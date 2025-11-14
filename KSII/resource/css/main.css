@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.top-header-bg {
+    width: 100%;
+    background-color: #000;
+}
+
+/* 상단 헤더 내부 */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    font-size: 12px;
+}
+
+.top-header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 12px;
+}
+
+.top-header span {
+    color: #fff;
+    text-decoration: none;
+}
+
+.top-header a:hover {
+    text-decoration: underline;
+}
+
+/* 네비게이션 배경 전체 */
+.main-nav-bg {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 네비게이션 내부 */
+nav.main-nav {
+    display: flex;
+    align-items: center;
+    height: 75px;
+}
+
+nav.main-nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+nav.main-nav .menu {
+    display: flex;
+    margin-left: auto;
+    gap: 30px;
+}
+
+nav.main-nav .menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+nav.main-nav .menu a:hover {
+    color: #007bff;
+}

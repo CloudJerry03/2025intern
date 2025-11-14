@@ -7,160 +7,93 @@
     <title>JCCI 2025</title>
 
     <!-- CSS -->
-    <link href="../resource/css/main.css" rel="stylesheet" />
+    <link href="resource/css/main.css" rel="stylesheet" />
 
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
-    </script>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
-body {
-    margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-.wrapper {
-    max-width: 1170px;
-    margin: 0 auto;
-}
-.top-header-bg {
-    width: 100%;
-    background-color: #000;
+    /* 슬라이드 */
+
+    .banner-slider {
+        width: 100%;
+        height: 600px;
+        background: url('resource/img/main/banner/slide.png') center/cover no-repeat;
+        position: relative;
+        color: #fff;
+    }
+
+    .banner-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 40px;
+    }
+
+    .banner-left {
+        max-width: 40%;
+    }
+
+    .banner-left .title {
+        font-weight: bold;
+        font-size: 50px;
+        margin-bottom: -10px;
+    }
+
+    .banner-left .subtitle {
+        font-weight: bold;
+        font-size: 20px;
+        /* 기존 24px → 22px로 약간 작게 */
+        margin-bottom: 20px;
+    }
+
+    .banner-left .date,
+    .banner-left .location {
+        font-size: 20px;
+        /* 기존 16px → 18px로 키움 */
+        margin-bottom: 0px;
+    }
+
+    .white-box-slide {
+    background: #ffffffd9; /* 흰색 + 약간 투명 */
+    padding: 20px 25px;
+    border-radius: 10px;
+    color: #000; /* 글씨는 검정으로 */
 }
 
-/* 상단 헤더 내부 */
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 20px;
-    font-size: 12px;
+.white-box-slide .slide-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.top-header a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 5px;
-    font-size: 12px;
+.white-box-slide p {
+    margin-bottom: 15px;
+    font-size: 16px;
 }
 
-.top-header a:hover {
+.white-box-slide .ul-wrap ul li {
+    margin-bottom: 8px;
+}
+
+.white-box-slide .ul-wrap ul li a {
+    color: #0056b3;
     text-decoration: underline;
 }
 
-/* 네비게이션 배경 전체 */
-.main-nav-bg {
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
+    /* 게시판 */
 
-/* 네비게이션 내부 */
-nav.main-nav {
-    display: flex;
-    align-items: center;
-    height: 75px;
-}
-
-nav.main-nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-    margin-right: 30px;
-}
-
-nav.main-nav .menu {
-    display: flex;
-    margin-left: auto;
-    gap: 30px;
-}
-
-nav.main-nav .menu a {
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-    font-size: 14px;
-    transition: color 0.2s;
-}
-
-nav.main-nav .menu a:hover {
-    color: #007bff;
-}
-
-/* 슬라이드 */
-
-/* 배너 기본 스타일 */
-/* 슬라이더 전체 */
-.banner-slider {
-    width: 100%;
-    height: 600px; /* 고정 높이 */
-    position: relative;
-    overflow: hidden;
-}
-
-/* 슬라이드 개별 */
-.banner-slider .slide {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;       /* div 전체 채우기, 비율 유지 */
-    background-position: center;  /* 중앙 기준 배치 */
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-}
-
-/* 현재 보이는 슬라이드 */
-.banner-slider .slide.active {
-    opacity: 1;
-}
-
-/* 슬라이드 컨트롤 */
-.banner-slider .slider-controls {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
-    display: flex;
-    gap: 10px;
-}
-
-.banner-slider .slider-controls button {
-    padding: 8px 12px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.banner-slider .slider-controls button:hover {
-    background: rgba(0,0,0,0.7);
+.con1 {
+    width: 70%;
+    height: 600px;
+    margin: auto;
 }
 </style>
+
 <body>
     <header>
-        <!-- 상단 헤더 배경 전체 -->
+        <!-- 상단 헤더 -->
         <div class="top-header-bg">
             <div class="wrapper top-header">
                 <div class="left">
@@ -174,10 +107,12 @@ nav.main-nav .menu a:hover {
             </div>
         </div>
 
-        <!-- 네비게이션 배경 전체 -->
+        <!-- 네비게이션 -->
         <div class="main-nav-bg">
             <nav class="main-nav wrapper">
-                <a href="#" class="logo">KSII</a>
+                <a href="index.html" class="logo">
+                    <img src="resource/img/main/logo.png" alt="KSII">
+                </a>
                 <div class="menu">
                     <a href="#">학회 소개</a>
                     <a href="#">회원 안내</a>
@@ -189,24 +124,47 @@ nav.main-nav .menu a:hover {
         </div>
     </header>
 
-<div class="banner-slider">
-    <div class="slide active" style="background-image: url('resource/img/main/banner/slide.png"></div>
-    <div class="slide" style="background-image: url('banner2.jpg');"></div>
-    <div class="slide" style="background-image: url('banner3.jpg');"></div>
+    <main>
+        <div class="banner-slider">
+            <div class="banner-container wrapper d-flex">
+                <!-- 왼쪽 텍스트 -->
+                <div class="banner-left">
+                    <div class="title"><strong>ICONI 2025</strong></div>
+                    <div class="subtitle"><strong>The 17th International Conference on Internet (ICONI 2025)</strong>
+                    </div>
+                    <div class="date">December 14(Sun) ~ 17(Wed), 2025</div>
+                    <div class="location">Okinawa Convention Center, Okinawa, Japan</div>
+                </div>
 
-    <!-- 슬라이드 컨트롤 -->
-    <div class="slider-controls">
-        <button class="prev">Prev</button>
-        <button class="next">Next</button>
-        <button class="pause">Pause</button>
-    </div>
-</div>
+                <!-- 오른쪽 슬라이드 -->
+                <div class="slide active white-box-slide">
+                    <div class="slide-title">
+                        KSII <strong>공지사항</strong>
+                    </div>
+                    <p>KSII 학회 및 ICONI 2025 관련 최신 정보를 확인하세요.</p>
 
-  <!-- 슬라이드 조작 버튼 -->
-  <button class="prev">Prev</button>
-  <button class="next">Next</button>
-  <button class="pause">Pause</button>
-</div>
+                    <div class="ul-wrap">
+                        <ul>
+                            <li><a href="#">Call for Papers</a></li>
+                            <li><a href="#">논문 제출 안내</a></li>
+                            <li><a href="#">프로그램 안내</a></li>
+                            <li><a href="#">등록 안내</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</section>  
+        <div class="con1">
+
+        </div>
+    </main>
+
+    </section>
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
