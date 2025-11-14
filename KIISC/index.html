@@ -25,6 +25,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/c467caf649.js" crossorigin="anonymous"></script>
 </head>
 <style>
 * {
@@ -36,9 +38,15 @@
 body {
     font-family: Arial, sans-serif;
 }
-.first-section {
-
+.first-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
 }
+/* slide start */
 .slider {
     position: relative;
     overflow: hidden;
@@ -51,18 +59,21 @@ body {
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    height: 100%;
 }
-.slide img {
-    object-fit: contain;
+.slide img {    
+    object-fit: cover;
+    width: 1100px;
+    height: 100%;
 }
 .slide {
     width: 100%;
-    height: 500px;
+    height: 100%;
     position: relative;
 }
 .textbox {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 27%;
     transform: translateY(-50%);
     color: #fff;
@@ -90,7 +101,7 @@ body {
 .text strong {
     background-color: #6ac3ff;
     border-radius: 20px;
-    padding: 5px;
+    padding: 0 7px;
 }
 .text p {
     margin-left: 5%;
@@ -154,6 +165,137 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+/* slide end */
+.second-section {
+    padding-top: 10px;
+}
+/* icon start */
+.icon {}
+.icon ul {
+    list-style: none;
+    padding: 0;
+   margin: 0;
+}
+.icon ul li {
+    display: flex;
+    gap: 120px;
+     justify-content: center;
+}
+.icon a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.icon a i {
+    font-size: 60px;
+}
+.icon span {
+    font-size: 20px;
+}
+/* icon end */
+
+.third-section {
+    padding-top: 10px;
+}
+
+/* tab start */
+
+.tabs {
+    max-width: 1400px;
+    width: 70%;
+}
+
+.tab {
+    padding-bottom: 10px;
+}
+
+.tab.active {
+    border-bottom: 8px solid #000;
+}
+
+.underline {
+    width: 100%;
+    border-bottom: 3px solid #e0e0e0;
+    margin-top: -3px;
+    margin-bottom: 30px;
+}
+
+.tab-content {
+    display: flex;
+    font-size: 30px;
+    gap: 40px;
+    cursor: pointer;
+}
+
+.tab-content i {
+    
+}
+
+.tab-next.active {
+    display: block;
+}
+.tab {
+    font-weight: bold;
+}
+
+.top-cards {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0 40px 0;
+}
+
+.card {
+    width: 70%;
+    min-height: 180px;
+    border: 1px solid #ddd;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.card span {
+    text-align: right;
+    font-size: 20px;
+    color: #555;
+}
+
+ul.tabmenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tabmenu li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+.tabmenu li span.text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: calc(100% - 160px);
+}
+.tabmenu .date {
+    font-size: 20px;
+    color: #777;
+    flex-shrink: 0;
+    width: 140px;
+    text-align: right;
+}
+.tab-next {
+    display: none;
 }
 </style>
 
@@ -277,7 +419,157 @@ body {
             </div> 
         </section>
         <section class="second-section">
-            
+            <div class="container">
+                <div class="icon">
+                    <ul>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-right-to-bracket"></i><span>회원가입</span></a>
+                        <a href="#"><i class="fa-solid fa-paste"></i><span>출간소식</span></a>
+                        <a href="#"><i class="fa-regular fa-note-sticky"></i><span>논문지</span></a>
+                        <a href="#"><i class="fa-solid fa-newspaper"></i><span>학회지</span></a>
+                        <a href="#"><i class="fa-solid fa-scroll"></i><span>논문투고</span></a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </section>    
+        <section class="third-section">
+            <div class="container">
+                    <div class="tabs">
+                        <div class="tab-content">
+                            <div class="tab active" data-target="#notice">공지사항</div>
+                            <div class="tab" data-target="#event">학회행사</div>
+                            <div class="tab" data-target="#news">학회소식</div>
+                            <a href="#"><i class="fa-solid fa-plus"></i></a>
+                        </div>
+                        <div class="underline"></div>
+
+                        <div id="notice" class="tab-next active">
+                            <div class="top-cards">
+                                <div class="card">
+                                    <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
+                                    <span>2025-11-12</span>
+                                </div>
+
+                                <div class="card">
+                                    <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
+                                    <span>2025-11-11</span>
+                                </div>
+
+                                <div class="card">
+                                    <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
+                                    <span>2025-11-11</span>
+                                </div>
+                                
+                            </div>
+                            <ul class="tabmenu">
+                                <li>
+                                    <span class="text">[KIISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
+                                    <span class="date">2025-11-11</span>
+                                </li>
+                                <li>
+                                    <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
+                                    <span class="date">2025-11-11</span>
+                                </li>
+                                <li>
+                                    <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
+                                    <span class="date">2025-11-11</span>
+                                </li>
+                                <li>
+                                    <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
+                                    <span class="date">2025-10-30</span>
+                                </li>
+                                <li>
+                                    <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
+                                    <span class="date">2025-10-21</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="event" class="tab-next">
+                            <div class="top-cards">
+                                <div class="card">
+                                    <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
+                                    <span>2025-11-12</span>
+                                </div>
+
+                                <div class="card">
+                                    <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
+                                    <span>2025-11-11</span>
+                                </div>
+
+                                <div class="card">
+                                    <p>	[KIIS_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
+                                    <span>2025-11-11</span>
+                                </div>
+                                
+                            </div>
+                            <ul class="tabmenu">
+                                <li>
+                                    <span class="text">[KIISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
+                                    <span class="date">2025-11-11</span>
+                                </li>
+                                <li>
+                                    <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
+                                    <span class="date">2025-11-11</span>
+                                </li>
+                                <li>
+                                    <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
+                                    <span class="date">2025-11-11</span>
+                                </li>
+                                <li>
+                                    <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
+                                    <span class="date">2025-10-30</span>
+                                </li>
+                                <li>
+                                    <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
+                                    <span class="date">2025-10-21</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="news" class="tab-next">
+                            <div class="top-cards">
+                                <div class="card">
+                                    <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
+                                    <span>2025-11-12</span>
+                                </div>
+
+                                <div class="card">
+                                    <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
+                                    <span>2025-11-11</span>
+                                </div>
+
+                                <div class="card">
+                                    <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
+                                    <span>2025-11-11</span>
+                                </div>
+                                
+                            </div>
+                            <ul class="tabmenu">
+                                <li>
+                                    <span class="text">[KISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
+                                    <span class="date">2025-11-11</span>
+                                </li>
+                                <li>
+                                    <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
+                                    <span class="date">2025-11-11</span>
+                                </li>
+                                <li>
+                                    <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
+                                    <span class="date">2025-11-11</span>
+                                </li>
+                                <li>
+                                    <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
+                                    <span class="date">2025-10-30</span>
+                                </li>
+                                <li>
+                                    <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
+                                    <span class="date">2025-10-21</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="gallery-tab"></div>
+            </div>
         </section>    
     </main>
     <footer>
@@ -298,6 +590,8 @@ body {
 
 
     <script>
+
+        // slide start//
         $(document).ready(function () {
             let currentIndex = 0;
             const totalSlides = $(".slide").length;
@@ -331,6 +625,17 @@ body {
                 showSlide(currentIndex);
             }, 3000);
         });
+        // slide end//
+
+        // tab start//
+        $(".tab").click(function () {
+            $(".tab").removeClass("active");
+            $(this).addClass("active");
+
+            $(".tab-next").removeClass("active");
+            $($(this).data("target")).addClass("active");
+        }); 
+        // tab end//
     </script>
     <script src="resource/js/src.js"></script>
 </body>

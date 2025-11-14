@@ -132,7 +132,7 @@ footer {
 
 footer .container {
     flex-wrap: wrap-reverse;
-    padding: 15px 30px;
+    padding: 15px 0;
 }
 footer a {
     color: #fff;
