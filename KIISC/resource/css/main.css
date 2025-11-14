@@ -1,0 +1,143 @@
+a {
+    text-decoration: none;
+    color: #000;
+}
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+/* header start */
+
+header {
+    width: 100%;
+    background: #fff;
+    height: 80px;               
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+header .container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header .logo img {
+    max-height: 60px;            
+}
+
+
+header .navi {
+    display: flex;
+    align-items: center;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 99;
+}
+
+header ul li {
+    position: relative;
+    
+}
+
+header ul li > a {
+    padding: 10px 15px;
+    font-size: 17px;
+    display: block;
+    text-align: center;
+    transition: 0.5s;
+}
+
+
+header ul li:hover > a {
+    background: #6ac3ff;
+    color: #fff;
+    border-radius: 4px;
+    width: 125px;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%); 
+    min-width: 160px;
+    display: none;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    padding: 5px 0;
+    border-radius: 4px;
+}
+
+.submenu a {
+    display: flex;             
+    align-items: center;       
+    justify-content: center;  
+    padding: 10px 0;
+    width: 100%;
+    transition: 0.5s;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.submenu a:last-child {
+    border-bottom: none;
+}
+
+.submenu a:hover {
+    background: #6ac3ff;
+    color: #fff;
+}
+
+
+/* header end */
+
+
+
+
+
+
+
+/* footer start */
+footer {
+    background-color: #333;
+    color: #fff;
+}
+
+footer .container {
+    flex-wrap: wrap-reverse;
+    padding: 15px 30px;
+}
+footer a {
+    color: #fff;
+}
+footer a:hover {
+    font-weight: bold;
+}
+/* footer end */
