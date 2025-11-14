@@ -1,23 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resource/css/main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
         .banner {
             width: 100%;
             height: 500px;
             background-image: url(resource/img/main/banner.jpg);
             background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
+        .banner>div {
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .banner-content-bg {
+            padding: 30px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
         .banner-content {
-            
+            display: inline-flex;
+            flex-direction: column;
+            flex: 0 0 auto;
+            gap: 15px;
+        }
+
+        .banner-content-bg h1 {
+            color: #fff;
+            font-size: 3rem;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .banner-content-bg h1 span {
+            color: #e0d905;
+        }
+
+        .banner-content h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+
+        .banner-content-bg a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #0076bc;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .banner-content-bg a:hover {
+            color: #0076bc;
+            background-color: #ddd;
         }
     </style>
     <title>KISP</title>
 </head>
+
 <body>
     <header>
         <div class="container row">
@@ -35,12 +91,60 @@
                     <a href="#">English</a>
                 </nav>
                 <nav class="navi row">
-                    <a href="#">학회소개</a>
-                    <a href="#">학회조직</a>
-                    <a href="#">발간</a>
-                    <a href="#">증명서 발급</a>
-                    <a href="#">행사 및 포상</a>
-                    <a href="#">공지사항</a>
+                    <li>
+                        <a href="#">학회소개</a>
+                        <div class="sub-menu">
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">학회조직</a>
+                        <div class="sub-menu">
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">발간</a>
+                        <div class="sub-menu">
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">증명서 발급</a>
+                        <div class="sub-menu">
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">행사 및 포상</a>
+                        <div class="sub-menu">
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">공지사항</a>
+                        <div class="sub-menu">
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                            <a href=""></a>
+                        </div>
+                    </li>
                 </nav>
             </div>
 
@@ -48,10 +152,26 @@
     </header>
     <section class="banner">
         <div class="container row">
-            <div class="col-8 offset-2 banner-content">
-                가나다라
+            <div class="col-8 banner-content-bg">
+                <h1>AKC <span>2025</span> 학술대회</h1>
+                <div class="banner-content">
+                    <h3>주제 : 정보보호와 대한민국의 미래</h3>
+                    <h3>일시 : 2025년 11월 6일 ~ 8일</h3>
+                    <h3>장소 : 동국대학교</h3>
+                </div>
+                <a href="https://ack.kips.or.kr/">바로가기</a>
             </div>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+    <script>
+        function headerPadding() {
+            let header = document.querySelector('header')
+            document.body.style.paddingTop = header.offsetHeight + 'px'
+        }
+        window.addEventListener('load', headerPadding)
+        window.addEventListener('resize', headerPadding)
+    </script>
 </body>

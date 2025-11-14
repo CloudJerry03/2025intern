@@ -7,6 +7,7 @@ nav a {
 }
 .logo img {
     max-height: 50px;
+    width: 100%;
 }
 .container {
     max-width: 1340px;
@@ -19,13 +20,18 @@ body {
 }
 header {
     display: flex;
+    border-bottom: 1px solid #ddd;
     justify-content: center;
     width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 999999;
 }
 .navi {
     width: 100%;
 }
-.navi a {
+.navi li {
     display: block;
     flex: 1;
     text-align: center;
