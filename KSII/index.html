@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCCI 2025</title>
+
+    <!-- CSS -->
+    <link href="../resource/css/main.css" rel="stylesheet" />
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.top-header-bg {
+    width: 100%;
+    background-color: #000;
+}
+
+/* 상단 헤더 내부 */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    font-size: 12px;
+}
+
+.top-header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 12px;
+}
+
+.top-header a:hover {
+    text-decoration: underline;
+}
+
+/* 네비게이션 배경 전체 */
+.main-nav-bg {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 네비게이션 내부 */
+nav.main-nav {
+    display: flex;
+    align-items: center;
+    height: 75px;
+}
+
+nav.main-nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+nav.main-nav .menu {
+    display: flex;
+    margin-left: auto;
+    gap: 30px;
+}
+
+nav.main-nav .menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+nav.main-nav .menu a:hover {
+    color: #007bff;
+}
+
+/* 슬라이드 */
+
+/* 배너 기본 스타일 */
+/* 슬라이더 전체 */
+.banner-slider {
+    width: 100%;
+    height: 600px; /* 고정 높이 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 슬라이드 개별 */
+.banner-slider .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;       /* div 전체 채우기, 비율 유지 */
+    background-position: center;  /* 중앙 기준 배치 */
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* 현재 보이는 슬라이드 */
+.banner-slider .slide.active {
+    opacity: 1;
+}
+
+/* 슬라이드 컨트롤 */
+.banner-slider .slider-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.banner-slider .slider-controls button {
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.banner-slider .slider-controls button:hover {
+    background: rgba(0,0,0,0.7);
+}
+</style>
+<body>
+    <header>
+        <!-- 상단 헤더 배경 전체 -->
+        <div class="top-header-bg">
+            <div class="wrapper top-header">
+                <div class="left">
+                    <a href="#">KOR</a>
+                </div>
+                <div class="right">
+                    <a href="#">로그인</a>
+                    <span>|</span>
+                    <a href="#">회원가입</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 네비게이션 배경 전체 -->
+        <div class="main-nav-bg">
+            <nav class="main-nav wrapper">
+                <a href="#" class="logo">KSII</a>
+                <div class="menu">
+                    <a href="#">학회 소개</a>
+                    <a href="#">회원 안내</a>
+                    <a href="#">학회 행사</a>
+                    <a href="#">출판</a>
+                    <a href="#">커뮤니티</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<div class="banner-slider">
+    <div class="slide active" style="background-image: url('resource/img/main/banner/slide.png"></div>
+    <div class="slide" style="background-image: url('banner2.jpg');"></div>
+    <div class="slide" style="background-image: url('banner3.jpg');"></div>
+
+    <!-- 슬라이드 컨트롤 -->
+    <div class="slider-controls">
+        <button class="prev">Prev</button>
+        <button class="next">Next</button>
+        <button class="pause">Pause</button>
+    </div>
+</div>
+
+  <!-- 슬라이드 조작 버튼 -->
+  <button class="prev">Prev</button>
+  <button class="next">Next</button>
+  <button class="pause">Pause</button>
+</div>
+
+</section>  
+</body>
