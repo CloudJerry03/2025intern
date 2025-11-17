@@ -4,7 +4,9 @@
 .container {
     max-width: 1340px;
 }
-
+body {
+    font-size: 1rem;
+}
 * {
     margin: 0;
     padding: 0;
@@ -19,10 +21,29 @@ a {
 }
 ul {
     margin: 0;
+    padding: 0;
 }
 h1 {
     font-size: 2rem;
     font-weight: bold;
+    text-align: center;
+}
+button {
+    background: none;
+    border: none;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex-row {
+    display: flex;
+}
+.color-main {
+    color: var(--maincolor);
+}
+.bgcolor-main {
+    background-color: var(--maincolor);
 }
 header {
     display: flex;
@@ -58,7 +79,6 @@ header>div {
     gap: 15px;
 }
 .login a {
-    font-size: 1rem;
     color: #666;
 }
 .login a:hover {

@@ -8,10 +8,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="resource/css/main.css">
     <style>
-        .carousel-inner {
-            width: 100vw;
-        }
-
+        /* banner start */
         .banner {
             width: 100%;
             height: 500px;
@@ -21,7 +18,6 @@
             align-items: center;
             justify-content: center;
         }
-
 
         .banner>div {
             justify-content: center;
@@ -77,6 +73,20 @@
             background-color: #ddd;
         }
 
+        /* banner end */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+        }
+
+        /* carousel start */
+        .carousel-inner {
+            width: 100vw;
+        }
+
+        /* carousel end */
+        /* shortcut start */
         .shortcut {
             width: 100%;
             background-color: #edf1fa;
@@ -91,9 +101,7 @@
 
         .shortcut li {
             flex: 1;
-            display: flex;
             align-items: center;
-            flex-direction: column;
             gap: 10px;
         }
 
@@ -118,24 +126,140 @@
             ;
         }
 
+        /* shortcut end */
+        /* papers start */
         .papers img {
             max-height: 200px;
+            transition: 0.3s;
+        }
+        .papers img:hover {
+            transform: scale(110%);
         }
 
         .papers ul {
-            display: flex;
-            gap: auto;
+            align-items: end;
+            justify-content: center;
+            flex: 1;
         }
 
         .papers ul>li {
+            flex: 1;
             display: flex;
+            justify-content: center;
+        }
+
+        .paper-card {
+            display: flex;
+            gap: 30px;
+            max-width: 300px;
+        }
+
+        .paper-card div {
+            margin-top: 30px;
+        }
+
+        /* papers end */
+        /* community start */
+        .community>div {
             gap: 30px;
         }
 
-        .papers ul li div {
-            display: flex;
-            flex-direction: column;
+        .community-left {
+            width: 25%;
+            border-radius: 10px 0 0 10px;
+            padding: 30px;
+            color: #fff;
+            justify-content: space-between;
         }
+
+        .community-left h5::after {
+            content: '';
+            background-color: #fff;
+            display: block;
+            width: 40%;
+            height: 4px;
+            margin-top: 15px;
+        }
+
+        .community-right {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-left: none;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .tab-btn ul {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-btn li {
+            padding: 15px 0;
+            text-align: center;
+            flex: 1;
+            border-left: 1px solid #ddd;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .tab-btn li:hover::after {
+            transform: scaleX(100%);
+        }
+        .tab-btn li.active::after {
+            transform: scaleX(100%);
+        }
+
+        .tab-btn li::after {
+            content: '';
+            width: 100%;
+            transition: 0.3s;
+            transform: scaleX(0);
+            background-color: var(--maincolor);
+            height: 2px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .tab-btn li:first-child {
+            border-left: none;
+        }
+
+        .tab-btn button {
+            color: #b3b3b3;
+            transition: 0.3s;
+        }
+
+        .tab-btn li:hover button {
+            font-weight: bold;
+            color: var(--maincolor);
+        }
+
+        .tab-btn li a {
+            color: #b3b3b3;
+            margin-left: 10px;
+            transition: 0.3s;
+        }
+        .tab-btn li a:hover {
+            color: var(--maincolor);
+        }
+
+        .tab-btn li.active button {
+            font-weight: bold;
+            color: var(--maincolor);
+        }
+
+        .tab-btn li i {
+            width: 15px;
+            height: 15px;
+        }
+
+        .tab-content ul li {
+            padding: 15px;
+            justify-content: space-between;
+        }
+
+        /* community end */
     </style>
     <title>KISP</title>
 </head>
@@ -281,71 +405,124 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <div class="shortcut">
-        <ul class="container">
-            <li>
-                <a href=""><i class="fa-regular fa-calendar"></i></a>
-                학회일정
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-computer"></i></a>
-                논문투고
-            </li>
-            <li>
-                <a href="#"><i class="fa-regular fa-credit-card"></i></a>
-                회비납부
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-book-open"></i></a>
-                학술발표회 안내
-            </li>
-            <li>
-                <a href="#"><i class="fa-regular fa-file-lines"></i></a>
-                증명서 발급
-            </li>
-            <li>
-                <a href="#"><i class="fa-regular fa-bell"></i></a>
-                공지사항
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a>
-                기부금
-            </li>
-        </ul>
-    </div>
-    <div class="papers">
-        <div class="container">
-            <ul>
-                <h1>학회 발간물</h1>
-                <li>
-                    <a href="#"><img src="resource/img/main/paper/KIPS.jpg" alt=""></a>
-                    <div>
-                        <h5>KIPS</h5>
-                        <p>한국정보처리학회 학회지</p>
-                    </div>
+    <div class="content">
+        <div class="shortcut">
+            <ul class="container">
+                <li class="flex-column">
+                    <a href=""><i class="fa-regular fa-calendar"></i></a>
+                    학회일정
                 </li>
-                <li>
-                    <a href="#"><img src="resource/img/main/paper/TKIPS.jpg" alt=""></a>
-                    <div>
-                        <h5>TKIPS</h5>
-                        <p>한국연구재단 등재 논문지</p>
-                    </div>
+                <li class="flex-column">
+                    <a href="#"><i class="fa-solid fa-computer"></i></a>
+                    논문투고
                 </li>
+                <li class="flex-column">
+                    <a href="#"><i class="fa-regular fa-credit-card"></i></a>
+                    회비납부
                 </li>
-                <li>
-                    <a href="#"><img src="resource/img/main/paper/JIPS.png" alt=""></a>
-                    <div>
-                        <h5>JIPS</h5>
-                        <p>한국연구재단 및 SCOPUS 등재 논문지</p>
-                    </div>
+                <li class="flex-column">
+                    <a href="#"><i class="fa-solid fa-book-open"></i></a>
+                    학술발표회 안내
+                </li>
+                <li class="flex-column">
+                    <a href="#"><i class="fa-regular fa-file-lines"></i></a>
+                    증명서 발급
+                </li>
+                <li class="flex-column">
+                    <a href="#"><i class="fa-regular fa-bell"></i></a>
+                    공지사항
+                </li>
+                <li class="flex-column">
+                    <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a>
+                    기부금
                 </li>
             </ul>
         </div>
-        <script src="https://code.jquery.com/jquery-3.7.1.js"
-            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-        </script>
-        <script src="https://kit.fontawesome.com/73190c27e7.js" crossorigin="anonymous"></script>
-        <script src="resource/js/main.js"></script>
+        <div class="papers">
+            <div class="container">
+                <ul class="flex-row">
+                    <li>
+                        <h1>학회 발간물</h1>
+                    </li>
+                    <li>
+                        <div class="paper-card">
+                            <a href="#"><img src="resource/img/main/paper/KIPS.jpg" alt=""></a>
+                            <div>
+                                <h5>KIPS</h5>
+                                <p class="color-main">한국정보처리학회 학회지</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="paper-card">
+                            <a href="#"><img src="resource/img/main/paper/TKIPS.jpg" alt=""></a>
+                            <div>
+                                <h5>TKIPS</h5>
+                                <p class="color-main">한국연구재단 등재 논문지</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="paper-card">
+                            <a href="#"><img src="resource/img/main/paper/JIPS.png" alt=""></a>
+                            <div>
+                                <h5>JIPS</h5>
+                                <p class="color-main">한국연구재단 및 SCOPUS 등재 논문지</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="community">
+            <div class="container flex-column">
+                <h1>커뮤니티</h1>
+                <div class="community-content flex-row">
+                    <div class="bgcolor-main community-left flex-column">
+                        <h5>한국정보처리학회<br>커뮤니티</h5>
+                        <p>
+                            학회 및 유관 기관의 최신 소식, <br>
+                            회원 활동, 각종 소식을 <br>
+                            확인하실 수 있습니다.
+                        </p>
+                    </div>
+                    <div class="community-right">
+                        <div class="tab-btn">
+                            <ul class="flex-row">
+                                <li class="active"><button>학회 공지/행사</button><a href="#"><i
+                                            class="fa-solid fa-plus"></i></a></li>
+                                <li><button>유관기관 공지/행사</button><a href="#"><i class="fa-solid fa-plus"></i></a></li>
+                                <li><button>회원 동정</button><a href="#"><i class="fa-solid fa-plus"></i></a></li>
+                                <li><button>구인/구직</button><a href="#"><i class="fa-solid fa-plus"></i></a></li>
+                                <li><button>학회 갤러리</button><a href="#"><i class="fa-solid fa-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <ul>
+                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
+                                </li>
+                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
+                                </li>
+                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
+                                </li>
+                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
+                                </li>
+                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
+                                </li>
+                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/73190c27e7.js" crossorigin="anonymous"></script>
+    <script src="resource/js/main.js"></script>
 </body>
