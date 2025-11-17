@@ -92,6 +92,77 @@
         height: 600px;
         margin: auto;
     }
+
+    .notice-board {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .notice-tab-left {
+        margin-left: 50px;
+        /* 왼쪽 끝 여백 */
+    }
+
+    .notice-tabs a {
+        margin-right: 60px;
+        /* 오른쪽 끝 여백 */
+    }
+
+    .notice-tab {
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 8px 12px;
+        background: #fff;
+        color: #00000030;
+        border: none;
+        margin: 0;
+    }
+
+    .notice-tab.active {
+        color: #000;
+        /* 활성 탭 표시 */
+    }
+
+    /* 탭 hover */
+    .notice-tab:hover {
+        opacity: 0.7;
+    }
+
+    .card-text {
+        background-color: #f0f0f0;
+        /* 연한 회색 */
+        padding: 10px;
+        /* 글씨와 배경 사이 여백 */
+        border-radius: 5px;
+        /* 모서리 살짝 둥글게 */
+    }
+
+    .custom-card {
+    width: 18rem;
+}
+
+.custom-card .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 200px; /* 카드 높이 */
+    padding: 0;
+}
+
+.custom-card .card-top {
+    flex: 1;
+    padding: 15px;
+}
+
+.custom-card .card-bottom {
+    flex: 1;
+    background-color: #f0f0f0; /* 하단 회색 */
+    padding: 15px;
+    border-radius: 0 0 5px 5px; /* 하단 모서리 둥글게 */
+}
 </style>
 
 <body>
@@ -159,16 +230,64 @@
         </div>
 
         <div class="con1">
-            <div class="notice-board">
-                <div class="card" style="width: 18rem;">
-                <span>공지</span>
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <!-- 버튼 영역 -->
+            <div class="notice-tabs d-flex justify-content-between mb-3 align-items-center">
+
+                <!-- 왼쪽 버튼들 -->
+                <div class="d-flex gap-3 notice-tab-left">
+                    <h2 class="notice-tab active">전체</h2>
+                    <h2 class="notice-tab">공지사항</h2>
+                    <h2 class="notice-tab">유관기관행사정보</h2>
+                    <h2 class="notice-tab">회원동정</h2>
                 </div>
+
+                <!-- 오른쪽 버튼 -->
+                <a href="#" class="btn btn-primary">우측 버튼</a>
             </div>
+            <div class="notice-board">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h5 class="card-title">공지 1</h5>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-text">내용입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h5 class="card-title">공지 2</h5>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-text">내용입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h5 class="card-title">공지 3</h5>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-text">내용입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h5 class="card-title">공지 4</h5>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-text">내용입니다.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
