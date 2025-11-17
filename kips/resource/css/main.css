@@ -20,6 +20,10 @@ a {
 ul {
     margin: 0;
 }
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
 header {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -122,5 +126,5 @@ header>div {
     left: 0;
     width: 100%;
     z-index: -1000;
-    height: auto;
+    height: 400px;
 }
