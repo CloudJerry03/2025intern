@@ -77,7 +77,7 @@
         .content {
             display: flex;
             flex-direction: column;
-            gap: 45px;
+            gap: 60px;
         }
 
         /* carousel start */
@@ -234,14 +234,15 @@
             font-weight: bold;
             color: var(--maincolor);
         }
-
-        .tab-btn li a {
-            color: #b3b3b3;
+        .tab-btn li a i {
             margin-left: 10px;
+            color: #b3b3b3;
             transition: 0.3s;
+            transform: rotate(0deg);
         }
-        .tab-btn li a:hover {
+        .tab-btn li a:hover i {
             color: var(--maincolor);
+            transform: rotate(45deg);
         }
 
         .tab-btn li.active button {
@@ -257,6 +258,13 @@
         .tab-content ul li {
             padding: 15px;
             justify-content: space-between;
+            border-bottom: 1px solid #e3e3e3;
+        }
+        .tab-content ul li span {
+            color: #666;
+        }
+        .tab-content ul li a:hover {
+            font-weight: bold;
         }
 
         /* community end */
@@ -514,6 +522,24 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="guide">
+            <div class="container flex-column">
+                <h1>행사안내</h1>
+                <div class="flex">
+                    <ul>
+                        <li>
+                            <li>
+                                <div>
+                                    <span>11.12</span>
+                                </div>
+                                <h5></h5>
+                                <p></p>
+                            </li>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
