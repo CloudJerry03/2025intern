@@ -231,12 +231,32 @@
     .small-card {
         width: 300px;
         height: 150px;
-        background: #eee url('resource/img/sample2.jpg') center/cover no-repeat;
+        background: #eee;
+        /* 기본 배경만 남김 */
+        background-size: cover;
+        background-position: center;
         border-radius: 10px;
         position: relative;
         margin-top: 15px;
         margin-bottom: 15px;
     }
+
+    .card-img-1 {
+        background-image: url('resource/img/main/gallery/image\ 1.png');
+    }
+
+    .card-img-2 {
+        background-image: url('resource/img/main/gallery/image\ 2.png');
+    }
+
+    .card-img-3 {
+        background-image: url('resource/img/main/gallery/image\ 1.png');
+    }
+
+    .card-img-4 {
+        background-image: url('resource/img/main/gallery/image\ 2.png');
+    }
+
 
     .small-card-info {
         position: absolute;
@@ -550,19 +570,20 @@
                 <!-- 메인 갤러리 -->
                 <div class="main-gallery">
                     <div class="small-gallery-row">
-                        <div class="small-card">
-                            <div class="small-card-info">사진1 / 2025-11-18</div>
+                        <div class="small-card card-img-1">
+                            <div class="small-card-info"> 2025-11-18</div>
                         </div>
-                        <div class="small-card">
-                            <div class="small-card-info">사진2 / 2025-11-17</div>
+                        <div class="small-card card-img-2">
+                            <div class="small-card-info"> 2025-11-17</div>
                         </div>
                     </div>
+
                     <div class="small-gallery-row">
-                        <div class="small-card">
-                            <div class="small-card-info">사진3 / 2025-11-16</div>
+                        <div class="small-card card-img-3">
+                            <div class="small-card-info"> 2025-11-16</div>
                         </div>
-                        <div class="small-card">
-                            <div class="small-card-info">사진4 / 2025-11-15</div>
+                        <div class="small-card card-img-4">
+                            <div class="small-card-info"> 2025-11-15</div>
                         </div>
                     </div>
                 </div>
