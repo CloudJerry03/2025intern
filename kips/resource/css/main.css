@@ -5,7 +5,7 @@
     max-width: 1340px;
 }
 body {
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 * {
     margin: 0;
@@ -24,7 +24,7 @@ ul {
     padding: 0;
 }
 h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: bold;
     text-align: center;
 }
@@ -63,7 +63,7 @@ header>div {
 }
 
 .logo {
-    padding: 15px;
+    padding: 20px;
 }
 
 .logo img {
@@ -73,13 +73,14 @@ header>div {
 
 .navi {
     display: flex;
-    font-size: 1.25rem;
+    font-size: 1rem;
     flex-direction: column;
     align-items: end;
     gap: 15px;
 }
-.login a {
+.login * {
     color: #666;
+    font-size: 0.75rem;
 }
 .login a:hover {
     text-decoration: underline;
@@ -118,11 +119,11 @@ header>div {
     top: 100%;
     width: 100%;
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-top: none;
-    border-bottom: none;
+    border-right: 1px solid #ddd;
     z-index: -10;
     display: none;
+    height: max-content;
+    height: 250px;
 }
 
 .sub-menu a {
@@ -146,5 +147,5 @@ header>div {
     left: 0;
     width: 100%;
     z-index: -1000;
-    height: 400px;
+    height: 300px;
 }
