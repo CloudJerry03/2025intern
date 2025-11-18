@@ -75,3 +75,25 @@ nav.main-nav .menu a {
 nav.main-nav .menu a:hover {
     color: #007bff;
 }
+
+    /* 카피라이트 */
+    .copyright-section {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+    }
+
+    .copyright-section .w1170 {
+        width: 1170px;
+        margin: 0 auto;
+        /* 가운데 정렬 */
+        text-align: left;
+        /* 왼쪽 정렬 */
+        font-size: 14px;
+        /* 글씨 크기 조정 */
+    }
+
+    .copyright-section p {
+        margin: 5px 0;
+        /* 문단 간 여백 */
+    }
