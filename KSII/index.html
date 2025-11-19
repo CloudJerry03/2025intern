@@ -85,8 +85,8 @@
 
     .con1 {
         width: 70%;
-        height: 600px;
         margin: auto;
+        padding-bottom: 60px;
     }
 
     .notice-board {
@@ -350,6 +350,8 @@
 
 
     .journal-info {
+
+        margin-left: 20px;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -389,28 +391,43 @@
         /* 밑줄 제거 */
     }
 
+    .footer-sponsor {
+        background-color: #eee;
+    }
 
-    
     .sponsors-carousel {
-        display: flex;
-        overflow-x: auto;
         width: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: #eee;
+    }
+
+    .carousel-track {
+        display: flex;
         gap: 20px;
-        justify-content: flex-start;
+        animation: scrollLeft 25s linear infinite;
     }
 
     .sponsor-banner {
         flex-shrink: 0;
         width: 150px;
-        /* 배너 크기 조정 */
         height: 80px;
-        /* 배너 높이 */
     }
 
     .sponsor-banner img {
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+
+    @keyframes scrollLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
     }
 
     /* 카피라이트 */
@@ -637,11 +654,11 @@
                         <div class="journal-info ms-3">
                             <h5 class="journal-title">JICS</h5>
                             <h6 class="journal-subtitle">Journal of Internet Computing and Services</h6>
-                            
-<div class="journal-buttons">
-    <a href="#" class="btn btn-link">자세히 보기</a>
-    <a href="#" class="btn btn-link">논문 투고</a>
-</div>
+
+                            <div class="journal-buttons">
+                                <a href="#" class="btn btn-link">자세히 보기</a>
+                                <a href="#" class="btn btn-link">논문 투고</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -657,11 +674,11 @@
                         <div class="journal-info ms-3">
                             <h5 class="journal-title">JICS</h5>
                             <h6 class="journal-subtitle">Journal of Internet Computing and Services</h6>
-                            
-<div class="journal-buttons">
-    <a href="#" class="btn btn-link">자세히 보기</a>
-    <a href="#" class="btn btn-link">논문 투고</a>
-</div>
+
+                            <div class="journal-buttons">
+                                <a href="#" class="btn btn-link">자세히 보기</a>
+                                <a href="#" class="btn btn-link">논문 투고</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -674,46 +691,37 @@
 
     <footer>
         <!-- 후원 영역 -->
-        <div class="sponsors-section" style="background-color: #f0f0f0; padding: 20px 0;">
-            <div class="wrapper">
-                <div class="sponsors-carousel d-flex justify-content-start">
-                    <!-- 각 후원 기업 배너 이미지 -->
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii1.png" alt="Sponsor 1">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii2.png" alt="Sponsor 2">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii3.png" alt="Sponsor 3">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii4.png" alt="Sponsor 4">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii5.png" alt="Sponsor 5">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii6.png" alt="Sponsor 6">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii7.png" alt="Sponsor 7">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii8.png" alt="Sponsor 8">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii9.png" alt="Sponsor 9">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii10.png" alt="Sponsor 10">
-                    </div>
-                    <div class="sponsor-banner">
-                        <img src="resource/img/main/sponsor/ksii11.jpg" alt="Sponsor 11">
-                    </div>
+        <div class="footer-sponsor">
+            <div class="sponsors-carousel">
+                <div class="carousel-track">
+                    <!-- 기존 배너들 (한 세트) -->
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii1.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii2.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii3.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii4.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii5.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii6.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii7.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii8.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii9.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii10.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii11.jpg"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii1.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii2.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii3.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii4.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii5.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii6.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii7.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii8.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii9.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii10.png"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii11.jpg"></div>
                 </div>
             </div>
         </div>
+
+
 
         <!-- 카피라이트 -->
         <div class="copyright-section">
