@@ -41,6 +41,7 @@ body {
 .first-section .container {
     display: flex;
     justify-content: space-between;
+    grid-template-columns: 1fr;
     align-items: center;
     width: 100%;
     margin: 0 auto;
@@ -51,7 +52,7 @@ body {
     position: relative;
     overflow: hidden;
     width: 70%;
-    height: 400px;
+    height: 400px; 
     border-radius: 10px;
     box-sizing: border-box;
     float: left;
@@ -74,29 +75,28 @@ body {
 .textbox {
     position: absolute;
     top: 50%;
-    left: 27%;
-    transform: translateY(-50%);
+    left: 50%;
     color: #fff;
-    font-size: 24px;
+    transform: translate(-50%, -50%);
     font-weight: bold;
-    max-width: 450px;
-    height: 270px;
     background-color: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 8px;
 }
-.text {
+.textbox .text {
     position: relative;
-    top: 10%;
+    top: 10%;   
+    font-size: 25px;
 }
-.text h2 {
+.text h1 {
     text-align: center;
     color: #fff;
+    
 }
 .text h5 {
     color: rgb(255, 234, 0);
     text-align: center;
-    margin-top: 3%;
+    font-size: 20px;
 }
 .text strong {
     background-color: #6ac3ff;
@@ -104,8 +104,8 @@ body {
     padding: 0 7px;
 }
 .text p {
-    margin-left: 5%;
-    margin-top: 3%;
+    margin-top: 4%;
+    font-size: 20px;
 }
 .prev, .next {
     position: absolute;
@@ -115,10 +115,10 @@ body {
     color: white;
     padding: 10px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 9;
 }
 .prev {
-     left: 10px;
+    left: 10px;
 }
 
 .next {
@@ -129,9 +129,8 @@ body {
     position: absolute;
     text-align: center;
     margin-top: 10px;
-    position: absolute;
     bottom: 5%;
-    left: 46%;
+    left: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,48 +155,26 @@ body {
     background-color: #0073e6;
 }
 .rightslide {
-    width: 30%;
+    width: 29%;
     height: 400px;
     overflow: hidden;
     position: relative;
+    border-radius: 10px;
 }
 .rightslide img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 /* slide end */
-.second-section {
-    padding-top: 10px;
-}
-/* icon start */
-.icon {}
-.icon ul {
-    list-style: none;
-    padding: 0;
-   margin: 0;
-}
-.icon ul li {
-    display: flex;
-    gap: 120px;
-     justify-content: center;
-}
-.icon a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.icon a i {
-    font-size: 60px;
-}
-.icon span {
-    font-size: 20px;
-}
-/* icon end */
+
 
 .third-section {
-    padding-top: 10px;
+    padding-top: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    grid-template-columns: 1fr;
 }
 
 /* tab start */
@@ -205,14 +182,17 @@ body {
 .tabs {
     max-width: 1400px;
     width: 70%;
+    box-sizing: border-box;
+    float: left;
 }
 
 .tab {
-    padding-bottom: 10px;
+    padding-bottom: 10px;   
 }
 
 .tab.active {
-    border-bottom: 8px solid #000;
+    border-bottom: 5px solid #000;
+    color: #000;
 }
 
 .underline {
@@ -237,6 +217,7 @@ body {
     display: block;
 }
 .tab {
+    color: #ddd;
     font-weight: bold;
 }
 
@@ -248,7 +229,7 @@ body {
 
 .card {
     width: 70%;
-    min-height: 180px;
+    min-height: 150px;
     border: 1px solid #ddd;
     padding: 25px;
     box-sizing: border-box;
@@ -259,33 +240,52 @@ body {
     font-size: 20px;
     font-weight: 500;
 }
-
+.card a {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
 .card span {
     text-align: right;
     font-size: 20px;
     color: #555;
 }
-
+.card:hover {
+    background-color: #6ac3ff;
+    
+}
+.card:hover a p, .card:hover a span {
+    color: #fff;
+}
 ul.tabmenu {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
+.tabmenu {
+    position: relative;
+    top: -30px;
+}
 .tabmenu li {
+
+}
+.tabmenu li a {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid #e0e0e0;
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 20px;
-    font-weight: 500;
 }
-.tabmenu li span.text {
+.tabmenu li a:hover {
+    font-weight: bold;
+}
+.tabmenu li a span.text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: inline-block;
-    width: calc(100% - 160px);
+
 }
 .tabmenu .date {
     font-size: 20px;
@@ -293,10 +293,259 @@ ul.tabmenu {
     flex-shrink: 0;
     width: 140px;
     text-align: right;
+    margin-top: 5px;
 }
 .tab-next {
     display: none;
 }
+.tab-content {
+    position: relative;
+}
+
+#plusbtn {
+    position: absolute;
+    top: 12px;
+    right: 5px;
+    font-size: 30px;
+}
+/* event start */
+.gallery-tab {
+    width: 28%;
+    float: left;
+    margin-left: 20px;
+    height: 100%;
+    margin-top: 14.9px;
+}
+
+.gallery-tab .underline {
+    width: 102%;
+}
+
+.eventt {
+    display: block;
+}
+.eventt .tabb {
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    top: -15px;
+}
+.eventt a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img img{
+    width: 350px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    display: block;
+}
+.img span {
+    font-size: 20px;
+    text-align: center;
+    color: #222;
+    user-select: none;
+    padding: 0 0 5px 0; 
+}
+/* event end */
+
+
+.fourth-section {
+    padding-top: 20px;
+}
+
+/* gallery start */
+.gallery {}
+.title {
+    font-size: 30px;
+    
+}
+.title span {
+    position: relative;
+    top: -15px;
+    font-weight: bold;
+}
+.title a {
+    float: right;
+    font-size: 30px;    
+}
+.gallery-img a img {
+    max-height: 150px;
+    object-fit: cover;
+    width: 100%;
+}
+.gallery-img a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.gallery-img a span {
+    font-weight: 650;
+    padding: 10px 0;
+    font-size: 20px;
+}
+.gallery-img ul li {
+    display: flex;
+    gap: 11%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* gallery end */
+
+/* sponsor start */
+
+.sponsor > div {
+    gap: 30px;
+}
+
+.sponsor-anime {
+    padding: 30px 15px;
+    display: flex;
+    height: fit-content;
+    overflow: hidden;
+}
+
+
+.sponsor-anime img {
+    height: 50px;
+    width: auto;
+    max-width: 150px;
+}
+
+.sponsor-img {
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+    animation: sponsor-anime 30s linear infinite;
+    padding-right: 30px;
+}
+
+.sponsor-img li {
+    padding: 15px;
+}
+
+@keyframes sponsor-anime {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+
+    /* 첫 화면 슬라이드 영역 전체 세로 배치 */
+    .first-section .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* 슬라이더 100%로 */
+    .slider {
+        width: 600px;
+        height: 250px;
+        float: none;
+    }
+
+    .slide img {
+        
+    }
+
+    /* 오른쪽 슬라이드 아래로 */
+    .rightslide {
+        width: 100%;
+        height: 200px;
+        float: none;
+    }
+
+    /* 탭 - 세로 배치 */
+    .third-section {
+        flex-direction: column;
+        width: 70%;
+    }
+
+    .tabs {
+        width: 100%;
+        float: none;
+    }
+
+    .card a {
+        font-size: 15px;
+    } 
+
+    .card span {
+        font-size: 15px;
+    }
+
+    .text, .date {
+        font-size: 15px;
+    }
+
+    .date {
+        font-size: 15px;
+    }
+
+    .tabmenu {
+        width: 70%;
+    }
+
+    .card {
+        width: 20%;
+    }
+
+    .underline {
+        width: 100%;
+    }
+
+    /* 갤러리 탭 오른쪽 박스 아래로 */
+    .gallery-tab {
+        width: 100%;
+        float: none;
+    }
+
+    .img {
+        margin-left: -420px;
+    }
+
+    .img img {
+        height: auto;
+        height: 120px;
+    }
+
+    /* 갤러리 이미지: 한 줄 한 개 */
+    .gallery-img ul li {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .gallery-img a img {
+        max-height: 120px;
+        width: 60%;
+        border-radius: 10px;
+    }
+
+    /* 스폰서 영역 가로 스크롤 */
+    .sponsor-anime {
+        padding: 15px;
+    }
+
+    .sponsor-img img {
+        height: 40px;
+    }
+}
+
 </style>
 
 <body>
@@ -362,6 +611,7 @@ ul.tabmenu {
                     </li>
                 </ul>
             </div>
+            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i>  </div>
         </div>
     </header>
     <main>  
@@ -373,7 +623,7 @@ ul.tabmenu {
                             <img src="resource/img/main/technology-6701509_1280.jpg" alt="slide1">
                             <div class="textbox">
                                 <div class="text">
-                                    <h2>ICISC</h2>
+                                    <h1>ICISC</h1>
                                     <h5>The 28th Annual International Conference on Information Security and Cryptology</h5>
                                     <p><strong>일시</strong> 2025년 11월 19일(수)-21일(금)</p>
                                     <p><strong>장소</strong> 롯데월드타워 스카이31</p>
@@ -384,10 +634,10 @@ ul.tabmenu {
                             <img src="resource/img/main/technology-6701509_1280.jpg" alt="slide2">
                             <div class="textbox">
                                 <div class="text">
-                                    <h2>ICISC</h2>
-                                    <h5>The 28th Annual International Conference on Information Security and Cryptology</h5>
-                                    <p><strong>일시</strong> 2025년 11월 19일(수)-21일(금)</p>
-                                    <p><strong>장소</strong> 롯데월드타워 스카이31</p>
+                                    <h1>CISC-W'25</h1>
+                                    <h5>2025년 동계학술대회</h5>
+                                    <p><strong>일시</strong> 2025년 11월 27일(목)-28일(금)</p>
+                                    <p><strong>장소</strong> 곤지암 리조트 EW빌리지</p>
                                 </div>
                             </div>
                         </div>
@@ -395,10 +645,10 @@ ul.tabmenu {
                             <img src="resource/img/main/technology-6701509_1280.jpg" alt="slide3">
                             <div class="textbox">
                                 <div class="text">
-                                    <h2>ICISC</h2>
-                                    <h5>The 28th Annual International Conference on Information Security and Cryptology</h5>
-                                    <p><strong>일시</strong> 2025년 11월 19일(수)-21일(금)</p>
-                                    <p><strong>장소</strong> 롯데월드타워 스카이31</p>
+                                    <h1>WISA</h1>
+                                    <h5>The 26th World Conference on Information Security Applications</h5>
+                                    <p><strong>일시</strong> 2025년 8월 20일(수)-22일(금)</p>
+                                    <p><strong>장소</strong> 성지하이츠 3 차빌딩 909호</p>
                                 </div>
                             </div>
                         </div>
@@ -417,160 +667,255 @@ ul.tabmenu {
                     <a href="https://public.thinkonweb.com/journals/jkiisc?lang=ko"><img src="resource/img/main/rightslide.png" alt="right-slide"></a>
                 </div>
             </div> 
-        </section>
-        <section class="second-section">
-            <div class="container">
-                <div class="icon">
-                    <ul>
-                    <li>
-                        <a href="#"><i class="fa-solid fa-right-to-bracket"></i><span>회원가입</span></a>
-                        <a href="#"><i class="fa-solid fa-paste"></i><span>출간소식</span></a>
-                        <a href="#"><i class="fa-regular fa-note-sticky"></i><span>논문지</span></a>
-                        <a href="#"><i class="fa-solid fa-newspaper"></i><span>학회지</span></a>
-                        <a href="#"><i class="fa-solid fa-scroll"></i><span>논문투고</span></a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-        </section>    
+        </section> 
         <section class="third-section">
             <div class="container">
                     <div class="tabs">
                         <div class="tab-content">
-                            <div class="tab active" data-target="#notice">공지사항</div>
-                            <div class="tab" data-target="#event">학회행사</div>
-                            <div class="tab" data-target="#news">학회소식</div>
-                            <a href="#"><i class="fa-solid fa-plus"></i></a>
+                            <div class="tab active" data-target="#notice" data-link="/notice/add">공지사항</div>
+                            <div class="tab" data-target="#event" data-link="/event/add">학회행사</div>
+                            <div class="tab" data-target="#news" data-link="/news/add">학회소식</div>
+                            <a id="plusbtn" href="/notice/add"><i class="fa-solid fa-plus"></i></a>
                         </div>
                         <div class="underline"></div>
 
                         <div id="notice" class="tab-next active">
                             <div class="top-cards">
                                 <div class="card">
-                                    <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
-                                    <span>2025-11-12</span>
+                                    <a href="#">
+                                        <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
+                                        <span>2025-11-12</span>
+                                    </a>
                                 </div>
 
                                 <div class="card">
-                                    <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
-                                    <span>2025-11-11</span>
+                                    <a href="#">
+                                        <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
+                                        <span>2025-11-11</span>
+                                    </a>
                                 </div>
 
                                 <div class="card">
-                                    <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
-                                    <span>2025-11-11</span>
+                                    <a href="#">
+                                        <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
+                                        <span>2025-11-11</span>
+                                    </a>
                                 </div>
                                 
                             </div>
                             <ul class="tabmenu">
                                 <li>
-                                    <span class="text">[KIISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
-                                    <span class="date">2025-11-11</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
-                                    <span class="date">2025-11-11</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
-                                    <span class="date">2025-11-11</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
-                                    <span class="date">2025-10-30</span>
+                                    <a href="#">
+                                        <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
+                                        <span class="date">2025-10-30</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
-                                    <span class="date">2025-10-21</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
+                                        <span class="date">2025-10-21</span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                         <div id="event" class="tab-next">
                             <div class="top-cards">
                                 <div class="card">
-                                    <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
-                                    <span>2025-11-12</span>
+                                    <a href="#">
+                                        <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
+                                        <span>2025-11-12</span>
+                                    </a>
                                 </div>
 
                                 <div class="card">
-                                    <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
-                                    <span>2025-11-11</span>
+                                    <a href="#">
+                                        <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
+                                        <span>2025-11-11</span>
+                                    </a>
                                 </div>
 
                                 <div class="card">
-                                    <p>	[KIIS_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
-                                    <span>2025-11-11</span>
+                                    <a href="#">
+                                        <p>	[KIIS_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
+                                        <span>2025-11-11</span>
+                                    </a>
                                 </div>
                                 
                             </div>
                             <ul class="tabmenu">
                                 <li>
-                                    <span class="text">[KIISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
-                                    <span class="date">2025-11-11</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
-                                    <span class="date">2025-11-11</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
-                                    <span class="date">2025-11-11</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
-                                    <span class="date">2025-10-30</span>
+                                    <a href="#">
+                                        <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
+                                        <span class="date">2025-10-30</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
-                                    <span class="date">2025-10-21</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
+                                        <span class="date">2025-10-21</span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                         <div id="news" class="tab-next">
                             <div class="top-cards">
                                 <div class="card">
-                                    <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
-                                    <span>2025-11-12</span>
+                                    <a href="#">
+                                        <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
+                                        <span>2025-11-12</span>
+                                    </a>
                                 </div>
 
                                 <div class="card">
-                                    <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
-                                    <span>2025-11-11</span>
+                                    <a href="#">
+                                        <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
+                                        <span>2025-11-11</span>
+                                    </a>
                                 </div>
 
                                 <div class="card">
-                                    <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
-                                    <span>2025-11-11</span>
+                                    <a href="#">
+                                        <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
+                                        <span>2025-11-11</span>
+                                    </a>
                                 </div>
                                 
                             </div>
                             <ul class="tabmenu">
                                 <li>
-                                    <span class="text">[KISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
-                                    <span class="date">2025-11-11</span>
+                                    <a href="#">
+                                        <span class="text">[KISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
-                                    <span class="date">2025-11-11</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
-                                    <span class="date">2025-11-11</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
-                                    <span class="date">2025-10-30</span>
+                                    <a href="#">
+                                        <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
+                                        <span class="date">2025-10-30</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
-                                    <span class="date">2025-10-21</span>
+                                    <a href="#">
+                                        <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
+                                        <span class="date">2025-10-21</span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                <div class="gallery-tab"></div>
+                <div class="gallery-tab">
+                    <div class="eventt">
+                        <div class="tabb">행사</div>
+                        <div class="underline"></div>
+                        <div class="img">
+                            <a href="https://www.netsec-kr.or.kr/" target="_blank"><img src="resource/img/main/NET.png" alt="net"><span>NETSEC</span></a>
+                            <a href="https://cisc.or.kr/" target="_blank"><img src="resource/img/main/CISC.png" alt="cisc"><span>CISC</span></a>
+                            <a href="https://www.wisa.or.kr/" target="_blank"><img src="resource/img/main/wisa.png" alt="wisa"><span>WISA</span></a>
+                            <a href="http://www.icisc.org/" target="_blank"><img src="resource/img/main/ICISC.png" alt="ICISC"><span>ICISC</span></a>
+                        </div>    
+                    </div>
+                </div>
             </div>
-        </section>    
+        </section>
+        <section class="fourth-section">
+            <div class="container">
+                <div class="gallery">
+                    <div class="title">
+                        <span>갤러리</span>
+                        <a href="#"><i class="fa-solid fa-plus"></i></a>
+                    </div>
+                    <div class="underline"></div>
+                    <div class="gallery-img">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="resource/img/main/gallery1.PNG" alt="gallery1"><span>WISA 2025</span></a>
+                                <a href="#"><img src="resource/img/main/gallery2.PNG" alt="gallery2"><span>2025년도 제2차 단기강좌</span></a>
+                                <a href="#"><img src="resource/img/main/gallery3.PNG" alt="gallery3"><span>하계학술대회 (CICS-S’25)</span></a>
+                                <a href="#"><img src="resource/img/main/gallery4.PNG" alt="gallery4"><span>NetSec-KR 2025</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sponsor">
+                    <div class="sponsor-anime">
+                        <ul class="sponsor-img">
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo1.png" alt="logo1"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo2.jfif" alt="logo2"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo3.jfif" alt="logo3"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo4.jpg" alt="logo4"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo5.jpg" alt="logo5"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo6.jpg" alt="logo6"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo7.jpg" alt="logo7"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo8.gif" alt="logo8"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo9.png" alt="logo9"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo10.PNG" alt="logo10"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo11.png" alt="logo11"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo12.png" alt="logo12"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo13.png" alt="logo13"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo14.PNG" alt="logo14"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo15.png" alt="logo15"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo16.png" alt="logo16"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo17.png" alt="logo17"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo18.png" alt="logo18"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo19.png" alt="logo19"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo20.png" alt="logo20"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo21.png" alt="logo21"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo22.png" alt="logo22"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo23.jpg" alt="logo23"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo24.png" alt="logo24"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo25.jpg" alt="logo25"></a></li>
+                        </ul>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="container">
@@ -634,9 +979,29 @@ ul.tabmenu {
 
             $(".tab-next").removeClass("active");
             $($(this).data("target")).addClass("active");
-        }); 
+        });
+
+        $('.tab').click(function () {
+
+        $('.tab').removeClass('active');
+        $(this).addClass('active');
+
+        let link = $(this).data('link');
+        $('#plusBtn').attr('href', link);
+
+        });
         // tab end//
+
+        // sponsor slide
+
+        const sponsor = document.querySelector(".sponsor-img");
+        const clone = sponsor.cloneNode(true);
+        sponsor.parentNode.appendChild(clone);
+       
+        // sponsor slide
+                
     </script>
+
     <script src="resource/js/src.js"></script>
 </body>
 </html>
