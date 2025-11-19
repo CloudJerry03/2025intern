@@ -28,7 +28,9 @@ ul {
     margin: 0;
     padding: 0;
 }
-
+h1,h2,h3,h4,h5 {
+    margin: 0;
+}
 h1 {
     font-size: 1.75rem;
     font-weight: bold;
@@ -66,7 +68,7 @@ header {
     top: 0;
     background-color: #fff;
     z-index: 999999;
-    padding: 30px;
+    padding: 15px;
 }
 
 header>div {
@@ -217,13 +219,22 @@ header>div {
     }
 }
 
-.mobile i {
+.mobile > i {
     font-size: 32px;
 }
 
+.mobile .menu a {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    text-align: end;
+    display: flex;
+    gap: 15px;
+    justify-content: end;
+}
 .mobile .menu {
-    height: 500px;
-    background-color: #00000066;
+    padding: 15px;
+    background-color: #fff;
     position: absolute;
     top: 100%;
     right: 0;
