@@ -1,12 +1,16 @@
 :root {
-  --maincolor : #0076bc;
+    --maincolor: #0076bc;
 }
+
 .container {
     max-width: 1340px;
+    --bs-gutter-x: 0;
 }
+
 body {
     font-size: 1.2rem;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -19,41 +23,50 @@ a {
     text-decoration: none;
     color: #000;
 }
+
 ul {
     margin: 0;
     padding: 0;
 }
+
 h1 {
     font-size: 1.75rem;
     font-weight: bold;
     text-align: center;
 }
+
 button {
     background: none;
     border: none;
 }
+
 .flex-column {
     display: flex;
     flex-direction: column;
 }
+
 .flex-row {
     display: flex;
 }
+
 .color-main {
     color: var(--maincolor);
 }
+
 .bgcolor-main {
     background-color: var(--maincolor);
 }
+
 header {
     display: flex;
     border-bottom: 1px solid #ddd;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     position: fixed;
     top: 0;
     background-color: #fff;
     z-index: 999999;
+    padding: 30px;
 }
 
 header>div {
@@ -62,13 +75,10 @@ header>div {
     align-items: center;
 }
 
-.logo {
-    padding: 20px;
-}
-
 .logo img {
     max-height: 50px;
     width: 100%;
+    object-fit: contain;
 }
 
 .navi {
@@ -78,13 +88,16 @@ header>div {
     align-items: end;
     justify-content: space-between;
 }
+
 .login {
     margin: 10px;
 }
+
 .login * {
     color: #666;
     font-size: 1rem;
 }
+
 .login a:hover {
     text-decoration: underline;
 }
@@ -94,10 +107,12 @@ header>div {
     width: 100%;
     display: flex;
 }
-.menu li:hover > a::after {
+
+.menu li:hover>a::after {
     transform: scaleX(100%);
 }
-.menu li > a::after {
+
+.menu li>a::after {
     content: '';
     position: absolute;
     background-color: var(--maincolor);
@@ -109,6 +124,7 @@ header>div {
     height: 3px;
     transition: 0.3s;
 }
+
 .menu li {
     display: block;
     padding-bottom: 5px;
@@ -127,7 +143,7 @@ header>div {
     z-index: -10;
     display: none;
     height: max-content;
-    height: 250px;
+    height: 350px;
 }
 
 .sub-menu a {
@@ -139,6 +155,7 @@ header>div {
     text-align: center;
     color: #000;
 }
+
 .sub-menu a:hover {
     color: var(--maincolor);
 }
@@ -153,10 +170,75 @@ header>div {
     height: 400px;
     overflow: hidden;
 }
+
 .sub-bg {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
-    height: 300px;
+    height: 400px;
     box-shadow: 0 10px 30px -10px #aaa;
     width: 100%;
+}
+
+@media (max-width: 767px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: flex !important;
+    }
+
+    .paper-card>div {
+        display: none;
+    }
+
+    .community-left {
+        display: none;
+    }
+
+    .guide .circle {
+        display: none;
+    }
+
+    .guide ul {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .guide li {
+        width: 100%;
+    }
+
+    .papers ul {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .tab-content li>span {
+        display: none;
+    }
+}
+
+.mobile i {
+    font-size: 32px;
+}
+
+.mobile .menu {
+    height: 500px;
+    background-color: #00000066;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+
+}
+
+footer {
+    margin-top: 30px;
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 30px;
+}
+
+footer>div {
+    gap: 15px;
+    padding: 30px 0;
 }

@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap,public style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- Bootstrap,public style -->
-    <!-- main style -->
     <style>
-        /* banner start */
+        :root {
+            --maincolor: #3b5ebb;
+            --bs-gutter-x: 0;
+        }
+
         .banner {
             width: 100%;
             height: 500px;
@@ -18,12 +19,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .banner>div {
-            justify-content: center;
-            align-items: center;
-            height: 100%;
         }
 
         .banner-content-bg {
@@ -48,11 +43,11 @@
             text-align: center;
             display: inline-block;
         }
-        
+
         .banner-content-bg h1 span {
             color: #e0d905;
         }
-        
+
         .banner-content h3 {
             color: #fff;
             font-size: clamp(1rem, 1vw, 2rem);
@@ -80,15 +75,11 @@
             width: 100vw;
         }
 
-        /* banner end */
-        /* main start */
         .content {
             display: flex;
             flex-direction: column;
-            /* gap: 60px; */
         }
 
-        /* shortcut start */
         .shortcut {
             width: 100%;
             background-color: #edf1fa;
@@ -104,6 +95,8 @@
         }
 
         .shortcut li {
+            display: flex;
+            flex-direction: column;
             flex: 1;
             align-items: center;
             gap: 10px;
@@ -130,11 +123,10 @@
             font-size: 48px;
         }
 
-        /* shortcut end */
-        /* papers start */
         .papers {
             padding: 30px;
         }
+
         .papers img {
             max-height: 200px;
             transition: 0.3s;
@@ -143,9 +135,11 @@
         .papers img:hover {
             transform: scale(110%);
         }
-        .papers > div {
+
+        .papers>div {
             gap: 30px;
         }
+
         .papers ul {
             place-items: center;
             gap: 30px;
@@ -169,29 +163,34 @@
             margin-top: 30px;
         }
 
-        /* papers end */
-        /* community start */
         .community {
             padding: 30px;
         }
+
         .community>div {
             gap: 30px;
         }
+
         .community-content {
             box-shadow: 0 0 20px 2px #ddd;
             border-radius: 10px;
+            display: flex;
         }
+
         .community-left {
             width: 25%;
             border-radius: 10px 0 0 10px;
             padding: 30px;
             color: #fff;
+            display: flex;
+            flex-direction: column;
             justify-content: space-between;
         }
 
         .community-left h1 {
             text-align: start;
         }
+
         .community-left h1::after {
             content: '';
             background-color: #fff;
@@ -211,6 +210,7 @@
         .tab-btn ul {
             width: 100%;
             border-bottom: 1px solid #ddd;
+            display: flex;
         }
 
         .tab-btn li {
@@ -222,10 +222,7 @@
             cursor: pointer;
         }
 
-        .tab-btn li:hover::after {
-            transform: scaleX(100%);
-        }
-
+        .tab-btn li:hover::after,
         .tab-btn li.active::after {
             transform: scaleX(100%);
         }
@@ -249,65 +246,51 @@
         .tab-btn button {
             color: #b3b3b3;
             transition: 0.3s;
+            background: none;
+            border: none;
+            font-weight: inherit;
         }
 
-        .tab-btn li:hover button {
-            font-weight: bold;
-            color: var(--maincolor);
-        }
-
-        .tab-btn li a i {
-            margin-left: 10px;
-            color: #b3b3b3;
-            transition: 0.3s;
-            transform: rotate(0deg);
-        }
-
-        .tab-btn li a:hover i {
-            color: var(--maincolor);
-            transform: rotate(-135deg);
-        }
-
+        .tab-btn li:hover button,
         .tab-btn li.active button {
             font-weight: bold;
             color: var(--maincolor);
         }
 
-        .tab-btn li i {
-            width: 15px;
-            height: 15px;
-        }
-
         .tab-content ul li {
             padding: 15px;
-            justify-content: space-between;
+            display: flex;
             border-bottom: 1px solid #e3e3e3;
         }
 
         .tab-content ul li span {
             color: #666;
+            float: right;
         }
-
+        .tab-content ul li a {
+            flex: 1;
+            display: block;
+        }
         .tab-content ul li a:hover {
             font-weight: bold;
         }
 
-        /* community end */
-        /* guide start */
         .guide {
             background-color: #edf0f8;
             padding: 30px;
         }
+
         .guide>div {
             position: relative;
             gap: 30px;
         }
 
-        .guide a {
+        .guide a.more-btn {
             position: absolute;
             font-size: 2rem;
             top: 0px;
             right: 10px;
+            display: flex;
             align-items: center;
             justify-content: center;
         }
@@ -331,6 +314,7 @@
         }
 
         .guide ul li {
+            display: flex;
             gap: 10px;
             max-width: 350px;
             align-items: center;
@@ -343,11 +327,14 @@
             background-color: #fff;
             border-radius: 100%;
             position: relative;
+            flex-shrink: 0;
         }
 
         .guide-text {
             flex: 1;
+            display: block;
             border-bottom: 1px solid #5555;
+            min-width: 0;
         }
 
         .guide-text p {
@@ -359,9 +346,7 @@
         }
 
         .guide-text h5 {
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
+            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
@@ -375,11 +360,10 @@
             font-weight: bold;
         }
 
-        /* guide end */
-        /* sponsor start */
         .sponsor {
             padding: 30px;
         }
+
         .sponsor>div {
             gap: 30px;
         }
@@ -393,12 +377,13 @@
         .sponsor-content {
             display: flex;
             width: fit-content;
-            animation: slide 60s linear infinite;
+            animation: slide 30s linear infinite;
         }
 
         .sponsor-content li {
             background-color: #fff;
             padding: 0 15px;
+            list-style: none;
         }
 
         .sponsor-content img {
@@ -414,36 +399,20 @@
                 transform: translate(-50%);
             }
         }
-
-        /* sponsor end */
-        /* main end */
-        /* footer start */
-        footer {
-            margin-top: 30px;
-            background-color: #2b2b2b;
-            color: #fff;
-        }
-        footer > div {
-            gap: 15px;
-            padding: 30px 0;
-        }
-        /* footer end */
     </style>
-    <!-- main style -->
-     <link rel="stylesheet" href="resource/css/main.css">
+    <link rel="stylesheet" href="resource/css/main.css">
     <title>KIPS</title>
 </head>
 
 <body>
-    <!-- header start -->
     <header>
         <div class="container">
-            <div class="logo col-3">
+            <div class="logo col-md-3 col-6">
                 <a href="index.html">
                     <img src="resource/img/logo.png" alt="로고">
                 </a>
             </div>
-            <div class="navi col-9">
+            <div class="navi col-9 desktop">
                 <nav class="login">
                     <a href="#">로그인</a>
                     <span>|</span>
@@ -505,26 +474,26 @@
                     </li>
                 </ul>
             </div>
+            <div class="mobile" style="display: none;">
+                <i class="fa-solid fa-bars"></i>
+                <div class="menu"></div>
+            </div>
             <div class="sub-bg-wrap">
                 <div class="sub-bg"></div>
             </div>
         </div>
     </header>
-    <!-- header end -->
-    <!-- banner start -->
+
     <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <section class="banner">
-                    <div class="container row">
+                    <div class="container row justify-content-center">
                         <div class="col-8 banner-content-bg">
                             <h1>AKC <span>2025</span> 학술대회</h1>
                             <div class="banner-content">
@@ -539,7 +508,7 @@
             </div>
             <div class="carousel-item">
                 <section class="banner">
-                    <div class="container row">
+                    <div class="container row justify-content-center">
                         <div class="col-8 banner-content-bg">
                             <h1>AKC <span>2025</span> 학술대회</h1>
                             <div class="banner-content">
@@ -554,7 +523,7 @@
             </div>
             <div class="carousel-item">
                 <section class="banner">
-                    <div class="container row">
+                    <div class="container row justify-content-center">
                         <div class="col-8 banner-content-bg">
                             <h1>AKC <span>2025</span> 학술대회</h1>
                             <div class="banner-content">
@@ -568,57 +537,31 @@
                 </section>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <!-- banner end -->
-    <!-- main start -->
+
     <div class="content">
-        <!--  shortcut start -->
         <section class="shortcut">
             <ul class="container">
-                <li class="flex-column">
-                    <a href=""><i class="fa-regular fa-calendar"></i></a>
-                    학회일정
-                </li>
-                <li class="flex-column">
-                    <a href="#"><i class="fa-solid fa-computer"></i></a>
-                    논문투고
-                </li>
-                <li class="flex-column">
-                    <a href="#"><i class="fa-regular fa-credit-card"></i></a>
-                    회비납부
-                </li>
-                <li class="flex-column">
-                    <a href="#"><i class="fa-solid fa-book-open"></i></a>
-                    학술발표회 안내
-                </li>
-                <li class="flex-column">
-                    <a href="#"><i class="fa-regular fa-file-lines"></i></a>
-                    증명서 발급
-                </li>
-                <li class="flex-column">
-                    <a href="#"><i class="fa-regular fa-bell"></i></a>
-                    공지사항
-                </li>
-                <li class="flex-column">
-                    <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a>
-                    기부금
-                </li>
+                <li><a href=""><i class="fa-regular fa-calendar"></i></a>학회일정</li>
+                <li><a href="#"><i class="fa-solid fa-computer"></i></a>논문투고</li>
+                <li><a href="#"><i class="fa-regular fa-credit-card"></i></a>회비납부</li>
+                <li><a href="#"><i class="fa-solid fa-book-open"></i></a>학술발표회 안내</li>
+                <li><a href="#"><i class="fa-regular fa-file-lines"></i></a>증명서 발급</li>
+                <li><a href="#"><i class="fa-regular fa-bell"></i></a>공지사항</li>
+                <li><a href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a>기부금</li>
             </ul>
         </section>
-        <!--  shortcut end -->
-        <!--  journal start -->
+
         <section class="papers">
-            <div class="container flex-column">
+            <div class="container d-flex flex-column">
                 <h1>학회 발간물</h1>
                 <ul>
                     <li>
@@ -651,22 +594,17 @@
                 </ul>
             </div>
         </section>
-        <!--  journal end -->
-        <!-- community start -->
+
         <section class="community">
             <div class="container">
-                <div class="community-content flex-row">
-                    <div class="bgcolor-main community-left flex-column">
+                <div class="community-content">
+                    <div class="bgcolor-main community-left">
                         <h1>한국정보처리학회<br>커뮤니티</h1>
-                        <p>
-                            학회 및 유관 기관의 최신 소식, <br>
-                            회원 활동, 각종 소식을 <br>
-                            확인하실 수 있습니다.
-                        </p>
+                        <p>학회 및 유관 기관의 최신 소식, <br>회원 활동, 각종 소식을 <br>확인하실 수 있습니다.</p>
                     </div>
                     <div class="community-right">
                         <div class="tab-btn">
-                            <ul class="flex-row">
+                            <ul>
                                 <li class="active"><button>학회 공지/행사</button></li>
                                 <li><button>유관기관 공지/행사</button></li>
                                 <li><button>회원 동정</button></li>
@@ -676,130 +614,75 @@
                         </div>
                         <div class="tab-content">
                             <ul>
-                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
-                                </li>
-                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
-                                </li>
-                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
-                                </li>
-                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
-                                </li>
-                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
-                                </li>
-                                <li class="flex-row"><a href="#">Lorem Ipsum is simply dummy</a><span>2020-12-05</span>
-                                </li>
-                                <li style="text-align: end;"><a href="#"><span>더보기<i class="fa-solid fa-plus"></i></a>
-                                </li>
+                                <li><a href="#">Lorem Ipsum is simply dummy<span>2020-12-05</span></a></li>
+                                <li><a href="#">Lorem Ipsum is simply dummy<span>2020-12-05</span></a></li>
+                                <li><a href="#">Lorem Ipsum is simply dummy<span>2020-12-05</span></a></li>
+                                <li><a href="#">Lorem Ipsum is simply dummy<span>2020-12-05</span></a></li>
+                                <li><a href="#">Lorem Ipsum is simply dummy<span>2020-12-05</span></a></li>
+                                <li><a href="#">Lorem Ipsum is simply dummy<span>2020-12-05</span></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- community end -->
-        <!-- guide start -->
+
         <section class="guide">
-            <div class="container flex-column">
+            <div class="container d-flex flex-column">
                 <h1>행사안내</h1>
-                <a href="#" class="flex-row">
-                    <i class="fa-solid fa-plus"></i>
-                </a>
+                <a href="#" class="more-btn"><i class="fa-solid fa-plus"></i></a>
                 <ul>
-                    <li class="flex-row">
-                        <div class="circle">
-                            <span>11.12</span>
-                        </div>
-                        <div class="guide-text">
-                            <h5>ACK 2025 학술대회 qwer1234qwe</h5>
-                            <p>안녕하세요 ACK 2025 학술대회 입니다 안녕하세요 ACK 2025 학술대회 입니...</p>
-                        </div>
-                    </li>
-                    <li class="flex-row">
-                        <div class="circle">
-                            <span>11.12</span>
-                        </div>
-                        <div class="guide-text">
-                            <h5>ACK 2025 학술대회 qwer1234 qwer1234</h5>
-                            <p>안녕하세요 ACK 2025 학술대회 입니다 안녕하세요 ACK 2025 학술대회</p>
-                        </div>
-                    </li>
-                    <li class="flex-row">
-                        <div class="circle">
-                            <span>11.12</span>
-                        </div>
+                    <li>
+                        <div class="circle"><span>11.12</span></div>
                         <div class="guide-text">
                             <h5>ACK 2025 학술대회</h5>
-                            <p>안녕하세요 ACK 2025 학술대회 입니다 안녕하세요 ACK 2025 학술대회 입니...</p>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
                         </div>
                     </li>
-                    <li class="flex-row">
-                        <div class="circle">
-                            <span>11.12</span>
-                        </div>
+                    <li>
+                        <div class="circle"><span>11.12</span></div>
                         <div class="guide-text">
-                            <h5>ACK 2025 학술대회</h5>
-                            <p>안녕하세요 ACK 2025 학술대회 입니다 안녕하세요 ACK 2025 학술대회 입니...</p>
+                            <h5>ACK 2025 학술대회 qweqweqweqweqweqwe</h5>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
                         </div>
                     </li>
-                    <li class="flex-row">
-                        <div class="circle">
-                            <span>11.12</span>
-                        </div>
+                    <li>
+                        <div class="circle"><span>11.12</span></div>
                         <div class="guide-text">
                             <h5>ACK 2025 학술대회</h5>
-                            <p>안녕하세요 ACK 2025 학술대회 입니다 안녕하세요 ACK 2025 학술대회 입니...</p>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
                         </div>
                     </li>
-                    <li class="flex-row">
-                        <div class="circle">
-                            <span>11.12</span>
-                        </div>
+                    <li>
+                        <div class="circle"><span>11.12</span></div>
                         <div class="guide-text">
                             <h5>ACK 2025 학술대회</h5>
-                            <p>안녕하세요 ACK 2025 학술대회 입니다 안녕하세요 ACK 2025 학술대회 입니...</p>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="circle"><span>11.12</span></div>
+                        <div class="guide-text">
+                            <h5>ACK 2025 학술대회</h5>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="circle"><span>11.12</span></div>
+                        <div class="guide-text">
+                            <h5>ACK 2025 학술대회</h5>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
                         </div>
                     </li>
                 </ul>
             </div>
         </section>
-        <!-- guide end -->
-        <!-- sponsor start -->
+
         <section class="sponsor">
-            <div class="container flex-column">
+            <div class="container d-flex flex-column">
                 <h1>후원사</h1>
                 <div class="sponsor-wrap">
                     <ul class="sponsor-content">
-                        <li><img src="resource/img/main/sponsor/2.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kips-sponsor-logo.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/3.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/4.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/5.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/6.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/8.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/9.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/10.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/11.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/12.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/13.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/14.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/ai.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/cns.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/gl-ci.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/hw.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kcc.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kdata.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kdcc.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/keris.gif" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/keti.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kisa.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kisti.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/klid.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/lgu.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/ministryofscience.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/nia.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/nrf.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/spri.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/ts.png" alt="후원사"></li>
                         <li><img src="resource/img/main/sponsor/2.png" alt="후원사"></li>
                         <li><img src="resource/img/main/sponsor/kips-sponsor-logo.jpg" alt="후원사"></li>
                         <li><img src="resource/img/main/sponsor/3.png" alt="후원사"></li>
@@ -835,22 +718,27 @@
                 </div>
             </div>
         </section>
-        <!-- sponsor end -->
     </div>
-    <!-- main end -->
-    <!-- footer start -->
+
     <footer>
-        <div class="container flex-column">
-            <div>전화 : 02)2077-1414  | 팩스 : 02)2077-1472  |  대표메일 : kips@kips.or.kr | 사업자등록번호 : 219-82-01313</div>
+        <div class="container d-flex flex-column">
+            <div>전화 : 02)2077-1414 | 팩스 : 02)2077-1472 | 대표메일 : kips@kips.or.kr | 사업자등록번호 : 219-82-01313</div>
             <div>주소 : (04376) 서울특별시 용산구 한강대로 109, 1002호(한강로2가 용성비즈텔)</div>
             <div>Copyright © 2025. KIPS. ALL RIGHTS RESERVED</div>
         </div>
     </footer>
-    <!-- footer end -->
-    <!-- JQuery,bootstrap,fontawesome,public script -->
+
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/73190c27e7.js" crossorigin="anonymous"></script>
     <script src="resource/js/main.js"></script>
-    <!-- JQuery,bootstrap,fontawesome,public script -->
+    <script>
+        const sponsorList = document.querySelector('.sponsor-content');
+        if (sponsorList) {
+            const clone = sponsorList.cloneNode(true);
+            sponsorList.parentNode.appendChild(clone);
+        }
+    </script>
 </body>
+
+</html>

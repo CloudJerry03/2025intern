@@ -10,3 +10,8 @@ $('.navi li, .sub-bg-wrap').mouseleave(function() {
 })
 window.addEventListener('load', headerPadding)
 window.addEventListener('resize', headerPadding)
+
+$('.mobile i').click(function() {
+    $('.mobile .menu').slideToggle(300)
+    $(this).toggleClass('fa-bars fa-close')
+})
