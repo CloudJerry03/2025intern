@@ -28,9 +28,15 @@ ul {
     margin: 0;
     padding: 0;
 }
-h1,h2,h3,h4,h5 {
+
+h1,
+h2,
+h3,
+h4,
+h5 {
     margin: 0;
 }
+
 h1 {
     font-size: 1.75rem;
     font-weight: bold;
@@ -49,6 +55,11 @@ button {
 
 .flex-row {
     display: flex;
+}
+
+.align-center {
+    justify-content: center;
+    align-items: center;
 }
 
 .color-main {
@@ -110,11 +121,20 @@ header>div {
     display: flex;
 }
 
-.menu li:hover>a::after {
+.desktop .menu li>a {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #000;
+}
+
+.desktop .menu li:hover>a::after {
     transform: scaleX(100%);
 }
 
-.menu li>a::after {
+.desktop .menu li>a::after {
     content: '';
     position: absolute;
     background-color: var(--maincolor);
@@ -127,7 +147,7 @@ header>div {
     transition: 0.3s;
 }
 
-.menu li {
+.desktop .menu li {
     display: block;
     padding-bottom: 5px;
     flex: 1;
@@ -135,20 +155,12 @@ header>div {
     position: relative;
 }
 
-.sub-menu {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    background-color: #fff;
-    border-right: 1px solid #ddd;
-    z-index: -10;
+.desktop .sub-menu {
     display: none;
-    height: max-content;
-    height: 350px;
+    height: 400px;
 }
 
-.sub-menu a {
+.desktop .sub-menu a {
     transition: 0.3s;
     position: relative;
     display: block;
@@ -158,11 +170,11 @@ header>div {
     color: #000;
 }
 
-.sub-menu a:hover {
+.desktop .sub-menu a:hover {
     color: var(--maincolor);
 }
 
-.sub-bg-wrap {
+.desktop .sub-bg-wrap {
     display: none;
     position: absolute;
     top: 100%;
@@ -173,11 +185,12 @@ header>div {
     overflow: hidden;
 }
 
-.sub-bg {
+.desktop .sub-bg {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     height: 400px;
     box-shadow: 0 10px 30px -10px #aaa;
+    display: none;
     width: 100%;
 }
 
@@ -188,6 +201,7 @@ header>div {
 
     .mobile {
         display: flex !important;
+        justify-content: end;
     }
 
     .paper-card>div {
@@ -219,19 +233,29 @@ header>div {
     }
 }
 
-.mobile > i {
+.mobile>i {
     font-size: 32px;
 }
 
+.mobile .menu i {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .mobile .menu a {
-    display: block;
+    display: flex;
     width: 100%;
     padding: 5px;
     text-align: end;
-    display: flex;
+    align-items: center;
     gap: 15px;
     justify-content: end;
 }
+
 .mobile .menu {
     padding: 15px;
     background-color: #fff;
@@ -239,7 +263,19 @@ header>div {
     top: 100%;
     right: 0;
     display: none;
+    border-bottom: 1px solid #ddd;
+    overflow-y: scroll;
+    max-height: 80vh
+}
 
+.mobile .sub-menu {
+    display: none;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.main-menu {
+    border-bottom: 1px solid #ddd;
 }
 
 footer {

@@ -15,3 +15,7 @@ $('.mobile > i').click(function() {
     $('.mobile .menu').slideToggle(300)
     $(this).toggleClass('fa-bars fa-close')
 })
+$('.mobile .menu li .main-menu').click(function() {
+    $(this).children('i').toggleClass('fa-angle-down fa-angle-up')
+    $(this).closest('li').children('.sub-menu').slideToggle(300)
+})
