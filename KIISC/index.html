@@ -128,9 +128,9 @@ body {
 .navigation {
     position: absolute;
     text-align: center;
-    margin-top: 10px;
     bottom: 5%;
     left: 50%;
+    transform: translate(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -310,15 +310,15 @@ ul.tabmenu {
 }
 /* event start */
 .gallery-tab {
-    width: 28%;
+    width: 29%;
     float: left;
-    margin-left: 15px;
+    margin-left: 14px;
     height: 100%;
     margin-top: 14.9px;
 }
 
 .gallery-tab .underline {
-    width: 103%;
+    width: 100%;
 }
 
 .eventt {
@@ -381,7 +381,8 @@ ul.tabmenu {
 .gallery-img a img {
     max-height: 150px;
     object-fit: cover;
-    width: 240px;
+    width: 270px;
+    border-radius: 10px;
 }
 .gallery-img a {
     display: flex;
@@ -394,7 +395,15 @@ ul.tabmenu {
     padding: 10px 0;
     font-size: 20px;
 }
+.gallery-img ul {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
 .gallery-img ul li {
+    flex: 1 1 100%;
     display: flex;
     gap: 10%;
     justify-content: center;
@@ -444,41 +453,76 @@ ul.tabmenu {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
 
-    /* 첫 화면 슬라이드 영역 전체 세로 배치 */
     .first-section .container {
         flex-direction: column;
         gap: 20px;
     }
 
-    /* 슬라이더 100%로 */
     .slider {
-        width: 600px;
+        width: 100%;
         height: 250px;
         float: none;
     }
 
-    .slide img {
-        
+
+    .textbox h1 {
+        font-size: 20px;
     }
 
-    /* 오른쪽 슬라이드 아래로 */
+    .textbox h5 {
+        font-size: 14px;
+    }
+
+    .textbox p {
+        font-size: 14px;
+    }
+
     .rightslide {
-        width: 100%;
+        width: 80%;
         height: 200px;
         float: none;
     }
+    .rightslide img {
+        object-fit: contain;
+    }
 
-    /* 탭 - 세로 배치 */
+
     .third-section {
         flex-direction: column;
-        width: 70%;
+        width: 100%;
     }
 
     .tabs {
-        width: 100%;
+        width: 60%;
         float: none;
+        margin-left: 5vh;
+    }
+
+    .tabmenu span {
+        font-size: 15px;
+    }
+    .tabmenu .date {
+        font-size: 15px;
+    }
+    .date {
+        font-size: 15px;
+    }
+
+    .tabmenu {
+        width: 100%;
+    }
+
+    .tabmenu li {
+    }
+
+    .card {
+        width: 30%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .card a {
@@ -489,54 +533,54 @@ ul.tabmenu {
         font-size: 15px;
     }
 
-    .text, .date {
-        font-size: 15px;
+
+    .tab, .title {
+        font-size: 25px;
+    }
+    .eventt .tabb {
+        font-size: 25px;
     }
 
-    .date {
-        font-size: 15px;
-    }
-
-    .tabmenu {
-        width: 70%;
-    }
-
-    .card {
-        width: 20%;
-    }
-
-    .underline {
-        width: 100%;
-    }
-
-    /* 갤러리 탭 오른쪽 박스 아래로 */
     .gallery-tab {
-        width: 100%;
+        width: 60%;
         float: none;
+        margin-left: 5vh;
     }
 
-    .img {
-        margin-left: -420px;
-    }
 
     .img img {
         height: auto;
         height: 120px;
     }
 
-    /* 갤러리 이미지: 한 줄 한 개 */
+    .gallery {
+        width: 87%;
+        margin: 0 auto;
+    }
+
+    .gallery-img {
+    }
+    
+    .gallery-img ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     .gallery-img ul li {
-        flex-direction: column;
-        gap: 25px;
+        flex: 1 1 48%;
+    }
+
+    .gallery-img a span {
+        font-size: 15px;
     }
 
     .gallery-img a img {
-        max-height: 120px;
-        width: 60%;
+        height: auto;
+        width: 75%;
         border-radius: 10px;
+        object-fit: cover;
     }
-
-    /* 스폰서 영역 가로 스크롤 */
+    
     .sponsor-anime {
         padding: 15px;
     }
@@ -544,6 +588,8 @@ ul.tabmenu {
     .sponsor-img img {
         height: 40px;
     }
+
+    
 }
 
 </style>
@@ -664,7 +710,7 @@ ul.tabmenu {
                     </div>
                 </div>
                 <div class="rightslide">
-                    <a href="https://public.thinkonweb.com/journals/jkiisc?lang=ko"><img src="resource/img/main/rightslide.png" alt="right-slide"></a>
+                    <a href="https://public.thinkonweb.com/journals/jkiisc?lang=ko" target="_blank"><img src="resource/img/main/rightslide.png" alt="right-slide"></a>
                 </div>
             </div> 
         </section> 
@@ -875,12 +921,10 @@ ul.tabmenu {
                     <div class="underline"></div>
                     <div class="gallery-img">
                         <ul>
-                            <li>
-                                <a href="#"><img src="resource/img/main/gallery1.PNG" alt="gallery1"><span>WISA 2025</span></a>
-                                <a href="#"><img src="resource/img/main/gallery2.PNG" alt="gallery2"><span>2025년도 제2차 단기강좌</span></a>
-                                <a href="#"><img src="resource/img/main/gallery3.PNG" alt="gallery3"><span>하계학술대회 (CICS-S’25)</span></a>
-                                <a href="#"><img src="resource/img/main/gallery4.PNG" alt="gallery4"><span>NetSec-KR 2025</span></a>
-                            </li>
+                            <li><a href="#"><img src="resource/img/main/gallery1.PNG" alt="gallery1"><span>WISA 2025</span></a></li>
+                            <li><a href="#"><img src="resource/img/main/gallery2.PNG" alt="gallery2"><span>2025년도 제2차 단기강좌</span></a></li> 
+                            <li><a href="#"><img src="resource/img/main/gallery3.PNG" alt="gallery3"><span>하계학술대회 (CICS-S’25)</span></a></li>
+                            <li><a href="#"><img src="resource/img/main/gallery4.PNG" alt="gallery4"><span>NetSec-KR 2025</span></a></li>
                         </ul>
                     </div>
                 </div>
