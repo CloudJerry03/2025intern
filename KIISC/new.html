@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국정보보호학회(KIISC)</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="resource/css/main.css">
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
+        </script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/c467caf649.js" crossorigin="anonymous"></script>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+section {
+    padding: 30px 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.first-section .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+
+    width: 100%;
+    position: relative;
+}
+/* slide start */
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 400px; 
+    border-radius: 10px;
+    box-sizing: border-box;
+    float: left;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+.slide img {    
+    object-fit: cover;
+    width: 1100px;
+    height: 100%;
+}
+.slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.textbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+}
+.textbox .text {
+    position: relative;
+    top: 10%;   
+    font-size: 25px;
+}
+.text h1 {
+    text-align: center;
+    color: #fff;
+    
+}
+.text h5 {
+    color: rgb(255, 234, 0);
+    text-align: center;
+    font-size: 20px;
+}
+.text strong {
+    background-color: #6ac3ff;
+    border-radius: 20px;
+    padding: 0 7px;
+}
+.text p {
+    margin-top: 4%;
+    font-size: 20px;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 9;
+}
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.navigation {
+    position: absolute;
+    text-align: center;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-dot.active {
+    background-color: #6ac3ff;
+}
+
+.nav-dot:hover {
+    background-color: #0073e6;
+}
+.rightslide {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+.rightslide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* slide end */
+
+/* tab start */
+
+.tabs {
+    max-width: 1400px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.tab {
+    padding-bottom: 10px;   
+}
+
+.tab.active {
+    border-bottom: 5px solid #000;
+    color: #000;
+}
+
+.underline {
+    width: 100%;
+    border-bottom: 3px solid #e0e0e0;
+    margin-top: -3px;
+    margin-bottom: 30px;
+}
+
+.tab-content {
+    display: flex;
+    font-size: 30px;
+    gap: 40px;
+    cursor: pointer;
+}
+
+.tab-content i {
+    
+}
+
+.tab-next.active {
+    display: block;
+}
+.tab {
+    color: #ddd;
+    font-weight: bold;
+}
+
+.top-cards {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0 40px 0;
+}
+
+.card {
+    width: 70%;
+    min-height: 150px;
+    border: 1px solid #ddd;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 500;
+}
+.card a {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.card span {
+    text-align: right;
+    font-size: 20px;
+    color: #555;
+}
+.card:hover {
+    background-color: #6ac3ff;
+    
+}
+.card:hover a p, .card:hover a span {
+    color: #fff;
+}
+ul.tabmenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.tabmenu {
+    position: relative;
+    top: -30px;
+}
+
+.tabmenu li a {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 10px 0;
+    font-size: 20px;
+}
+.tabmenu li a:hover {
+    font-weight: bold;
+}
+.tabmenu li a span.text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+
+}
+.tabmenu .date {
+    font-size: 20px;
+    color: #777;
+    flex-shrink: 0;
+    width: 140px;
+    text-align: right;
+    margin-top: 5px;
+}
+.tab-next {
+    display: none;
+}
+.tab-content {
+    position: relative;
+}
+
+#plusbtn {
+    position: absolute;
+    top: 12px;
+    right: 5px;
+    font-size: 30px;
+}
+/* event start */
+    .third-section .container{
+       display: grid;
+       grid-template-columns: 2fr 1fr;
+       gap: 30px;
+    }
+    .index-title {
+        font-size: 30px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+.event-content a > img {
+    height: 80px;
+    width: 100%;
+}
+/* event end */
+
+
+.fourth-section {
+    padding-top: 20px;
+}
+
+/* gallery start */
+.gallery {}
+.title {
+    font-size: 30px;
+    
+}
+.title span {
+    position: relative;
+    top: -15px;
+    font-weight: bold;
+}
+.title a {
+    float: right;
+    font-size: 30px;    
+}
+.gallery-img a img {
+    max-height: 150px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+}
+.gallery-img a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.gallery-img a span {
+    font-weight: 650;
+    padding: 10px 0;
+    font-size: 20px;
+}
+.gallery-img ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* gallery end */
+
+/* sponsor start */
+
+.sponsor > div {
+    gap: 30px;
+}
+
+.sponsor-anime {
+    padding: 30px 15px;
+    display: flex;
+    height: fit-content;
+    overflow: hidden;
+}
+
+
+.sponsor-anime img {
+    height: 50px;
+    width: auto;
+    max-width: 150px;
+}
+
+.sponsor-img {
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+    animation: sponsor-anime 30s linear infinite;
+    padding-right: 30px;
+}
+
+.sponsor-img li {
+    padding: 15px;
+}
+
+@keyframes sponsor-anime {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 576px) {
+
+    .first-section .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .slider {
+        width: 100%;
+        height: 250px;
+        float: none;
+    }
+
+
+    .textbox h1 {
+        font-size: 20px;
+    }
+
+    .textbox h5 {
+        font-size: 14px;
+    }
+
+    .textbox p {
+        font-size: 14px;
+    }
+
+    .rightslide {
+        width: 80%;
+        height: 200px;
+        float: none;
+    }
+    .rightslide img {
+        object-fit: contain;
+    }
+
+    .tabs {
+        width: 60%;
+        float: none;
+        margin-left: 5vh;
+    }
+
+    .tabmenu span {
+        font-size: 15px;
+    }
+    .tabmenu .date {
+        font-size: 15px;
+    }
+    .date {
+        font-size: 15px;
+    }
+
+    .tabmenu {
+        width: 100%;
+    }
+
+    .tabmenu li {
+    }
+
+    .card {
+        width: 30%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card a {
+        font-size: 15px;
+    } 
+
+    .card span {
+        font-size: 15px;
+    }
+
+
+    .tab, .title {
+        font-size: 25px;
+    }
+    .eventt .tabb {
+        font-size: 25px;
+    }
+
+    .gallery-tab {
+        width: 60%;
+        float: none;
+        margin-left: 5vh;
+    }
+
+
+    .img img {
+        height: auto;
+        height: 120px;
+    }
+
+    .gallery {
+        width: 87%;
+        margin: 0 auto;
+    }
+
+    .gallery-img {
+    }
+    
+    .gallery-img ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .gallery-img ul li {
+        flex: 1 1 48%;
+    }
+
+    .gallery-img a span {
+        font-size: 15px;
+    }
+
+    .gallery-img a img {
+        height: auto;
+        width: 75%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    
+    .sponsor-anime {
+        padding: 15px;
+    }
+
+    .sponsor-img img {
+        height: 40px;
+    }
+
+    
+}
+
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="resource/img/main/logo.png" alt="logo"></a>
+            </div>
+            <div class="navi">
+                <ul class="menu">
+                    <li>
+                        <a href="#">학회소개</a>
+                        <div class="submenu">
+                            <a href="#">설립목적</a>
+                            <a href="#">인삿말</a>
+                            <a href="#">학회연혁</a>
+                            <a href="#">역대회장</a>
+                            <a href="#">정관/규정/연구윤리규정</a>
+                            <a href="#">오시는 길</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">학회조직</a>
+                        <div class="submenu">
+                            <a href="#">임원</a>
+                            <a href="#">지부 및 위원회</a>
+                            <a href="#">연구회</a>
+                            <a href="#">학회 자문단</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">회원광장</a>
+                        <div class="submenu">
+                            <a href="#">회원가입</a>
+                            <a href="#">특별 회원사</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">학회행사</a>
+                        <div class="submenu">
+                            <a href="#">학회행사</a>
+                            <a href="#">과거행사</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">학회지/논문지</a>
+                        <div class="submenu">
+                            <a href="#">투고안내</a>
+                            <a href="#">투고규정</a>
+                            <a href="#">투고규정</a>
+                            <a href="#">편집위원회</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">커뮤니티</a>
+                        <div class="submenu">
+                            <a href="#">공지사항</a>
+                            <a href="#">갤러리</a>
+                            <a href="#">유관기관 공지/행사</a>
+                            <a href="#">정보보호뉴스</a>
+                            <a href="#">학회소식</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i>  </div>
+        </div>
+    </header>
+    <main>  
+        <section class="first-section">
+            <div class="container">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="resource/img/main/technology-6701509_1280.jpg" alt="slide1">
+                            <div class="textbox">
+                                <div class="text">
+                                    <h1>ICISC</h1>
+                                    <h5>The 28th Annual International Conference on Information Security and Cryptology</h5>
+                                    <p><strong>일시</strong> 2025년 11월 19일(수)-21일(금)</p>
+                                    <p><strong>장소</strong> 롯데월드타워 스카이31</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="resource/img/main/technology-6701509_1280.jpg" alt="slide2">
+                            <div class="textbox">
+                                <div class="text">
+                                    <h1>CISC-W'25</h1>
+                                    <h5>2025년 동계학술대회</h5>
+                                    <p><strong>일시</strong> 2025년 11월 27일(목)-28일(금)</p>
+                                    <p><strong>장소</strong> 곤지암 리조트 EW빌리지</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="resource/img/main/technology-6701509_1280.jpg" alt="slide3">
+                            <div class="textbox">
+                                <div class="text">
+                                    <h1>WISA</h1>
+                                    <h5>The 26th World Conference on Information Security Applications</h5>
+                                    <p><strong>일시</strong> 2025년 8월 20일(수)-22일(금)</p>
+                                    <p><strong>장소</strong> 성지하이츠 3 차빌딩 909호</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <span class="prev">&#10094;</span>
+                        <span class="next">&#10095;</span>
+                    </div>
+                    <div class="navigation">
+                        <span class="nav-dot active" data-slide="0"></span>
+                        <span class="nav-dot" data-slide="1"></span>
+                        <span class="nav-dot" data-slide="2"></span>
+                    </div>
+                </div>
+                <div class="rightslide">
+                    <a href="https://public.thinkonweb.com/journals/jkiisc?lang=ko" target="_blank"><img src="resource/img/main/rightslide.png" alt="right-slide"></a>
+                </div>
+            </div> 
+        </section> 
+        <section class="third-section">
+            <div class="container">
+                    <div class="tabs">
+                        <div class="tab-content">
+                            <div class="tab active" data-target="#notice" data-link="/notice/add">공지사항</div>
+                            <div class="tab" data-target="#event" data-link="/event/add">학회행사</div>
+                            <div class="tab" data-target="#news" data-link="/news/add">학회소식</div>
+                            <a id="plusbtn" href="/notice/add"><i class="fa-solid fa-plus"></i></a>
+                        </div>
+                        <div class="underline"></div>
+
+                        <div id="notice" class="tab-next active">
+                            <div class="top-cards">
+                                <div class="card">
+                                    <a href="#">
+                                        <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
+                                        <span>2025-11-12</span>
+                                    </a>
+                                </div>
+
+                                <div class="card">
+                                    <a href="#">
+                                        <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
+                                        <span>2025-11-11</span>
+                                    </a>
+                                </div>
+
+                                <div class="card">
+                                    <a href="#">
+                                        <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
+                                        <span>2025-11-11</span>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                            <ul class="tabmenu">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">[KIISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
+                                        <span class="date">2025-11-11</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
+                                        <span class="date">2025-10-30</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
+                                        <span class="date">2025-10-21</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                    </div>
+                <div class="event-area">
+                    <div class="index-title">행사</div>
+                        <div class="underline"></div>
+                        <div class="event-content">
+                            <a href="https://www.netsec-kr.or.kr/" target="_blank"><img src="resource/img/main/NET.png" alt="net"><span>NETSEC</span></a>
+                            <a href="https://cisc.or.kr/" target="_blank"><img src="resource/img/main/CISC.png" alt="cisc"><span>CISC</span></a>
+                            <a href="https://www.wisa.or.kr/" target="_blank"><img src="resource/img/main/wisa.png" alt="wisa"><span>WISA</span></a>
+                            <a href="http://www.icisc.org/" target="_blank"><img src="resource/img/main/ICISC.png" alt="ICISC"><span>ICISC</span></a>
+                        </div>  
+                </div>
+            </div>
+        </section>
+        <section class="fourth-section">
+            <div class="container">
+                <div class="gallery">
+                    <div class="title">
+                        <div class="index-title">갤러리</ㅇ>
+                        <a href="#"><i class="fa-solid fa-plus"></i></a>
+                    </div>
+                    <div class="underline"></div>
+                    <div class="gallery-img">
+                        <ul>
+                            <li><a href="#"><img src="resource/img/main/gallery1.PNG" alt="gallery1"><span>WISA 2025</span></a></li>
+                            <li><a href="#"><img src="resource/img/main/gallery2.PNG" alt="gallery2"><span>2025년도 제2차 단기강좌</span></a></li> 
+                            <li><a href="#"><img src="resource/img/main/gallery3.PNG" alt="gallery3"><span>하계학술대회 (CICS-S’25)</span></a></li>
+                            <li><a href="#"><img src="resource/img/main/gallery4.PNG" alt="gallery4"><span>NetSec-KR 2025</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sponsor">
+                    <div class="sponsor-anime">
+                        <ul class="sponsor-img">
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo1.png" alt="logo1"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo2.jfif" alt="logo2"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo3.jfif" alt="logo3"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo4.jpg" alt="logo4"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo5.jpg" alt="logo5"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo6.jpg" alt="logo6"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo7.jpg" alt="logo7"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo8.gif" alt="logo8"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo9.png" alt="logo9"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo10.PNG" alt="logo10"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo11.png" alt="logo11"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo12.png" alt="logo12"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo13.png" alt="logo13"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo14.PNG" alt="logo14"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo15.png" alt="logo15"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo16.png" alt="logo16"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo17.png" alt="logo17"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo18.png" alt="logo18"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo19.png" alt="logo19"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo20.png" alt="logo20"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo21.png" alt="logo21"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo22.png" alt="logo22"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo23.jpg" alt="logo23"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo24.png" alt="logo24"></a></li>
+                            <li><a href="#"><img src="resource/img/main/sponsor/logo25.jpg" alt="logo25"></a></li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            
+                <a href="#">개인정보 처리방침</a>  |  <a href="#">이메일주소 무단 수집 거부</a>  |
+                <a href="#">오시는 길</a>  |  <a href="#">관리자 로그인</a>
+                <br><br>
+            <p>
+                대표자 : 박영호   (06132) 서울시 강남구 논현로 507 (역삼동 성지하이츠 3차) 909호   |   02)564-9333~4   |   02)564-9226   |    <a href="#">kiisc@kiisc.or.kr</a>
+            </p>
+                <br>
+           <p> 
+                Copyright @ 2025 KOREA INSTITUTE OF INFORMATION SECURITY & CRYPTOLOGY. | ALL RIGHTS RESERVED. DESIGNED BY <a href="#">ManscriptLink</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+
+        // slide start//
+        $(document).ready(function () {
+            let currentIndex = 0;
+            const totalSlides = $(".slide").length;
+
+            function showSlide(index) {
+                const slideWidth = $(".slide").width();
+                $(".slides").css("transform", "translateX(" + (-slideWidth * index) + "px)");
+                $(".nav-dot").removeClass("active");
+                $(".nav-dot").eq(index).addClass("active");
+
+                currentIndex = index;
+            }
+
+            $(".prev").click(function () {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                showSlide(currentIndex);
+            });
+
+            $(".next").click(function () {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                showSlide(currentIndex);
+            });
+
+            $(".nav-dot").click(function () {
+                const index = $(this).data("slide");
+                showSlide(index);
+            });
+
+            setInterval(function () {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                showSlide(currentIndex);
+            }, 3000);
+        });
+        // slide end//
+
+        // tab start//
+        $(".tab").click(function () {
+            $(".tab").removeClass("active");
+            $(this).addClass("active");
+
+            $(".tab-next").removeClass("active");
+            $($(this).data("target")).addClass("active");
+        });
+
+        $('.tab').click(function () {
+
+        $('.tab').removeClass('active');
+        $(this).addClass('active');
+
+        let link = $(this).data('link');
+        $('#plusBtn').attr('href', link);
+
+        });
+        // tab end//
+
+        // sponsor slide
+
+        const sponsor = document.querySelector(".sponsor-img");
+        const clone = sponsor.cloneNode(true);
+        sponsor.parentNode.appendChild(clone);
+       
+        // sponsor slide
+                
+    </script>
+
+    <script src="resource/js/src.js"></script>
+</body>
+</html>
