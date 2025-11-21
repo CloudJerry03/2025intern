@@ -1,70 +1,65 @@
 /* init */
 :root {
-    --maincolor: #0076bc;
+    --main-color: #3b5ebb;
+    --accent-color: #eeee00;
+    --first-color: #333;
+    --second-color: #999;
+    --third-color: #edf1fa;
 }
-
-body {
-    font-size: 1.2rem;
-}
-
 * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
+    word-break: keep-all;
 }
-
-a {
-    text-decoration: none;
-    color: #000;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    margin: 0;
-}
-/* init */
-.container {
-    max-width: 1340px;
-    --bs-gutter-x: 0;
-}
-
 button {
     background: none;
     border: none;
 }
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
+.banner-title {
+    font-size: clamp(1.6rem, 3vw, 4rem);
+    font-weight: bold;
 }
 
-.flex-row {
-    display: flex;
+.banner-text {
+    font-size: clamp(0.8rem, 1.5vw, 2rem);
+    font-weight: medium;
 }
 
-.align-center {
-    justify-content: center;
-    align-items: center;
+.t1 {
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
-.color-main {
-    color: var(--maincolor);
+.t2 {
+    font-size: 1.2rem;
+    font-weight: medium;
 }
 
-.bgcolor-main {
-    background-color: var(--maincolor);
+.t3 {
+    font-size: 1rem;
+    font-weight: normal;
 }
-
+.d-gird {
+    display: grid;
+}
+/* text */
+.w100 {
+    width: 100vw;
+}
+a {
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,p{
+    margin: 0;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.container {
+    padding: 0;
+    margin: 0 auto;
+}
+/* init */
 header {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -132,7 +127,7 @@ header>div {
 .desktop .menu li>a::after {
     content: '';
     position: absolute;
-    background-color: var(--maincolor);
+    background-color: var(--bs-primary); /* 변경: 변수 통일 */
     left: 0;
     top: 100%;
     width: 100%;
@@ -166,7 +161,7 @@ header>div {
 }
 
 .desktop .sub-menu a:hover {
-    color: var(--maincolor);
+    color: var(--bs-primary); /* 변경: 변수 통일 */
 }
 
 .desktop .sub-bg-wrap {
@@ -195,7 +190,7 @@ header>div {
     }
 
     .mobile {
-        display: flex !important;
+        display: flex;
         justify-content: end;
     }
 
@@ -204,11 +199,11 @@ header>div {
     }
 
     .community-left {
-        display: none;
+        display: none !important;
     }
 
     .guide .circle {
-        display: none;
+        border-radius: 0;
     }
 
     .guide ul {
@@ -267,6 +262,7 @@ header>div {
     display: none;
     font-weight: normal;
     font-size: 1rem;
+    padding-left: 10px;
 }
 
 .main-menu {
@@ -274,13 +270,6 @@ header>div {
 }
 
 footer {
-    margin-top: 30px;
     background-color: #2b2b2b;
     color: #fff;
-    padding: 30px;
-}
-
-footer>div {
-    gap: 15px;
-    padding: 30px 0;
 }
