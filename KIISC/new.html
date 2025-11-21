@@ -38,20 +38,28 @@
 body {
     font-family: Arial, sans-serif;
 }
-.first-section .container {
-    display: flex;
-    justify-content: space-between;
-    grid-template-columns: 1fr;
-    align-items: center;
-    width: 100%;
+
+section {
+    padding: 30px 0;
+}
+
+.container {
     margin: 0 auto;
+    padding: 0 15px;
+}
+
+.first-section .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+
+    width: 100%;
     position: relative;
 }
 /* slide start */
 .slider {
     position: relative;
     overflow: hidden;
-    width: 70%;
     height: 400px; 
     border-radius: 10px;
     box-sizing: border-box;
@@ -155,7 +163,6 @@ body {
     background-color: #0073e6;
 }
 .rightslide {
-    width: 29%;
     height: 400px;
     overflow: hidden;
     position: relative;
@@ -168,20 +175,10 @@ body {
 }
 /* slide end */
 
-
-.third-section {
-    padding-top: 30px;
-    display: flex;
-    gap: 20px;
-    align-items: stretch;
-    grid-template-columns: 1fr;
-}
-
 /* tab start */
 
 .tabs {
     max-width: 1400px;
-    width: 70%;
     box-sizing: border-box;
     float: left;
 }
@@ -267,9 +264,7 @@ ul.tabmenu {
     position: relative;
     top: -30px;
 }
-.tabmenu li {
 
-}
 .tabmenu li a {
     display: flex;
     justify-content: space-between;
@@ -309,52 +304,20 @@ ul.tabmenu {
     font-size: 30px;
 }
 /* event start */
-.gallery-tab {
-    width: 29%;
-    float: left;
-    margin-left: 14px;
-    height: 100%;
-    margin-top: 14.9px;
-}
+    .third-section .container{
+       display: grid;
+       grid-template-columns: 2fr 1fr;
+       gap: 30px;
+    }
+    .index-title {
+        font-size: 30px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
 
-.gallery-tab .underline {
-    width: 100%;
-}
-
-.eventt {
-    display: block;
-}
-.eventt .tabb {
-    font-size: 30px;
-    font-weight: bold;
-    position: relative;
-    top: -15px;
-}
-.eventt a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.img img{
-    width: 350px;
+.event-content a > img {
     height: 80px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 8px;
-    display: block;
-}
-.img span {
-    font-size: 20px;
-    text-align: center;
-    color: #222;
-    user-select: none;
-    padding: 0 0 5px 0; 
+    width: 100%;
 }
 /* event end */
 
@@ -381,7 +344,7 @@ ul.tabmenu {
 .gallery-img a img {
     max-height: 150px;
     object-fit: cover;
-    width: 270px;
+    width: 100%;
     border-radius: 10px;
 }
 .gallery-img a {
@@ -396,18 +359,12 @@ ul.tabmenu {
     font-size: 20px;
 }
 .gallery-img ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     padding: 0;
     margin: 0;
     list-style: none;
-}
-.gallery-img ul li {
-    flex: 1 1 100%;
-    display: flex;
-    gap: 10%;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 /* gallery end */
@@ -486,12 +443,6 @@ ul.tabmenu {
     }
     .rightslide img {
         object-fit: contain;
-    }
-
-
-    .third-section {
-        flex-direction: column;
-        width: 100%;
     }
 
     .tabs {
@@ -782,132 +733,17 @@ ul.tabmenu {
                                 </li>
                             </ul>
                         </div>
-                        <div id="event" class="tab-next">
-                            <div class="top-cards">
-                                <div class="card">
-                                    <a href="#">
-                                        <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
-                                        <span>2025-11-13</span>
-                                    </a>
-                                </div>
-
-                                <div class="card">
-                                    <a href="#">
-                                        <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
-                                        <span>2025-11-11</span>
-                                    </a>
-                                </div>
-
-                                <div class="card">
-                                    <a href="#">
-                                        <p>	[KIIS_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
-                                        <span>2025-11-11</span>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                            <ul class="tabmenu">
-                                <li>
-                                    <a href="#">
-                                        <span class="text">[KIISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
-                                        <span class="date">2025-11-11</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
-                                        <span class="date">2025-11-11</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
-                                        <span class="date">2025-11-11</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
-                                        <span class="date">2025-10-30</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
-                                        <span class="date">2025-10-21</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="news" class="tab-next">
-                            <div class="top-cards">
-                                <div class="card">
-                                    <a href="#">
-                                        <p>[KIISC] 2025 한국정보보호학회 동계학술대회 (CISC-W'25) 개최</p>
-                                        <span>2025-11-12</span>
-                                    </a>
-                                </div>
-
-                                <div class="card">
-                                    <a href="#">
-                                        <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
-                                        <span>2025-11-11</span>
-                                    </a>
-                                </div>
-
-                                <div class="card">
-                                    <a href="#">
-                                        <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
-                                        <span>2025-11-11</span>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                            <ul class="tabmenu">
-                                <li>
-                                    <a href="#">
-                                        <span class="text">[KISC] ICISC 2025 Call for Participation (등록기간 연장: ~11월 17일(월)까지)</span>
-                                        <span class="date">2025-11-11</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="text">[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</span>
-                                        <span class="date">2025-11-11</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="text">[KIISC_IT플랫폼안정성연구회] 2026년도 IT플랫폼안전성연구회 위탁 연구과제 공모_12/20(토) 18:00까지</span>
-                                        <span class="date">2025-11-11</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="text">	[KIISC_6G보안연구회] 제9회 모바일인터넷보안 국제학술대회 (Mobisec 2025)</span>
-                                        <span class="date">2025-10-30</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="text">[KIISC_사이버시큐리티정책연구회] 2025 사이버 시큐리티 정책 워크샵(추계)</span>
-                                        <span class="date">2025-10-21</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    
                     </div>
-                <div class="gallery-tab">
-                    <div class="eventt">
-                        <div class="tabb">행사</div>
+                <div class="event-area">
+                    <div class="index-title">행사</div>
                         <div class="underline"></div>
-                        <div class="img">
+                        <div class="event-content">
                             <a href="https://www.netsec-kr.or.kr/" target="_blank"><img src="resource/img/main/NET.png" alt="net"><span>NETSEC</span></a>
                             <a href="https://cisc.or.kr/" target="_blank"><img src="resource/img/main/CISC.png" alt="cisc"><span>CISC</span></a>
                             <a href="https://www.wisa.or.kr/" target="_blank"><img src="resource/img/main/wisa.png" alt="wisa"><span>WISA</span></a>
                             <a href="http://www.icisc.org/" target="_blank"><img src="resource/img/main/ICISC.png" alt="ICISC"><span>ICISC</span></a>
-                        </div>    
-                    </div>
+                        </div>  
                 </div>
             </div>
         </section>
@@ -915,7 +751,7 @@ ul.tabmenu {
             <div class="container">
                 <div class="gallery">
                     <div class="title">
-                        <span>갤러리</span>
+                        <div class="index-title">갤러리</ㅇ>
                         <a href="#"><i class="fa-solid fa-plus"></i></a>
                     </div>
                     <div class="underline"></div>
