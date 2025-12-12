@@ -1,70 +1,68 @@
-body {
-    margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-.wrapper {
-    max-width: 1170px;
-    margin: 0 auto;
-}
-.top-header-bg {
-    width: 100%;
+/* 헤더 배경 */
+header {
     background-color: #000;
-}
-
-/* 상단 헤더 내부 */
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 20px;
-    font-size: 12px;
-}
-
-.top-header a {
     color: #fff;
-    text-decoration: none;
-    margin: 0 5px;
-    font-size: 12px;
 }
 
-.top-header span {
+/* a 태그 기본 스타일 */
+header a {
     color: #fff;
     text-decoration: none;
 }
 
-.top-header a:hover {
+header a:hover {
+    color: #fff;
     text-decoration: underline;
 }
 
-/* 네비게이션 배경 전체 */
-.main-nav-bg {
-    width: 100%;
+.divider {
+    display: inline-block; /* 블록 요소처럼 취급되도록 설정 */
+    width: 1px; /* 선의 너비 */
+    height: 12px; /* 선의 높이 */
+    background-color: #fff; /* 흰색 */
+}
+
+/* 로그인/회원가입 */
+.auth-links {
+    display: flex;
+    justify-content: space-between; /* 양쪽에 배치 */
+    align-items: center;
+    gap: 20px;
+}
+
+/* 네비 시작 */
+
+.nav-bg {
     background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* 네비게이션 내부 */
-nav.main-nav {
+.nav {
     display: flex;
     align-items: center;
     height: 75px;
+    padding: 0 15px;
+    max-width: 1320px; /* 최대 너비를 1320px로 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+    width: 100%; /* 너비를 100%로 설정 */
 }
 
-nav.main-nav .logo {
-    font-size: 24px;
+/* 로고 */
+.nav .logo {
     font-weight: bold;
     color: #000;
     text-decoration: none;
-    margin-right: 30px;
 }
 
-nav.main-nav .menu {
+/* 메뉴 */
+.nav .menu {
     display: flex;
-    margin-left: auto;
+    margin-left: auto; /* 오른쪽 정렬 */
     gap: 30px;
 }
 
-nav.main-nav .menu a {
+.nav .menu a {
     text-decoration: none;
     color: #000;
     font-weight: 500;
@@ -72,28 +70,8 @@ nav.main-nav .menu a {
     transition: color 0.2s;
 }
 
-nav.main-nav .menu a:hover {
-    color: #007bff;
+.nav .menu a:hover {
+    color: #007bff; /* 호버 색상 */
 }
 
-    /* 카피라이트 */
-    .copyright-section {
-        background-color: #333;
-        color: white;
-        padding: 10px 0;
-    }
-
-    .copyright-section .w1170 {
-        width: 1170px;
-        margin: 0 auto;
-        /* 가운데 정렬 */
-        text-align: left;
-        /* 왼쪽 정렬 */
-        font-size: 14px;
-        /* 글씨 크기 조정 */
-    }
-
-    .copyright-section p {
-        margin: 5px 0;
-        /* 문단 간 여백 */
-    }
+/* 네비 끝 끝 */

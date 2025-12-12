@@ -1,870 +1,205 @@
-        <!DOCTYPE html>
-        <html lang="en">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>KSII</title>
-
-            <!-- CSS -->
-            <link href="resource/css/main.css" rel="stylesheet" />
-
-            <!-- bootstrap -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-                integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-                crossorigin="anonymous">
-        </head>
-        <style>
-            /* 슬라이드 */
-
-            .banner-slider-container {
-                position: relative;
-                width: 100%;
-                height: 600px;
-                overflow: hidden;
-            }
-
-            .banner-slider {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity 2s ease-in-out, visibility 0s linear 2s;
-                /* 페이드 효과를 위한 설정 */
-                z-index: 1;
-            }
-
-            /* 활성화된 슬라이드는 보이게 */
-            .banner-slider.active {
-                opacity: 1;
-                visibility: visible;
-                z-index: 2;
-                /* 활성화된 슬라이드가 위에 위치 */
-                transition: opacity 2s ease-in-out, visibility 0s linear 0s;
-            }
-
-            /* 배너 내용 */
-            .banner-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                height: 100%;
-                padding: 300px;
-            }
-
-            .banner-left {
-                max-width: 40%;
-                color: #fff;
-            }
-
-            .banner-left .title {
-                font-weight: bold;
-                font-size: 50px;
-                margin-bottom: -10px;
-            }
-
-            .banner-left .subtitle {
-                font-weight: bold;
-                font-size: 20px;
-                margin-bottom: 20px;
-            }
-
-            .banner-left .date,
-            .banner-left .location {
-                font-size: 20px;
-                margin-bottom: 0px;
-            }
-
-
-            /* 게시판 */
-
-            .con1 {
-                width: 70%;
-                margin: auto;
-                padding-bottom: 60px;
-            }
-
-            .notice-board {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-
-            .notice-tabs {
-                display: grid;
-                grid-template-columns: 1fr auto;
-                /* 왼쪽 탭, 오른쪽 more 버튼 */
-                align-items: center;
-                padding: 20px 0;
-            }
-
-            .notice-tab-left {
-                display: grid;
-                grid-auto-flow: column;
-                /* 가로 나열 */
-                grid-gap: 20px;
-                /* 탭 간격 */
-                align-items: center;
-            }
-
-            .notice-tabs .more-btn {
-                justify-self: end;
-            }
-
-            .nav-tabs {
-                border-bottom: none !important;
-            }
-
-            .nav-tabs .nav-link {
-                font-size: 22px;
-                font-weight: bold;
-                background: transparent !important;
-                border: none !important;
-                color: #888;
-            }
-
-            .nav-tabs .nav-link.active {
-                color: #000;
-            }
-
-
-            .notice-tab-left {
-                margin-left: 50px;
-                display: flex;
-                gap: 15px;
-                /* 탭 간 간격 조정 */
-                align-items: center;
-                /* 세로 가운데 정렬 */
-            }
-
-            .notice-tabs a {
-                margin-right: 55px;
-                display: flex;
-                align-items: center;
-                /* 세로 가운데 정렬 */
-            }
-
-            .notice-tab {
-                font-size: 22px;
-                font-weight: bold;
-                cursor: pointer;
-                padding: 8px 12px;
-                background: #fff;
-                color: #00000030;
-                border: none;
-                margin: 0;
-            }
-
-            .notice-tab.active {
-                color: #000;
-            }
-
-            .notice-tab:hover {
-                opacity: 0.7;
-            }
-
-            /* 카드 디자인 */
-            .custom-card {
-                width: 18rem;
-                max-height: 260px;
-                /* 카드의 최대 높이 설정 */
-                overflow: hidden;
-                /* 카드 내용이 넘칠 경우 숨김 */
-                transition: transform 0.3s ease;
-                /* 부드러운 전환 효과 */
-            }
-
-            .custom-card:hover {
-                transform: scale(1.05);
-                /* 마우스를 올리면 카드가 커지는 효과 */
-            }
-
-            .custom-card .card-body {
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                padding: 0;
-            }
-
-            .custom-card .card-top {
-                flex: 1;
-                padding: 15px;
-            }
-
-            .custom-card .card-title {
-                background-color: #00438b;
-                color: #fff;
-                padding: 8px 12px;
-                border-radius: 5px;
-                display: inline-block;
-                font-size: 18px;
-                font-weight: bold;
-                margin-bottom: 8px;
-                cursor: default;
-            }
-
-            .card-subtitle {
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                /* 최대 3줄 */
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-            }
-
-            .custom-card .card-subtitle {
-                font-size: 16px;
-                color: #555;
-                margin-bottom: 12px;
-            }
-
-            .custom-card .card-bottom {
-                flex: 1;
-                background-color: #f0f0f0;
-                padding: 15px;
-                border-radius: 0 0 5px 5px;
-                position: relative;
-                overflow: hidden;
-                /* 하단 내용이 넘칠 경우 숨김 */
-            }
-
-            .card-text {
-                background-color: transparent;
-                padding: 0;
-                margin-bottom: 20px;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                font-size: 14px;
-            }
-
-            .card-date {
-                position: absolute;
-                right: 10px;
-                bottom: 10px;
-                font-size: 13px;
-                color: #666;
-            }
-
-            .con2 {
-                margin: auto;
-                display: flex;
-                gap: 50px;
-            }
-
-            /* 왼쪽 갤러리 */
-            .left-gallery {
-                width: 650px;
-            }
-
-            .main-gallery {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .left-gallery .gallery-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                /* 수직 가운데 정렬 */
-                margin-bottom: 20px;
-                margin-right: -10px;
-            }
-
-            .small-gallery-row {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                justify-content: space-between;
-                gap: 10px;
-            }
-
-            .small-card {
-                width: 300px;
-                height: 150px;
-                background: #eee;
-                /* 기본 배경만 남김 */
-                background-size: cover;
-                background-position: center;
-                border-radius: 10px;
-                position: relative;
-                margin-top: 15px;
-                margin-bottom: 15px;
-            }
-
-            .card-img-1 {
-                background-image: url('resource/img/main/gallery/image\ 1.png');
-            }
-
-            .card-img-2 {
-                background-image: url('resource/img/main/gallery/image\ 2.png');
-            }
-
-            .card-img-3 {
-                background-image: url('resource/img/main/gallery/image\ 1.png');
-            }
-
-            .card-img-4 {
-                background-image: url('resource/img/main/gallery/image\ 2.png');
-            }
-
-
-            .small-card-info {
-                position: absolute;
-                bottom: 5px;
-                left: 5px;
-                color: #fff;
-                background: rgba(0, 0, 0, 0.5);
-                padding: 3px 5px;
-                border-radius: 5px;
-            }
-
-            /* 오른쪽 학술지 */
-            .right-journal {
-                width: 400px;
-                display: flex;
-                flex-direction: column;
-                /* 카드 간 간격 */
-            }
-
-            .journal-card {
-                width: 100%;
-                height: 200px;
-                /* background: #f5f5f5; */
-                border-radius: 10px;
-                padding: 15px;
-                position: relative;
-                box-sizing: border-box;
-                display: flex;
-                gap: 15px;
-                /* 이미지와 텍스트 간의 간격 */
-                align-items: center;
-                /* 세로로 중앙 정렬 */
-            }
-
-            .journal-cover {
-                width: 100px;
-                height: 150px;
-                position: relative;
-            }
-
-            .journal-cover::after {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.15);
-                /* 연한 회색 */
-                bottom: -8px;
-                /* 아래쪽으로 이동 */
-                right: -8px;
-                /* 오른쪽으로 이동 */
-                z-index: 0;
-            }
-
-            .journal-cover img {
-                position: relative;
-                z-index: 2;
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-            }
-
-
-            .journal-info {
-
-                margin-left: 20px;
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-            }
-
-            .journal-title {
-                font-size: 18px;
-                font-weight: bold;
-                color: #00438b;
-                margin-bottom: 5px;
-            }
-
-            .journal-subtitle {
-                font-size: 14px;
-                color: #555;
-                margin-bottom: 10px;
-            }
-
-            .btn-link {
-                background-color: #000;
-                /* 검은색 배경 */
-                color: #fff;
-                /* 흰색 글씨 */
-                text-decoration: none;
-                /* 밑줄 제거 */
-                padding: 5px 10px;
-                /* 여백 추가 */
-                border-radius: 5px;
-                /* 둥근 모서리 */
-            }
-
-            .btn-link:hover {
-                background-color: #333;
-                /* 마우스 오버시 배경색을 좀 더 어두운 색으로 */
-                text-decoration: none;
-                /* 밑줄 제거 */
-            }
-
-            .footer-sponsor {
-                background-color: #eee;
-            }
-
-            .sponsors-carousel {
-                width: 100%;
-                overflow: hidden;
-                position: relative;
-                background-color: #eee;
-            }
-
-            .carousel-track {
-                display: flex;
-                gap: 20px;
-                animation: scrollLeft 25s linear infinite;
-            }
-
-            .sponsor-banner {
-                flex-shrink: 0;
-                width: 150px;
-                height: 80px;
-            }
-
-            .sponsor-banner img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-
-            @keyframes scrollLeft {
-                0% {
-                    transform: translateX(0);
-                }
-
-                100% {
-                    transform: translateX(-50%);
-                }
-            }
-
-            /* 카피라이트 */
-            .copyright-section {
-                background-color: #333;
-                color: white;
-                padding: 10px 0;
-            }
-
-            .copyright-section .w1170 {
-                width: 1170px;
-                margin: 0 auto;
-                /* 가운데 정렬 */
-                text-align: left;
-                /* 왼쪽 정렬 */
-                font-size: 14px;
-                /* 글씨 크기 조정 */
-            }
-
-            .copyright-section p {
-                margin: 5px 0;
-                /* 문단 간 여백 */
-            }
-
-
-            /* 스폰서 배너가 화면을 넘지 않도록 처리 */
-            .sponsors-carousel {
-                max-width: 1220px;
-                margin: 0 auto;
-            }
-        </style>
-
-        <body>
-            <header>
-                <!-- 상단 헤더 -->
-                <div class="top-header-bg">
-                    <div class="wrapper top-header">
-                        <div class="left">
-                            <a href="#">KOR</a>
-                        </div>
-                        <div class="right">
-                            <a href="#">로그인</a>
-                            <span>|</span>
-                            <a href="#">회원가입</a>
-                        </div>
-                    </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSII</title>
+
+    <!-- CSS -->
+    <link href="resource/css/main.css" rel="stylesheet" />
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<style>
+    /* 배너 슬라이더 컨테이너 */
+    .banner-slider-container {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        /* 배너 높이 설정 */
+        overflow: hidden;
+        /* 넘치는 부분 숨기기 */
+    }
+
+    /* 슬라이드 */
+    .banner-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+        /* 페이드 효과 */
+    }
+
+    /* 활성화된 슬라이드 */
+    .banner-slider.active {
+        opacity: 1;
+    }
+
+    /* 배너 내용 */
+    .banner-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        color: #fff;
+        padding-left: 30px;
+        /* 왼쪽 여백 */
+    }
+
+    /* 텍스트 스타일 */
+    .banner-left {
+        max-width: 600px;
+    }
+
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .subtitle {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .date,
+    .location {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+        .title {
+            font-size: 28px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+        }
+
+        .date,
+        .location {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="header-main container">
+            <div class="top-header row">
+                <!-- 언어 선택 부분: KOR | EN -->
+                <div class="language-selector col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
+                    <a href="#">KOR</a>
                 </div>
 
-                <!-- 네비게이션 -->
-                <div class="main-nav-bg">
-                    <nav class="main-nav wrapper">
-                        <a href="index.html" class="logo">
-                            <img src="resource/img/main/logo.png" alt="KSII">
-                        </a>
-                        <div class="menu">
-                            <a href="#">학회 소개</a>
-                            <a href="#">회원 안내</a>
-                            <a href="#">학회 행사</a>
-                            <a href="#">출판</a>
-                            <a href="#">커뮤니티</a>
-                        </div>
-                    </nav>
+                <!-- 로그인/회원가입 부분 -->
+                <div class="auth-links col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+                    <a href="#">로그인</a>
+                    <span class="divider"></span>
+                    <a href="#">회원가입</a>
                 </div>
-            </header>
+            </div>
+        </div>
 
-            <main>
-                <!-- 슬라이드 -->
-                <div class="banner-slider-container">
-                    <div class="banner-slider active"
-                        style="background-image: url('resource/img/main/banner/slide.png');">
-                        <div class="banner-container">
-                            <div class="col-12 col-md-6 banner-left">
-                                <div class="title"><strong>ICONI 2025</strong></div>
-                                <div class="subtitle"><strong>The 17th International Conference on Internet (ICONI
-                                        2025)</strong></div>
-                                <div class="date">December 14(Sun) ~ 17(Wed), 2025</div>
-                                <div class="location">Okinawa Convention Center, Okinawa, Japan</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="banner-slider" style="background-image: url('resource/img/main/banner/slide.png');">
-                        <div class="banner-container">
-                            <div class="col-12 col-md-6 banner-left">
-                                <div class="title"><strong>Test Event</strong></div>
-                                <div class="subtitle"><strong>The 17th International Conference on Internet (ICONI
-                                        2025)</strong></div>
-                                <div class="date">December 14(Sun) ~ 17(Wed), 2025</div>
-                                <div class="location">Okinawa Convention Center, Okinawa, Japan</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 추가 슬라이드 추가 가능 -->
+        <!-- 네비게이션 -->
+        <div class="nav-bg">
+            <nav class="nav container">
+                <!-- container로 고정 크기 유지 -->
+                <a href="index.html" class="logo">
+                    <img src="resource/img/main/logo.png" alt="KSII">
+                </a>
+                <div class="menu">
+                    <a href="#">학회 소개</a>
+                    <a href="#">회원 안내</a>
+                    <a href="#">학회 행사</a>
+                    <a href="#">출판</a>
+                    <a href="#">커뮤니티</a>
                 </div>
+            </nav>
+        </div>
+    </header>
 
+    <main>
+        <!-- 배너 슬라이더 컨테이너 -->
+        <div class="banner-slider-container">
+            <!-- 첫 번째 슬라이드 -->
+            <div class="banner-slider" style="background-image: url('resource/img/main/banner/slide1.png');">
+                <div class="banner-container">
+        <div class="col-12 col-md-6 banner-left">
+            <div class="title">
+                <strong>한국인터넷정보학회</strong>
+            </div>
+            <div class="subtitle">
+                <strong>The 17th International Conference on Internet (ICONI 2025)</strong>
+            </div>
+            <div class="date">December 14(Sun) ~ 17(Wed), 2025</div>
+            <div class="location">Okinawa Convention Center, Okinawa, Japan</div>
+        </div>
+                </div>
+            </div>
 
-
-                <!-- 슬라이드 -->
-
-                <div class="con1">
-                    <!-- 버튼 영역 -->
-                    <div class="notice-tabs">
-                        <!-- 왼쪽 탭 영역 -->
-                        <ul class="nav nav-tabs notice-tab-left" id="noticeTab" role="tablist">
-                            <li class="nav-item">
-                                <button class="nav-link active" id="tab-all" data-bs-toggle="tab"
-                                    data-bs-target="#panel-all" type="button" role="tab">
-                                    전체
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="tab-notice" data-bs-toggle="tab"
-                                    data-bs-target="#panel-notice" type="button" role="tab">
-                                    공지사항
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="tab-event" data-bs-toggle="tab"
-                                    data-bs-target="#panel-event" type="button" role="tab">
-                                    유관기관행사정보
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="tab-member" data-bs-toggle="tab"
-                                    data-bs-target="#panel-member" type="button" role="tab">
-                                    회원동정
-                                </button>
-                            </li>
-                        </ul>
-
-                        <!-- 오른쪽 more 버튼 -->
-                        <a href="#" class="more-btn">
-                            <img src="resource/img/main/more.png" alt="more">
-                        </a>
-                    </div>
-
-
-                    <div class="tab-content" id="noticeTabContent">
-                        <!-- 전체 -->
-                        <div class="tab-pane fade show active" id="panel-all" role="tabpanel">
-                            <!-- 모든 카드 표시 -->
-                            <div class="notice-board">
-                                <div class="card custom-card">
-                                    <div class="card-body">
-                                        <div class="card-top">
-                                            <h5 class="card-title">정보</h5>
-                                            <h6 class="card-subtitle">[행사홍보] 한국지능형사물인터넷협회, AIoT 국제컨퍼런스 개최 안내</h6>
-                                        </div>
-                                        <div class="card-bottom">
-                                            <p class="card-text">안녕하세요?<br>
-                                                한국인터넷정보학회 사무국입니다.
-
-                                                본 학회 유관기관인 한국지능형사물인터넷협회와 과학기술정보통신부가 매년 개최하는 AIoT Week Korea가
-                                                올해 11월 26일(수)~28일(금), 코엑스에서 개최됩니다.</p>
-                                            <span class="card-date">2025-11-17</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card custom-card">
-                                    <div class="card-body">
-                                        <div class="card-top">
-                                            <h5 class="card-title">공지</h5>
-                                            <h6 class="card-subtitle">[보도자료 - 보안뉴스] 2025 추계학술발표대회 개최 관련 기사</h6>
-                                        </div>
-                                        <div class="card-bottom">
-                                            <p class="card-text">안녕하세요?<br>
-                                                한국인터넷정보학회 사무국입니다.
-
-                                                본 학회가 2025년 10월 30일 ~ 11월 1일, 전라남도 여수시 디오션호텔앤리조트에서 주최한
-                                                2025 추계학술발표대회와 관련된 기사가 아래와 같이 보도되었습니다.</p>
-                                            <span class="card-date">2025-11-05</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card custom-card">
-                                    <div class="card-body">
-                                        <div class="card-top">
-                                            <h5 class="card-title">회원</h5>
-                                            <h6 class="card-subtitle">[기사글] "국방정보기술연구회 '2025년 후반기 워크숍' 성료…AI 방위산업 구축 논의"
-                                            </h6>
-                                        </div>
-                                        <div class="card-bottom">
-                                            <p class="card-text">안녕하세요?<br>
-                                                한국인터넷정보학회 사무국입니다.
-
-                                                본 학회 국방정보기술연구회(회장 강지원 세종대학교 교수)가 10월 30일~31일 전남 여수 디오션리조트앤호텔에서
-                                                군·산·학·연 전문가 100여명이 참석한 가운데 '2025년 후반기 국방정보기술연구회 워크숍'을 개최했습니다.
-
-                                                상세한 상세한 기사글은 아래 링크를 클릭하시면 보실 수 있습니다.
-                                                국방정보기술연구회 '2025년 후반기 워크숍' 성료…AI 방위산업 구축 논의</p>
-                                            <span class="card-date">2025-11-05</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card custom-card">
-                                    <div class="card-body">
-                                        <div class="card-top">
-                                            <h5 class="card-title">공지 1</h5>
-                                            <h6 class="card-subtitle">여기에 부제목이 들어갑니다</h6>
-                                        </div>
-                                        <div class="card-bottom">
-                                            <p class="card-text">내용입니다.</p>
-                                            <span class="card-date">2025-02-20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 공지사항 -->
-                        <div class="tab-pane fade" id="panel-notice" role="tabpanel">
-                            <div class="notice-board">
-                                <!-- 공지사항 카드들 -->
-                                ...
-                            </div>
-                        </div>
-
-                        <!-- 유관기관 행사 -->
-                        <div class="tab-pane fade" id="panel-event" role="tabpanel">
-                            <div class="notice-board">
-                                <!-- 유관기관 행사 카드들 -->
-                                ...
-                            </div>
-                        </div>
-
-                        <!-- 회원동정 -->
-                        <div class="tab-pane fade" id="panel-member" role="tabpanel">
-                            <div class="notice-board">
-                                <!-- 회원 카드들 -->
-                                ...
-                            </div>
-                        </div>
+            <!-- 두 번째 슬라이드 -->
+            <div class="banner-slider" style="background-image: url('resource/img/main/banner/slide2.png');">
+                <div class="banner-container">
+                    <div class="col-12 col-md-6 banner-left">
+                        <div class="title"><strong>ICONI 2025</strong></div>
+                        <div class="subtitle"><strong>The 17th International Conference on Internet (ICONI
+                                2025)</strong></div>
+                        <div class="date">December 14(Sun) ~ 17(Wed), 2025</div>
+                        <div class="location">Okinawa Convention Center, Okinawa, Japan</div>
                     </div>
                 </div>
-                <!-- 갤러리 & 학술지 -->
-                <div class="con2 wrapper row">
-                    <!-- 왼쪽 갤러리 -->
-                    <div class="left-gallery">
-                        <div class="gallery-header d-flex justify-content-between align-items-center mb-3">
-                            <h3>갤러리</h3>
-                            <a href="#" class="btn"><img src="resource/img/main/more.png" alt="more"></a>
-                        </div>
+            </div>
+        </div>
+    </main>
 
-                        <!-- 메인 갤러리 -->
-                        <div class="main-gallery">
-                            <div class="small-gallery-row">
-                                <div class="small-card card-img-1">
-                                    <div class="small-card-info"> 제목 </div>
-                                </div>
-                                <div class="small-card card-img-2">
-                                    <div class="small-card-info"> 제목 </div>
-                                </div>
-                                <div class="small-card card-img-3">
-                                    <div class="small-card-info"> 제목 </div>
-                                </div>
-                                <div class="small-card card-img-4">
-                                    <div class="small-card-info"> 제목 </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- 오른쪽 학술지 -->
-                    <div class="right-journal">
-                        <div class="journal-header d-flex justify-content-between align-items-center mb-3">
-                            <h3>학술지</h3>
-                        </div>
-                        <div class="journal-card">
-                            <div class="d-flex">
-                                <!-- 왼쪽: 학술지 표지 -->
-                                <div class="journal-cover">
-                                    <img src="resource/img/main/journal/jics_cover.png" alt="Journal Cover"
-                                        class="img-fluid w-100 h-100">
-                                </div>
-
-                                <!-- 오른쪽: 제목, 서브타이틀, 링크들 -->
-                                <div class="journal-info ms-3">
-                                    <h5 class="journal-title">JICS</h5>
-                                    <h6 class="journal-subtitle">Journal of Internet Computing and Services</h6>
-
-                                    <div class="journal-buttons">
-                                        <a href="#" class="btn btn-link">자세히 보기</a>
-                                        <a href="#" class="btn btn-link">논문 투고</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="journal-card">
-                            <div class="d-flex">
-                                <!-- 왼쪽: 학술지 표지 -->
-                                <div class="journal-cover">
-                                    <img src="resource/img/main/journal/tiis.cover.png" alt="Journal Cover"
-                                        class="img-fluid w-100 h-100">
-                                </div>
-
-                                <!-- 오른쪽: 제목, 서브타이틀, 링크들 -->
-                                <div class="journal-info ms-3">
-                                    <h5 class="journal-title">JICS</h5>
-                                    <h6 class="journal-subtitle">Journal of Internet Computing and Services</h6>
-
-                                    <div class="journal-buttons">
-                                        <a href="#" class="btn btn-link">자세히 보기</a>
-                                        <a href="#" class="btn btn-link">논문 투고</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-            </main>
-
-            <footer>
-                <!-- 후원 영역 -->
-                <div class="footer-sponsor">
-                    <div class="sponsors-carousel">
-                        <div class="carousel-track">
-                            <!-- 기존 배너들 (한 세트) -->
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii1.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii2.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii3.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii4.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii5.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii6.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii7.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii8.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii9.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii10.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii11.jpg"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii1.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii2.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii3.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii4.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii5.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii6.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii7.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii8.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii9.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii10.png"></div>
-                            <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii11.jpg"></div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <!-- 카피라이트 -->
-                <div class="copyright-section">
-                    <div class="w1170">
-                        <p>개인정보취급방침 | 이메일주소무단수집거부 | 오시는 길</p>
-                        <p>대표자 : 신동규 (60130) 서울시 강남구 테헤란로 7길 22(역삼동) 한국과학기술회관 1관 505호 | T. 02)564-2827/2825 |
-                            F.02)564-2834
-                            | E.
-                            ksii@ksii.or.kr</p>
-                        <p>Copyright @ 2018 KOREA SOCIETY FOR INTERNET INFORMATION. | ALL RIGHTS RESERVED. DESIGNED BY
-                            <a href="https://www.manuscriptlink.com/">ManuscriptLink</a></p>
-                    </div>
-                </div>
-            </footer>
-
-            </section>
-
-
-
-
-
-
-
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                crossorigin="anonymous">
-            </script>
-
-
-            <script>
-                // 슬라이드 애니메이션 설정
-                const slides = document.querySelectorAll('.banner-slider');
-                let currentSlide = 0;
-                const totalSlides = slides.length; // 슬라이드 총 개수
-                const slideInterval = 20000; // 슬라이드 전환 간격 (20초)
-                const fadeDuration = 2000; // 페이드 효과 지속 시간 (2초)
-                const delayBetweenSlides = 1000; // 슬라이드 전환 간 딜레이 (1초)
-
-                // 슬라이드를 표시하는 함수
-                function showSlide(index, isFirstSlide = false) {
-                    // 첫 번째 슬라이드일 경우 바로 표시하고, 그 이후 슬라이드에서는 딜레이 적용
-                    slides.forEach(slide => slide.classList.remove('active')); // 모든 슬라이드에서 active 클래스 제거
-
-                    if (isFirstSlide) {
-                        // 첫 번째 슬라이드일 경우 딜레이 없이 바로 active 클래스 추가
-                        slides[index].classList.add('active');
-                    } else {
-                        // 그 외의 슬라이드에서는 페이드 아웃 후 딜레이를 준 후 active 클래스 추가
-                        setTimeout(() => {
-                            slides[index].classList.add('active');
-                        }, fadeDuration + delayBetweenSlides); // 페이드 아웃 후 딜레이 주기
-                    }
-                }
-
-                // 처음에 첫 번째 슬라이드 표시 (isFirstSlide 파라미터를 true로 전달)
-                showSlide(currentSlide, true);
-
-        // 일정 시간마다 슬라이드를 전환
-        setInterval(() => {
-            // 현재 슬라이드에서 다음 슬라이드로 이동
-            currentSlide = (currentSlide + 1) % totalSlides; // 슬라이드 순환
-            showSlide(currentSlide); // 첫 번째 슬라이드는 isFirstSlide로 설정, 그 이후는 기본 딜레이
-        }, slideInterval);
-    </script>
 </body>
+
+
+<script>
+    // 슬라이드 애니메이션 설정
+    const slides = document.querySelectorAll('.banner-slider');
+    let currentSlide = 0;
+    const totalSlides = slides.length; // 슬라이드 총 개수
+    const slideInterval = 20000; // 슬라이드 전환 간격 (20초)
+    const fadeDuration = 2000; // 페이드 효과 지속 시간 (2초)
+    const delayBetweenSlides = 1000; // 슬라이드 전환 간 딜레이 (1초)
+
+    // 슬라이드를 표시하는 함수
+    function showSlide(index, isFirstSlide = false) {
+        // 첫 번째 슬라이드일 경우 바로 표시하고, 그 이후 슬라이드에서는 딜레이 적용
+        slides.forEach(slide => slide.classList.remove('active')); // 모든 슬라이드에서 active 클래스 제거
+
+        if (isFirstSlide) {
+            // 첫 번째 슬라이드일 경우 딜레이 없이 바로 active 클래스 추가
+            slides[index].classList.add('active');
+        } else {
+            // 그 외의 슬라이드에서는 페이드 아웃 후 딜레이를 준 후 active 클래스 추가
+            setTimeout(() => {
+                slides[index].classList.add('active');
+            }, fadeDuration + delayBetweenSlides); // 페이드 아웃 후 딜레이 주기
+        }
+    }
+
+    // 처음에 첫 번째 슬라이드 표시 (isFirstSlide 파라미터를 true로 전달)
+    showSlide(currentSlide, true);
+
+    // 일정 시간마다 슬라이드를 전환
+    setInterval(() => {
+        // 현재 슬라이드에서 다음 슬라이드로 이동
+        currentSlide = (currentSlide + 1) % totalSlides; // 슬라이드 순환
+        showSlide(currentSlide); // 첫 번째 슬라이드는 isFirstSlide로 설정, 그 이후는 기본 딜레이
+    }, slideInterval);
+</script>
+
+</html>
