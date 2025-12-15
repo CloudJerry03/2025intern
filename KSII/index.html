@@ -8,90 +8,15 @@
 
     <!-- CSS -->
     <link href="resource/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="resource/css/banner.css">
+    <link rel="stylesheet" href="resource/css/con1.css">
+    <link rel="stylesheet" href="resource/css/con2.css">
+    <link rel="stylesheet" href="resource/css/sponsor.css">
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-
-<style>
-    /* 배너 슬라이더 컨테이너 */
-    .banner-slider-container {
-        position: relative;
-        width: 100%;
-        height: 600px;
-        /* 배너 높이 설정 */
-        overflow: hidden;
-        /* 넘치는 부분 숨기기 */
-    }
-
-    /* 슬라이드 */
-    .banner-slider {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        transition: opacity 2s ease-in-out;
-        /* 페이드 효과 */
-    }
-
-    /* 활성화된 슬라이드 */
-    .banner-slider.active {
-        opacity: 1;
-    }
-
-    /* 배너 내용 */
-    .banner-container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        height: 100%;
-        color: #fff;
-        padding-left: 30px;
-        /* 왼쪽 여백 */
-    }
-
-    /* 텍스트 스타일 */
-    .banner-left {
-        max-width: 600px;
-    }
-
-    .title {
-        font-size: 36px;
-        font-weight: bold;
-    }
-
-    .subtitle {
-        font-size: 24px;
-        margin: 10px 0;
-    }
-
-    .date,
-    .location {
-        font-size: 18px;
-        margin: 5px 0;
-    }
-
-    /* 반응형 디자인 */
-    @media (max-width: 768px) {
-        .title {
-            font-size: 28px;
-        }
-
-        .subtitle {
-            font-size: 18px;
-        }
-
-        .date,
-        .location {
-            font-size: 14px;
-        }
-    }
-</style>
 
 <body>
     <header>
@@ -132,37 +57,328 @@
     <main>
         <!-- 배너 슬라이더 컨테이너 -->
         <div class="banner-slider-container">
-            <!-- 첫 번째 슬라이드 -->
-            <div class="banner-slider" style="background-image: url('resource/img/main/banner/slide1.png');">
-                <div class="banner-container">
-        <div class="col-12 col-md-6 banner-left">
-            <div class="title">
-                <strong>한국인터넷정보학회</strong>
-            </div>
-            <div class="subtitle">
-                <strong>The 17th International Conference on Internet (ICONI 2025)</strong>
-            </div>
-            <div class="date">December 14(Sun) ~ 17(Wed), 2025</div>
-            <div class="location">Okinawa Convention Center, Okinawa, Japan</div>
-        </div>
+            <div class="banner-slider active" style="background-image: url('resource/img/main/banner/slide1.png');">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- 헤더 로고와 같은 시작선 -->
+                        <div class="col-12 col-md-6">
+                            <div class="banner-left">
+                                <div class="title"><strong>한국인터넷정보학회</strong></div>
+                                <div class="subtitle">
+                                    <strong>The 17th International Conference on Internet (ICONI 2025)</strong>
+                                </div>
+                                <div class="date">December 14(Sun) ~ 17(Wed), 2025</div>
+                                <div class="location">Okinawa Convention Center, Okinawa, Japan</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- 두 번째 슬라이드 -->
             <div class="banner-slider" style="background-image: url('resource/img/main/banner/slide2.png');">
-                <div class="banner-container">
-                    <div class="col-12 col-md-6 banner-left">
-                        <div class="title"><strong>ICONI 2025</strong></div>
-                        <div class="subtitle"><strong>The 17th International Conference on Internet (ICONI
-                                2025)</strong></div>
-                        <div class="date">December 14(Sun) ~ 17(Wed), 2025</div>
-                        <div class="location">Okinawa Convention Center, Okinawa, Japan</div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- 헤더 로고와 같은 시작선 -->
+                        <div class="col-12 col-md-6">
+                            <div class="banner-left">
+                                <div class="title"><strong>ICONI 2025</strong></div>
+                                <div class="subtitle"><strong>The 17th International Conference on Internet (ICONI
+                                        2025)</strong></div>
+                                <div class="date">December 14(Sun) ~ 17(Wed), 2025</div>
+                                <div class="location">Okinawa Convention Center, Okinawa, Japan</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- 게시판 -->
+        <div class="con1 container my-5">
+            <div class="notice-tabs row align-items-center mb-3">
+                <!-- 탭 -->
+                <div class="col-12 col-md-10">
+                    <ul class="nav nav-tabs notice-tab-left" id="noticeTab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#panel-all"
+                                type="button">
+                                전체
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#panel-notice" type="button">
+                                공지사항
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#panel-event" type="button">
+                                유관기관행사정보
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#panel-member" type="button">
+                                회원동정
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 버튼 -->
+                <div class="col-12 col-md-2 text-md-end mt-2 mt-md-0">
+                    <a href="#" class="more-btn">
+                        <img src="resource/img/main/more.png" alt="more">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 탭 콘텐츠 -->
+            <div class="tab-content" id="noticeTabContent">
+
+                <!-- 전체 -->
+                <div class="tab-pane fade show active" id="panel-all">
+                    <div class="notice-board row g-4">
+
+                        <!-- 카드 1 -->
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card custom-card h-100">
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <h5 class="card-title">정보</h5>
+                                        <h6 class="card-subtitle">
+                                            [행사홍보] 한국지능형사물인터넷협회, AIoT 국제컨퍼런스 개최 안내
+                                        </h6>
+                                    </div>
+                                    <div class="card-bottom">
+                                        <p class="card-text">
+                                            안녕하세요?<br>
+                                            한국인터넷정보학회 사무국입니다.
+
+                                            본 학회 국방정보기술연구회(회장 강지원 세종대학교 교수)가 10월 30일~31일 전남 여수 디오션리조트앤호텔에서
+                                            군·산·학·연 전문가 100여명이 참석한 가운데 '2025년 후반기 국방정보기술연구회 워크숍'을 개최했습니다.
+
+                                            상세한 상세한 기사글은 아래 링크를 클릭하시면 보실 수 있습니다.
+                                            국방정보기술연구회 '2025년 후반기 워크숍' 성료…AI 방위산업 구축 논의
+                                        </p>
+                                        <span class="card-date">2025-11-17</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card custom-card h-100">
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <h5 class="card-title">공지</h5>
+                                        <h6 class="card-subtitle">
+                                            [보도자료] 2025 추계학술발표대회 개최 기사
+                                        </h6>
+                                    </div>
+                                    <div class="card-bottom">
+                                        <p class="card-text">
+                                            본 학회가 주최한 2025 추계학술발표대회 관련 기사입니다.
+                                        </p>
+                                        <span class="card-date">2025-11-05</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card custom-card h-100">
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <h5 class="card-title">공지</h5>
+                                        <h6 class="card-subtitle">
+                                            [보도자료] 2025 추계학술발표대회 개최 기사
+                                        </h6>
+                                    </div>
+                                    <div class="card-bottom">
+                                        <p class="card-text">
+                                            본 학회가 주최한 2025 추계학술발표대회 관련 기사입니다.
+                                        </p>
+                                        <span class="card-date">2025-11-05</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 카드 4 -->
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card custom-card h-100">
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <h5 class="card-title">공지</h5>
+                                        <h6 class="card-subtitle">
+                                            [보도자료] 2025 추계학술발표대회 개최 기사
+                                        </h6>
+                                    </div>
+                                    <div class="card-bottom">
+                                        <p class="card-text">
+                                            본 학회가 주최한 2025 추계학술발표대회 관련 기사입니다.
+                                        </p>
+                                        <span class="card-date">2025-11-05</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 카드 추가 가능 -->
+                    </div>
+                </div>
+
+                <!-- 공지사항 -->
+                <div class="tab-pane fade" id="panel-notice">...</div>
+
+                <!-- 유관기관행사 -->
+                <div class="tab-pane fade" id="panel-event">...</div>
+
+                <!-- 회원동정 -->
+                <div class="tab-pane fade" id="panel-member">...</div>
+
+            </div>
+        </div>
+
+        <!-- 갤러리 & 학술지 -->
+        <section class="con2">
+            <div class="container">
+                <div class="row g-5">
+
+                    <!-- 왼쪽 : 갤러리 -->
+                    <div class="col-12 col-md-7">
+                        <div class="left-gallery">
+                            <div class="gallery-header d-flex justify-content-between align-items-center mb-3">
+                                <h3>갤러리</h3>
+                                <a href="#" class="more-btn">
+                                    <img src="resource/img/main/more.png" alt="more">
+                                </a>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="small-card card-img-1">
+                                        <img src="resource/img/main/gallery/image 1.png" alt="">
+                                        <div class="small-card-info">
+                                            2025 한국인터넷정보학회 추계학술발표대회 및 제52차 정기총회
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="small-card card-img-2">
+                                        <img src="resource/img/main/gallery/image 1.png" alt="">
+                                        <div class="small-card-info">제목</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="small-card card-img-3">
+                                        <img src="resource/img/main/gallery/image 1.png" alt="">
+                                        <div class="small-card-info">제목</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="small-card card-img-4">
+                                        <img src="resource/img/main/gallery/image 1.png" alt="">
+                                        <div class="small-card-info">제목</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽 : 학술지 -->
+                    <div class="col-12 col-md-5">
+                        <div class="right-journal">
+                            <div class="journal-header mb-3">
+                                <h3>학술지</h3>
+                            </div>
+
+                            <div class="journal-card mb-3">
+                                <div class="journal-cover">
+                                    <img src="resource/img/main/journal/jics_cover.png" alt="JICS">
+                                </div>
+                                <div class="journal-info">
+                                    <div>
+                                        <div class="journal-title">JICS</div>
+                                        <div class="journal-subtitle">
+                                            Journal of Internet Computing and Services
+                                        </div>
+                                    </div>
+                                    <div class="journal-buttons">
+                                        <a href="#" class="btn-link">자세히 보기</a>
+                                        <a href="#" class="btn-link">논문 투고</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="journal-card">
+                                <div class="journal-cover">
+                                    <img src="resource/img/main/journal/tiis.cover.png" alt="TIIS">
+                                </div>
+                                <div class="journal-info">
+                                    <div>
+                                        <div class="journal-title">TIIS</div>
+                                        <div class="journal-subtitle">
+                                            Transactions on Internet and Information Systems
+                                        </div>
+                                    </div>
+                                    <div class="journal-buttons">
+                                        <a href="#" class="btn-link">자세히 보기</a>
+                                        <a href="#" class="btn-link">논문 투고</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sponsor-section">
+            <div class="sponsors-carousel">
+                <div class="carousel-track">
+                    <!-- 배너들 (두 번 반복) -->
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii1.png" alt="Sponsor 1"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii2.png" alt="Sponsor 2"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii3.png" alt="Sponsor 3"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii4.png" alt="Sponsor 4"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii5.png" alt="Sponsor 5"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii6.png" alt="Sponsor 6"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii7.png" alt="Sponsor 7"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii8.png" alt="Sponsor 8"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii9.png" alt="Sponsor 9"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii10.png" alt="Sponsor 10"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii11.jpg" alt="Sponsor 11"></div>
+
+                    <!-- 배너들이 끝나면 다시 첫 번째 배너들이 나열됨 -->
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii1.png" alt="Sponsor 1"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii2.png" alt="Sponsor 2"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii3.png" alt="Sponsor 3"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii4.png" alt="Sponsor 4"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii5.png" alt="Sponsor 5"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii6.png" alt="Sponsor 6"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii7.png" alt="Sponsor 7"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii8.png" alt="Sponsor 8"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii9.png" alt="Sponsor 9"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii10.png" alt="Sponsor 10"></div>
+                    <div class="sponsor-banner"><img src="resource/img/main/sponsor/ksii11.jpg" alt="Sponsor 11"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <footer>
+        <div class="copyright-section">
+            <div class="container">
+                <p>개인정보취급방침 | 이메일주소무단수집거부 | 오시는 길</p>
+                <p>대표자 : 신동규 (60130) 서울시 강남구 테헤란로 7길 22(역삼동) 한국과학기술회관 1관 505호 | T. 02)564-2827/2825 |
+                    F.02)564-2834
+                    | E.
+                    ksii@ksii.or.kr</p>
+                <p>Copyright @ 2018 KOREA SOCIETY FOR INTERNET INFORMATION. | ALL RIGHTS RESERVED. DESIGNED BY
+                    <a href="https://www.manuscriptlink.com/">ManuscriptLink</a></p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 

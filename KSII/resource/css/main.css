@@ -16,10 +16,10 @@ header a:hover {
 }
 
 .divider {
-    display: inline-block; /* 블록 요소처럼 취급되도록 설정 */
-    width: 1px; /* 선의 너비 */
-    height: 12px; /* 선의 높이 */
-    background-color: #fff; /* 흰색 */
+    width: 1px;
+    height: 1em;
+    background-color: #fff;
+    display: inline-block;
 }
 
 /* 로그인/회원가입 */
@@ -75,3 +75,97 @@ header a:hover {
 }
 
 /* 네비 끝 끝 */
+
+.copyright-section {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.copyright-section .container {
+    width: 100%;
+    max-width: 1320px; /* 최대 너비 1320px로 설정 */
+    margin: 0 auto;    /* 가운데 정렬 */
+    padding: 0 15px;   /* 양옆 여백 추가 */
+    text-align: left;  /* 왼쪽 정렬 */
+    font-size: 14px;   /* 기본 글씨 크기 */
+}
+
+.copyright-section p {
+    margin: 5px 0; /* 문단 간 간격 설정 */
+    line-height: 1.6; /* 행간을 조금 넓혀서 가독성 향상 */
+}
+
+.copyright-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copyright-section a:hover {
+    text-decoration: underline; /* 링크에 hover 효과 추가 */
+}
+
+/* copyright */
+
+.copyright-section {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.copyright-section .container {
+    width: 100%;
+    max-width: 1320px;  /* 최대 너비 1320px로 설정 */
+    margin: 0 auto;     /* 가운데 정렬 */
+    text-align: left;   /* 왼쪽 정렬 */
+    font-size: 14px;    /* 기본 글씨 크기 */
+}
+
+.copyright-section p {
+    margin: 5px 0; /* 문단 간 간격 설정 */
+    line-height: 1.6; /* 행간을 조금 넓혀서 가독성 향상 */
+}
+
+.copyright-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copyright-section a:hover {
+    text-decoration: underline; /* 링크에 hover 효과 추가 */
+}
+
+/* 모바일 뷰 */
+@media (max-width: 576px) {
+    .copyright-section .container {
+        padding: 0; /* 모바일에서 양옆 패딩 제거 */
+    }
+
+    .copyright-section p {
+        font-size: 12px; /* 모바일에서는 글씨 크기 줄이기 */
+    }
+}
+
+/* 태블릿 뷰 */
+@media (min-width: 577px) and (max-width: 768px) {
+    .copyright-section .container {
+        padding: 0; /* 태블릿에서 양옆 패딩 제거 */
+    }
+
+    .copyright-section p {
+        font-size: 13px; /* 태블릿에서는 약간 글씨 크기 줄이기 */
+    }
+}
+
+/* 데스크탑 뷰 */
+@media (min-width: 768px) {
+    .copyright-section .container {
+        padding: 0; /* 데스크탑에서도 패딩 제거 */
+    }
+
+    .copyright-section p {
+        font-size: 14px; /* 데스크탑에서는 기본 글씨 크기 */
+    }
+}
