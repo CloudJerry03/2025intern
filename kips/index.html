@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -7,24 +8,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-        /* index.html의 style 태그 내용은 변경하지 않았습니다. */
-        :root {
-            --bs-primary: #3b5ebb;
-            --bs-secondary: #edf1fa;
-            --bs-light: #ddd;
-            --bs-dark: #999;
-            --bs-primary-rgb: 59,94,187;
-            --bs-secondary-rgb: 237, 240, 249;
-            --bs-light-rgb: 221, 221, 221;
-            --bs-dark-rgb: 153, 153, 153;
-            --bs-link-color-rgb: none;
-            --bs-link-hover-color-rgb: none;
+        .g-5 {
+            --bs-gutter-x: 0;
+        }
+        /* banner */
+        .carousel-item:first-child .banner {
+            height: 500px;
+            background-image: url(resource/img/main/banner/banner1.jpg);
+            background-size: cover;
         }
 
-        /* banner */
-        .banner {
+        .carousel-item:nth-child(2) .banner {
             height: 500px;
-            background-image: url(resource/img/main/banner.jpg);
+            background-image: url(resource/img/main/banner/banner2.jpg);
+            background-size: cover;
+        }
+
+        .carousel-item:last-child .banner {
+            height: 500px;
+            background-image: url(resource/img/main/banner/banner3.jpg);
             background-size: cover;
         }
 
@@ -36,19 +38,14 @@
             transition: 0.3s;
         }
 
-        .banner-content-bg a:hover {
-            color: var(--main-color);
-            background-color: var(--second-color);
-        }
-
         /* banner */
         .shortcut>ul {
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         }
 
         .shortcut a {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             background-color: #fff;
             border-radius: 100%;
         }
@@ -67,21 +64,15 @@
         /* shortcut */
         /* paper */
         .papers img {
-            max-height: 200px;
-            transition: 0.3s;
-        }
-
-        .papers img:hover {
-            color: var(--bs-primary);
-            transform: scale(110%);
-        }
-
-        .paper-card {
-            max-width: 300px;
+            width: 100%;
         }
 
         /* paper */
         /* community */
+        .community-right {
+            border-radius: 0 10px 10px 0;
+        }
+
         .under-line::after {
             content: '';
             background-color: #fff;
@@ -91,10 +82,18 @@
             margin-top: 15px;
         }
 
+        .tab-btn {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scrollbar-width: none;
+        }
+
         .tab-btn li {
-            flex: 1;
+            min-width: 140px;
             position: relative;
             cursor: pointer;
+            font-weight: 1000;
+            color: #999;
         }
 
         .tab-btn li::after {
@@ -102,7 +101,7 @@
             width: 100%;
             transition: 0.3s;
             transform: scaleX(0);
-            background-color: var(--main-color);
+            background-color: var(--bs-primary);
             height: 2px;
             position: absolute;
             left: 0;
@@ -116,18 +115,30 @@
 
         .tab-btn li:hover,
         .tab-btn li.active {
-            font-weight: bold;
-            color: var(--main-color);
+            font-weight: 1000;
+            color: var(--bs-primary);
+        }
+
+        .tab-content ul li {
+            color: #666;
         }
 
         .tab-content ul li span {
-            color: #666;
-            float: right;
+            color: #999;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .tab-content ul li a p {
+            flex: 1;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
 
         .tab-content ul li a {
-            flex: 1;
-            display: block;
+            display: flex;
+            justify-content: space-between;
         }
 
         .tab-content ul li a:hover {
@@ -157,33 +168,26 @@
         }
 
         .guide a:hover i {
-            transform: rotate(-135deg);
-            color: var(--maincolor);
-        }
-
-        .guide ul {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            place-items: center;
-            justify-content: space-between;
-            gap: 30px;
+            color: var(--bs-primary);
         }
 
         .guide ul li {
             display: flex;
             gap: 10px;
-            max-width: 350px;
             align-items: center;
         }
 
         .guide .circle {
             width: 80px;
             height: 80px;
+            display: flex;
             border: 1px solid #ddd;
             background-color: #fff;
             border-radius: 100%;
             position: relative;
             flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
         }
 
         .guide-text {
@@ -191,6 +195,7 @@
             display: block;
             border-bottom: 1px solid #5555;
             min-width: 0;
+            width: 100%;
         }
 
         .guide-text p {
@@ -199,6 +204,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+            word-break: break-all;
         }
 
         .guide-text h5 {
@@ -208,18 +214,14 @@
         }
 
         .circle span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             color: var(--maincolor);
             font-weight: bold;
         }
 
         /* guide */
         /* sponsor */
-        .sponsor-content {
-            animation: slide 60s linear infinite;
+        .sponsor-wrap>div {
+            animation: slide 120s linear infinite;
         }
 
         .sponsor-content img {
@@ -235,6 +237,7 @@
                 transform: translate(-50%);
             }
         }
+
         /* sponsor */
     </style>
     <link rel="stylesheet" href="resource/css/main.css">
@@ -244,146 +247,148 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo col-md-3 col-6">
-                <a href="index.html" class="text-decoration-none text-dark">
-                    <img src="resource/img/logo.png" alt="로고">
-                </a>
-            </div>
-            <div class="navi col-9 desktop">
-                <nav class="login">
-                    <a href="#" class="text-decoration-none">로그인</a>
-                    <span class="text-decoration-none">|</span>
-                    <a href="#" class="text-decoration-none">회원가입</a>
-                    <span class="text-decoration-none">|</span>
-                    <a href="#" class="text-decoration-none">English</a>
-                </nav>
-                <ul class="menu">
-                    <li>
-                        <a href="#">학회소개</a>
-                        <div class="sub-menu">
-                            <a href="#">회장 인사말</a>
-                            <a href="#">설립 취지</a>
-                            <a href="#">연혁</a>
-                            <a href="#">정관 및 윤리규정</a>
-                            <a href="#">명예 회장</a>
-                            <a href="#">사무국 안내</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">학회조직</a>
-                        <div class="sub-menu">
-                            <a href="#">조직</a>
-                            <a href="#">임원</a>
-                            <a href="#">조직현황</a>
-                            <a href="#">법인/유관 기관회원</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">발간</a>
-                        <div class="sub-menu">
-                            <a href="#">정보처리학회 논문지</a>
-                            <a href="#">JIPS</a>
-                            <a href="#">학회지</a>
-                            <a href="#">학술대회</a>
-                            <a href="#">증명서 발급</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">행사 및 포상</a>
-                        <div class="sub-menu">
-                            <a href="#">행사</a>
-                            <a href="#">학회상</a>
-                            <a href="#">운당학술상</a>
-                            <a href="#">KIPS-AOH</a>
-                            <a href="#">기부금</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">공지사항</a>
-                        <div class="sub-menu">
-                            <a href="#">학회 공지/행사</a>
-                            <a href="#">학회 갤러리</a>
-                            <a href="#">회원 동정</a>
-                            <a href="#">유관기관 공지/행사</a>
-                            <a href="#">자료실</a>
-                            <a href="#">구인/구직</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="mobile col-6 d-flex justify-content-end" style="display: none;">
-                <i class="fa-solid fa-bars"></i>
-                <ul class="menu">
-                    <li>
-                        <div class="main-menu d-flex flex-row align-items-center">
+            <div class="row justify-content-between align-items-center">
+                <div class="logo col-md-3 col-6">
+                    <a href="index.html">
+                        <img src="resource/img/logo.png" alt="로고">
+                    </a>
+                </div>
+                <div class="navi col-9 desktop flex-fill">
+                    <nav class="login">
+                        <a href="#" class="text-decoration-none">로그인</a>
+                        <span class="text-decoration-none">|</span>
+                        <a href="#" class="text-decoration-none">회원가입</a>
+                        <span class="text-decoration-none">|</span>
+                        <a href="#" class="text-decoration-none">English</a>
+                    </nav>
+                    <ul class="menu">
+                        <li>
                             <a href="#">학회소개</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="sub-menu">
-                            <a href="#">회장 인사말</a>
-                            <a href="#">설립 취지</a>
-                            <a href="#">연혁</a>
-                            <a href="#">정관 및 윤리규정</a>
-                            <a href="#">명예 회장</a>
-                            <a href="#">사무국 안내</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="main-menu d-flex flex-row align-items-center">
+                            <div class="sub-menu">
+                                <a href="#">회장 인사말</a>
+                                <a href="#">설립 취지</a>
+                                <a href="#">연혁</a>
+                                <a href="#">정관 및 윤리규정</a>
+                                <a href="#">명예 회장</a>
+                                <a href="#">사무국 안내</a>
+                            </div>
+                        </li>
+                        <li>
                             <a href="#">학회조직</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="sub-menu">
-                            <a href="#">조직</a>
-                            <a href="#">임원</a>
-                            <a href="#">조직현황</a>
-                            <a href="#">법인/유관 기관회원</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="main-menu d-flex flex-row align-items-center">
+                            <div class="sub-menu">
+                                <a href="#">조직</a>
+                                <a href="#">임원</a>
+                                <a href="#">조직현황</a>
+                                <a href="#">법인/유관 기관회원</a>
+                            </div>
+                        </li>
+                        <li>
                             <a href="#">발간</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="sub-menu">
-                            <a href="#">정보처리학회 논문지</a>
-                            <a href="#">JIPS</a>
-                            <a href="#">학회지</a>
-                            <a href="#">학술대회</a>
-                            <a href="#">증명서 발급</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="main-menu d-flex flex-row align-items-center">
+                            <div class="sub-menu">
+                                <a href="#">정보처리학회 논문지</a>
+                                <a href="#">JIPS</a>
+                                <a href="#">학회지</a>
+                                <a href="#">학술대회</a>
+                                <a href="#">증명서 발급</a>
+                            </div>
+                        </li>
+                        <li>
                             <a href="#">행사 및 포상</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="sub-menu">
-                            <a href="#">행사</a>
-                            <a href="#">학회상</a>
-                            <a href="#">운당학술상</a>
-                            <a href="#">KIPS-AOH</a>
-                            <a href="#">기부금</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="main-menu d-flex flex-row align-items-center">
+                            <div class="sub-menu">
+                                <a href="#">행사</a>
+                                <a href="#">학회상</a>
+                                <a href="#">운당학술상</a>
+                                <a href="#">KIPS-AOH</a>
+                                <a href="#">기부금</a>
+                            </div>
+                        </li>
+                        <li>
                             <a href="#">공지사항</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="sub-menu">
-                            <a href="#">학회 공지/행사</a>
-                            <a href="#">학회 갤러리</a>
-                            <a href="#">회원 동정</a>
-                            <a href="#">유관기관 공지/행사</a>
-                            <a href="#">자료실</a>
-                            <a href="#">구인/구직</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="sub-bg-wrap">
-                <div class="sub-bg"></div>
+                            <div class="sub-menu">
+                                <a href="#">학회 공지/행사</a>
+                                <a href="#">학회 갤러리</a>
+                                <a href="#">회원 동정</a>
+                                <a href="#">유관기관 공지/행사</a>
+                                <a href="#">자료실</a>
+                                <a href="#">구인/구직</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile col-6 d-flex justify-content-end">
+                    <i class="fa-solid fa-bars"></i>
+                    <ul class="menu">
+                        <li>
+                            <div class="main-menu d-flex flex-row align-items-center">
+                                <span>학회소개</span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <div class="sub-menu">
+                                <a href="#">회장 인사말</a>
+                                <a href="#">설립 취지</a>
+                                <a href="#">연혁</a>
+                                <a href="#">정관 및 윤리규정</a>
+                                <a href="#">명예 회장</a>
+                                <a href="#">사무국 안내</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="main-menu d-flex flex-row align-items-center">
+                                <span>학회조직</span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <div class="sub-menu">
+                                <a href="#">조직</a>
+                                <a href="#">임원</a>
+                                <a href="#">조직현황</a>
+                                <a href="#">법인/유관 기관회원</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="main-menu d-flex flex-row align-items-center">
+                                <span>발간</span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <div class="sub-menu">
+                                <a href="#">정보처리학회 논문지</a>
+                                <a href="#">JIPS</a>
+                                <a href="#">학회지</a>
+                                <a href="#">학술대회</a>
+                                <a href="#">증명서 발급</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="main-menu d-flex flex-row align-items-center">
+                                <span>행사 및 포상</span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <div class="sub-menu">
+                                <a href="#">행사</a>
+                                <a href="#">학회상</a>
+                                <a href="#">운당학술상</a>
+                                <a href="#">KIPS-AOH</a>
+                                <a href="#">기부금</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="main-menu d-flex flex-row align-items-center">
+                                <span>공지사항</span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <div class="sub-menu">
+                                <a href="#">학회 공지/행사</a>
+                                <a href="#">학회 갤러리</a>
+                                <a href="#">회원 동정</a>
+                                <a href="#">유관기관 공지/행사</a>
+                                <a href="#">자료실</a>
+                                <a href="#">구인/구직</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sub-bg-wrap">
+                    <div class="sub-bg"></div>
+                </div>
             </div>
         </div>
     </header>
@@ -401,15 +406,16 @@
             <div class="carousel-item active">
                 <section class="banner d-flex align-items-center justify-content-center">
                     <div
-                        class="banner-content-bg d-flex flex-column align-items-center justify-content-center col-8 text-white gap-4 p-5">
-                        <h1 class="text-center banner-title">AKC <span class="text-warning">2025</span> 학술대회</h1>
+                        class="banner-content-bg d-flex flex-column align-items-center justify-content-center col-8 text-white gap-5 p-5 text-center">
+                        <h1 class="d-flex justify-content-center align-items-center flex-column gap-3">
+                            <p class="banner-title">ACK <span class="text-warning">2025</span> 학술대회</p>
+                            <p class="banner-text"><span>정보보호와 대한민국의 미래</span></p>
+                        </h1>
                         <div class="banner-content d-flex flex-column gap-3">
-                            <h2 class="banner-text">주제 : 정보보호와 대한민국의 미래</h2>
-                            <h2 class="banner-text">일시 : 2025년 11월 6일 ~ 8일</h2>
-                            <h2 class="banner-text">장소 : 동국대학교</h2>
+                            <h2 class="banner-text">2025년 11월 6일 ~ 8일 | 동국대학교</h2>
                         </div>
                         <a href="https://ack.kips.or.kr/" target="_blank"
-                            class="col-6 text-center p-2 text-white bg-primary banner-text text-decoration-none">
+                            class="col-6 text-center p-2 text-white bg-primary banner-text text-decoration-none hover">
                             바로가기
                         </a>
                     </div>
@@ -418,15 +424,16 @@
             <div class="carousel-item">
                 <section class="banner d-flex align-items-center justify-content-center">
                     <div
-                        class="banner-content-bg d-flex flex-column align-items-center justify-content-center col-8 text-white gap-4 p-5">
-                        <h1 class="text-center banner-title">AKC <span class="text-warning">2025</span> 학술대회</h1>
+                        class="banner-content-bg d-flex flex-column align-items-center justify-content-center col-8 text-white gap-5 p-5 text-center">
+                        <h1 class="d-flex justify-content-center align-items-center flex-column gap-3">
+                            <p class="banner-title">ACK <span class="text-warning">2025</span> 학술대회</p>
+                            <p class="banner-text"><span>정보보호와 대한민국의 미래</span></p>
+                        </h1>
                         <div class="banner-content d-flex flex-column gap-3">
-                            <h2 class="banner-text">주제 : 정보보호와 대한민국의 미래</h2>
-                            <h2 class="banner-text">일시 : 2025년 11월 6일 ~ 8일</h2>
-                            <h2 class="banner-text">장소 : 동국대학교</h2>
+                            <h2 class="banner-text">2025년 11월 6일 ~ 8일 | 동국대학교</h2>
                         </div>
                         <a href="https://ack.kips.or.kr/" target="_blank"
-                            class="col-6 text-center p-2 text-white bg-primary banner-text text-decoration-none">
+                            class="col-6 text-center p-2 text-white bg-primary banner-text text-decoration-none hover">
                             바로가기
                         </a>
                     </div>
@@ -435,20 +442,22 @@
             <div class="carousel-item">
                 <section class="banner d-flex align-items-center justify-content-center">
                     <div
-                        class="banner-content-bg d-flex flex-column align-items-center justify-content-center col-8 text-white gap-4 p-5">
-                        <h1 class="text-center banner-title">AKC <span class="text-warning">2025</span> 학술대회</h1>
+                        class="banner-content-bg d-flex flex-column align-items-center justify-content-center col-8 text-white gap-5 p-5 text-center">
+                        <h1 class="d-flex justify-content-center align-items-center flex-column gap-3">
+                            <p class="banner-title">ACK <span class="text-warning">2025</span> 학술대회</p>
+                            <p class="banner-text"><span>정보보호와 대한민국의 미래</span></p>
+                        </h1>
                         <div class="banner-content d-flex flex-column gap-3">
-                            <h2 class="banner-text">주제 : 정보보호와 대한민국의 미래</h2>
-                            <h2 class="banner-text">일시 : 2025년 11월 6일 ~ 8일</h2>
-                            <h2 class="banner-text">장소 : 동국대학교</h2>
+                            <h2 class="banner-text">2025년 11월 6일 ~ 8일 | 동국대학교</h2>
                         </div>
                         <a href="https://ack.kips.or.kr/" target="_blank"
-                            class="col-6 text-center p-2 text-white bg-primary banner-text text-decoration-none">
+                            class="col-6 text-center p-2 text-white bg-primary banner-text text-decoration-none hover">
                             바로가기
                         </a>
                     </div>
                 </section>
             </div>
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev">
@@ -463,7 +472,7 @@
     </div>
 
     <div class="content">
-        <section class="shortcut bg-secondary p-5 t2">
+        <section class="shortcut bg-secondary t2">
             <ul class="container d-grid gap-4 text-center">
                 <li class="d-flex flex-column align-items-center gap-2">
                     <a href="#" class="d-flex align-items-center justify-content-center">
@@ -510,34 +519,61 @@
             </ul>
         </section>
 
-        <section class="papers p-5">
-            <div class="container d-flex flex-column gap-4">
+        <section class="papers">
+            <div class="d-flex flex-column gap-4 container">
                 <h1 class="t1">학회 발간물</h1>
-                <ul class="row justify-content-between g-4">
-                    <li class="col-lg-3 col-12 d-flex justify-content-center">
-                        <div class="paper-card d-flex gap-3">
-                            <a href="#" class="text-decoration-none text-dark"><img src="resource/img/main/paper/KIPS.jpg" alt=""></a>
-                            <div>
-                                <h5 class="t2">KIPS</h5>
-                                <p class="text-primary t3">한국정보처리학회 학회지</p>
+                <ul class="row justify-content-between g-5">
+                    <li class="col-md-4 col-12 d-flex justify-content-center">
+                        <div class="paper-card gap-3 d-flex col-6 w-100">
+                            <a href="#" class="text-decoration-none"><img src="resource/img/main/paper/KIPS.jpg"
+                                    alt=""></a>
+                            <div class="d-flex flex-column justify-content-between col-6">
+                                <div>
+                                    <h5 class="t2">KIPS</h5>
+                                    <p class="text-primary t2">한국정보처리학회 학회지</p>
+                                </div>
+                                <div class="d-flex flex-column gap-2 paper-btn">
+                                    <a href="#" class="p-2 bg-primary text-white text-center hover">자세히 보기<i
+                                            class="fa-solid fa-angle-right"></i></a>
+                                    <a href="#" class="p-2 bg-secondary text-primary text-center hover">논문 투고<i
+                                            class="fa-solid fa-angle-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </li>
-                    <li class="col-lg-3 col-12 d-flex justify-content-center">
-                        <div class="paper-card d-flex gap-2">
-                            <a href="#" class="text-decoration-none text-dark"><img src="resource/img/main/paper/TKIPS.jpg" alt=""></a>
-                            <div>
-                                <h5 class="t2">TKIPS</h5>
-                                <p class="text-primary t3">한국연구재단 등재 논문지</p>
+                    <li class="col-md-4 col-12 d-flex justify-content-center">
+                        <div class="paper-card gap-3 d-flex col-6 w-100">
+                            <a href="#" class="text-decoration-none"><img src="resource/img/main/paper/TKIPS.jpg"
+                                    alt=""></a>
+                            <div class="d-flex flex-column justify-content-between col-6">
+                                <div>
+                                    <h5 class="t2">TKIPS</h5>
+                                    <p class="text-primary t2">한국연구재단 등재 논문지</p>
+                                </div>
+                                <div class="d-flex flex-column gap-2 paper-btn">
+                                    <a href="#" class="p-2 bg-primary text-white text-center hover">자세히 보기<i
+                                            class="fa-solid fa-angle-right"></i></a>
+                                    <a href="#" class="p-2 bg-secondary text-primary text-center hover">논문 투고<i
+                                            class="fa-solid fa-angle-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </li>
-                    <li class="col-lg-3 col-12 d-flex justify-content-center">
-                        <div class="paper-card d-flex gap-2">
-                            <a href="#" class="text-decoration-none text-dark"><img src="resource/img/main/paper/JIPS.png" alt=""></a>
-                            <div>
-                                <h5 class="t2">JIPS</h5>
-                                <p class="text-primary t3">한국연구재단 및 SCOPUS 등재 논문지</p>
+                    <li class="col-md-4 col-12 d-flex justify-content-center">
+                        <div class="paper-card gap-3 d-flex col-6 w-100">
+                            <a href="#" class="text-decoration-none"><img src="resource/img/main/paper/JIPS.png"
+                                    alt=""></a>
+                            <div class="d-flex flex-column justify-content-between col-6">
+                                <div>
+                                    <h5 class="t2">JIPS</h5>
+                                    <p class="text-primary t2">한국연구재단 및 SCOPUS 등재 논문지</p>
+                                </div>
+                                <div class="d-flex flex-column gap-2 paper-btn">
+                                    <a href="#" class="p-2 bg-primary text-white text-center hover">자세히 보기<i
+                                            class="fa-solid fa-angle-right"></i></a>
+                                    <a href="#" class="p-2 bg-secondary text-primary text-center hover">논문 투고<i
+                                            class="fa-solid fa-angle-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -545,57 +581,66 @@
             </div>
         </section>
 
-        <section class="community p-5">
-            <div class="container gap-4">
-                <div class="community-content row rounded-3 overflow-hidden">
-                    <div class="d-flex flex-column justify-content-between col-3 bg-primary text-white p-5">
-                        <h1 class="t1 under-line">한국정보처리학회<br>커뮤니티</h1>
+        <section class="community">
+            <div class="container">
+                <div class="row g-0">
+                    <div
+                        class="d-flex flex-column justify-content-between col-3 bg-primary text-white p-4 community-left">
+                        <h1 class="t1 under-line community-title">한국정보처리학회 커뮤니티</h1>
                         <p class="t3">학회 및 유관 기관의 최신 소식, <br>회원 활동, 각종 소식을 <br>확인하실 수 있습니다.</p>
                     </div>
-                    <div class="community-right col-9 border border-light border-start-0 rounded-3">
+                    <div class="col-md-9 col-12 border border-light border-start-0 community-right">
                         <div class="tab-btn">
-                            <ul class="row">
-                                <li class="active text-center t2 col p-3 border-light border-bottom">학회 공지/행사</li>
-                                <li class="text-center t2 col p-3 border-start border-light border-bottom">유관기관 공지/행사</li>
-                                <li class="text-center t2 col p-3 border-start border-light border-bottom">회원 동정</li>
-                                <li class="text-center t2 col p-3 border-start border-light border-bottom">구인/구직</li>
-                                <li class="text-center t2 col p-3 border-start border-light border-bottom">학회 갤러리</li>
+                            <ul class="d-flex">
+                                <li class="active text-center t2 col p-3">학회 공지/행사</li>
+                                <li class="text-center t2 col p-3">유관기관 공지/행사</li>
+                                <li class="text-center t2 col p-3">회원 동정</li>
+                                <li class="text-center t2 col p-3">구인/구직</li>
+                                <li class="text-center t2 col p-3">학회 갤러리</li>
                             </ul>
                         </div>
                         <div class="tab-content">
                             <ul>
                                 <li class="p-3 border-bottom border-light">
-                                    <a href="#" class="text-decoration-none text-dark">Lorem Ipsum is simply dummy
+                                    <a href="#" class="text-decoration-none gap-4">
+                                        <p>Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy Lorem Ipsum is simply
+                                            dummy</p>
                                         <span>2020-12-05</span>
                                     </a>
                                 </li>
                                 <li class="p-3 border-bottom border-light">
-                                    <a href="#" class="text-decoration-none text-dark">Lorem Ipsum is simply dummy
+                                    <a href="#" class="text-decoration-none gap-4">
+                                        <p>Lorem Ipsum is simply dummy</p>
                                         <span>2020-12-05</span>
                                     </a>
                                 </li>
                                 <li class="p-3 border-bottom border-light">
-                                    <a href="#" class="text-decoration-none text-dark">Lorem Ipsum is simply dummy
+                                    <a href="#" class="text-decoration-none gap-4">
+                                        <p>Lorem Ipsum is simply dummy</p>
                                         <span>2020-12-05</span>
                                     </a>
                                 </li>
                                 <li class="p-3 border-bottom border-light">
-                                    <a href="#" class="text-decoration-none text-dark">Lorem Ipsum is simply dummy
+                                    <a href="#" class="text-decoration-none gap-4">
+                                        <p>Lorem Ipsum is simply dummy</p>
                                         <span>2020-12-05</span>
                                     </a>
                                 </li>
                                 <li class="p-3 border-bottom border-light">
-                                    <a href="#" class="text-decoration-none text-dark">Lorem Ipsum is simply dummy
+                                    <a href="#" class="text-decoration-none gap-4">
+                                        <p>Lorem Ipsum is simply dummy</p>
                                         <span>2020-12-05</span>
                                     </a>
                                 </li>
                                 <li class="p-3 border-bottom border-light">
-                                    <a href="#" class="text-decoration-none text-dark">Lorem Ipsum is simply dummy
+                                    <a href="#" class="text-decoration-none g-4">
+                                        <p>Lorem Ipsum is simply dummy</p>
                                         <span>2020-12-05</span>
                                     </a>
                                 </li>
                                 <li class="p-3 text-end text-dark">
-                                    <a href="#" class="text-decoration-none text-dark">더보기<i class="fa-solid fa-plus"></i></a>
+                                    <button href="#" class="text-decoration-none hover" style="color: #999;">더보기<i
+                                            class="fa-solid fa-plus"></i></button>
                                 </li>
                             </ul>
                         </div>
@@ -604,102 +649,155 @@
             </div>
         </section>
 
-        <section class="guide p-5 bg-secondary">
+        <section class="guide bg-secondary">
             <div class="container d-flex flex-column">
                 <div class="d-flex justify-content-between align-items-center">
                     <h1 class="t1">행사안내</h1>
                     <a href="#" class="t1 text-decoration-none text-dark"><i class="fa-solid fa-plus"></i></a>
                 </div>
-                <ul>
-                    <li>
+                <ul class="row g-4 align-items-center justify-content-center">
+                    <li class="col-md-4 col-12">
                         <div class="circle"><span class="t2 text-primary">11.12</span></div>
-                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2">
+                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
-                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다.
+                                안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p class="mobile-date d-none">
+                                2025.12.25
+                            </p>
                         </div>
                     </li>
-                    <li>
+                    <li class="col-md-4 col-12">
                         <div class="circle"><span class="t2 text-primary">11.12</span></div>
-                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2">
+                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
                             <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p class="mobile-date d-none">
+                                2025.12.25
+                            </p>
                         </div>
                     </li>
-                    <li>
+                    <li class="col-md-4 col-12">
                         <div class="circle"><span class="t2 text-primary">11.12</span></div>
-                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2">
+                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
                             <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p class="mobile-date d-none">
+                                2025.12.25
+                            </p>
                         </div>
                     </li>
-                    <li>
+                    <li class="col-md-4 col-12">
                         <div class="circle"><span class="t2 text-primary">11.12</span></div>
-                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2">
+                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
                             <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p class="mobile-date d-none">
+                                2025.12.25
+                            </p>
                         </div>
                     </li>
-                    <li>
+                    <li class="col-md-4 col-12">
                         <div class="circle"><span class="t2 text-primary">11.12</span></div>
-                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2">
+                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
                             <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p class="mobile-date d-none">
+                                2025.12.25
+                            </p>
                         </div>
                     </li>
-                    <li>
+                    <li class="col-md-4 col-12">
                         <div class="circle"><span class="t2 text-primary">11.12</span></div>
-                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2">
+                        <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
-                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다.
+                                안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p class="mobile-date d-none">
+                                2025.12.25
+                            </p>
                         </div>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <section class="sponsor p-5">
+        <section class="sponsor">
             <div class="container d-flex flex-column gap-4">
                 <h1 class="t1">후원사</h1>
                 <div class="sponsor-wrap d-flex overflow-hidden">
-                    <ul class="sponsor-content d-flex gap-4">
-                        <li><img src="resource/img/main/sponsor/2.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kips-sponsor-logo.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/3.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/4.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/5.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/6.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/8.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/9.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/10.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/11.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/12.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/13.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/14.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/ai.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/cns.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/gl-ci.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/hw.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kcc.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kdata.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kdcc.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/keris.gif" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/keti.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kisa.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/kisti.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/klid.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/lgu.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/ministryofscience.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/nia.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/nrf.png" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/spri.jpg" alt="후원사"></li>
-                        <li><img src="resource/img/main/sponsor/ts.png" alt="후원사"></li>
-                    </ul>
+                    <div class="d-flex gap-4">
+                        <ul class="sponsor-content d-flex gap-4">
+                            <li><img src="resource/img/main/sponsor/2.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kips-sponsor-logo.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/3.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/4.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/5.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/6.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/8.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/9.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/10.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/11.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/12.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/13.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/14.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/ai.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/cns.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/gl-ci.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/hw.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kcc.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kdata.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kdcc.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/keris.gif" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/keti.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kisa.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kisti.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/klid.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/lgu.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/ministryofscience.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/nia.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/nrf.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/spri.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/ts.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/2.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kips-sponsor-logo.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/3.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/4.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/5.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/6.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/8.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/9.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/10.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/11.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/12.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/13.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/14.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/ai.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/cns.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/gl-ci.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/hw.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kcc.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kdata.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kdcc.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/keris.gif" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/keti.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kisa.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/kisti.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/klid.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/lgu.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/ministryofscience.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/nia.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/nrf.png" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/spri.jpg" alt="후원사"></li>
+                            <li><img src="resource/img/main/sponsor/ts.png" alt="후원사"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <footer class="p-5">
+    <footer>
         <div class="container d-flex flex-column gap-3">
             <div>전화 : 02)2077-1414 | 팩스 : 02)2077-1472 | 대표메일 : kips@kips.or.kr | 사업자등록번호 : 219-82-01313</div>
             <div>주소 : (04376) 서울특별시 용산구 한강대로 109, 1002호(한강로2가 용성비즈텔)</div>
@@ -714,13 +812,6 @@
     </script>
     <script src="https://kit.fontawesome.com/73190c27e7.js" crossorigin="anonymous"></script>
     <script src="resource/js/main.js"></script>
-    <script>
-        const sponsorList = document.querySelector('.sponsor-content');
-        if (sponsorList) {
-            const clone = sponsorList.cloneNode(true);
-            sponsorList.parentNode.appendChild(clone);
-        }
-    </script>
 </body>
 
 </html>

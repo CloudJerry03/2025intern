@@ -1,18 +1,30 @@
 /* init */
 :root {
-    --main-color: #3b5ebb;
-    --accent-color: #eeee00;
-    --first-color: #333;
-    --second-color: #999;
-    --third-color: #edf1fa;
+            --bs-primary: #3b5ebb;
+            --bs-secondary: #edf1fa;
+            --bs-light: #ddd;
+            --bs-dark: #999;
+            --bs-primary-rgb: 59,94,187;
+            --bs-secondary-rgb: 237, 240, 249;
+            --bs-light-rgb: 221, 221, 221;
+            --bs-dark-rgb: 153, 153, 153;
+            --bs-link-color-rgb: none;
+            --bs-link-hover-color-rgb: none;
+        }
+html {
+    font-size: 12px;
 }
 * {
     word-break: keep-all;
+    overflow-wrap: break-word;
+
 }
+
 button {
     background: none;
     border: none;
 }
+
 .banner-title {
     font-size: clamp(1.6rem, 3vw, 4rem);
     font-weight: bold;
@@ -37,47 +49,48 @@ button {
     font-size: 1rem;
     font-weight: normal;
 }
+
 .d-gird {
     display: grid;
 }
+
 /* text */
-.w100 {
-    width: 100vw;
-}
+
 a {
     text-decoration: none;
 }
-h1,h2,h3,h4,h5,p{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
     margin: 0;
 }
+
 ul {
     padding: 0;
     margin: 0;
     list-style: none;
 }
-.container {
-    padding: 0;
-    margin: 0 auto;
-}
+
 /* init */
+section {
+    padding: 30px 0;
+}
 header {
-    display: flex;
+    padding: 15px 0;
     border-bottom: 1px solid #ddd;
-    justify-content: space-between;
-    width: 100%;
+    width: 100vw;
     position: fixed;
     top: 0;
     background-color: #fff;
     z-index: 999999;
-    padding: 15px;
 }
-
-header>div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+footer {
+    padding: 30px 0;
 }
-
 .logo img {
     max-height: 50px;
     width: 100%;
@@ -102,7 +115,7 @@ header>div {
 }
 
 .login a:hover {
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 .menu {
@@ -127,7 +140,8 @@ header>div {
 .desktop .menu li>a::after {
     content: '';
     position: absolute;
-    background-color: var(--bs-primary); /* 변경: 변수 통일 */
+    background-color: var(--bs-primary);
+    /* 변경: 변수 통일 */
     left: 0;
     top: 100%;
     width: 100%;
@@ -161,7 +175,8 @@ header>div {
 }
 
 .desktop .sub-menu a:hover {
-    color: var(--bs-primary); /* 변경: 변수 통일 */
+    color: var(--bs-primary);
+    /* 변경: 변수 통일 */
 }
 
 .desktop .sub-bg-wrap {
@@ -189,31 +204,36 @@ header>div {
         display: none;
     }
 
-    .mobile {
-        display: flex;
-        justify-content: end;
+    header .mobile {
+        display: flex !important;
     }
 
-    .paper-card>div {
-        display: none;
+    .papers ul li:first-child div {
+        margin-top: 0;
     }
-
+    .tab-btn > a{
+        width: 100%;
+    }
     .community-left {
         display: none !important;
     }
-
-    .guide .circle {
-        border-radius: 0;
+    .community-right {
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     }
-
-    .guide ul {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    section.p-5 {
+        padding: 3rem 0 !important;
+    }
+    .guide .circle {
+        display: none;
     }
 
     .guide li {
-        width: 100%;
+        flex-direction: column;
     }
-
+    html {
+    font-size: 12px; /* 기본 16px → 14px */
+    }   
     .papers ul {
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
@@ -221,8 +241,15 @@ header>div {
     .tab-content li>span {
         display: none;
     }
+    .mobile-date {
+        display: block !important;
+        font-weight: normal;
+        color: #666;
+    }
 }
-
+.mobile {
+    display: none !important;
+}
 .mobile>i {
     font-size: 32px;
 }
@@ -230,20 +257,15 @@ header>div {
 .mobile .menu i {
     width: 20px;
     height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
-.mobile .menu a {
-    display: flex;
+.mobile .sub-menu a {
+    display: block;
     width: 100%;
     padding: 5px;
-    text-align: end;
     align-items: center;
     gap: 15px;
-    justify-content: end;
 }
 
 .mobile .menu {
@@ -253,7 +275,6 @@ header>div {
     top: 100%;
     right: 0;
     display: none;
-    border-bottom: 1px solid #ddd;
     overflow-y: scroll;
     max-height: 80vh
 }
@@ -262,14 +283,23 @@ header>div {
     display: none;
     font-weight: normal;
     font-size: 1rem;
-    padding-left: 10px;
 }
 
 .main-menu {
-    border-bottom: 1px solid #ddd;
+    padding: 5px;
 }
 
 footer {
     background-color: #2b2b2b;
     color: #fff;
+}
+
+.hover {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.hover:hover {
+    color: var(--bs-primary) !important;
+    background-color: var(--bs-white) !important;
 }
