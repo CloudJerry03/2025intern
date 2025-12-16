@@ -45,12 +45,17 @@
 .right-journal {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .journal-card {
   display: flex;
   align-items: stretch; /* 🔥 중요: 양쪽 높이 맞춤 */
   gap: 15px;
+}
+
+.journal-card + .journal-card {
+  margin-top: 3.5rem;
 }
 
 
@@ -103,7 +108,7 @@
   border-radius: 5px;
   text-decoration: none !important;
   font-size: 18px;
-  margin-right: 5px;
+  margin-right: 5px;  
 }
 
 .btn-link:hover {
