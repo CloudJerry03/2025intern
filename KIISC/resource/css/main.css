@@ -141,7 +141,7 @@ footer a:hover {
 /* footer end */
 
 
-@media (max-width: 767px) {
+@media (max-width: 1008px) {
 
     .logo img {
         width: 200px;

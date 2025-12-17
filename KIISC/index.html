@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head id="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>한국정보보호학회(KIISC)</title>
@@ -18,15 +18,15 @@
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
         </script>
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <!-- icon -->
     <script src="https://kit.fontawesome.com/c467caf649.js" crossorigin="anonymous"></script>
+
 </head>
 <style>
 
@@ -415,7 +415,7 @@ ul.tabmenu {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1008px) {
 
     .first-section .container {
         flex-direction: column;
@@ -567,6 +567,7 @@ ul.tabmenu {
 </style>
 
 <body>
+    <div class="include_wrap" data-include-path="C:\Users\THINKONWEB\Documents\2025intern\KIISC\include\head.html"></div>
     <header>
         <div class="container">
             <div class="logo">
@@ -578,7 +579,7 @@ ul.tabmenu {
                         <a href="sub.html">학회소개</a>
                         <div class="submenu">
                             <a href="#">설립목적</a>
-                            <a href="#">인삿말</a>
+                            <a href="#">인사말</a>
                             <a href="#">학회연혁</a>
                             <a href="#">역대회장</a>
                             <a href="#">정관/규정/연구윤리규정</a>
@@ -640,7 +641,7 @@ ul.tabmenu {
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                         <div class="submenu">
-                            <a href="#">설립목적</a>
+                            <a href="sub.html">설립목적</a>
                             <a href="#">인삿말</a>
                             <a href="#">학회연혁</a>
                             <a href="#">역대회장</a>
@@ -1117,7 +1118,7 @@ ul.tabmenu {
         // sponsor slide
             
     </script>
-
+    
     <script src="resource/js/src.js"></script>
 </body>
 </html>

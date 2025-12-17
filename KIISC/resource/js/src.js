@@ -1,3 +1,5 @@
+// navi
+
 function headerPadding() {
     let header = document.querySelector('header');
     if (header) {
@@ -66,4 +68,30 @@ $(document).ready(function() {
             arrow.removeClass('fa-angle-down').addClass('fa-angle-up');
         }
     });
+});
+
+
+// navi end
+
+
+// icon
+
+$(document).ready(function() {
+  var icon = $('.icon'); 
+  var offset = icon.offset().top; 
+
+  $(window).scroll(function() {
+    var scrollTop = $(window).scrollTop(); 
+
+    if (scrollTop > offset) {
+      icon.css('top', scrollTop + 20); 
+    } else {
+      icon.css('top', 50 + '%');
+    }
+  });
+})
+
+$(document).ready(function () {
+    $("#header").load("./resource/include/header.html", function () { });
+    $("#footer").load("./resource/include/footer.html");
 });
