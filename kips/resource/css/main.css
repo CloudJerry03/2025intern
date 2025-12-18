@@ -1,28 +1,41 @@
 /* init */
 :root {
-            --bs-primary: #3b5ebb;
-            --bs-secondary: #edf1fa;
-            --bs-light: #ddd;
-            --bs-dark: #999;
-            --bs-primary-rgb: 59,94,187;
-            --bs-secondary-rgb: 237, 240, 249;
-            --bs-light-rgb: 221, 221, 221;
-            --bs-dark-rgb: 153, 153, 153;
-            --bs-link-color-rgb: none;
-            --bs-link-hover-color-rgb: none;
-        }
-html {
-    font-size: 12px;
+    --bs-primary: #3273b6;
+    --bs-secondary: #edf1fa;
+    --bs-light: #ddd;
+    --bs-dark: #999;
+    --bs-primary-rgb: 50, 115, 182;
+    --bs-secondary-rgb: 237, 240, 249;
+    --bs-light-rgb: 221, 221, 221;
+    --bs-dark-rgb: 153, 153, 153;
+    --bs-link-color-rgb: none;
+    --bs-link-hover-color-rgb: none;
 }
+
+html {
+    font-size: 14px;
+}
+
 * {
     word-break: keep-all;
     overflow-wrap: break-word;
 
 }
 
+.g-5 {
+    --bs-gutter-x: 0;
+}
+
 button {
-    background: none;
-    border: none;
+    background: var(--bs-primary);
+    color: #fff;
+    border: 1px solid var(--bs-primary);
+    padding: 5px 15px;
+    transition: 0.5s;
+}
+button:hover {
+    color: var(--bs-primary);
+    background: #fff;
 }
 
 .banner-title {
@@ -79,6 +92,7 @@ ul {
 section {
     padding: 30px 0;
 }
+
 header {
     padding: 15px 0;
     border-bottom: 1px solid #ddd;
@@ -88,9 +102,11 @@ header {
     background-color: #fff;
     z-index: 999999;
 }
+
 footer {
     padding: 30px 0;
 }
+
 .logo img {
     max-height: 50px;
     width: 100%;
@@ -141,7 +157,6 @@ footer {
     content: '';
     position: absolute;
     background-color: var(--bs-primary);
-    /* 변경: 변수 통일 */
     left: 0;
     top: 100%;
     width: 100%;
@@ -153,7 +168,6 @@ footer {
 
 .desktop .menu li {
     display: block;
-    padding-bottom: 5px;
     flex: 1;
     text-align: center;
     position: relative;
@@ -176,7 +190,6 @@ footer {
 
 .desktop .sub-menu a:hover {
     color: var(--bs-primary);
-    /* 변경: 변수 통일 */
 }
 
 .desktop .sub-bg-wrap {
@@ -211,19 +224,24 @@ footer {
     .papers ul li:first-child div {
         margin-top: 0;
     }
-    .tab-btn > a{
+
+    .tab-btn>a {
         width: 100%;
     }
+
     .community-left {
         display: none !important;
     }
+
     .community-right {
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     }
+
     section.p-5 {
         padding: 3rem 0 !important;
     }
+
     .guide .circle {
         display: none;
     }
@@ -231,9 +249,12 @@ footer {
     .guide li {
         flex-direction: column;
     }
+
     html {
-    font-size: 12px; /* 기본 16px → 14px */
-    }   
+        font-size: 12px;
+        /* 기본 16px → 14px */
+    }
+
     .papers ul {
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
@@ -241,15 +262,21 @@ footer {
     .tab-content li>span {
         display: none;
     }
+
     .mobile-date {
         display: block !important;
         font-weight: normal;
         color: #666;
     }
+    tr th:first-child {
+        width: 20% !important;
+    }
 }
+
 .mobile {
     display: none !important;
 }
+
 .mobile>i {
     font-size: 32px;
 }
