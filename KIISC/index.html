@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head id="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>한국정보보호학회(KIISC)</title>
@@ -18,60 +18,55 @@
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
         </script>
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <!-- icon -->
     <script src="https://kit.fontawesome.com/c467caf649.js" crossorigin="anonymous"></script>
+
 </head>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: Arial, sans-serif;
+.first-section {
+    padding-top: 25px;
 }
 .first-section .container {
-    display: flex;
-    justify-content: space-between;
-    grid-template-columns: 1fr;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
     width: 100%;
-    margin: 0 auto;
-    position: relative;
 }
 /* slide start */
 .slider {
     position: relative;
     overflow: hidden;
-    width: 70%;
     height: 400px; 
     border-radius: 10px;
     box-sizing: border-box;
     float: left;
 }
+
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
     height: 100%;
 }
+
 .slide img {    
     object-fit: cover;
     width: 1100px;
     height: 100%;
 }
+
 .slide {
     width: 100%;
     height: 100%;
     position: relative;
 }
+
 .textbox {
     position: absolute;
     top: 50%;
@@ -80,33 +75,38 @@ body {
     transform: translate(-50%, -50%);
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 8px;
+    padding: 30px;
+    border-radius: 10px;
 }
+
 .textbox .text {
     position: relative;
-    top: 10%;   
+    top: 10%;
     font-size: 25px;
 }
+
 .text h1 {
     text-align: center;
     color: #fff;
-    
 }
+
 .text h5 {
     color: rgb(255, 234, 0);
     text-align: center;
     font-size: 20px;
 }
+
 .text strong {
     background-color: #6ac3ff;
     border-radius: 20px;
     padding: 0 7px;
 }
+
 .text p {
     margin-top: 4%;
     font-size: 20px;
 }
+
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -117,6 +117,7 @@ body {
     cursor: pointer;
     z-index: 9;
 }
+
 .prev {
     left: 10px;
 }
@@ -154,8 +155,8 @@ body {
 .nav-dot:hover {
     background-color: #0073e6;
 }
+
 .rightslide {
-    width: 29%;
     height: 400px;
     overflow: hidden;
     position: relative;
@@ -166,29 +167,30 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+.icon {
+    display: none;
+}
 /* slide end */
 
-
-.third-section {
-    padding-top: 30px;
-    display: flex;
-    gap: 20px;
-    align-items: stretch;
-    grid-template-columns: 1fr;
+.second-section .container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    width: 100%;
 }
 
 /* tab start */
 
-.tabs {
-    max-width: 1400px;
-    width: 70%;
-    box-sizing: border-box;
-    float: left;
+.tab {
+    color: #ddd;
+    font-weight: bold;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.tab {
-    padding-bottom: 10px;   
-}
+
 
 .tab.active {
     border-bottom: 5px solid #000;
@@ -205,40 +207,30 @@ body {
 .tab-content {
     display: flex;
     font-size: 30px;
-    gap: 40px;
+    gap: 30px;
     cursor: pointer;
-}
-
-.tab-content i {
-    
 }
 
 .tab-next.active {
     display: block;
 }
-.tab {
-    color: #ddd;
-    font-weight: bold;
-}
 
 .top-cards {
     display: flex;
     gap: 30px;
-    margin: 20px 0 40px 0;
+    margin-bottom: 40px;
 }
 
 .card {
-    width: 70%;
-    min-height: 150px;
+    width: 50%;
+    min-height: 180px;
     border: 1px solid #ddd;
     padding: 25px;
-    box-sizing: border-box;
     background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-size: 20px;
-    font-weight: 500;
 }
 .card a {
     height: 100%;
@@ -253,13 +245,11 @@ body {
 }
 .card:hover {
     background-color: #6ac3ff;
-    
 }
 .card:hover a p, .card:hover a span {
     color: #fff;
 }
 ul.tabmenu {
-    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -267,16 +257,15 @@ ul.tabmenu {
     position: relative;
     top: -30px;
 }
-.tabmenu li {
 
-}
 .tabmenu li a {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid #e0e0e0;
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 20px;
 }
+
 .tabmenu li a:hover {
     font-weight: bold;
 }
@@ -285,18 +274,17 @@ ul.tabmenu {
     overflow: hidden;
     text-overflow: ellipsis;
     display: inline-block;
-
 }
 .tabmenu .date {
     font-size: 20px;
     color: #777;
     flex-shrink: 0;
-    width: 140px;
     text-align: right;
     margin-top: 5px;
 }
 .tab-next {
-    display: none;
+    display: none;  
+    height: 470px;
 }
 .tab-content {
     position: relative;
@@ -309,139 +297,113 @@ ul.tabmenu {
     font-size: 30px;
 }
 /* event start */
-.gallery-tab {
-    width: 29%;
-    float: left;
-    margin-left: 14px;
-    height: 100%;
-    margin-top: 14.9px;
-}
-
-.gallery-tab .underline {
-    width: 100%;
-}
-
-.eventt {
-    display: block;
-}
-.eventt .tabb {
+    
+.index-title {
     font-size: 30px;
     font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.event-area {
     position: relative;
-    top: -15px;
+    top: 5px;
 }
-.eventt a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.event-content a > img {
+    height: 95px;
+    width: 100%;
+    border-radius: 10px;
+    filter: hue-rotate(20deg) saturate(2);
 }
-.img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.event-content {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-.img img{
-    width: 350px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 8px;
-    display: block;
-}
-.img span {
+
+.event-content span {
     font-size: 20px;
-    text-align: center;
-    color: #222;
-    user-select: none;
-    padding: 0 0 5px 0; 
+    display: none;
 }
+
 /* event end */
 
-
-.fourth-section {
-    padding-top: 20px;
+.third-section {
+    padding-bottom: 25px;
 }
 
 /* gallery start */
-.gallery {}
 .title {
     font-size: 30px;
-    
+    display: flex;
+    justify-content: space-between;
 }
-.title span {
-    position: relative;
-    top: -15px;
-    font-weight: bold;
-}
+
 .title a {
-    float: right;
-    font-size: 30px;    
+    margin-top: 10px;
 }
+
+.gallery {
+    padding-bottom: 25px;
+}
+
 .gallery-img a img {
-    max-height: 150px;
+    height: 150px;
     object-fit: cover;
-    width: 270px;
+    width: 100%;
     border-radius: 10px;
 }
+
 .gallery-img a {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .gallery-img a span {
-    font-weight: 650;
-    padding: 10px 0;
+    padding-top: 5px;
     font-size: 20px;
 }
+
 .gallery-img ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
 }
-.gallery-img ul li {
-    flex: 1 1 100%;
-    display: flex;
-    gap: 10%;
-    justify-content: center;
-    flex-wrap: wrap;
+
+.gallery .ps {
+    padding-top: 10px;
 }
 
 /* gallery end */
 
 /* sponsor start */
 
-.sponsor > div {
-    gap: 30px;
-}
-
 .sponsor-anime {
-    padding: 30px 15px;
     display: flex;
     height: fit-content;
     overflow: hidden;
+    padding-top: 25px;
 }
-
 
 .sponsor-anime img {
     height: 50px;
     width: auto;
-    max-width: 150px;
+    max-width: 200px;
 }
 
 .sponsor-img {
     display: flex;
-    gap: 30px;
+    gap: 50px;
     width: fit-content;
     animation: sponsor-anime 30s linear infinite;
     padding-right: 30px;
 }
 
 .sponsor-img li {
-    padding: 15px;
+    padding: 0 30px;
 }
 
 @keyframes sponsor-anime {
@@ -453,11 +415,12 @@ ul.tabmenu {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1008px) {
 
     .first-section .container {
         flex-direction: column;
         gap: 20px;
+        display: block;
     }
 
     .slider {
@@ -466,46 +429,79 @@ ul.tabmenu {
         float: none;
     }
 
+    .slide {
+        aspect-ratio: 16 / 9; 
+    }
+
+    .slide img {
+        width: 100vw;
+    }
+
+    .textbox {
+        padding: 20px;
+    }
 
     .textbox h1 {
         font-size: 20px;
     }
 
     .textbox h5 {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .textbox p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .rightslide {
-        width: 80%;
-        height: 200px;
-        float: none;
+        display: none;
     }
+
     .rightslide img {
         object-fit: contain;
     }
 
+    .icon {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    .icon i {
+        font-size: 8vw;
+    }
 
-    .third-section {
-        flex-direction: column;
-        width: 100%;
+    .icon span {
+        font-size: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+        padding-top: 5px;
+    }
+
+    .second-section .container {
+        gap: 20px;
+        display: block;
     }
 
     .tabs {
-        width: 60%;
         float: none;
-        margin-left: 5vh;
+    }
+
+    .tab {
+        font-size: 20px;
     }
 
     .tabmenu span {
-        font-size: 15px;
+        font-size: 2vh;
     }
+
     .tabmenu .date {
         font-size: 15px;
     }
+    
     .date {
         font-size: 15px;
     }
@@ -514,15 +510,9 @@ ul.tabmenu {
         width: 100%;
     }
 
-    .tabmenu li {
-    }
-
     .card {
         width: 30%;
         padding: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .card a {
@@ -533,68 +523,51 @@ ul.tabmenu {
         font-size: 15px;
     }
 
-
-    .tab, .title {
-        font-size: 25px;
-    }
-    .eventt .tabb {
-        font-size: 25px;
-    }
-
-    .gallery-tab {
-        width: 60%;
-        float: none;
-        margin-left: 5vh;
-    }
-
-
-    .img img {
-        height: auto;
-        height: 120px;
-    }
-
-    .gallery {
-        width: 87%;
-        margin: 0 auto;
-    }
-
-    .gallery-img {
-    }
-    
-    .gallery-img ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .gallery-img ul li {
-        flex: 1 1 48%;
-    }
-
-    .gallery-img a span {
+    .tabmenu li span {
         font-size: 15px;
     }
 
-    .gallery-img a img {
-        height: auto;
-        width: 75%;
-        border-radius: 10px;
-        object-fit: cover;
+    .tab {
+        font-size: 25px;
+    }
+
+    .tab-next {
+        height: 5%;
+    }
+
+    .index-title {
+        font-size: 25px;
     }
     
-    .sponsor-anime {
-        padding: 15px;
+    .event-area {
+        float: none; 
+        padding-top: 15px;
+    }
+
+    .event-content img {
+        object-fit: cover;
+    }
+
+    .event-content span {
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gallery span {
+        font-size: 15px;
     }
 
     .sponsor-img img {
-        height: 40px;
+        height: 50px;
     }
-
-    
 }
 
 </style>
 
 <body>
+    <div class="include_wrap" data-include-path="C:\Users\THINKONWEB\Documents\2025intern\KIISC\include\head.html"></div>
     <header>
         <div class="container">
             <div class="logo">
@@ -603,10 +576,10 @@ ul.tabmenu {
             <div class="navi">
                 <ul class="menu">
                     <li>
-                        <a href="#">학회소개</a>
+                        <a href="sub.html">학회소개</a>
                         <div class="submenu">
                             <a href="#">설립목적</a>
-                            <a href="#">인삿말</a>
+                            <a href="#">인사말</a>
                             <a href="#">학회연혁</a>
                             <a href="#">역대회장</a>
                             <a href="#">정관/규정/연구윤리규정</a>
@@ -625,6 +598,7 @@ ul.tabmenu {
                     <li>
                         <a href="#">회원광장</a>
                         <div class="submenu">
+                            <a href="#">로그인</a>
                             <a href="#">회원가입</a>
                             <a href="#">특별 회원사</a>
                         </div>
@@ -641,7 +615,8 @@ ul.tabmenu {
                         <div class="submenu">
                             <a href="#">투고안내</a>
                             <a href="#">투고규정</a>
-                            <a href="#">투고규정</a>
+                            <a href="#">개재양식</a>
+                            <a href="#">논문투고</a>
                             <a href="#">편집위원회</a>
                         </div>
                     </li>
@@ -657,16 +632,94 @@ ul.tabmenu {
                     </li>
                 </ul>
             </div>
-            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i>  </div>
+            <div class="mobile col-6" style="display: none;">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li>
+                        <div class="main-menu flex-row align-center">
+                            <a href="#">학회소개</a>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="submenu">
+                            <a href="sub.html">설립목적</a>
+                            <a href="#">인삿말</a>
+                            <a href="#">학회연혁</a>
+                            <a href="#">역대회장</a>
+                            <a href="#">정관/규정/연구윤리규정</a>
+                            <a href="#">오시는 길</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main-menu flex-row align-center">
+                            <a href="#">학회조직</a>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="submenu">
+                            <a href="#">임원</a>
+                            <a href="#">지부 및 위원회</a>
+                            <a href="#">연구회</a>
+                            <a href="#">학회 자문단</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main-menu flex-row align-center">
+                            <a href="#">회원광장</a>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="submenu">
+                            <a href="#">로그인</a>
+                            <a href="#">회원가입</a>
+                            <a href="#">특별 회원사</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main-menu flex-row align-center">
+                            <a href="#">학회행사</a>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="submenu">
+                            <a href="#">학회행사</a>
+                            <a href="#">과거행사</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main-menu flex-row align-center">
+                            <a href="#">학회지/논문지</a>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="submenu">
+                            <a href="#">투고안내</a>
+                            <a href="#">투고규정</a>
+                            <a href="#">개재양식</a>
+                            <a href="#">논문투고</a>
+                            <a href="#">편집위원회</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main-menu flex-row align-center">
+                            <a href="#">커뮤니티</a>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="submenu">
+                            <a href="#">공지사항</a>
+                            <a href="#">갤러리</a>
+                            <a href="#">유관기관 공지/행사</a>
+                            <a href="#">정보보호뉴스</a>
+                            <a href="#">학회소식</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <main>  
         <section class="first-section">
             <div class="container">
+                
                 <div class="slider">
                     <div class="slides">
                         <div class="slide">
-                            <img src="resource/img/main/technology-6701509_1280.jpg" alt="slide1">
+                            <img src="resource/img/main/slide1.jpg" alt="slide1">
                             <div class="textbox">
                                 <div class="text">
                                     <h1>ICISC</h1>
@@ -677,7 +730,7 @@ ul.tabmenu {
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="resource/img/main/technology-6701509_1280.jpg" alt="slide2">
+                            <img src="resource/img/main/slide2.jpg" alt="slide2">
                             <div class="textbox">
                                 <div class="text">
                                     <h1>CISC-W'25</h1>
@@ -688,7 +741,7 @@ ul.tabmenu {
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="resource/img/main/technology-6701509_1280.jpg" alt="slide3">
+                            <img src="resource/img/main/slide3.jpg" alt="slide3">
                             <div class="textbox">
                                 <div class="text">
                                     <h1>WISA</h1>
@@ -712,9 +765,15 @@ ul.tabmenu {
                 <div class="rightslide">
                     <a href="https://public.thinkonweb.com/journals/jkiisc?lang=ko" target="_blank"><img src="resource/img/main/rightslide.png" alt="right-slide"></a>
                 </div>
+                <div class="icon">
+                    <a href="#"><i class="fa-regular fa-calendar"><span>학회 일정</span></i></a>
+                    <a href="#"><i class="fa-regular fa-newspaper"><span>학회지</span></i></a>
+                    <a href="#"><i class="fa-regular fa-note-sticky"><span>논문지</span></i></a>
+                    <a href="#"><i class="fa-regular fa-copy"><span>출간소식</span></i></a>                  
+                </div>
             </div> 
         </section> 
-        <section class="third-section">
+        <section class="second-section">
             <div class="container">
                     <div class="tabs">
                         <div class="tab-content">
@@ -733,21 +792,18 @@ ul.tabmenu {
                                         <span>2025-11-12</span>
                                     </a>
                                 </div>
-
                                 <div class="card">
                                     <a href="#">
                                         <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
                                         <span>2025-11-11</span>
                                     </a>
                                 </div>
-
                                 <div class="card">
                                     <a href="#">
                                         <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
                                         <span>2025-11-11</span>
                                     </a>
-                                </div>
-                                
+                                </div>                               
                             </div>
                             <ul class="tabmenu">
                                 <li>
@@ -804,7 +860,6 @@ ul.tabmenu {
                                         <span>2025-11-11</span>
                                     </a>
                                 </div>
-                                
                             </div>
                             <ul class="tabmenu">
                                 <li>
@@ -847,21 +902,18 @@ ul.tabmenu {
                                         <span>2025-11-12</span>
                                     </a>
                                 </div>
-
                                 <div class="card">
                                     <a href="#">
                                         <p>[KIISC] 11/13(목) 학회 사무국 업무 시간 조정 안내</p>
                                         <span>2025-11-11</span>
                                     </a>
                                 </div>
-
                                 <div class="card">
                                     <a href="#">
                                         <p>	[KIISC_한국암호포럼] (2025년도 하반기) 정보보호 전문가를 위한 암호교육 </p>
                                         <span>2025-11-11</span>
                                     </a>
                                 </div>
-                                
                             </div>
                             <ul class="tabmenu">
                                 <li>
@@ -897,34 +949,32 @@ ul.tabmenu {
                             </ul>
                         </div>
                     </div>
-                <div class="gallery-tab">
-                    <div class="eventt">
-                        <div class="tabb">행사</div>
+                <div class="event-area">
+                    <div class="index-title">행사</div>
                         <div class="underline"></div>
-                        <div class="img">
-                            <a href="https://www.netsec-kr.or.kr/" target="_blank"><img src="resource/img/main/NET.png" alt="net"><span>NETSEC</span></a>
-                            <a href="https://cisc.or.kr/" target="_blank"><img src="resource/img/main/CISC.png" alt="cisc"><span>CISC</span></a>
-                            <a href="https://www.wisa.or.kr/" target="_blank"><img src="resource/img/main/wisa.png" alt="wisa"><span>WISA</span></a>
-                            <a href="http://www.icisc.org/" target="_blank"><img src="resource/img/main/ICISC.png" alt="ICISC"><span>ICISC</span></a>
-                        </div>    
+                        <div class="event-content">
+                            <a href="https://www.netsec-kr.or.kr/" target="_blank"><img src="resource/img/main/NET.png" alt="net"><span class="sub">NetSec-KR 2025</span></a>
+                            <a href="https://cisc.or.kr/" target="_blank"><img src="resource/img/main/CISC.png" alt="cisc"><span class="sub">CISC 2025</span></a>
+                            <a href="https://www.wisa.or.kr/" target="_blank"><img src="resource/img/main/wisa.png" alt="wisa"><span class="sub">WISA 2025</span></a>
+                            <a href="http://www.icisc.org/" target="_blank"><img src="resource/img/main/ICISC.png" alt="ICISC"><span class="sub">ICISC</span></a>
+                        </div>  
                     </div>
                 </div>
-            </div>
         </section>
-        <section class="fourth-section">
+        <section class="third-section">
             <div class="container">
                 <div class="gallery">
                     <div class="title">
-                        <span>갤러리</span>
+                        <div class="index-title">갤러리</div>
                         <a href="#"><i class="fa-solid fa-plus"></i></a>
                     </div>
                     <div class="underline"></div>
                     <div class="gallery-img">
-                        <ul>
-                            <li><a href="#"><img src="resource/img/main/gallery1.PNG" alt="gallery1"><span>WISA 2025</span></a></li>
+                        <ul>    
+                            <li><a href="#"><img src="resource/img/main/gallery1.PNG" alt="gallery1"><span class="ps">WISA 2025</span></a></li>
                             <li><a href="#"><img src="resource/img/main/gallery2.PNG" alt="gallery2"><span>2025년도 제2차 단기강좌</span></a></li> 
                             <li><a href="#"><img src="resource/img/main/gallery3.PNG" alt="gallery3"><span>하계학술대회 (CICS-S’25)</span></a></li>
-                            <li><a href="#"><img src="resource/img/main/gallery4.PNG" alt="gallery4"><span>NetSec-KR 2025</span></a></li>
+                            <li><a href="#"><img src="resource/img/main/gallery4.PNG" alt="gallery4"><span class="ps">NetSec-KR 2025</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -963,14 +1013,14 @@ ul.tabmenu {
     </main>
     <footer>
         <div class="container">
-            
-                <a href="#">개인정보 처리방침</a>  |  <a href="#">이메일주소 무단 수집 거부</a>  |
+            <p>
+                <a class="sd" href="#">개인정보 처리방침</a>  |  <a href="#">이메일주소 무단 수집 거부</a>  |
                 <a href="#">오시는 길</a>  |  <a href="#">관리자 로그인</a>
-                <br><br>
+            </p>
+            
             <p>
                 대표자 : 박영호   (06132) 서울시 강남구 논현로 507 (역삼동 성지하이츠 3차) 909호   |   02)564-9333~4   |   02)564-9226   |    <a href="#">kiisc@kiisc.or.kr</a>
             </p>
-                <br>
            <p> 
                 Copyright @ 2025 KOREA INSTITUTE OF INFORMATION SECURITY & CRYPTOLOGY. | ALL RIGHTS RESERVED. DESIGNED BY <a href="#">ManscriptLink</a>
             </p>
@@ -1036,6 +1086,29 @@ ul.tabmenu {
         });
         // tab end//
 
+        // event start
+        $(document).ready(function() {
+        function handleResponsiveEffect() {
+            if (window.innerWidth >= 767) {
+                $('.event-content a').mouseenter(function() {
+                    $(this).children('.sub').stop(true, true).fadeIn(50);
+                });
+                $('.event-content a').mouseleave(function() {
+                    $(this).children('.sub').stop(true, true).hide(0);
+                });
+            } else {
+                $('.event-content a').off('mouseenter mouseleave');
+            }
+        }
+
+        handleResponsiveEffect();
+
+        $(window).resize(function() {
+            handleResponsiveEffect();
+        });
+    });
+
+        // event end
         // sponsor slide
 
         const sponsor = document.querySelector(".sponsor-img");
@@ -1043,9 +1116,9 @@ ul.tabmenu {
         sponsor.parentNode.appendChild(clone);
        
         // sponsor slide
-                
+            
     </script>
-
+    
     <script src="resource/js/src.js"></script>
 </body>
 </html>
