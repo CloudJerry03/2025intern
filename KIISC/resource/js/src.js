@@ -1,6 +1,6 @@
-// navi
-
-function headerPadding() {
+$(document).ready(function () {
+    $("#header").load("./resource/include/header.html", function () {
+        function headerPadding() {
     let header = document.querySelector('header');
     if (header) {
         document.style.paddingTop = header.offsetHeight + 'px';
@@ -23,7 +23,7 @@ $('.mobile > i').on('click', function() {
 });
 
 $(window).on('resize', function() {
-    if ($(window).width() > 767) {
+    if ($(window).width() > 1008) {
         $('.mobile .menu').removeClass('active').slideUp(300);
         $('.mobile > i').removeClass('fa-times').addClass('fa-bars'); 
         $('.submenu').stop(true, true).slideUp();
@@ -69,29 +69,59 @@ $(document).ready(function() {
         }
     });
 });
-
-
-// navi end
-
+    });
+    $("#footer").load("./resource/include/footer.html");
+});
 
 // icon
 
+// $(document).ready(function() {
+//   var icon = $('.icon'); 
+//   var offset = icon.offset().top; 
+
+//   $(window).scroll(function() {
+//     var scrollTop = $(window).scrollTop(); 
+
+//     if (scrollTop > offset) {
+//       icon.css('top', scrollTop + 20); 
+//     } else {
+//       icon.css('top', 50 + '%');
+//     }
+//   });
+// })
+
+// subpage
+
 $(document).ready(function() {
-  var icon = $('.icon'); 
-  var offset = icon.offset().top; 
+    $('.mobile-list').on('click', function() {
+        $('.subpage').stop().toggle();
+    });
 
-  $(window).scroll(function() {
-    var scrollTop = $(window).scrollTop(); 
+    $(window).on('resize', function() {
+        if ($(window).width() <= 1008) { 
+            $('.subpage').stop().hide(); 
+        } else {
+            
+        }
+    });
 
-    if (scrollTop > offset) {
-      icon.css('top', scrollTop + 20); 
-    } else {
-      icon.css('top', 50 + '%');
-    }
-  });
-})
+    $(window).on('beforeunload', function() {
+        $('.subpage').stop().hide();
+    });
+});
 
-$(document).ready(function () {
-    $("#header").load("./resource/include/header.html", function () { });
-    $("#footer").load("./resource/include/footer.html");
+// topbtn
+
+$(document).ready(function() {
+    $(window).on('scroll', function() {
+        if ($(this).scrollTop() > 200) {
+            $('#topbtn').fadeIn();  
+        } else {
+            $('#topbtn').fadeOut(); 
+        }
+    });
+
+    $('#topbtn').on('click', function() {
+        $('html, body').animate({ scrollTop: 0 }, 500); 
+    });
 });
