@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSII</title>
+
+    <!-- CSS -->
+    <link href="resource/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="resource/css/sub/title.css">
+    <link rel="stylesheet" href="resource/css/sub/organization.css">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="resource/js/inculde.js"></script>
+</head>
+
+<style>
+    /* ===== 서브 레이아웃 ===== */
+    /* 서브 레이아웃 */
+    /* 레이아웃 */
+    .sub-layout {
+        padding: 80px 0;
+    }
+
+    /* 사이드 메뉴 */
+    .sub-side-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .sub-side ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sub-side li+li {
+        margin-top: 10px;
+    }
+
+    /* 버튼 */
+    /* 기본 */
+    .sub-side-btn {
+        width: 100%;
+        padding: 10px 12px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    /* hover */
+    .sub-side-btn:hover {
+        border-color: #00438b;
+        color: #00438b;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 50px 14px;
+        background-color: #f8fbff;
+    }
+
+    /* active */
+    .sub-side-btn.active {
+        border-color: #00438b;
+        color: #00438b;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 50px 14px;
+        background-color: #f8fbff;
+    }
+
+    /* 🔥 active 비활성화 상태 */
+    .sub-side-btn.active-disabled {
+        border-color: #ccc;
+        color: #333;
+        font-weight: 400;
+        font-size: 14px;
+        padding: 10px 12px;
+        background: #fff;
+    }
+
+    /* 콘텐츠 */
+    .sub-content h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .sub-content p,
+    .sub-content li {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* 콘텐츠 전환 */
+    .content-box {
+        display: none;
+    }
+
+    .content-box.active {
+        display: block;
+    }
+
+    .sub-side-link {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+
+    .side-link-btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #00438b;
+        border-radius: 4px;
+    }
+
+    .side-link-btn h3 {
+        font-size: 16px;
+        margin: 0;
+        font-weight: 700;
+    }
+
+    .side-link-btn p {
+        font-size: 12px;
+        margin: 4px 0 0;
+        line-height: 1.4;
+        opacity: 0.9;
+    }
+</style>
+
+<body>
+    <header id="headers"></header>
+
+    <main>
+        <!-- 상단 타이틀 -->
+        <section class="title">
+            <div class="container">
+                <h1>학회 소개</h1>
+            </div>
+        </section>
+
+        <!-- 서브 레이아웃 -->
+        <section class="sub-layout">
+            <div class="container">
+                <div class="row">
+
+                    <!-- 사이드 메뉴 -->
+                    <aside class="col-12 col-md-2">
+                        <nav class="sub-side">
+                            <ul>
+                                <li>
+                                    <button class="sub-side-btn active" data-target="sub1">
+                                        학회 설립 배경
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="sub-side-btn" data-target="sub2">
+                                        회장 인사말
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="sub-side-btn" data-target="sub3">
+                                        역대 회장
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="sub-side-btn" data-target="sub4">
+                                        연혁
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="sub-side-btn" data-target="sub5">
+                                        조직
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="sub-side-btn" data-target="sub6">
+                                        오시는 길
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="sub-side-link">
+                            <a href="https://itiis.org/" target="_blank" class="side-link-btn">
+                                <h3>TIIS</h3>
+                                <p>Transactions on Internet & Information Systems</p>
+                            </a>
+                            <a href="https://jics.or.kr/" target="_blank" class="side-link-btn">
+                                <h3>JICS</h3>
+                                <p>Journal of Internet Computing & Services</p>
+                            </a>
+                        </div>
+                    </aside>
+
+                    <!-- 오른쪽 콘텐츠 -->
+                    <div class="col-12 col-md-9">
+                        <article class="sub-content">
+
+                            <section class="content-box active" id="sub1">
+                                <p>
+                                    2000년 학회 창립 이후로 정보 산업의 성장으로 인해 현대 사회에서 인터넷의 중요성은 극적으로 증가하고 있습니다. 인터넷은 국방, 국가 안보, 개발의
+                                    목적을위한 것이지만 개발과 커뮤니케이션을 위한 국가 산업과의 통합은 국가 경제에 막대한 기여를합니다.
+                                </p>
+
+                                <p>
+                                    지금까지 컴퓨터 관련 그룹, 학계, 컴퓨터 관련 정보 기술이 많이 있지만 이제 인터넷은 학술 단체의 중심을 연구하고 개발하는 방법입니다. 인터넷 기반
+                                    비즈니스 및 정보 기술 비즈니스는 다양한 연구 기관 및 학술 단체가 개별적으로 구축 한 상입니다. 그러나 이제는 기술과 인터넷이 효과적이어야하고, 정보
+                                    기술을 통합하여 승수 효과를 달성하고, 이러한 기술의 시너지가 산업 발전을 가져오고 국가 경쟁력을 강화해야합니다.
+                                </p>
+
+                                <p>
+                                    인터넷 및 정보 산업은 국가의 산업으로 부상하고 있으며,이 분야에서 당면한 어려움을 예측하고 해결하는 것이 시급합니다. 기업과 컴퓨터, 통신 및
+                                    기술적인 문제에 종사하는 사람들 간의 모든 전자 정부 거래는 인터넷을 통해 이루어집니다. 인터넷과 정보 기술의 중요성과 발전으로 인해 위험이
+                                    초래되었습니다.
+                                </p>
+
+                                <p>
+                                    기업 및 정부 기관, 기업은 시민들간에 정보를 공유해야하며, 필요한 모든 기술을 표준화하고 통합하는 방법을 개발해야합니다. 또한, 정보를 보호하기위한
+                                    기술을 개발하기 위해서는 인터넷이 여전히 매우 중요합니다.
+                                </p>
+
+                                <p>
+                                    지금까지 저희의 개발은 현재 인터넷 및 통신 기술에 대해 대담한 조치를 취하고 있으며, 이는 저렴한 가격으로 가능 해지고 있습니다. 우리는 이것이 광역
+                                    네트워크, 인터넷, 정보 기술, 비즈니스를 저렴하고 신속하게 구축하는 것이 얼마나 쉬운지를 알고 있습니다. 인터넷 정보 기술의 활성화는 사람들의 삶의
+                                    질을 향상시킵니다.
+                                </p>
+
+                                <p>
+                                    학술 협력의 생산과 함께 대학 및 정부와 산업계의 교육 및 연구 역량은 다음과 같아야한다.
+                                </p>
+
+                                <ul>
+                                    <li> 인터넷 기술, 인적 자원 및 정보 기술은 커리큘럼 개발 및 교육 기관의 대량 생산을 가능하게합니다.</li>
+
+                                    <li>연구 업무 및 연구 프로젝트를 통합 및 수행하기 위한 인터넷 및 정보 기술 개발.
+                                    </li>
+
+                                    <li>발표 및 강의를 위한 연구 및 관련 기술을 장거리 통신의 가능성과 함께 공동으로 개최 할 수 있습니다.</li>
+
+                                    <li>회의 개최, 저널 출판 및 관련 문헌.</li>
+
+                                    <li>표준화 개발 및 비즈니스 지원 수립을위한 기술, 상호 이익을 증진시키는 회원.</li>
+                                </ul>
+                            </section>
+
+                            <section class="content-box" id="sub2">
+                                <h2>학문적 필요성</h2>
+                                <p>
+                                    인터넷은 이제 학술 연구와 기술 개발의 중심으로 자리 잡고 있습니다.
+                                </p>
+                            </section>
+
+                            <section class="content-box" id="sub3">
+                                <h2>국가·산업·사회에서의 역할</h2>
+                                <p>
+                                    인터넷 및 정보 산업은 국가 핵심 산업으로부상하고 있습니다.
+                                </p>
+                            </section>
+
+                            <section class="content-box" id="sub4">
+                                <div class="history-year">
+                                    <h3>2025</h3>
+                                    <ul class="history-list">
+                                        <li>
+                                            <span class="month">12월</span>
+                                            <span class="desc">
+                                                ICONI 2025 국제학술대회 :
+                                                12월 17일(일) ~ 20일(수) 일본 오키나와
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="month">10월</span>
+                                            <span class="desc">
+                                                제52차 정기총회 및 추계학술발표대회: 10월 30일(목) ~ 11월 1일(토) 전라남도 여수시 디오션 호텔앤리조트
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="history-year">
+                                    <h3>2024</h3>
+                                    <ul class="history-list">
+                                        <li>
+                                            <span class="month">11월</span>
+                                            <span class="desc">
+                                                ICONI 2024 국제학술대회 : 서울
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section class="content-box" id="sub5">
+
+                                <table class="org-center-table">
+
+                                    <!-- 회장 -->
+                                    <tr class="org-title-row">
+                                        <td></td>
+                                        <th>회장</th>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr class="org-name-row">
+                                        <td></td>
+                                        <td>신동규 (세종대학교)</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <!-- 감사 -->
+                                    <tr class="org-title-row">
+                                        <td></td>
+                                        <th>감사</th>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr class="org-name-row">
+                                        <td></td>
+                                        <td>권혁진 (서울과학기술대학교)</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <!-- 부회장 -->
+                                    <tr class="org-title-row">
+                                        <td></td>
+                                        <th>부회장</th>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr class="org-name-row">
+                                        <td>기획부회장</td>
+                                        <td>조민호 (고려대학교)</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>학술부회장</td>
+                                        <td>이우찬 (인천대학교)</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>재무부회장</td>
+                                        <td>최종근 (서울과학기술대학교)</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>행정부회장</td>
+                                        <td>김문성 (서울신학대학교)</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>산학연부회장</td>
+                                        <td>김우용 (세종대학교)</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td rowspan="10">부회장</td>
+                                        <td>공병철(국제사이버보안인증협회)</td>
+                                        <td>강지원 (세종대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김경신 (국방과학연구소)</td>
+                                        <td>김상희 (KAIST)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김영철 (홍익대학교)</td>
+                                        <td>김윤희 (숙명여자대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김창수 (부경대학교)</td>
+                                        <td>권용진 (한국항공대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>박무성 (국방과학연구소)</td>
+                                        <td>박혜숙 (한국전자통신연구원)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>배인한 (대구가톨릭대학교)</td>
+                                        <td>안종창 (한양대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>유인태 (경희대학교)</td>
+                                        <td>이재일 (숭실대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>이종숙 (한국과학기술정보연구원)</td>
+                                        <td>임창균 (전남대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>전우천 (서울교육대학교)</td>
+                                        <td>정규문 (㈜더비엔 보안뉴스)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>정종문 (연세대학교)</td>
+                                        <td>허의남 (경희대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>편집위원장(TIIS)</td>
+                                        <td>정종문 (연세대학교)</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>편집위원장(JICS)</td>
+                                        <td>김문성 (서울신학대학교)</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td rowspan="10">산학연부회장단</td>
+                                        <td>강요식 (단국대학교)</td>
+                                        <td>권기원 (한국전자기술연구원)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김재수 (홍익대학교)</td>
+                                        <td>김진수 (네트컴시스템)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>박범중 ((주)쿼드마이너)</td>
+                                        <td>박찬원 (한국전자통신연구원)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>박창식 (주영일렉트로닉)</td>
+                                        <td>박춘석 (국방혁신기술보안협회)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>박 호 (한화시스템)</td>
+                                        <td>손경종 (한국지능형사물인터넷협회)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>유천수 ((주)피씨엔)</td>
+                                        <td>손이영상 (데이터스트림즈)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>이용우 (아이티센그룹)</td>
+                                        <td>이종훈 (홍익대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>이준호 (㈜소프트자이온)</td>
+                                        <td>정문성 (SK브로드밴드)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>제갈대훈 (LIG시스템)</td>
+                                        <td>조병인 (국방신속획득기술연구원)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>최중환 (세종대학교)</td>
+                                        <td>홍재완 ((주)쿼드마이너)</td>
+                                    </tr>
+                                    <!-- 산학연이사 -->
+                                    <tr class="org-title-row">
+                                        <td></td>
+                                        <th>산학연이사</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>고준용 (시큐어링크)</td>
+                                        <td>김민규 (데이터스트림즈)</td>
+                                        <td>김영수 (NIPA)</td>
+                                    </tr>
+                                </table>
+                            </section>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footers"></footer>
+</body>
+
+<script>
+    document.querySelectorAll('.sub-side-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 버튼 active
+            document.querySelectorAll('.sub-side-btn')
+                .forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 콘텐츠 전환
+            const target = btn.dataset.target;
+            document.querySelectorAll('.content-box')
+                .forEach(box => box.classList.remove('active'));
+            document.getElementById(target).classList.add('active');
+        });
+    });
+</script>
+
+<script>
+    const sideMenu = document.querySelector('.sub-side');
+    const buttons = document.querySelectorAll('.sub-side-btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+
+            if (!btn.classList.contains('active')) {
+                document.querySelectorAll('.sub-side-btn.active')
+                    .forEach(activeBtn => {
+                        activeBtn.classList.add('active-disabled');
+                    });
+            }
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            document.querySelectorAll('.sub-side-btn.active-disabled')
+                .forEach(activeBtn => {
+                    activeBtn.classList.remove('active-disabled');
+                });
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+.org-center-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+/* 기본 셀 */
+.org-center-table td,
+.org-center-table th {
+    text-align: center;
+    padding: 14px 8px;
+}
+
+/* 직책 행 */
+.org-title-row th {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* 굵은 구분선 */
+.org-title-row {
+    border-bottom: 3px solid #00438b;
+}
+
+/* 이름 행 */
+.org-name-row td {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 얇은 구분선 */
+.org-name-row {
+    border-bottom: 1px solid #ddd;
+}
+
+/* 좌우 빈칸 폭 */
+.org-center-table td:first-child,
+.org-center-table td:last-child {
+    width: 25%;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .org-title-row th {
+        font-size: 16px;
+    }
+
+    .org-name-row td {
+        font-size: 14px;
+    }
+
+    .org-center-table td:first-child,
+    .org-center-table td:last-child {
+        width: 15%;
+    }
+}
