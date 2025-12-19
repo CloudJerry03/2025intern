@@ -8,8 +8,9 @@
 
     <!-- CSS -->
     <link href="resource/css/main.css" rel="stylesheet" />
-    <link rel="stylesheet" href="resource/css/sub/title.css">
-    <link rel="stylesheet" href="resource/css/sub/organization.css">
+    <link rel="stylesheet" href="resource/css/about/title.css">
+    <link rel="stylesheet" href="resource/css/about/organization.css">
+    <link rel="stylesheet" href="resource/css/about/president.css">
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,8 +23,6 @@
 </head>
 
 <style>
-    /* ===== 서브 레이아웃 ===== */
-    /* 서브 레이아웃 */
     /* 레이아웃 */
     .sub-layout {
         padding: 80px 0;
@@ -80,7 +79,7 @@
         background-color: #f8fbff;
     }
 
-    /* 🔥 active 비활성화 상태 */
+    /* active 비활성화 상태 */
     .sub-side-btn.active-disabled {
         border-color: #ccc;
         color: #333;
@@ -268,10 +267,33 @@
                             </section>
 
                             <section class="content-box" id="sub3">
-                                <h2>국가·산업·사회에서의 역할</h2>
-                                <p>
-                                    인터넷 및 정보 산업은 국가 핵심 산업으로부상하고 있습니다.
-                                </p>
+                                <div class="president-item">
+                                    <div class="president-photo-wrap">
+                                        <img src="resource/img/president/1.jpg" alt="제1대 회장" class="president-photo">
+                                    </div>
+
+                                    <div class="president-info">
+                                        <p class="president-term">제 1대 회장</p>
+                                        <p class="president-name">
+                                            정동영 <span>現) 국회의원</span>
+                                        </p>
+                                        <p class="president-period">2000.08.30 ~ 2003.07.31</p>
+                                    </div>
+                                </div>
+
+                                <div class="president-item">
+                                    <div class="president-photo-wrap">
+                                        <img src="resource/img/president/02.jpg" alt="제2대 회장" class="president-photo">
+                                    </div>
+
+                                    <div class="president-info">
+                                        <p class="president-term">제 2대 회장</p>
+                                        <p class="president-name">
+                                            홍길동 <span>(OO대학교)</span>
+                                        </p>
+                                        <p class="president-period">2021 ~ 2024</p>
+                                    </div>
+                                </div>
                             </section>
 
                             <section class="content-box" id="sub4">
@@ -310,7 +332,6 @@
                             <section class="content-box" id="sub5">
 
                                 <table class="org-center-table">
-
                                     <!-- 회장 -->
                                     <tr class="org-title-row">
                                         <td></td>
@@ -471,6 +492,181 @@
                                         <td>고준용 (시큐어링크)</td>
                                         <td>김민규 (데이터스트림즈)</td>
                                         <td>김영수 (NIPA)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김용호 ((주)쿼드마이너)</td>
+                                        <td>김휘영 (㈜씨드젠)</td>
+                                        <td>노병인 (소프트자이온)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>박원근 (한국지능형사물인터넷협회)</td>
+                                        <td>이상신 (한국전자기술연구원)</td>
+                                        <td>양용진 (국방혁신기술보안협회)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>전성태 (한국지능형사물인터넷협회)</td>
+                                        <td>정해균 (국방혁신기술보안협회)</td>
+                                        <td>조병모 (LIG 넥스원)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>한은택 (혁신전공사)</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- 운영이사 -->
+                                    <tr class="org-title-row">
+                                        <td></td>
+                                        <th>운영이사</th>
+                                        <td></td>
+                                    </tr>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김도훈 (경기대학교)</td>
+                                        <td>박수연 (서울신학대학교)</td>
+                                        <td>박재영 (홍익대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>선경희 (경기대학교)</td>
+                                        <td>설진아 (한국방송통신대학교)</td>
+                                        <td>안명길 (국방과학연구소)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>유수현 (한국과학기술정보연구원)</td>
+                                        <td>임재현 (공주대학교)</td>
+                                        <td>유자양 (경기대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>이준원 (한남대학교)</td>
+                                        <td>이용준 (극동대학교)</td>
+                                        <td>장정현 (경기대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>황윤영 (한국과학기술정보연구원)</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- 이사 -->
+                                    <tr class="org-title-row">
+                                        <td></td>
+                                        <th>이사</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>고한얼 (경희대학교)</td>
+                                        <td>구영현 (세종대학교)</td>
+                                        <td>강신후 (고려대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김기연 (목원대학교)</td>
+                                        <td>김민호 (고려대학교)</td>
+                                        <td>김명섭 (고려대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김성태 (경희대학교)</td>
+                                        <td>김수현 (경희대학교)</td>
+                                        <td>김 용 (한국방송통신대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김용현 (국방과학연구소)</td>
+                                        <td>김용철 (육군사관학교)</td>
+                                        <td>김자미 (고려대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>김종현 (세종대학교)</td>
+                                        <td>김효경 (부산광역시)</td>
+                                        <td>김희열 (경기대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>노기섭 (홍익대학교)</td>
+                                        <td>박민재 (대림대학교)</td>
+                                        <td>박선주 (광주교육대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>박용석 (한국전자기술연구원)</td>
+                                        <td>박진호 (동국대학교)</td>
+                                        <td>배성호 (경희대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>배영권 (대구교육대학교)</td>
+                                        <td>서채연 (홍익대학교)</td>
+                                        <td>성무진 (경희대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>송오영 (세종대학교)</td>
+                                        <td>신용주 (강원대학교)</td>
+                                        <td>인 호 (고려대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>안 현 (한신대학교)</td>
+                                        <td>오염덕 (한국교통대학교)</td>
+                                        <td>오창현 (홍익대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>유 현 (경기대학교)</td>
+                                        <td>윤재필 (육군3사관학교)</td>
+                                        <td>이병수 (특허청)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>이윤규 (홍익대학교)</td>
+                                        <td>이종관 (육군사관학교)</td>
+                                        <td>이종덕 (육군사관학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>이종원 (서울사이버대학교)</td>
+                                        <td>이혜진 (한국과학기술정보연구원)</td>
+                                        <td>양희규 (성균관대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>엄정호 (대전대학교)</td>
+                                        <td>정미현 (차의과학대학교)</td>
+                                        <td>정성민 (명지전문대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>조성윤 (한국전자기술연구원)</td>
+                                        <td>정용화 (고려대학교)</td>
+                                        <td>조규민 (금융보안원)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>조영호 (국방대학교)</td>
+                                        <td>조학수 (호서대학교)</td>
+                                        <td>최세호 ((주)쿼드마이너)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>최영관 (헌법재판소)</td>
+                                        <td>최창희 (세종대학교)</td>
+                                        <td>하효동 (한양여자대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>한병래 (진주교육대학교)</td>
+                                        <td>한옥영 (성균관대학교)</td>
+                                        <td>한인성 (국방과학연구소)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>한정란 (협성대학교)</td>
+                                        <td>한창희 (육군사관학교)</td>
+                                        <td>홍대기 (상명대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td>홍준기 (공주대학교)</td>
+                                        <td>황보원규 (KT)</td>
+                                        <td>황의갑 (경기대학교)</td>
+                                    </tr>
+                                    <!-- 연구회 -->
+                                    <tr class="org-title-row">
+                                        <td></td>
+                                        <th>연구회</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td colspan="2">인터넷통신연구회 (시스코네트워킹아카데미) 유인태 (경희대학교))</td>
+                                        <td>국방정보기술연구회 강지원 (세종대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td colspan="2">해양수산지능형ICT연구회 권기원(한국전자기술연구원)</td>
+                                        <td>지능형공공안전융합연구회 장정현 (경기대학교)</td>
+                                    </tr>
+                                    <tr class="org-name-row">
+                                        <td colspan="2">정보보호심사연구회 공병철 (국제사이버보안인증협회)</td>
                                     </tr>
                                 </table>
                             </section>
