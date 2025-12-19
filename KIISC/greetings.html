@@ -68,7 +68,7 @@
 
         .second-section {
             padding: 25px 0;
-            padding-bottom: 100px;
+            padding-bottom: 50px;
         }
 
         .second-section .container{
@@ -124,6 +124,8 @@
 
         /* side bar end */
 
+        /* content start */
+
         .top-title {
             display: flex;
             justify-content: space-between;
@@ -140,7 +142,7 @@
             padding-bottom: 15px;
         }
         
-        .detail span {
+        .title-icon {
             color: #666;
             display: flex;
             justify-content: flex-end;
@@ -190,6 +192,13 @@
         .bottom-title p {
             text-align: right;    
         }
+
+        /* content end */
+
+        .third-section .container {
+            padding: 0;
+        }
+
         /* icon start */
         
         .icon {
@@ -225,11 +234,9 @@
         /* mobile side bar */
 
         .mobile-list {
-            background-color: #eeecec;
-            color: #0468ab;
+            border: 1px solid #979696;
             padding: 5px;
             font-size: 20px;
-            font-weight: bold;
         }
         .mobile-list-group-item {
             padding: 5px;
@@ -238,13 +245,9 @@
 
         .subpage {
             display: none;
+            border: 1px solid #979696;
+            border-top: none;
         }
-
-        .subpage li:hover {
-            color: #0468ab;
-            text-decoration: underline;
-        }
-
         /* topbtn */
 
         #topbtn {
@@ -268,7 +271,7 @@
                 display: grid;
                 grid-template-columns: 1fr;
                 gap: 0;
-                pr20
+                padding-right: 20px;
             }
 
             .col-md-3 {
@@ -342,7 +345,7 @@
                 <div class="detail">
                     <div class="top-title">
                         <h3>인사말</h3>
-                    <span>
+                    <span class="title-icon">
                         <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 인사말
                     </span>
                     </div>

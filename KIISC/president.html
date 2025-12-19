@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국정보보호학회(KIISC)</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="resource/css/main.css">
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
+        </script>
+    <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icon -->
+        <script src="https://kit.fontawesome.com/c467caf649.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style> 
+        .first-section {
+            width: 100%;
+        }
+
+        .page {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+        }
+        .page img {
+            width: 100%;
+            position: relative;
+        }
+        .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: right;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .text-container p, .text-container span {
+            margin: 0;
+            padding: 5px 0;
+        }
+
+        .text-container p {
+            font-size: 30px;
+        }
+
+        .second-section {
+            padding: 25px 0;
+            padding-bottom: 0;
+        }
+
+        .second-section .container{
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            gap: 50px;
+            width: 100%;
+            grid-template-rows: auto;
+            padding-right: 100px;
+            padding-bottom: 0;
+        }
+
+        /* side bar start */
+
+        .panel-heading {
+            color: #6ac3ff;
+            font-size: 30px;
+            padding-bottom: 15px;
+        }
+        .underline {
+            border-bottom: 3px solid black;
+            width: 300px;
+        }
+
+        .list-group {
+            padding-top: 30px;
+        }
+
+        .list-group li {
+            font-size: 20px;
+            gap: 30px;
+            padding: 15px;
+            border-radius: 15px;
+            width: 280px;
+        }
+
+        .list-group-item:hover {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+
+        .list-group-item.active {
+            background-color: #6ac3ff;
+            color: #fff;
+        }
+
+        .mobile-side {
+            display: none;
+        }
+
+        .list-group-item.active:hover {
+            font-weight: normal;
+        }
+
+        /* side bar end */
+
+        /* content start */
+
+        .top-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .detail {
+            width: 100%;
+        }
+
+        .detail h3 {
+            font-size: 35.1px;
+            padding-bottom: 15px;
+        }
+        
+        .title-icon {
+            color: #666;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 15px;
+            position: relative;
+            gap: 5px;
+            height: 0;
+        }
+
+        .detail i {
+            height: 0;
+            margin-top: 5px;
+        }
+
+        .detail .underline {
+            width: 100%;
+        }  
+
+        .content {
+            padding-top: 30px;
+        }
+        h4 {
+            padding-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .president {
+            display: flex;
+            flex-wrap: wrap;  
+            gap: 50px;     
+            justify-content: space-between; 
+            padding-top: 15px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .president li {
+            display: flex;  
+        }
+
+        .president li img {
+            min-width: 200px;
+        }
+
+        li .text {
+           position: relative;
+           top: 60%;
+           padding-left: 20px; 
+           height: 0;
+        }
+
+        .text h5 {
+            font-size: 20px;
+        }
+
+        .text p {
+            font-size: 15px;
+        }
+
+        .text span {
+            font-size: 15px;
+        }
+
+        /* content end */
+
+        .third-section .container {
+            padding: 0;
+        }
+        /* icon start */
+        
+        .icon {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%); 
+            margin-left: 10px;
+            z-index: 1000;
+        }
+
+        .icon ul {
+            padding-left: 30px;
+        }
+
+        .icon ul li {
+            margin-bottom: 20px;
+        }
+        
+        .icon i {
+            font-size: 50px;
+            margin-right: 10px;
+        }
+
+        .icon span {
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5px;
+        }
+
+        /* mobile side bar */
+
+        .mobile-list {
+            border: 1px solid #979696;
+            padding: 5px;
+            font-size: 20px;
+        }
+        .mobile-list-group-item {
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        .subpage {
+            display: none;
+            border: 1px solid #979696;
+            border-top: none;
+        }
+        /* topbtn */
+
+        #topbtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; 
+            border-radius: 50px;
+        }
+
+        @media (max-width: 1008px) {
+
+            .second-section .container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding-right: 20px;
+            }
+
+            .col-md-3 {
+                display: none;
+            }
+            .icon {
+                display: none;
+            }
+            .detail {
+                width: 100%; 
+                padding-top: 25px;
+            }
+            .detail h3 {
+                font-size: 2rem;
+            }
+            .mobile-side {
+                display: block;
+            }
+
+            .content {
+                display: block;
+            }
+
+            .detail img {
+                width: 100%;
+            }
+        }
+    </style>
+    <header id="header"></header>
+    <main> 
+        <section class="first-section">
+                    <div class="page">
+                    <img src="resource/img/sub/cyber-security-3194286_1280.jpg" alt="subpage">
+                    <div class="text-container">
+                        <p>한국정보보호학회</p>
+                        <span>Korea Institute of Information Security & Cryptology</span>
+                    </div>
+                </div>
+        </section>
+        <section class="second-section">    
+            <div class="container">
+                <div class="col-md-3">
+                    <div class="panel-panel-info">
+                        <div class="panel-heading">
+                        <h3 class="panel-title">학회소개</h3>
+                        </div>
+                        <div class="underline"></div>
+                        <ul class="list-group">
+                            <a href="purpose.html"><li class="list-group-item">설립목적</li></a>
+                            <a href="greetings.html"><li class="list-group-item">인사말</li></a>
+                            <a href="History.html"><li class="list-group-item">학회연혁</li></a>
+                            <a href="president.html"><li class="list-group-item active">역대회장</li></a>
+                            <a href="#"><li class="list-group-item">정관/규정/연구윤리규정</li></a>
+                            <a href="#"><li class="list-group-item">오시는 길</li></a>
+                        </ul>
+                    </div>               
+                </div>
+                <div class="mobile-side">
+                    <ul class="mobile-list-group">
+                        <a href="#"><li class="mobile-list">역대회장</li></a>
+                        <div class="subpage">
+                            <a href="purpose.html"><li class="mobile-list-group-item ">설립목적</li></a>
+                            <a href="greetings.html"><li class="mobile-list-group-item">인사말</li></a>
+                            <a href="History.html"><li class="mobile-list-group-item">학회연혁</li></a>
+                            <a href="president.html"><li class="mobile-list-group-item">역대회장</li></a>
+                            <a href="#"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
+                            <a href="#"><li class="mobile-list-group-item">오시는 길</li></a>
+                        </div> 
+                    </ul>
+                </div>
+                <div class="detail">
+                    <div class="top-title">
+                        <h3>학회연혁</h3>
+                    <span class="title-icon">
+                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 인사말
+                    </span>
+                    </div>
+                    <div class="underline"></div>
+                    <div class="content">
+                        <h4>한국정보보호학회의 역대 회장소개입니다.</h4>
+                        <ul class="president">
+                            <li>
+                                <img src="resource/img/president/1.png" alt="1">
+                                <div class="text">
+                                    <h5>故 이만영 회장</h5>
+                                    <p>초대 -제4대 (1990-1998)</p>
+                                    <span>前) 경희대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/2.png" alt="2">
+                                <div class="text">
+                                    <h5>남길현 회장</h5>
+                                    <p>제5대 (1999-2000)</p>
+                                    <span>現 ) 국방대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/3.png" alt="2">
+                                <div class="text">
+                                    <h5>문상재 회장</h5>
+                                    <p>제6대 (2001) </p>
+                                    <span>現 ) 경북대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/4.png" alt="2">
+                                <div class="text">
+                                    <h5>원동호 회장</h5>
+                                    <p>제7대 (2002)</p>
+                                    <span>現 ) 성균관대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/5.png" alt="2">
+                                <div class="text">
+                                    <h5>김세헌 회장</h5>
+                                    <p>제8대 (2003)</p>
+                                    <span>現 ) 한국과학기술원 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/6.png" alt="2">
+                                <div class="text">
+                                    <h5>이필중 회장</h5>
+                                    <p>제9대 (2004)</p>
+                                    <span>現 ) 포항공과대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/7.png" alt="2">
+                                <div class="text">
+                                    <h5>김대호 회장</h5>
+                                    <p>제10대 (2005)</p>
+                                    <span>前 ) 국가보안기술연구소 소장</span>
+                                    <br>
+                                    <span>現 ) 국가보안기술연구소 연구위원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/8.png" alt="2">
+                                <div class="text">
+                                    <h5>송주석 회장</h5>
+                                    <p>제11대 (2006)</p>
+                                    <span>前) 경희대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/9.png" alt="2">
+                                <div class="text">                                   
+                                    <h5>이민섭 회장</h5>
+                                    <p>제12대 (2007)</p>
+                                    <span>現 ) 단국대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/10.png" alt="2">
+                                <div class="text">
+                                    <h5>이홍섭 회장</h5>
+                                    <p>제13대 (2008)</p>
+                                    <span>前 ) 한국정보보호진흥원 원장</span>
+                                    <br>
+                                    <span>現 ) 건국대학교 석좌교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/11.png" alt="2">
+                                <div class="text">
+                                    <h5>김광조 회장</h5>
+                                    <p>제14대 (2009) </p>
+                                    <span>現 ) 한국과학기술원 명예교수</span> 
+                                    <br>
+                                    <span>現 ) IACR Fellow</span> 
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/12.png" alt="2">
+                                <div class="text">
+                                    <h5>임종인 회장</h5>
+                                    <p>제15대 (2010)</p>
+                                    <span>現 ) 고려대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/13.png" alt="2">
+                                <div class="text">
+                                    <h5>염흥열 회장</h5>
+                                    <p>제16대 (2011)</p>
+                                    <span>現 ) 순천향대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/14.png" alt="2">
+                                <div class="text">
+                                    <h5>박창섭 회장</h5>
+                                    <p>제17대 (2012)</p>
+                                    <span>現 ) 단국대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/15.png" alt="2">
+                                <div class="text">
+                                    <h5>김석우 회장</h5>
+                                    <p>제18대 (2013) </p>
+                                    <span>現 ) 한세대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/16.png" alt="2">
+                                <div class="text">
+                                    <h5>오희국 회장</h5>
+                                    <p>제19대 (2014) </p>
+                                    <span>現 ) 한양대학교 교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/17.png" alt="2">
+                                <div class="text">
+                                    <h5>박춘식 회장</h5>
+                                    <p>제20대 (2015)</p>
+                                    <span>現 ) 아주대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/18.png" alt="2">
+                                <div class="text">
+                                    <h5>이임영 회장</h5>
+                                    <p>제21대 (2016)</p>
+                                    <span>現 ) 순천향대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/19.png" alt="2">
+                                <div class="text">
+                                    <h5>이동훈 회장</h5>
+                                    <p>제22대(2017)</p>
+                                    <span>現 ) 고려대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/20.png" alt="2">
+                                <div class="text">
+                                    <h5>홍만표 회장</h5>
+                                    <p>제23대(2018)</p>
+                                    <span>現 ) 아주대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/21.png" alt="2">
+                                <div class="text">
+                                    <h5>이경현 회장</h5>
+                                    <p>제24대(2019)</p>
+                                    <span>現 ) 부경대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/21.png" alt="2">
+                                <div class="text">
+                                    <h5>정수환 회장</h5>
+                                    <p>제25대(2020)</p>
+                                    <span>現 ) 숭실대학교 교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/22.png" alt="2">
+                                <div class="text">
+                                    <h5>류재철 회장</h5>
+                                    <p>제26대(2021)</p>
+                                    <span>現 ) 충남대학교 교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/21.png" alt="2">
+                                <div class="text">
+                                    <h5>이경현 회장</h5>
+                                    <p>제24대(2019)</p>
+                                    <span>現 ) 부경대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/21.png" alt="2">
+                                <div class="text">
+                                    <h5>이경현 회장</h5>
+                                    <p>제24대(2019)</p>
+                                    <span>現 ) 부경대학교 명예교수</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="resource/img/president/21.png" alt="2">
+                                <div class="text">
+                                    <h5>이경현 회장</h5>
+                                    <p>제24대(2019)</p>
+                                    <span>現 ) 부경대학교 명예교수</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+        </section>
+        <section class="third-section">
+            <div class="container">
+                <div class="icon">
+                    <ul>
+                        <a href="#"><li><i class="fa-regular fa-calendar"><span>학회 일정</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-newspaper"><span>학회지</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-note-sticky"><span>논문지</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-copy"><span>출간소식</span></i></li></a>
+                    </ul>   
+                </div> 
+            </div>
+        </section>
+        <button id="topbtn" style="display: none;"><i class="fa-solid fa-angle-up"></i></button>
+    </main>
+    <footer id="footer"></footer>
+
+    <script src="resource/js/src.js"></script>
+</body>
+</html>

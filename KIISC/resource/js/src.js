@@ -73,42 +73,30 @@ $(document).ready(function() {
     $("#footer").load("./resource/include/footer.html");
 });
 
-// icon
-
-// $(document).ready(function() {
-//   var icon = $('.icon'); 
-//   var offset = icon.offset().top; 
-
-//   $(window).scroll(function() {
-//     var scrollTop = $(window).scrollTop(); 
-
-//     if (scrollTop > offset) {
-//       icon.css('top', scrollTop + 20); 
-//     } else {
-//       icon.css('top', 50 + '%');
-//     }
-//   });
-// })
-
 // subpage
 
 $(document).ready(function() {
+
     $('.mobile-list').on('click', function() {
-        $('.subpage').stop().toggle();
+        if ($('.subpage').is(':visible')) {
+            $('.subpage').stop().slideUp(300);
+        } else {
+            $('.subpage').stop().slideDown(300);
+        }
     });
 
     $(window).on('resize', function() {
-        if ($(window).width() <= 1008) { 
-            $('.subpage').stop().hide(); 
-        } else {
-            
+        if ($(window).width() <= 1008) {
+            $('.subpage').stop().slideUp(300);
         }
     });
 
     $(window).on('beforeunload', function() {
         $('.subpage').stop().hide();
     });
+
 });
+
 
 // topbtn
 
