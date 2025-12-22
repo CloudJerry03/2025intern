@@ -5,7 +5,11 @@ a {
 .container {
     max-width: 1400px;
     margin: 0 auto;
+<<<<<<< HEAD
     padding: 25px 20px;
+=======
+    padding: 0 15px;
+>>>>>>> ed195c5 (KIISC)
 }
 
 * {
@@ -63,12 +67,22 @@ header ul {
 }
 
 .navi ul li {
+<<<<<<< HEAD
     position: relative;  
 }
 
 .navi ul li > a {
     padding: 10px;
     font-size: 20px;
+=======
+    position: relative;
+    
+}
+
+.navi ul li > a {
+    padding: 10px 15px;
+    font-size: 16px;
+>>>>>>> ed195c5 (KIISC)
     display: block;
     text-align: center;
     transition: 0.2s;
@@ -80,6 +94,8 @@ header ul {
     border-radius: 4px;
     width: 150px;
 }
+
+
 
 .submenu {
     position: absolute;
@@ -114,6 +130,10 @@ header ul {
     color: #fff;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ed195c5 (KIISC)
 /* header end */
 
 /* footer start */
@@ -141,11 +161,15 @@ footer a:hover {
 /* footer end */
 
 
+<<<<<<< HEAD
 @media (max-width: 1008px) {
 
     .logo img {
         width: 200px;
     }
+=======
+@media (max-width: 767px) {
+>>>>>>> ed195c5 (KIISC)
     
     .navi ul {
         display: none;
@@ -165,6 +189,7 @@ footer a:hover {
         padding: 5px;
         z-index: 10;
     }
+<<<<<<< HEAD
     
     footer {
         font-size: 15px;
@@ -195,6 +220,33 @@ footer a:hover {
     font-size: 1rem;
 }
 
+=======
+}
+
+.mobile>i {
+    font-size: 32px;
+}
+
+.mobile .menu i {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.mobile .menu a {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+>>>>>>> ed195c5 (KIISC)
 .main-menu {
     display: flex;
     text-align: left;
@@ -203,15 +255,22 @@ footer a:hover {
 
 .mobile .menu {
     padding: 10px;
+<<<<<<< HEAD
     background-color: #ffffffe0;
     position: absolute;
     top: 60px;
+=======
+    background-color: #ffffffad;
+    position: absolute;
+    top: 10vh;
+>>>>>>> ed195c5 (KIISC)
     left: 9px;
     width: 100%;
     display: none;
     border-bottom: 1px solid #ddd;
 }
 
+<<<<<<< HEAD
 .mobile ul {
     margin-top: 20px;
 }
@@ -223,13 +282,24 @@ footer a:hover {
     margin-left: 50%;
     width: 100%; 
     background-color: #ffffff00;
+=======
+.mobile .submenu {
+    display: none;
+    font-weight: normal;
+    font-size: 1rem;
+    background-color: #ffffffad;
+    width: 100%;
+>>>>>>> ed195c5 (KIISC)
 }
 
 .main-menu {
     border-bottom: 1px solid #383838;
+<<<<<<< HEAD
 }
 
 .mobile .submenu a {
     display: flex;
     justify-content: space-between;
+=======
+>>>>>>> ed195c5 (KIISC)
 }
