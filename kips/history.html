@@ -19,11 +19,51 @@
     <script src="https://kit.fontawesome.com/73190c27e7.js" crossorigin="anonymous"></script>
     <title>KIPS</title>
     <style>
-        .greeting p {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            line-height: 2rem;
-            text-align: justify;
+        .timeline-center {
+            position: relative;
+        }
+
+        .timeline-center::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 0;
+            left: 8px;
+            width: 1px;
+            background: #ddd;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 2rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 6px solid var(--bs-primary);
+            background: #fff;
+            z-index: 2;
+        }
+
+        .year-btn li:hover {
+            font-weight: bold;
+            color: var(--bs-primary);
+            cursor: pointer;
+        }
+
+        @media (max-width: 767px) {
+            .year-btn li:nth-child(3) {
+                border: none !important;
+            }
+        }
+        .active {
+            font-weight: bold;
+            color: var(--bs-primary);
+            cursor: pointer;
         }
     </style>
 </head>
@@ -32,9 +72,9 @@
     <header id="header"></header>
     <section class="title d-flex justify-content-center align-items-center">
         <div class="d-flex flex-column gap-3 align-items-center">
-            <h1 class="banner-title text-white">회장 인사말</h1>
+            <h1 class="banner-title text-white">연혁</h1>
             <div class="bread-crumb d-flex gap-2">
-                <a href="index.html">Home</a><span>/</span><a href="#">학회소개</a><span>/</span><select name="" id="">
+                <a href="index.html">Home</a><span>/</span><a>학회소개</a><span>/</span><select name="" id="">
                     <option value="#">회장 인사말</option>
                     <option value="#">설립 취지</option>
                     <option value="#">연혁</option>
@@ -45,15 +85,89 @@
             </div>
         </div>
     </section>
-    <section class="my-5 d-flex container flex-column gap-3">
-        <div class="subtitle d-flex gap-3 align-items-center">
-            <div class="out-circle d-flex justify-content-center align-items-center bg-primary">
-                <div class="in-circle bg-white">
-                </div>
+    <section class="container my-5">
+        <div class="row border-top border-bottom mb-5 year-btn">
+            <li class="col-6 col-md-3 my-3 text-center active">~2021년</li>
+            <li class="col-6 col-md-3 my-3 text-center border-start">2020년~2011년</li>
+            <li class="col-6 col-md-3 my-3 text-center border-start">2010년~2001년</li>
+            <li class="col-6 col-md-3 my-3 text-center border-start">2000년~</li>
+        </div>
+        <div class="timeline-center g-4">
+            <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                <dt class="timeline d-flex align-items-center gap-3">
+                    <span class="dot"></span>
+                    <span class="t1">2024</span>
+                </dt>
+                <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                    <li class="t3 text-dark my-2">
+                        <b class="text-primary t2">12.30</b>
+                        <p class="mx-2">2024년 운당(雲堂)학술상 시상식(학술대상 : 경희대학교 홍충선 교수)</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">12.16 ~ 18</b>
+                        <p class="mx-2">AICompS 개최</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">10.10</b>
+                        <p class="mx-2">안티드론연구회 신설(초대위원장 : 유동영 교수)</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">07.03 ~ 05</b>
+                        <p class="mx-2">제29회 IT 21 글로벌 컨퍼런스 개최</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">02.20</b>
+                        <p class="mx-2">AI시스템연구회 신설(초대위원장 : 임유진 교수)</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">01.08</b>
+                        <p class="mx-2">데이터프라이버시연구회 신설(초대위원장 : 권태경 교수)</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">01.01</b>
+                        <p class="mx-2">제29대 백윤흥 회장 취임</p>
+                    </li>
+                </dd>
             </div>
-            <div class="t1">정보처리학회에 오신 것을 환영합니다!</div>
+            <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                <dt class="timeline d-flex align-items-center gap-3">
+                    <span class="dot"></span>
+                    <span class="t1">2023</span>
+                </dt>
+                <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                    <li class="t3 text-dark my-2">
+                        <b class="text-primary t2">12.30</b>
+                        <p class="mx-2">2024년 운당(雲堂)학술상 시상식(학술대상 : 경희대학교 홍충선 교수)</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">12.16 ~ 18</b>
+                        <p class="mx-2">AICompS 개최</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">10.10</b>
+                        <p class="mx-2">안티드론연구회 신설(초대위원장 : 유동영 교수)</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">07.03 ~ 05</b>
+                        <p class="mx-2">제29회 IT 21 글로벌 컨퍼런스 개최</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">02.20</b>
+                        <p class="mx-2">AI시스템연구회 신설(초대위원장 : 임유진 교수)</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">01.08</b>
+                        <p class="mx-2">데이터프라이버시연구회 신설(초대위원장 : 권태경 교수)</p>
+                    </li>
+                    <li class="t3 text-dark my-3">
+                        <b class="text-primary t2">01.01</b>
+                        <p class="mx-2">제29대 백윤흥 회장 취임</p>
+                    </li>
+                </dd>
+            </div>
         </div>
     </section>
+
     <footer id="footer"></footer>
     <script src="resource/js/main.js"></script>
 </body>

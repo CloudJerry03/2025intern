@@ -88,6 +88,9 @@ ul {
     margin: 0;
     list-style: none;
 }
+li {
+    list-style: none;
+}
 
 /* init */
 header {
@@ -268,6 +271,9 @@ footer {
 
     tr th:first-child {
         width: 20% !important;
+    }
+    dd {
+        border: none !important;
     }
 }
 

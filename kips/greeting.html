@@ -25,6 +25,13 @@
             line-height: 2rem;
             text-align: justify;
         }
+
+        .span {
+            font-weight: 1000;
+            font-size: clamp(1rem, 3vw, 3rem);
+            color: var(--bs-primary);
+            text-shadow: 2px 2px 0px #fff;
+        }
     </style>
 </head>
 
@@ -46,15 +53,15 @@
         </div>
     </section>
     <section class="my-5 d-flex container flex-column gap-3">
-        <div class="subtitle d-flex gap-3 align-items-center">
-            <div class="out-circle d-flex justify-content-center align-items-center bg-primary">
-                <div class="in-circle bg-white">
-                </div>
-            </div>
-            <div class="t1">정보처리학회에 오신 것을 환영합니다!</div>
-        </div>
         <div class="greeting">
-            <img src="resource/img/sub/greeting/boss.jpg" alt="한국정보처리학회 회장 황종성" class="float-start me-0 mb-0 me-sm-3 mb-sm-2 col-12 col-sm-2">
+
+            <div class="bg-secondary d-flex align-items-center p-3 gap-3 flex-column flex-sm-row mb-3 justify-content-between">
+                <span class="d-none d-sm-block span">
+                    (사)한국정보처리학회<br>
+                    30대 회장 신년사
+                </span>
+                <img src="resource/img/sub/greeting/boss.jpg" alt="한국정보처리학회 회장 황종성" class="float-start col-12 col-sm-3">
+            </div>
             <p>안녕하십니까!</p>
             <p>2025년 한국정보처리학회 회장 황종성입니다.</p>
             <p>
