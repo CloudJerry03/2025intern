@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국정보보호학회(KIISC)</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="resource/css/main.css">
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
+        </script>
+    <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icon -->
+        <script src="https://kit.fontawesome.com/c467caf649.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style> 
+        .first-section {
+            width: 100%;
+        }
+
+        .page {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+        }
+        .page img {
+            width: 100%;
+            position: relative;
+        }
+        .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: right;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .text-container p, .text-container span {
+            margin: 0;
+            padding: 5px 0;
+        }
+
+        .text-container p {
+            font-size: 30px;
+        }
+
+        .second-section {
+            padding: 25px 0;
+            padding-bottom: 50px;
+        }
+
+        .second-section .container{
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            gap: 50px;
+            width: 100%;
+            grid-template-rows: auto;
+            padding-right: 100px;
+        }
+
+        /* side bar start */
+
+        .panel-heading {
+            color: #6ac3ff;
+            font-size: 30px;
+            padding-bottom: 15px;
+        }
+        .underline {
+            border-bottom: 3px solid black;
+            width: 300px;
+        }
+
+        .list-group {
+            padding-top: 30px;
+        }
+
+        .list-group li {
+            font-size: 20px;
+            gap: 30px;
+            padding: 15px;
+            border-radius: 15px;
+            width: 280px;
+        }
+
+        .list-group-item:hover {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+        
+        .list-group-item.active {
+            background-color: #6ac3ff;
+            color: #fff;
+        }
+
+        .mobile-side {
+            display: none;
+        }
+
+        .list-group-item.active:hover {
+            font-weight: normal;
+        }
+
+        /* side bar end */
+
+        /* content start */
+
+        .top-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .detail {
+            width: 100%;
+        }
+
+        .detail h3 {
+            font-size: 35.1px;
+            padding-bottom: 15px;
+        }
+        
+        .title-icon {
+            color: #666;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 15px;
+            position: relative;
+            gap: 5px;
+            height: 0;
+        }
+
+        .detail i {
+            height: 0;
+            margin-top: 5px;
+        }
+
+        .detail .underline {
+            width: 100%;
+        }  
+
+        .content {
+            display: flex;
+            gap: 60px;
+            padding-top: 30px;
+        }
+
+        .detail img {
+            max-width: 400px;
+            border-radius: 20px;
+        }
+        
+       .detail h4 {
+            font-size: 25px;
+       }
+       .detail p {
+            font-size: 20px;
+            padding-top: 15px;
+       }
+
+        .title p {
+            font-weight: bold;
+            color: #0468ab;
+        }
+
+        .bottom-title {
+            padding-top: 30px;
+        }
+
+        .bottom-title p {
+            text-align: right;    
+        }
+
+        /* content end */
+
+        .third-section .container {
+            padding: 0;
+        }
+
+        /* icon start */
+        
+        .icon {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%); 
+            margin-left: 10px;
+            z-index: 1000;
+        }
+
+        .icon ul {
+            padding-left: 30px;
+        }
+
+        .icon ul li {
+            margin-bottom: 20px;
+        }
+
+        .icon i {
+            font-size: 50px;
+            margin-right: 10px;
+        }
+
+        .icon span {
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5px;
+        }
+
+        /* mobile side bar */
+
+        .mobile-list {
+            border: 1px solid #979696;
+            padding: 5px;
+            font-size: 20px;
+        }
+        .mobile-list-group-item {
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        .subpage {
+            display: none;
+            border: 1px solid #979696;
+            border-top: none;
+        }
+        /* topbtn */
+
+        #topbtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; 
+            border-radius: 50px;
+        }
+
+        @media (max-width: 1008px) {
+
+            .second-section .container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding-right: 20px;
+            }
+
+            .col-md-3 {
+                display: none;
+            }
+            .icon {
+                display: none;
+            }
+            .detail {
+                width: 100%; 
+                padding-top: 25px;
+            }
+            .detail h3 {
+                font-size: 2rem;
+            }
+            .mobile-side {
+                display: block;
+            }
+
+            .content {
+                display: block;
+            }
+
+            .detail img {
+                width: 100%;
+            }
+        }
+    </style>
+    <header id="header"></header>
+    <main>
+        <section class="first-section">
+                    <div class="page">
+                    <img src="resource/img/sub/cyber-security-3194286_1280.jpg" alt="subpage">
+                    <div class="text-container">
+                        <p>한국정보보호학회</p>
+                        <span>Korea Institute of Information Security & Cryptology</span>
+                    </div>
+                </div>
+        </section>
+        <section class="second-section">    
+            <div class="container">
+                <div class="col-md-3">
+                    <div class="panel-panel-info">
+                        <div class="panel-heading">
+                        <h3 class="panel-title">학회소개</h3>
+                        </div>
+                        <div class="underline"></div>
+                        <ul class="list-group">
+                            <a href="purpose.html"><li class="list-group-item">설립목적</li></a>
+                            <a href="greetings.html"><li class="list-group-item active">인사말</li></a>
+                            <a href="history.html"><li class="list-group-item">학회연혁</li></a>
+                            <a href="#"><li class="list-group-item">역대회장</li></a>
+                            <a href="#"><li class="list-group-item">정관/규정/연구윤리규정</li></a>
+                            <a href="#"><li class="list-group-item">오시는 길</li></a>
+                        </ul>
+                    </div>               
+                </div>
+                <div class="mobile-side">
+                    <ul class="mobile-list-group">
+                            <a href="#"><li class="mobile-list">인사말</li></a>
+                            <div class="subpage">
+                                <a href="purpose.html"><li class="mobile-list-group-item ">설립목적</li></a>
+                                <a href="greetings.html"><li class="mobile-list-group-item">인사말</li></a>
+                                <a href="history.html"><li class="mobile-list-group-item">학회연혁</li></a>
+                                <a href="#"><li class="mobile-list-group-item">역대회장</li></a>
+                                <a href="#"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
+                                <a href="#"><li class="mobile-list-group-item">오시는 길</li></a>
+                            </div> 
+                    </ul>
+                </div>
+                <div class="detail">
+                    <div class="top-title">
+                        <h3>인사말</h3>
+                    <span class="title-icon">
+                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 인사말
+                    </span>
+                    </div>
+                    <div class="underline"></div>
+                    <div class="content">
+                        <div class="img"><img src="resource/img/greetings/pgreetings img.png" alt="pace"></div>
+                    <div class="text"><h4>존경하는 한국정보보호학회 회원 여러분,</h4>
+                    <p>
+                        2025년 을사년 새해가 밝았습니다.
+                        회원 여러분 가정과 직장에 건강과 행복이 가득하길 기원합니다. 
+                        정보보호 분야에서 국내 최고의 권위를 자랑하는 한국정보보호학회의 
+                        제30대 회장으로 인사를 드리게 된 것을 매우 기쁘고 영광스럽게 생각합니다
+                    </p>
+                    <p>
+                        디지털 대전환의 중심에 서 있는 현재, 정보보호는 더 이상 선택이 아닌 필수로 자리 잡았습니다. 
+                        인공지능(AI), 양자컴퓨터, 클라우드 컴퓨팅 등의 발전이 새로운 혁신의 문을 열고 있지만, 
+                        그 이면에는 딥페이크, 랜섬웨어, 사이버 공격 등 점점 고도화되는 보안 위협이 도사리고 있습니다. 
+                        정보보호는 이제 개인의 안전을 넘어 국가 안보와 경제의 근간을 지키는 데 중대한 역할을 하고 있습니다. 
+                    </p>
+                    </div>
+                    </div>
+                    <p>
+                        이러한 중요한 시점에서 여러모로 부족한 저이지만 그동안 학회를 훌륭하게 이끌어 오셨던 
+                        명예회장님들의 조언과 회원 여러분들의 따뜻한 지원에 힘입어 여러분과 함께 학회의 전통을 이어가며, 정보보호를 위한 학술 및 기술 
+                        진흥과 관련분야의 발전에 공헌이라는 학회의 소명을 이루는데 최선을 다할 것을 다짐합니다.
+                    </p>
+                    <p>
+                        한국정보보호학회는 지난 35년간 정보보호 학문과 기술 발전의 중심에서 학계, 산업계, 정부기관과 협력하여 탄탄한 기반을 쌓아왔습니다. 특히 과학기술정보통신부, 국가정보원, 행정안전부와 같은 정부 기관을 비롯하여 
+                        한국전자통신연구원, 국가보안기술연구소, 한국인터넷진흥원, 한국과학기술정보연구원, 금융보안원과 같은 공공 기관과 정보보호 가치를 공유하고 발전시켜 왔습니다. 또한, 정보보호산업협회 및 정보보호 산업체와도 꾸준히 협력관계를 유지해 왔습니다. 따라서 이러한 기반 위에서 다음과 같은 방향으로 학회를 이끌어 가고자 합니다.
+                    </p>
+                    <p>첫째, 학술적 발전을 최우선 과제로 삼겠습니다.</p>
+                    <p>
+                        학회의 논문지와 학회지의 발간을 질적·양적으로 강화하고, 다양한 정보보호 분야의 우수한 논문들이 발행될 수 있도록 학문적 수준을 한층 높이겠습니다. 
+                        또한, 학회가 주관하는 CISC-S, CISC-W, NetSec-KR, WISA, ICISC와 같은 학술대회를 더욱 발전시켜, 국내는 물론 국제적으로도 영향력 있는 학술 행사로 자리매김할 수 있도록 지원하겠습니다. 
+                        이를 통해 정보보호 분야의 학문적 위상이 더욱 높아지도록 최선을 다하겠습니다.
+                    </p>
+                    <p>둘째, 신진 연구자의 발굴과 차세대 정보보호 인재 육성에 힘쓰겠습니다.</p>
+                    <p>
+                        정보보호는 신기술에 대한 창의적 접근과 혁신적 사고를 필요로 하는 분야입니다. 
+                        학회는 학교와 연구기관에서 활동하는 신진 연구자들을 적극적으로 발굴하고, 
+                        학회 활동에 활발히 참여하여 정보보호의 다양한 영역에서 전문가로 성장할 수 
+                        있도록 지원을 강화하겠습니다. 이를 위해 각 연구회의 활동을 
+                        활성화하고, 워크숍, 단기 강좌, 학술 세미나 등을 정기적으로 개최하여 연구자 간의 교류와 협력을 촉진하겠습니다. 나아가 정보보호의 미래를 책임질 차세대 인재를 체계적으로 발굴하고 육성함으로써, 
+                        지속 가능한 정보보호 생태계를 구축하는 데 기여하겠습니다
+                    </p>
+                    <p>셋째, 글로벌 협력과 전 산업 분야로의 확장을 도모하겠습니다.</p>
+                    <p>
+                        디지털 전환 시대에 정보보호는 특정 산업에 국한되지 않고, 모든 산업의 지속가능성을 위한 핵심 요소로 부상하고 있습니다. 정보보호산업체뿐만 아니라 글로벌 기업, 대기업과의 협력을 강화하여 정보보호의 중요성을 알리고, 전 산업 분야로 정보보호 기술과 정책의 확산을 지원하겠습니다.
+                    </p>
+                    <p>
+                        2025년 한국정보보호학회와 함께 힘차게 도약하는 한 해가 되기를 기원하며, 회원 여러분 모두의 건강과 행복을 기원합니다. 감사합니다.
+                    </p>
+                    <div class="bottom-title">
+                        <p>2025년 1월 1일</p>
+                        <p>한국정보보호학회 제30대 회장 박영호 배상</p>
+                    </div>
+                </div>    
+            </div> 
+        </section>
+        <section class="third-section">
+            <div class="container">
+                <div class="icon">
+                    <ul>
+                        <a href="#"><li><i class="fa-regular fa-calendar"><span>학회 일정</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-newspaper"><span>학회지</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-note-sticky"><span>논문지</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-copy"><span>출간소식</span></i></li></a>
+                    </ul>   
+                </div> 
+            </div>
+        </section>
+        <button id="topbtn" style="display: none;"><i class="fa-solid fa-angle-up"></i></button>
+    </main>
+    <footer id="footer"></footer>
+
+    <script src="resource/js/src.js"></script>
+</body>
+</html>

@@ -68,15 +68,16 @@
 
         .second-section {
             padding: 25px 0;
-            padding-bottom: 400px;
+            padding-bottom: 550px;
         }
 
         .second-section .container{
             display: grid;
-            grid-template-columns: 1fr 5fr 0.3fr;
+            grid-template-columns: 1fr 5fr;
             gap: 50px;
             width: 100%;
             grid-template-rows: auto;
+            padding-right: 100px;
         }
 
         /* side bar start */
@@ -103,12 +104,27 @@
             width: 280px;
         }
 
+        .list-group-item:hover {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+
         .list-group-item.active {
             background-color: #6ac3ff;
             color: #fff;
         }
 
+        .mobile-side {
+            display: none;
+        }
+
+        .list-group-item.active:hover {
+            font-weight: normal;
+        }
+
         /* side bar end */
+
+        /* content start */
 
         .top-title {
             display: flex;
@@ -156,6 +172,8 @@
             width: 100%;
         }  
 
+        /* content end */
+
         /* icon start */
         
         .icon {
@@ -163,6 +181,10 @@
             top: 50%;
             right: 30px;
             transform: translateY(-50%); 
+        }
+
+        .icon ul {
+            padding-left: 30px;
         }
 
         .icon ul li {
@@ -182,12 +204,44 @@
             padding-top: 5px;
         }
 
-        
+
+        .mobile-list {
+            border: 1px solid #979696;
+            padding: 5px;
+            font-size: 20px;
+        }
+        .mobile-list-group-item {
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        .subpage {
+            display: none;
+            border: 1px solid #979696;
+            border-top: none;
+        }
+        #topbtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; 
+            border-radius: 50px;
+        }
+
         @media (max-width: 1008px) {
 
             .second-section .container {
                 display: grid;
                 grid-template-columns: 1fr;
+                gap: 0;
+                padding-right: 20px;
             }
 
             .col-md-3 {
@@ -198,160 +252,18 @@
             }
             .text {
                 width: 100%; 
-                padding-top: 65px;
+                padding-top: 25px;
             }
             .text h3 {
                 font-size: 2rem;
             }
+            .mobile-side {
+                display: block;
+            }
         }
-
     </style>
+    <header id="header"></header>
     <main>
-        <header>
-                    <div class="container">
-            <div class="logo">
-                <a href="index.html"><img src="resource/img/main/logo.png" alt="logo"></a>
-            </div>
-            <div class="navi">
-                <ul class="menu">
-                    <li>
-                        <a href="#">학회소개</a>
-                        <div class="submenu">
-                            <a href="#">설립목적</a>
-                            <a href="#">인사말</a>
-                            <a href="#">학회연혁</a>
-                            <a href="#">역대회장</a>
-                            <a href="#">정관/규정/연구윤리규정</a>
-                            <a href="#">오시는 길</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">학회조직</a>
-                        <div class="submenu">
-                            <a href="#">임원</a>
-                            <a href="#">지부 및 위원회</a>
-                            <a href="#">연구회</a>
-                            <a href="#">학회 자문단</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">회원광장</a>
-                        <div class="submenu">
-                            <a href="#">로그인</a>
-                            <a href="#">회원가입</a>
-                            <a href="#">특별 회원사</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">학회행사</a>
-                        <div class="submenu">
-                            <a href="#">학회행사</a>
-                            <a href="#">과거행사</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">학회지/논문지</a>
-                        <div class="submenu">
-                            <a href="#">투고안내</a>
-                            <a href="#">투고규정</a>
-                            <a href="#">개재양식</a>
-                            <a href="#">논문투고</a>
-                            <a href="#">편집위원회</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">커뮤니티</a>
-                        <div class="submenu">
-                            <a href="#">공지사항</a>
-                            <a href="#">갤러리</a>
-                            <a href="#">유관기관 공지/행사</a>
-                            <a href="#">정보보호뉴스</a>
-                            <a href="#">학회소식</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="mobile col-6" style="display: none;">
-                <i class="fa-solid fa-bars"></i>
-                <ul class="menu">
-                    <li>
-                        <div class="main-menu flex-row align-center">
-                            <a href="#">학회소개</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="submenu">
-                            <a href="#">설립목적</a>
-                            <a href="#">인삿말</a>
-                            <a href="#">학회연혁</a>
-                            <a href="#">역대회장</a>
-                            <a href="#">정관/규정/연구윤리규정</a>
-                            <a href="#">오시는 길</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="main-menu flex-row align-center">
-                            <a href="#">학회조직</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="submenu">
-                            <a href="#">임원</a>
-                            <a href="#">지부 및 위원회</a>
-                            <a href="#">연구회</a>
-                            <a href="#">학회 자문단</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="main-menu flex-row align-center">
-                            <a href="#">회원광장</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="submenu">
-                            <a href="#">로그인</a>
-                            <a href="#">회원가입</a>
-                            <a href="#">특별 회원사</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="main-menu flex-row align-center">
-                            <a href="#">학회행사</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="submenu">
-                            <a href="#">학회행사</a>
-                            <a href="#">과거행사</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="main-menu flex-row align-center">
-                            <a href="#">학회지/논문지</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="submenu">
-                            <a href="#">투고안내</a>
-                            <a href="#">투고규정</a>
-                            <a href="#">개재양식</a>
-                            <a href="#">논문투고</a>
-                            <a href="#">편집위원회</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="main-menu flex-row align-center">
-                            <a href="#">커뮤니티</a>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="submenu">
-                            <a href="#">공지사항</a>
-                            <a href="#">갤러리</a>
-                            <a href="#">유관기관 공지/행사</a>
-                            <a href="#">정보보호뉴스</a>
-                            <a href="#">학회소식</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-        </header>
         <section class="first-section">
                     <div class="page">
                     <img src="resource/img/sub/cyber-security-3194286_1280.jpg" alt="subpage">
@@ -370,14 +282,27 @@
                         </div>
                         <div class="underline"></div>
                         <ul class="list-group">
-                            <a href="#"><li class="list-group-item active">설립목적</li></a>
-                            <a href="#"><li class="list-group-item">인사말</li></a>
-                            <a href="#"><li class="list-group-item">학회연혁</li></a>
+                            <a href="purpose.html"><li class="list-group-item active">설립목적</li></a>
+                            <a href="greetings.html"><li class="list-group-item">인사말</li></a>
+                            <a href="history.html"><li class="list-group-item">학회연혁</li></a>
                             <a href="#"><li class="list-group-item">역대회장</li></a>
                             <a href="#"><li class="list-group-item">정관/규정/연구윤리규정</li></a>
                             <a href="#"><li class="list-group-item">오시는 길</li></a>
                         </ul>
                     </div>               
+                </div>
+                <div class="mobile-side">
+                    <ul class="mobile-list-group">
+                            <a href="#"><li class="mobile-list">설립목적</li></a>
+                            <div class="subpage">
+                                <a href="purpose.html"><li class="mobile-list-group-item ">설립목적</li></a>
+                                <a href="greetings.html"><li class="mobile-list-group-item">인사말</li></a>
+                                <a href="history.html"><li class="mobile-list-group-item">학회연혁</li></a>
+                                <a href="#"><li class="mobile-list-group-item">역대회장</li></a>
+                                <a href="#"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
+                                <a href="#"><li class="mobile-list-group-item">오시는 길</li></a>
+                            </div> 
+                    </ul>
                 </div>
                 <div class="text">
                     <div class="top-title">
@@ -417,12 +342,9 @@
                 </div>      
             </div> 
         </section>
+        <button id="topbtn" style="display: none;"><i class="fa-solid fa-angle-up"></i></button>
     </main>
     <div id="footer"></div>
-
-    <script>
-    
-    </script>
 
     <script src="resource/js/src.js"></script>
 </body>

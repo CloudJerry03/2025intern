@@ -1,6 +1,6 @@
-// navi
-
-function headerPadding() {
+$(document).ready(function () {
+    $("#header").load("./resource/include/header.html", function () {
+        function headerPadding() {
     let header = document.querySelector('header');
     if (header) {
         document.style.paddingTop = header.offsetHeight + 'px';
@@ -23,7 +23,7 @@ $('.mobile > i').on('click', function() {
 });
 
 $(window).on('resize', function() {
-    if ($(window).width() > 767) {
+    if ($(window).width() > 1008) {
         $('.mobile .menu').removeClass('active').slideUp(300);
         $('.mobile > i').removeClass('fa-times').addClass('fa-bars'); 
         $('.submenu').stop(true, true).slideUp();
@@ -69,29 +69,47 @@ $(document).ready(function() {
         }
     });
 });
+    });
+    $("#footer").load("./resource/include/footer.html");
+});
 
-
-// navi end
-
-
-// icon
+// subpage
 
 $(document).ready(function() {
-  var icon = $('.icon'); 
-  var offset = icon.offset().top; 
 
-  $(window).scroll(function() {
-    var scrollTop = $(window).scrollTop(); 
+    $('.mobile-list').on('click', function() {
+        if ($('.subpage').is(':visible')) {
+            $('.subpage').stop().slideUp(300);
+        } else {
+            $('.subpage').stop().slideDown(300);
+        }
+    });
 
-    if (scrollTop > offset) {
-      icon.css('top', scrollTop + 20); 
-    } else {
-      icon.css('top', 50 + '%');
-    }
-  });
-})
+    $(window).on('resize', function() {
+        if ($(window).width() <= 1008) {
+            $('.subpage').stop().slideUp(300);
+        }
+    });
 
-$(document).ready(function () {
-    $("#header").load("./resource/include/header.html", function () { });
-    $("#footer").load("./resource/include/footer.html");
+    $(window).on('beforeunload', function() {
+        $('.subpage').stop().hide();
+    });
+
+});
+
+
+// topbtn
+
+$(document).ready(function() {
+    $(window).on('scroll', function() {
+        if ($(this).scrollTop() > 200) {
+            $('#topbtn').fadeIn();  
+        } else {
+            $('#topbtn').fadeOut(); 
+        }
+    });
+
+    $('#topbtn').on('click', function() {
+        $('html, body').animate({ scrollTop: 0 }, 500); 
+    });
 });

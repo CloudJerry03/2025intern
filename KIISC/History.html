@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국정보보호학회(KIISC)</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="resource/css/main.css">
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
+        </script>
+    <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icon -->
+        <script src="https://kit.fontawesome.com/c467caf649.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style> 
+        .first-section {
+            width: 100%;
+        }
+
+        .page {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+        }
+        .page img {
+            width: 100%;
+            position: relative;
+        }
+        .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: right;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .text-container p, .text-container span {
+            margin: 0;
+            padding: 5px 0;
+        }
+
+        .text-container p {
+            font-size: 30px;
+        }
+
+        .second-section {
+            padding: 25px 0;
+            padding-bottom: 0;
+        }
+
+        .second-section .container{
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            gap: 50px;
+            width: 100%;
+            grid-template-rows: auto;
+            padding-right: 100px;
+            padding-bottom: 0;
+        }
+
+        /* side bar start */
+
+        .panel-heading {
+            color: #6ac3ff;
+            font-size: 30px;
+            padding-bottom: 15px;
+        }
+        .underline {
+            border-bottom: 3px solid black;
+            width: 300px;
+        }
+
+        .list-group {
+            padding-top: 30px;
+        }
+
+        .list-group li {
+            font-size: 20px;
+            gap: 30px;
+            padding: 15px;
+            border-radius: 15px;
+            width: 280px;
+        }
+
+        .list-group-item:hover {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+
+        .list-group-item.active {
+            background-color: #6ac3ff;
+            color: #fff;
+        }
+
+        .mobile-side {
+            display: none;
+        }
+
+        .list-group-item.active:hover {
+            font-weight: normal;
+        }
+
+        /* side bar end */
+
+        /* content start */
+
+        .top-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .detail {
+            width: 100%;
+        }
+
+        .detail h3 {
+            font-size: 35.1px;
+            padding-bottom: 15px;
+        }
+        
+        .detail span {
+            color: #666;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 15px;
+            position: relative;
+            gap: 5px;
+            height: 0;
+        }
+
+        .detail i {
+            height: 0;
+            margin-top: 5px;
+        }
+
+        .detail .underline {
+            width: 100%;
+        }  
+
+        .content {
+            padding-top: 30px;
+        }
+        .tory h4 {
+            padding-bottom: 15px;
+            font-size: 20px;
+        }
+        .tory p {
+            padding: 15px 0;
+        }
+        
+        .history {
+            padding: 15px 0;
+        }
+
+        .title {
+            display: flex;
+            gap: 20px;
+        }
+
+        .title i {
+            font-size: 15px;
+        }
+
+        h5 {
+            font-size: 30px;
+            color: #6ac3ff;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .his {
+            padding-bottom: 50px;
+        }
+        
+        .his li {
+            display: flex;
+            gap: 50px;
+            padding: 15px 40px;
+        }
+
+        .date {
+            font-weight: 600;
+        }
+
+        .data {
+            font-weight: 600;
+            position: relative;
+            top: 5px;
+        }
+
+        .cont {
+            padding-left: 40px;
+        }
+        
+        .conf {
+            padding-left: 25px;
+        }
+
+        .cona {
+            padding-left: 53px;
+        }
+
+        /* content end */
+
+        .third-section .container {
+            padding: 0;
+        }
+        /* icon start */
+        
+        .icon {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%); 
+            margin-left: 10px;
+            z-index: 1000;
+        }
+
+        .icon ul {
+            padding-left: 30px;
+        }
+
+        .icon ul li {
+            margin-bottom: 20px;
+        }
+        
+        .icon i {
+            font-size: 50px;
+            margin-right: 10px;
+        }
+
+        .icon span {
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5px;
+        }
+
+        /* mobile side bar */
+
+        .mobile-list {
+            border: 1px solid #979696;
+            padding: 5px;
+            font-size: 20px;
+        }
+        .mobile-list-group-item {
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        .subpage {
+            display: none;
+            border: 1px solid #979696;
+            border-top: none;
+        }
+        /* topbtn */
+
+        #topbtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; 
+            border-radius: 50px;
+        }
+
+        @media (max-width: 1008px) {
+
+            .second-section .container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding-right: 20px;
+            }
+
+            .col-md-3 {
+                display: none;
+            }
+            .icon {
+                display: none;
+            }
+            .detail {
+                width: 100%; 
+                padding-top: 25px;
+            }
+            .detail h3 {
+                font-size: 2rem;
+            }
+            .mobile-side {
+                display: block;
+            }
+
+            .content {
+                display: block;
+            }
+
+            .detail img {
+                width: 100%;
+            }
+        }
+    </style>
+    <header id="header"></header>
+    <main>
+        
+        <section class="first-section">
+                    <div class="page">
+                    <img src="resource/img/sub/cyber-security-3194286_1280.jpg" alt="subpage">
+                    <div class="text-container">
+                        <p>한국정보보호학회</p>
+                        <span>Korea Institute of Information Security & Cryptology</span>
+                    </div>
+                </div>
+        </section>
+        <section class="second-section">    
+            <div class="container">
+                <div class="col-md-3">
+                    <div class="panel-panel-info">
+                        <div class="panel-heading">
+                        <h3 class="panel-title">학회소개</h3>
+                        </div>
+                        <div class="underline"></div>
+                        <ul class="list-group">
+                            <a href="purpose.html"><li class="list-group-item">설립목적</li></a>
+                            <a href="greetings.html"><li class="list-group-item">인사말</li></a>
+                            <a href="History.html"><li class="list-group-item active">학회연혁</li></a>
+                            <a href="president.html"><li class="list-group-item">역대회장</li></a>
+                            <a href="#"><li class="list-group-item">정관/규정/연구윤리규정</li></a>
+                            <a href="#"><li class="list-group-item">오시는 길</li></a>
+                        </ul>
+                    </div>               
+                </div>
+                <div class="mobile-side">
+                    <ul class="mobile-list-group">
+                        <a href="#"><li class="mobile-list">학회연혁</li></a>
+                        <div class="subpage">
+                            <a href="purpose.html"><li class="mobile-list-group-item ">설립목적</li></a>
+                            <a href="greetings.html"><li class="mobile-list-group-item">인사말</li></a>
+                            <a href="History.html"><li class="mobile-list-group-item">학회연혁</li></a>
+                            <a href="president.html"><li class="mobile-list-group-item">역대회장</li></a>
+                            <a href="#"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
+                            <a href="#"><li class="mobile-list-group-item">오시는 길</li></a>
+                        </div> 
+                    </ul>
+                </div>
+                <div class="detail">
+                    <div class="top-title">
+                        <h3>학회연혁</h3>
+                    <span>
+                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 인사말
+                    </span>
+                    </div>
+                    <div class="underline"></div>
+                    <div class="content">
+                        <div class="tory">
+                            <h4>한국정보보호학회 연혁</h4>
+                            <p>정보보호를 위한 학술 및 기술의 진흥과 관련분야의 발전에 공헌.</p>
+                        </div>
+                            <div class="history">
+                                <div class="title">
+                                <i class="fa-solid fa-circle"></i>
+                                <h5>2020 ~</h5>
+                            </div>
+                            <div class="his">
+                                <li>                                    
+                                    <div class="date">2025.01 ~ 現在</div>	
+                                    <div class="conf">제 30대 박영호 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2024.01 ~ 12</div>	
+                                    <div class="cont">제 29대 하재철 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2023.01 ~ 12</div>	
+                                    <div class="cont">제 28대 원유재 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2022.01 ~ 12</div>	
+                                    <div class="cont">제 27대 이옥연 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2021.01 ~ 12</div>	
+                                    <div class="cont">제 26대 류재철 회장</div>
+                                </li>
+                                <li>
+                                    
+                                    <div class="data">2020.01 ~ 12</div>	
+                                    <div class="cont">제 25대 정수환 회장</div>
+                                </li>
+                            </div>
+                            </div>
+                            <div class="history">
+                                 <div class="title">
+                                <i class="fa-solid fa-circle"></i>
+                                <h5>2010 ~ 2019</h5>
+                            </div>
+                            <div class="his">
+                                <li>                                    
+                                    <div class="data">2019.01 ~ 12</div>	
+                                    <div class="cont">제 24대 이경현 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2018.01 ~ 2019.01</div>	
+                                    <div class="con">제 23대 홍만표 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2017.01 ~ 2018.01</div>	
+                                    <div class="con">제 22대 이동훈 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2016.01 ~ 12</div>	
+                                    <div class="cont">제 21대 이임영 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2015.01 ~ 12</div>	
+                                    <div class="cont">제 20대 박춘식 회장</div>
+                                </li>
+                                <li>
+                                    
+                                    <div class="data">2014.01 ~ 12</div>	
+                                    <div class="cont">제 19대 오희국 회장</div>
+                                </li>
+                                <li>
+                                    <div class="data">2013.01 ~ 12</div>	
+                                    <div class="cont">제 18대 김석우 회장</div>
+                                </li>
+                                <li>
+                                    <div class="data">2012.01 ~ 12</div>	
+                                    <div class="cont">제 17대 박창섭 회장</div>
+                                </li>
+                                <li>
+                                    <div class="data">2011.01 ~ 12</div>	
+                                    <div class="cont">제 16대 염흥열 회장</div>
+                                </li>
+                                <li>
+                                    <div class="data">2010.01 ~ 12</div>	
+                                    <div class="cont">제 15대 임종인 회장</div>
+                                </li>
+                            </div>
+                            </div>
+                            <div class="history">
+                                 <div class="title">
+                                <i class="fa-solid fa-circle"></i>
+                                <h5>2000 ~ 2009</h5>
+                            </div>
+                            <div class="his">
+                                <li>                                    
+                                    <div class="data">2009.01 ~ 12</div>	
+                                    <div class="cont">제 14대 김광조 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2008.01 ~ 12</div>	
+                                    <div class="cont">제 13대 이홍섭 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2007.01 ~ 12</div>	
+                                    <div class="cont">제 12대 이민섭 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2006.01 ~ 12</div>	
+                                    <div class="cont">제 11대 송주석 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">2005.01 ~ 12</div>	
+                                    <div class="cont">제 10대 김대호 회장</div>
+                                </li>
+                                <li>  
+                                    <div class="data">2004.01 ~ 12</div>	
+                                    <div class="cont">제 9대 이필중 회장</div>
+                                </li>
+                                <li>
+                                    <div class="data">2003.08.26</div>	
+                                    <div class="cona">한국학술단체연합회 가입</div>
+                                </li>
+                                <li>
+                                    <div class="data">2003.01 ~ 12</div>	
+                                    <div class="cont">제 8대 김세헌 회장</div>
+                                </li>
+                                <li>
+                                    <div class="data">2002.12.12</div>	
+                                    <div class="cona">국가안전보장표창</div>
+                                </li>
+                                <li>
+                                    <div class="data">2002.01 ~ 12</div>	
+                                    <div class="cont">제 7대 원동호 회장</div>
+                                </li>
+                                <li>
+                                    <div class="data">2001.12.31</div>	
+                                    <div class="cona">정보통신부장관 표창</div>
+                                </li>
+                                <li>
+                                    <div class="data">2001.06.04</div>	
+                                    <div class="cona">(사)한국정보보호학회로 명칭변경</div>
+                                </li>
+                                <li>
+                                    <div class="data">2001.01 ~ 12</div>	
+                                    <div class="cont">제 6대 문상재 회장</div>
+                                </li>
+                                <li>
+                                    <div class="data">2000.11.30</div>	
+                                    <div class="cona">한국과학기술단체총연합회 가입</div>
+                                </li>
+                            </div>
+                            </div>
+                            <div class="history">
+                                 <div class="title">
+                                <i class="fa-solid fa-circle"></i>
+                                <h5>1990 ~ 1999</h5>
+                            </div>
+                            <div class="his">
+                                <li>                                    
+                                    <div class="data">1999.01 ~ 2000.12</div>	
+                                    <div class="con">제 5대 남길현 회장</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">1991.12.30</div>	
+                                    <div class="cona">한국통신정보보호학회논문지 제1권 제1호 발간</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">1991.09.02</div>	
+                                    <div class="cona">I.U.G.G 한국위원회 회원가입승인</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">1991.04.30</div>	
+                                    <div class="cona">한국통신정보보호학회지 제1권 제1호 발간</div>
+                                </li>
+                                <li>                                    
+                                    <div class="data">1991.02.08</div>	
+                                    <div class="cona">체신부 산하 설립등기 완료</div>
+                                </li>
+                                <li>
+                                    
+                                    <div class="data">1990.12 ~ 1998.12</div>	
+                                    <div class="con">제 1대 ~ 제 4대 이만영 회장</div>
+                                </li>
+                                <li>
+                                    <div class="data">1990.12.12</div>	
+                                    <div class="cona">(사)한국통신정보보호학회 창립총회 개최, 초대회장 이만영 교수</div>
+                                </li>
+                            </div>
+                            </div>
+                    </div>
+                </div> 
+        </section>
+        <section class="third-section">
+            <div class="container">
+                <div class="icon">
+                    <ul>
+                        <a href="#"><li><i class="fa-regular fa-calendar"><span>학회 일정</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-newspaper"><span>학회지</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-note-sticky"><span>논문지</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-copy"><span>출간소식</span></i></li></a>
+                    </ul>   
+                </div> 
+            </div>
+        </section>
+        <button id="topbtn" style="display: none;"><i class="fa-solid fa-angle-up"></i></button>
+    </main>
+    <footer id="footer"></footer>
+
+    <script src="resource/js/src.js"></script>
+</body>
+</html>
