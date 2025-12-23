@@ -68,6 +68,7 @@
 
         .second-section {
             padding: 25px 0;
+            padding-bottom: 50px;
         }
 
         .second-section .container{
@@ -77,6 +78,7 @@
             width: 100%;
             grid-template-rows: auto;
             padding-right: 100px;
+            padding-bottom: 0;
         }
 
         /* side bar start */
@@ -131,16 +133,16 @@
             box-sizing: border-box;
         }
 
-        .text {
+        .detail {
             width: 100%;
         }
 
-        .text h3 {
+        .detail h3 {
             font-size: 35.1px;
             padding-bottom: 15px;
         }
         
-        .text span {
+        .title-icon {
             color: #666;
             display: flex;
             justify-content: flex-end;
@@ -150,32 +152,58 @@
             height: 0;
         }
 
-        .text i {
+        .detail i {
             height: 0;
             margin-top: 5px;
         }
 
-        .text p {
-            padding-top: 30px;
-            font-size: 20px;
-        }
-
-        .text p:last-child {
-            padding-top: 0;
-        }
-        .text ol {
-            padding: 30px 0;
-        }
-        .text li {
-            list-style: decimal;
-            font-size: 20px;
-        }
-        .text .underline {
+        .detail .underline {
             width: 100%;
         }  
 
+        .content {
+            padding-top: 30px;
+        }
+        h4 {
+            padding-bottom: 30px;
+            font-size: 20px;
+        }
+
+        iframe {
+            width: 100%;
+        }
+
+        .text {
+            font-size: 20px;
+        }
+
+        .road {
+            padding-bottom: 10px;
+            padding-top: 30px;
+        }
+
+        .call {
+            padding-bottom: 10px;
+        }
+
+        .fax {
+            padding-bottom: 10px;
+            padding-left: 32px;
+        }
+        
+        .email {
+            padding-bottom: 10px;
+        }
+
+        .text p {
+            font-size: 15px;
+        }
+
         /* content end */
 
+        .third-section .container {
+            padding: 0;
+        }
         /* icon start */
         
         .icon {
@@ -183,6 +211,8 @@
             top: 50%;
             right: 30px;
             transform: translateY(-50%); 
+            margin-left: 10px;
+            z-index: 1000;
         }
 
         .icon ul {
@@ -192,7 +222,7 @@
         .icon ul li {
             margin-bottom: 20px;
         }
-
+        
         .icon i {
             font-size: 50px;
             margin-right: 10px;
@@ -206,6 +236,7 @@
             padding-top: 5px;
         }
 
+        /* mobile side bar */
 
         .mobile-list {
             border: 1px solid #979696;
@@ -222,6 +253,8 @@
             border: 1px solid #979696;
             border-top: none;
         }
+        /* topbtn */
+
         #topbtn {
             position: fixed;
             bottom: 20px;
@@ -252,20 +285,40 @@
             .icon {
                 display: none;
             }
-            .text {
+            .detail {
                 width: 100%; 
                 padding-top: 25px;
             }
-            .text h3 {
+            .detail h3 {
                 font-size: 2rem;
             }
             .mobile-side {
                 display: block;
             }
+
+            .content {
+                display: block;
+            }
+
+            .detail img {
+                width: 100%;
+            }
+
+            .president {
+                grid-template-columns: 1fr;
+            }
+
+            .text {
+                font-size: 17px;
+            }
+
+            .fax {
+                padding-left: 27px;
+            }
         }
     </style>
     <header id="header"></header>
-    <main>
+    <main> 
         <section class="first-section">
                     <div class="page">
                     <img src="resource/img/sub/cyber-security-3194286_1280.jpg" alt="subpage">
@@ -284,56 +337,61 @@
                         </div>
                         <div class="underline"></div>
                         <ul class="list-group">
-                            <a href="purpose.html"><li class="list-group-item active">설립목적</li></a>
+                            <a href="purpose.html"><li class="list-group-item">설립목적</li></a>
                             <a href="greetings.html"><li class="list-group-item">인사말</li></a>
-                            <a href="history.html"><li class="list-group-item">학회연혁</li></a>
+                            <a href="History.html"><li class="list-group-item">학회연혁</li></a>
                             <a href="president.html"><li class="list-group-item">역대회장</li></a>
                             <a href="ARR.html"><li class="list-group-item">정관/규정/연구윤리규정</li></a>
-                            <a href="road.html"><li class="list-group-item">오시는길</li></a>
+                            <a href="#"><li class="list-group-item active">오시는길</li></a>
                         </ul>
                     </div>               
                 </div>
                 <div class="mobile-side">
                     <ul class="mobile-list-group">
-                            <a href="#"><li class="mobile-list">설립목적</li></a>
-                            <div class="subpage">
-                                <a href="purpose.html"><li class="mobile-list-group-item ">설립목적</li></a>
-                                <a href="greetings.html"><li class="mobile-list-group-item">인사말</li></a>
-                                <a href="history.html"><li class="mobile-list-group-item">학회연혁</li></a>
-                                <a href="president.html"><li class="mobile-list-group-item">역대회장</li></a>
-                                <a href="ARR.html"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
-                                <a href="road.html"><li class="mobile-list-group-item">오시는길</li></a>
-                            </div> 
+                        <a href="#"><li class="mobile-list">오시는길</li></a>
+                        <div class="subpage">
+                            <a href="purpose.html"><li class="mobile-list-group-item ">설립목적</li></a>
+                            <a href="greetings.html"><li class="mobile-list-group-item">인사말</li></a>
+                            <a href="History.html"><li class="mobile-list-group-item">학회연혁</li></a>
+                            <a href="president.html"><li class="mobile-list-group-item">역대회장</li></a>
+                            <a href="ARR.html"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
+                            <a href="#"><li class="mobile-list-group-item">오시는길</li></a>
+                        </div> 
                     </ul>
                 </div>
-                <div class="text">
+                <div class="detail">
                     <div class="top-title">
-                        <h3>설립목적</h3>
-                    <span>
-                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 설립목적
+                        <h3>오시는길</h3>
+                    <span class="title-icon">
+                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 오시는길
                     </span>
                     </div>
                     <div class="underline"></div>
-                    <p>
-                        본 학회는 정보보호를 위한 학술 및 기술의 진흥과 관련분야의 발전에 공헌하기 위하여, 
-                        학술적 연구와 필요한 사업을 행함을 목적으로 학계, 관련연구소, 그리고 관련정부부서에 계시는 여러분의 헌신적인 노력으로 1990년 12월에 창립되었습니다.
-                        <br>
-                        <br>본 회는 상기의 목적을 달성하기 위하여 다음 각 호의 사업을 행하고 있습니다.
-                    </p>
-                    <ol style="padding-left: 50px;">
-                        <li>정보보호에 관한 학술연구 발표회, 평론회의 개최</li>
-                        <li>학술적, 기술적 연구조사 및 발간사업</li>
-                        <li>표준 및 규격의 제정에 관한 연구</li>
-                        <li>기술의 보급, 발전을 위한 사업</li>
-                        <li>전문가 양성을 위한 기반 조성 사업</li>
-                        <li>위 각 호의 부대 사업 및 본 회 목적달성에 필요한 사업</li>
-                    </ol>
-                    <p>
-                        본 학회는 그간에 학회 회원 여러분들의 능동적인 참여의 결과 학문적으로나 산업면에서나 괄목할 만한 성장을 가져와 
-                        현재 4,000여명의 회원과 80여 곳의 기관 및 회원사들을 확보하고 있으며, 
-                        효과적이면서도 전문성이 높은 학술 연구를 위해 3개의 지부와 36개의 연구회를 두고 있습니다.
-                    </p>
-                </div>    
+                    <div class="content">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.270266649428!2d127.03356251157062!3d37.50154332773545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca33d2d2e6213%3A0x2b0a4c532442c05e!2z7ISx7KeA7ZWY7J207LigIDPssKg!5e0!3m2!1sko!2skr!4v1766448542862!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="text">
+                            <div class="road">
+                                <i class="fa-solid fa-location-dot"></i>
+                                주소 : 06132 서울시 강남구 논현로 507 (역삼동 성지하이츠 3차) 909호
+                            </div>
+                            <div class="call">
+                                <i class="fa-solid fa-phone"></i>
+                                대표전화 : 02) 564-9333~4
+                            </div>
+                            <div class="fax">
+                                Fax : 02) 564-9226
+                            </div>
+                            <div class="email">
+                                <i class="fa-regular fa-envelope"></i>
+                                Email : kiisc@kiisc.or.kr
+                            </div>
+                            <p>* 지하철로 오시는 경우, 2호선 역삼역 6번 출구로 나오신 후, 동호대교 방면으로 30m 정도 오시면, 1층에 수협이 있는 건물입니다.</p>
+                        </div>
+                    </div>
+                </div> 
+        </section>
+        <section class="third-section">
+            <div class="container">
                 <div class="icon">
                     <ul>
                         <a href="#"><li><i class="fa-regular fa-calendar"><span>학회 일정</span></i></li></a>
@@ -342,12 +400,13 @@
                         <a href="#"><li><i class="fa-regular fa-note-sticky"><span>논문지</span></i></li></a>
                         <a href="#"><li><i class="fa-regular fa-copy"><span>출간소식</span></i></li></a>
                     </ul>   
-                </div>      
-            </div> 
+                </div> 
+            </div>
         </section>
         <button id="topbtn" style="display: none;"><i class="fa-solid fa-angle-up"></i></button>
+
     </main>
-    <div id="footer"></div>
+    <footer id="footer"></footer>
 
     <script src="resource/js/src.js"></script>
 </body>

@@ -68,6 +68,7 @@
 
         .second-section {
             padding: 25px 0;
+            padding-bottom: 50px;
         }
 
         .second-section .container{
@@ -106,7 +107,7 @@
             background-color: #ddd;
             font-weight: bold;
         }
-
+        
         .list-group-item.active {
             background-color: #6ac3ff;
             color: #fff;
@@ -131,16 +132,16 @@
             box-sizing: border-box;
         }
 
-        .text {
+        .detail {
             width: 100%;
         }
 
-        .text h3 {
+        .detail h3 {
             font-size: 35.1px;
             padding-bottom: 15px;
         }
         
-        .text span {
+        .title-icon {
             color: #666;
             display: flex;
             justify-content: flex-end;
@@ -150,31 +151,133 @@
             height: 0;
         }
 
-        .text i {
+        .detail i {
             height: 0;
             margin-top: 5px;
         }
 
-        .text p {
-            padding-top: 30px;
-            font-size: 20px;
-        }
-
-        .text p:last-child {
-            padding-top: 0;
-        }
-        .text ol {
-            padding: 30px 0;
-        }
-        .text li {
-            list-style: decimal;
-            font-size: 20px;
-        }
-        .text .underline {
+        .detail .underline {
             width: 100%;
         }  
 
+        .content {
+            display: flex;
+            gap: 30px;
+            padding-top: 30px;
+        }
+
+        .detail img {
+            max-width: 350px;
+            border-radius: 20px;
+        }
+        
+       .detail h4 {
+            font-size: 25px;
+       }
+       .detail p {
+            font-size: 20px;
+            padding-top: 15px;
+       }
+
+        .community {
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .board-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .board-search {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .board-search input {
+            padding: 6px 10px;
+            width: 200px;
+        }
+
+        .board-search button {
+            padding: 6px 14px;
+            background: #6ac3ff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .board-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .board-table th,
+        .board-table td {
+            border-bottom: 1px solid #ddd;
+            padding: 12px 30px;
+            text-align: center;
+        }
+
+        .board-table th {
+            background: #f5f7fa;
+        }
+
+        .board-table td.title {
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .board-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .title {
+            width: 600px;
+            text-align-last: left;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        #pageNumbers button.active {
+            background: #6ac3ff;
+            color: #fff;
+        }
+
+
         /* content end */
+
+        .third-section .container {
+            padding: 0;
+        }
 
         /* icon start */
         
@@ -183,6 +286,8 @@
             top: 50%;
             right: 30px;
             transform: translateY(-50%); 
+            margin-left: 10px;
+            z-index: 1000;
         }
 
         .icon ul {
@@ -206,6 +311,7 @@
             padding-top: 5px;
         }
 
+        /* mobile side bar */
 
         .mobile-list {
             border: 1px solid #979696;
@@ -222,6 +328,8 @@
             border: 1px solid #979696;
             border-top: none;
         }
+        /* topbtn */
+
         #topbtn {
             position: fixed;
             bottom: 20px;
@@ -252,15 +360,23 @@
             .icon {
                 display: none;
             }
-            .text {
+            .detail {
                 width: 100%; 
                 padding-top: 25px;
             }
-            .text h3 {
+            .detail h3 {
                 font-size: 2rem;
             }
             .mobile-side {
                 display: block;
+            }
+
+            .content {
+                display: block;
+            }
+
+            .detail img {
+                width: 100%;
             }
         }
     </style>
@@ -280,60 +396,73 @@
                 <div class="col-md-3">
                     <div class="panel-panel-info">
                         <div class="panel-heading">
-                        <h3 class="panel-title">학회소개</h3>
+                        <h3 class="panel-title">커뮤니티</h3>
                         </div>
                         <div class="underline"></div>
                         <ul class="list-group">
-                            <a href="purpose.html"><li class="list-group-item active">설립목적</li></a>
-                            <a href="greetings.html"><li class="list-group-item">인사말</li></a>
-                            <a href="history.html"><li class="list-group-item">학회연혁</li></a>
-                            <a href="president.html"><li class="list-group-item">역대회장</li></a>
-                            <a href="ARR.html"><li class="list-group-item">정관/규정/연구윤리규정</li></a>
-                            <a href="road.html"><li class="list-group-item">오시는길</li></a>
+                            <a href="commu.html"><li class="list-group-item active">공지사항</li></a>
+                            <a href="#"><li class="list-group-item">갤러리</li></a>
+                            <a href="#"><li class="list-group-item">유관기관 공지/행사</li></a>
+                            <a href="#"><li class="list-group-item">정보보호뉴스</li></a>
+                            <a href="#"><li class="list-group-item">학회소식</li></a>
                         </ul>
                     </div>               
                 </div>
                 <div class="mobile-side">
                     <ul class="mobile-list-group">
-                            <a href="#"><li class="mobile-list">설립목적</li></a>
+                            <a href="#"><li class="mobile-list">공지사항</li></a>
                             <div class="subpage">
-                                <a href="purpose.html"><li class="mobile-list-group-item ">설립목적</li></a>
-                                <a href="greetings.html"><li class="mobile-list-group-item">인사말</li></a>
-                                <a href="history.html"><li class="mobile-list-group-item">학회연혁</li></a>
-                                <a href="president.html"><li class="mobile-list-group-item">역대회장</li></a>
-                                <a href="ARR.html"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
-                                <a href="road.html"><li class="mobile-list-group-item">오시는길</li></a>
+                                <a href="commu.html"><li class="mobile-list-group-item ">공지사항</li></a>
+                                <a href="#"><li class="mobile-list-group-item">갤러리</li></a>
+                                <a href="#"><li class="mobile-list-group-item">유관기관 공지/행사</li></a>
+                                <a href="#"><li class="mobile-list-group-item">정보보호뉴스</li></a>
+                                <a href="#"><li class="mobile-list-group-item">학회소식</li></a>
                             </div> 
                     </ul>
                 </div>
-                <div class="text">
+                <div class="detail">
                     <div class="top-title">
-                        <h3>설립목적</h3>
-                    <span>
-                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 설립목적
+                        <h3>공지사항</h3>
+                    <span class="title-icon">
+                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 커뮤니티 <i class="fa-solid fa-angle-right"></i> 공지사항
                     </span>
                     </div>
                     <div class="underline"></div>
-                    <p>
-                        본 학회는 정보보호를 위한 학술 및 기술의 진흥과 관련분야의 발전에 공헌하기 위하여, 
-                        학술적 연구와 필요한 사업을 행함을 목적으로 학계, 관련연구소, 그리고 관련정부부서에 계시는 여러분의 헌신적인 노력으로 1990년 12월에 창립되었습니다.
-                        <br>
-                        <br>본 회는 상기의 목적을 달성하기 위하여 다음 각 호의 사업을 행하고 있습니다.
-                    </p>
-                    <ol style="padding-left: 50px;">
-                        <li>정보보호에 관한 학술연구 발표회, 평론회의 개최</li>
-                        <li>학술적, 기술적 연구조사 및 발간사업</li>
-                        <li>표준 및 규격의 제정에 관한 연구</li>
-                        <li>기술의 보급, 발전을 위한 사업</li>
-                        <li>전문가 양성을 위한 기반 조성 사업</li>
-                        <li>위 각 호의 부대 사업 및 본 회 목적달성에 필요한 사업</li>
-                    </ol>
-                    <p>
-                        본 학회는 그간에 학회 회원 여러분들의 능동적인 참여의 결과 학문적으로나 산업면에서나 괄목할 만한 성장을 가져와 
-                        현재 4,000여명의 회원과 80여 곳의 기관 및 회원사들을 확보하고 있으며, 
-                        효과적이면서도 전문성이 높은 학술 연구를 위해 3개의 지부와 36개의 연구회를 두고 있습니다.
-                    </p>
+                    <div class="content">
+                        <div class="community">
+
+                        <table class="board-table">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th class="title">제목</th>
+                                    <th>작성일</th>
+                                    <th>조회</th>
+                                </tr>
+                            </thead>
+                            <tbody id="boardBody">
+                                
+                            </tbody>
+                        </table>
+
+                        <div class="pagination" id="pagination">
+                            <div class="pagination">
+                            <button onclick="prevPage()">← </button>
+                            <div id="pageNumbers"></div>
+                            <button onclick="nextPage()"> →</button>
+                        </div>
+                        </div>
+                        <div class="board-search">
+                            <input type="text" id="searchInput" placeholder="제목 검색">
+                            <button onclick="searchPosts()">검색</button>
+                        </div>
+                    </div>
+
                 </div>    
+            </div> 
+        </section>
+        <section class="third-section">
+            <div class="container">
                 <div class="icon">
                     <ul>
                         <a href="#"><li><i class="fa-regular fa-calendar"><span>학회 일정</span></i></li></a>
@@ -342,12 +471,96 @@
                         <a href="#"><li><i class="fa-regular fa-note-sticky"><span>논문지</span></i></li></a>
                         <a href="#"><li><i class="fa-regular fa-copy"><span>출간소식</span></i></li></a>
                     </ul>   
-                </div>      
-            </div> 
+                </div> 
+            </div>
         </section>
         <button id="topbtn" style="display: none;"><i class="fa-solid fa-angle-up"></i></button>
     </main>
-    <div id="footer"></div>
+    <footer id="footer"></footer>
+
+    <script>
+        const postsPerPage = 15;
+        let currentPage = 1;
+
+        const posts = Array.from({ length: 75 }, (_, i) => ({
+            no: i + 1,
+            title: `커뮤니티 게시글 제목 ${i + 1}`,
+            date: '2025-01-01',
+            view: Math.floor(Math.random() * 200)
+        }));
+
+        let filteredPosts = [...posts];
+
+        function renderBoard() {
+            const start = (currentPage - 1) * postsPerPage;
+            const end = start + postsPerPage;
+            const list = filteredPosts.slice(start, end);
+
+            const tbody = document.getElementById('boardBody');
+            tbody.innerHTML = '';
+
+            list.forEach(post => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${post.no}</td>
+                        <td class="title">${post.title}</td>
+                        <td>${post.date}</td>
+                        <td>${post.view}</td>
+                    </tr>
+                `;
+            });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+            const pageNumbers = document.getElementById('pageNumbers');
+            pageNumbers.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                pageNumbers.innerHTML += `
+                    <button class="${i === currentPage ? 'active' : ''}"
+                        onclick="goPage(${i})">${i}</button>
+                `;
+            }
+
+            document.querySelector('.pagination button:first-child').disabled = currentPage === 1;
+            document.querySelector('.pagination button:last-child').disabled = currentPage === totalPages;
+        }
+
+        function goPage(page) {
+            currentPage = page;
+            renderBoard();
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderBoard();
+            }
+        }
+
+        function nextPage() {
+            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderBoard();
+            }
+        }
+
+        function searchPosts() {
+            const keyword = document.getElementById('searchInput').value.toLowerCase();
+            filteredPosts = posts.filter(post =>
+                post.title.toLowerCase().includes(keyword)
+            );
+            currentPage = 1;
+            renderBoard();
+        }
+
+        renderBoard();
+    </script>
+
 
     <script src="resource/js/src.js"></script>
 </body>
