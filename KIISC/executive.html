@@ -164,93 +164,13 @@
         .content {
             padding-top: 30px;
         }
-        .tory h4 {
-            padding-bottom: 15px;
-            font-size: 20px;
-        }
-        .tory p {
-            padding: 15px 0;
-        }
         
         .title {
-            padding-top: 30px;
-            display: flex;
+            padding-top: 20px;
             gap: 20px;
             font-weight: bold;
-            font-size: 80px;
+            font-size: 40px;
             margin-bottom: 15px;
-            color: #6ac3ff;
-            justify-content: flex-end;
-        }
-        
-        .min {
-            display: flex;
-            gap: 30px;
-            padding-bottom: 15px;
-        }
-
-        .min i {
-            padding-top: 7px;
-            z-index: 1;
-            color: #6ac3ff;
-        }
-
-        .year {
-            position: relative;
-        }
-
-        .year::before {
-            content: '';
-            position: absolute;
-            top: 0;  
-            bottom: 0;
-            left: 1.1%;
-            width: 2px;
-            background-color: #ccc;
-            transform: translateX(-50%);
-        }
-
-        .text {
-            display: flex;
-            gap: 60px;
-            flex-wrap: wrap;
-            padding-bottom: 15px;
-            margin-left: 50px;
-        }
-
-        .text span {
-            font-size: 20px;
-            color: #666;
-        }
-
-        .text p {
-            color: #737373;
-            font-size: 20px;
-        }
-        
-        .textx {
-            display: flex;
-            gap: 60px;
-            flex-wrap: wrap;
-            padding-bottom: 15px;
-            margin-left: 50px;
-            padding-left: 100px;
-        }
-
-        .textx p {
-            color: #737373;
-            font-size: 20px;
-            word-break: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .year-start {
-            position: relative;
-            left: 10%;
-        }
-
-        .year h5 {
-            font-size: 25px;
         }
 
         .tab-container {
@@ -271,8 +191,21 @@
             justify-content: flex-start;
         }
 
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 0 20px;
+            border: 1px solid black;
+        }
+
+        th {
+            border: 1px solid black;
+        }
+
         .nav-item {
-            width: 25%;
+            width: 33%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -281,11 +214,10 @@
         .nav-link {
             padding: 10px 20px;
             cursor: pointer;
-            background-color: #eee;
+            background-color: #fff;
             border: none;
             font-size: 20px;
             width: 100%;
-            transition: 0.3s;            
         }
 
         .nav-link.active {
@@ -311,9 +243,7 @@
         }
 
         /* content end */
-        .third-section .container {
-            padding-bottom: 0;
-        }
+
         /* icon start */
         
         .icon {
@@ -379,7 +309,7 @@
             display: none; 
             border-radius: 50px;
         }
-
+        
         @media (max-width: 1008px) {
 
             .second-section .container {
@@ -436,234 +366,288 @@
                 <div class="col-md-3">
                     <div class="panel-panel-info">
                         <div class="panel-heading">
-                        <h3 class="panel-title">학회소개</h3>
+                        <h3 class="panel-title">학회조직</h3>
                         </div>
                         <div class="underline"></div>
                         <ul class="list-group">
-                            <a href="purpose.html"><li class="list-group-item">설립목적</li></a>
-                            <a href="greetings.html"><li class="list-group-item">인사말</li></a>
-                            <a href="History.html"><li class="list-group-item active">학회연혁</li></a>
-                            <a href="president.html"><li class="list-group-item">역대회장</li></a>
-                            <a href="ARR.html"><li class="list-group-item">정관/규정/연구윤리규정</li></a>
-                            <a href="road.html"><li class="list-group-item">오시는길</li></a>
+                            <a href="purpose.html"><li class="list-group-item active">임원</li></a>
+                            <a href="#"><li class="list-group-item">지부 및 위원회</li></a>
+                            <a href="#"><li class="list-group-item">연구회</li></a>
+                            <a href="#"><li class="list-group-item">학회 자문단</li></a>
                         </ul>
                     </div>               
                 </div>
                 <div class="mobile-side">
                     <ul class="mobile-list-group">
-                        <a href="#"><li class="mobile-list">학회연혁</li></a>
+                        <a href="#"><li class="mobile-list">임원</li></a>
                         <div class="subpage">
-                            <a href="purpose.html"><li class="mobile-list-group-item ">설립목적</li></a>
-                            <a href="greetings.html"><li class="mobile-list-group-item">인사말</li></a>
-                            <a href="History.html"><li class="mobile-list-group-item">학회연혁</li></a>
-                            <a href="president.html"><li class="mobile-list-group-item">역대회장</li></a>
-                            <a href="ARR.html"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
-                            <a href="road.html"><li class="mobile-list-group-item">오시는길</li></a>
+                            <a href="executive.html"><li class="mobile-list-group-item ">임원</li></a>
+                            <a href="#"><li class="mobile-list-group-item">지부 및 위원회</li></a>
+                            <a href="#"><li class="mobile-list-group-item">연구회</li></a>
+                            <a href="#"><li class="mobile-list-group-item">학회 자문단</li></a>
                         </div> 
                     </ul>
                 </div>
                 <div class="detail">
                     <div class="top-title">
-                        <h3>학회연혁</h3>
+                        <h3>임원</h3>
                     <span>
-                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 학회연혁
+                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회조직 <i class="fa-solid fa-angle-right"></i> 임원
                     </span>
                     </div>
                     <div class="underline"></div>
                     <div class="content">
-                        <div class="tory">
-                            <h4>한국정보보호학회 연혁</h4>
-                            <p>정보보호를 위한 학술 및 기술의 진흥과 관련분야의 발전에 공헌.</p>
-                        </div>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="home" aria-selected="true">2020's</button>
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="home" aria-selected="true">회장단</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="profile" aria-selected="false">2010's</button>
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="profile" aria-selected="false">감사 & 위원회</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="profile" aria-selected="false">2000's</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button" role="tab" aria-controls="profile" aria-selected="false">1990's</button>
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="profile" aria-selected="false">이사</button>
                         </li>
                         </ul>
                           <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="title">2020 ~</div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2025년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제30대 박영호 회장 취임</p>
-                                    </div>
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2024년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제29대 하재철 회장 취임</p>
-                                    </div>
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2023년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제28대 원유재 회장 취임</p>
-                                    </div>
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2022년</h5> 
-                                    </div>                           
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제27대 이옥연 회장 취임</p>
-                                    </div>
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2021년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제26대 류재철 회장 취임</p>
-                                    </div>
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2020년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제25대 정수환 회장 취임</p>
-                                    </div>
-                                </div>
+                                <div class="title">회장단</div>
+                                <table><tbody>
+                                <tr>
+                                    <td>회 장</td>
+                                    <td>박 영 호 (세종사이버대)</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                               
+                                <tr>
+                                    <td>수석부회장</td>
+                                    <td>김 호 원 (부산대)</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">상임부회장</td>
+                                    <td>홍 석 희 (총무, 고려대)</td>
+                                    <td> 한 동 국 (학술, 국민대)</td>
+                                    <td> 이 만 희 (협력, 한남대)</td>
+                                </tr>
+                                <tr>
+                                    <td>이 정 현 (교육, 숭실대)</td>
+                                    <td> 곽    진 (국제, 아주대)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>지부장</td>
+                                    <td> 최 윤 호 (영남지부, 부산대)</td>
+                                    <td> 이 만 희 (충청지부, 한남대)</td>
+                                    <td> 정 석 원 (호남지부, 국립목포대)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="9">상임이사</td>
+                                    <td>김 희 석 (기획, 고려대)</td>
+                                    <td> 이 영 숙 (여성협력, 호원대)</td>
+                                    <td> 이 창 훈 (총무, 서울과기대)</td>
+                                </tr>
+                                <tr>
+                                    <td>이 덕 규 (언론협력, 서원대)</td>
+                                    <td> 박 기 웅 (재무, 세종대)</td>
+                                    <td> 김 창 훈 (지부협력, 대구대)</td>
+                                </tr>
+                                <tr>
+                                    <td>김 종 성 (회원, 국민대)</td>
+                                    <td> 서 대 희 (교육기획, 상명대)</td>
+                                    <td> 최 두 호 (운영, 고려대)</td>
+                                </tr>
+                                <tr>
+                                    <td>양 대 헌 (교육사업, 이화여대)</td>
+                                    <td> 서 석 충 (과제, 국민대)</td>
+                                    <td> 장 항 배 (산업교육, 중앙대)</td>
+                                </tr>
+                                <tr>
+                                    <td>허 준 범 (논문지, 고려대)</td>
+                                    <td> 이 태 진 (공공교육, 가천대)</td>
+                                    <td> 서 화 정 (학회지, 한성대)</td>
+                                </tr>
+                                <tr>
+                                    <td>김 태 성 (대학교육, 충북대)</td>
+                                    <td> 김 환 국 (연구회, 국민대)</td>
+                                    <td> 조 해 현 (국제학술, 숭실대)</td>
+                                </tr>
+                                <tr>
+                                    <td> 최 대 선 (국내학술, 숭실대)</td>
+                                    <td> 서 승 현 (국제표준, 한양대)</td>
+                                    <td> 이 문 규 (학술자료, 인하대)</td>
+                                </tr>
+                                <tr>
+                                    <td>유 일 선 (국제협력, 국민대)</td>
+                                    <td> 이 일 구 (단기강좌, 성신여대)</td>
+                                    <td> 권 태 경 (국제행사, 연세대)</td>
+                                </tr>
+                                <tr>
+                                    <td>서 정 택 (대외협력, 가천대)</td>
+                                    <td> 이 종 혁 (국제논문, 세종대)</td>
+                                    <td> 김 승 주 (대외홍보, 고려대)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="18" class="asdf">협력부회장</td>
+                                    <td>강 용 석 (한국항공우주산업)</td>
+                                    <td> 이 도 훈 (국가보안기술연구소)</td>
+                                    <td> 강 인 양 (금융결제원)</td>
+                                </tr>
+                                <tr>
+                                    <td>이 돈 각 (아마존웹서비스)</td>
+                                    <td> 공 준 진 (웨이브피아)</td>
+                                    <td> 이 동 근 (한국인터넷진흥원)</td>
+                                </tr>
+                                <tr>
+                                    <td>구 경 본 (유비벨록스)</td>
+                                    <td> 이 석 윤 (서울대)</td>
+                                    <td> 길 민 권 (데일리시큐)</td>
+                                </tr>
+                                <tr>
+                                    <td>이 성 권 (엔키화이트햇)</td>
+                                    <td> 김 명 수 (구글클라우드코리아)</td>
+                                    <td> 이 수 미 (금융보안원)</td>
+                                </tr>
+                                <tr>
+                                    <td>김 민 주 (센스톤)</td>
+                                    <td> 이 승 영 (LIG넥스원)</td>
+                                    <td> 김 은 중 (이글루코퍼레이션)</td>
+                                </tr>
+                                <tr>
+                                    <td>이 승 용 (현대모비스)</td>
+                                    <td> 김 익 균 (한국전자통신연구원)</td>
+                                    <td> 이 재 형 (옥타코)</td>
+                                </tr>
+                                <tr>
+                                    <td> 김 일 용 (앤앤에스피)</td>
+                                    <td> 이 정 원 (아이씨티케이)</td>
+                                    <td> 나 중 찬 (한국전자통신연구원)</td>
+                                </tr>
+                                <tr>
+                                    <td>임 차 성 (시큐레터)</td>
+                                    <td> 노 용 환 (쏘마)</td>
+                                    <td> 장 대 현 (LG유플러스)</td>
+                                </tr>
+                                <tr>
+                                    <td>박 재 성 (지구루)</td>
+                                    <td> 장 종 수 (한국전자통신연구원)</td>
+                                    <td> 박 찬 암 (스틸리언)</td>
+                                </tr>
+                                <tr>
+                                    <td>전 길 수 (김앤장 법률사무소)</td>
+                                    <td> 배 환 국 (소프트캠프)</td>
+                                    <td> 전 성 학 (안랩)</td>
+                                </tr>
+                                <tr>
+                                    <td>백 건 대 (한국보안인증)</td>
+                                    <td>정 교 일 (조선대)</td>
+                                    <td>성 재 모 (고려대)</td>
+                                </tr>
+                                <tr>
+                                    <td>정 현 철 (한국인터넷진흥원)</td>
+                                    <td>송 중 석 (한국과학기술정보연구원)</td>
+                                    <td>조 상 우 (오투원즈)</td>
+                                </tr>
+                                <tr>
+                                    <td>신 대 규 (한국인터넷진흥원)</td>
+                                    <td>지 성 택 (국가보안기술연구소)</td>
+                                    <td>오 다 인 (더 리더블)</td>
+                                </tr>
+                                <tr>
+                                    <td>진 승 헌 (한국전자통신연구원)</td>
+                                    <td>오 진 영 (한국인터넷진흥원)</td>
+                                    <td>최 광 희 (법무법인 세종)</td>
+                                </tr>
+                                <tr>
+                                    <td>오 형 근 (국가보안기술연구소)</td>
+                                    <td>최 동 근 (고려대)</td>
+                                    <td>유 성 철 (아이티센엔텍)</td>
+                                </tr>
+                                <tr>
+                                    <td>최 만 용 (코어시큐리티)</td>
+                                    <td>유 현 경(Microsoft)</td>
+                                    <td>최 소 영 (보안뉴스)</td>
+                                </tr>
+                                <tr>
+                                    <td>윤 기 순 (NSHC)</td>
+                                    <td>최 영 철 (SGA솔루션즈)</td>
+                                    <td>윤 덕 상 (굿모닝아이텍)</td>
+                                </tr>
+                                <tr>
+                                    <td>한 대 완 (국가보안기술연구소)</td>
+                                    <td>윤 두 식 (이로운앤컴퍼니)</td>
+                                    <td>한 은 혜 (에스에스앤씨)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">부회장</td>
+                                    <td>권 헌 영 (고려대)</td>
+                                    <td> 신 상 욱 (부경대)</td>
+                                    <td>김 용 대 (한국과학기술원)</td>
+                                </tr>
+                                <tr>
+                                    <td>안 효 범 (국립공주대)</td>
+                                    <td>김 정 녀 (한국전자통신연구원)</td>
+                                    <td> 이 경 호 (고려대)</td>
+                                </tr>
+                                <tr>
+                                    <td> 남 기 효 (유니스소프트)</td>
+                                    <td> 이 상 진 (고려대)</td>
+                                    <td>박 동 규 (순천향대)</td>
+                                </tr>
+                                <tr>
+                                    <td>임 강 빈 (순천향대)</td>
+                                    <td> 서 창 호 (국립공주대)</td>
+                                    <td> 정 석 원 (국립목포대)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">손 기 욱 (서울과기대)</td>
+                                    <td> 한 근 희 (코어시큐리티)</td>
+                                    <td></td>
+                                </tr>
+                                </tbody></table>
                             </div>
                             <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="title">
-                                    <div class="year-start">2010</div>
-                                    <br>
-                                    ~ 2019
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2019년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제24대 이경현 회장 취임</p>
-                                    </div>
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2018년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제23대 홍만표 회장 취임</p>
-                                    </div>
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2017년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제22대 이동훈 회장 취임</p>
-                                    </div>
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2016년</h5>
-                                    </div>                    
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제21대 이임영 회장 취임</p>
-                                    </div>                               
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2015년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제20대 박춘식 회장 취임</p>
-                                    </div>                      
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2014년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제19대 이동훈 회장 취임</p>
-                                    </div>
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2013년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제18대 김석우 회장 취임</p>
-                                    </div>           
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2012년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제17대 박창섭 회장 취임</p>
-                                    </div>     
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2011년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제16대 염흥열 회장 취임</p>
-                                    </div>                                
-                                </div>
-                                <div class="year">
-                                    <div class="min">
-                                        <i class="fa-solid fa-circle"></i>
-                                        <h5>2010년</h5>
-                                    </div>
-                                    <div class="text">
-                                        <span>1월</span>
-                                        <p>제15대 임종인 회장 취임</p>
-                                    </div>   
-                                </div>
-                                
+                                <div class="title">감사</div>
+                                <table><thead>
+                                <tr>
+                                    <th colspan="2">감 사</th>
+                                </tr></thead>
+                                <tbody>
+                                <tr>
+                                    <td>최 명 길 (중앙대)</td>
+                                    <td>문 종 철 (국가보안기술연구소)</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <div class="title">위원회</div>
+                                <table><thead>
+                                <tr>
+                                    <th colspan="2">위 원 회</th>
+                                </tr></thead>
+                                <tbody>
+                                <tr>
+                                    <td> 논문지편집위원회 위원장: 허 준 범 (고려대)</td>
+                                    <td> 선거관리위원회 위원장: 류 재 철 (충남대)</td>
+                                </tr>
+                                <tr>
+                                    <td> 학회지편집위원회 위원장: 서 화 정 (한성대)</td>
+                                    <td> 포상위원회 위원장: 원 유 재 (충남대)</td>
+                                </tr>
+                                <tr>
+                                    <td> 학술연구위원회 위원장: 한 동 국 (국민대)</td>
+                                    <td> 여성위원회 위원장: 이 윤 경 (한국전자통신연구원)</td>
+                                </tr>
+                                <tr>
+                                    <td> 연구윤리위원회 위원장: 이 민 섭 (단국대)</td>
+                                    <td> 장학위원회 위원장: 이 임 영 (순천향대)</td>
+                                </tr>
+                                </tbody>
+                                </table>
                             </div>
                             <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="title">
-                                    <div class="year-start">2000</div>
+                                    <div class="year-start">2000 </div>
                                     <br>
                                     ~ 2009
                                 </div>
@@ -674,7 +658,7 @@
                                     </div>
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제14대 김광조 회장 취임</p>
+                                        <p>제14대 김광조 회장</p>
                                     </div>    
                                 </div>
                                 <div class="year">
@@ -684,7 +668,7 @@
                                     </div>
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제13대 이홍섭 회장 취임</p>
+                                        <p>제13대 이홍섭 회장</p>
                                     </div>    
                                 </div>
                                 <div class="year">
@@ -694,7 +678,7 @@
                                     </div>
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제12대 이민섭 회장 취임</p>
+                                        <p>제12대 이민섭 회장</p>
                                     </div>    
                                 </div>
                                 <div class="year">
@@ -704,7 +688,7 @@
                                     </div>
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제11대 송주석 회장 취임</p>
+                                        <p>제11대 송주석 회장</p>
                                     </div>    
                                 </div>
                                 <div class="year">
@@ -714,7 +698,7 @@
                                     </div>
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제10대 김대호 회장 취임</p>
+                                        <p>제10대 김대호 회장</p>
                                     </div>
                                     
                                 </div>
@@ -725,7 +709,7 @@
                                     </div>
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제 9대 이필중 회장 취임</p>
+                                        <p>제 9대 이필중 회장</p>
                                     </div>   
                                 </div>
                                 <div class="year">
@@ -739,7 +723,7 @@
                                     </div>     
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제 8대 김세헌 회장 취임</p>
+                                        <p>제 8대 김세헌 회장</p>
                                     </div>   
                                 </div>
                                 <div class="year">
@@ -753,7 +737,7 @@
                                     </div>    
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제 7대 원동호 회장 취임</p>
+                                        <p>제 7대 원동호 회장</p>
                                     </div>
                                 </div>
                                 <div class="year">
@@ -771,7 +755,7 @@
                                     </div>
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제 6대 문상재 회장 취임</p>
+                                        <p>제 6대 문상재 회장</p>
                                     </div>    
                                 </div>
                                 <div class="year">
@@ -787,7 +771,7 @@
                             </div>
                             <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="title">
-                                    <div class="year-start">1990</div>
+                                    <div class="year-start">1990 </div>
                                     <br>
                                     ~ 1999
                                 </div>
@@ -798,7 +782,7 @@
                                     </div>
                                     <div class="text">
                                         <span>1월</span>
-                                        <p>제 5대 남길현 회장 취임</p>
+                                        <p>제 5대 남길현 회장</p>
                                     </div>
                                 </div>
                                 <div class="year">
@@ -806,21 +790,21 @@
                                         <i class="fa-solid fa-circle"></i>
                                         <h5>1991년</h5>
                                     </div>
-                                    <div class="text">
+                                    <div class="text" dding-left: 226px;">
                                         <span>12월</span>
                                         <p>한국통신정보보호학회논문지 제1권 제1호 발간</p>
                                     </div>
                                     <div class="text">
                                         <span>9월</span>
-                                        <p style="padding-left: 15px;">I.U.G.G 한국위원회 회원가입승인</p>
+                                        <p>I.U.G.G 한국위원회 회원가입승인</p>
                                     </div>
                                     <div class="text">
                                         <span>4월</span>
-                                        <p style="padding-left: 12px;">한국통신정보보호학회지 제1권 제1호 발간</p>
+                                        <p>한국통신정보보호학회지 제1권 제1호 발간</p>
                                     </div>
                                     <div class="text">
                                         <span>2월</span>
-                                        <p style="padding-left: 15px;">체신부 산하 설립등기 완료</p>
+                                        <p>체신부 산하 설립등기 완료</p>
                                     </div>
                                 </div>
                                 <div class="year">
@@ -830,7 +814,7 @@
                                     </div>
                                     <div class="text">
                                         <span>12월</span>
-                                        <p>제 1대 ~ 제 4대 이만영 회장 취임</p>
+                                        <p>제 1대 ~ 제 4대 이만영 회장</p>
                                     </div>
                                     <div class="textx">
                                         <p>(사)한국통신정보보호학회 창립총회 개최, 초대회장 이만영 교수</p>

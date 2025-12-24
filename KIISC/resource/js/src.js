@@ -102,7 +102,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $(window).on('scroll', function() {
-        if ($(this).scrollTop() > 200) {
+        if ($(this).scrollTop() > 300) {
             $('#topbtn').fadeIn();  
         } else {
             $('#topbtn').fadeOut(); 

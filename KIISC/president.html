@@ -68,7 +68,7 @@
 
         .second-section {
             padding: 25px 0;
-            padding-bottom: 0;
+            padding-bottom: 50px;
         }
 
         .second-section .container{
@@ -99,7 +99,6 @@
 
         .list-group li {
             font-size: 20px;
-            gap: 30px;
             padding: 15px;
             border-radius: 15px;
             width: 280px;
@@ -166,18 +165,14 @@
             padding-top: 30px;
         }
         h4 {
-            padding-bottom: 15px;
+            padding-bottom: 30px;
             font-size: 20px;
         }
         
         .president {
-            display: flex;
-            flex-wrap: wrap;  
-            gap: 50px;     
-            justify-content: space-between; 
-            padding-top: 15px;
-            width: 100%;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
         }
 
         .president li {
@@ -185,14 +180,13 @@
         }
 
         .president li img {
-            min-width: 200px;
+            max-width: 200px;
         }
 
         li .text {
-           position: relative;
-           top: 60%;
            padding-left: 20px; 
-           height: 0;
+           word-break: keep-all;
+           line-height: 1.5;
         }
 
         .text h5 {
@@ -200,11 +194,11 @@
         }
 
         .text p {
-            font-size: 15px;
+            font-size: 20px;
         }
 
         .text span {
-            font-size: 15px;
+            font-size: 20px;
         }
 
         /* content end */
@@ -311,6 +305,10 @@
             .detail img {
                 width: 100%;
             }
+
+            .president {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <header id="header"></header>
@@ -337,8 +335,8 @@
                             <a href="greetings.html"><li class="list-group-item">인사말</li></a>
                             <a href="History.html"><li class="list-group-item">학회연혁</li></a>
                             <a href="president.html"><li class="list-group-item active">역대회장</li></a>
-                            <a href="#"><li class="list-group-item">정관/규정/연구윤리규정</li></a>
-                            <a href="#"><li class="list-group-item">오시는 길</li></a>
+                            <a href="ARR.html"><li class="list-group-item">정관/규정/연구윤리규정</li></a>
+                            <a href="road.html"><li class="list-group-item">오시는길</li></a>
                         </ul>
                     </div>               
                 </div>
@@ -350,16 +348,16 @@
                             <a href="greetings.html"><li class="mobile-list-group-item">인사말</li></a>
                             <a href="History.html"><li class="mobile-list-group-item">학회연혁</li></a>
                             <a href="president.html"><li class="mobile-list-group-item">역대회장</li></a>
-                            <a href="#"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
-                            <a href="#"><li class="mobile-list-group-item">오시는 길</li></a>
+                            <a href="ARR.html"><li class="mobile-list-group-item">정관/규정/연구윤리규정</li></a>
+                            <a href="road.html"><li class="mobile-list-group-item">오시는길</li></a>
                         </div> 
                     </ul>
                 </div>
                 <div class="detail">
                     <div class="top-title">
-                        <h3>학회연혁</h3>
+                        <h3>역대회장</h3>
                     <span class="title-icon">
-                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 인사말
+                        <i class="fa-solid fa-house"></i> <i class="fa-solid fa-angle-right"></i> 학회소개 <i class="fa-solid fa-angle-right"></i> 역대회장
                     </span>
                     </div>
                     <div class="underline"></div>
@@ -367,7 +365,7 @@
                         <h4>한국정보보호학회의 역대 회장소개입니다.</h4>
                         <ul class="president">
                             <li>
-                                <img src="resource/img/president/1.png" alt="1">
+                                <img src="resource/img/president/1.png" alt="1~4">
                                 <div class="text">
                                     <h5>故 이만영 회장</h5>
                                     <p>초대 -제4대 (1990-1998)</p>
@@ -375,7 +373,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/2.png" alt="2">
+                                <img src="resource/img/president/2.png" alt="5">
                                 <div class="text">
                                     <h5>남길현 회장</h5>
                                     <p>제5대 (1999-2000)</p>
@@ -383,7 +381,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/3.png" alt="2">
+                                <img src="resource/img/president/3.png" alt="6">
                                 <div class="text">
                                     <h5>문상재 회장</h5>
                                     <p>제6대 (2001) </p>
@@ -391,7 +389,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/4.png" alt="2">
+                                <img src="resource/img/president/4.png" alt="7">
                                 <div class="text">
                                     <h5>원동호 회장</h5>
                                     <p>제7대 (2002)</p>
@@ -399,7 +397,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/5.png" alt="2">
+                                <img src="resource/img/president/5.png" alt="8">
                                 <div class="text">
                                     <h5>김세헌 회장</h5>
                                     <p>제8대 (2003)</p>
@@ -407,7 +405,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/6.png" alt="2">
+                                <img src="resource/img/president/6.png" alt="9">
                                 <div class="text">
                                     <h5>이필중 회장</h5>
                                     <p>제9대 (2004)</p>
@@ -415,7 +413,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/7.png" alt="2">
+                                <img src="resource/img/president/7.png" alt="10">
                                 <div class="text">
                                     <h5>김대호 회장</h5>
                                     <p>제10대 (2005)</p>
@@ -425,7 +423,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/8.png" alt="2">
+                                <img src="resource/img/president/8.png" alt="11">
                                 <div class="text">
                                     <h5>송주석 회장</h5>
                                     <p>제11대 (2006)</p>
@@ -433,7 +431,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/9.png" alt="2">
+                                <img src="resource/img/president/9.png" alt="12">
                                 <div class="text">                                   
                                     <h5>이민섭 회장</h5>
                                     <p>제12대 (2007)</p>
@@ -441,7 +439,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/10.png" alt="2">
+                                <img src="resource/img/president/10.png" alt="13">
                                 <div class="text">
                                     <h5>이홍섭 회장</h5>
                                     <p>제13대 (2008)</p>
@@ -451,7 +449,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/11.png" alt="2">
+                                <img src="resource/img/president/11.png" alt="14">
                                 <div class="text">
                                     <h5>김광조 회장</h5>
                                     <p>제14대 (2009) </p>
@@ -461,7 +459,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/12.png" alt="2">
+                                <img src="resource/img/president/12.png" alt="15">
                                 <div class="text">
                                     <h5>임종인 회장</h5>
                                     <p>제15대 (2010)</p>
@@ -469,7 +467,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/13.png" alt="2">
+                                <img src="resource/img/president/13.png" alt="16">
                                 <div class="text">
                                     <h5>염흥열 회장</h5>
                                     <p>제16대 (2011)</p>
@@ -477,7 +475,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/14.png" alt="2">
+                                <img src="resource/img/president/14.png" alt="17">
                                 <div class="text">
                                     <h5>박창섭 회장</h5>
                                     <p>제17대 (2012)</p>
@@ -485,7 +483,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/15.png" alt="2">
+                                <img src="resource/img/president/15.png" alt="18">
                                 <div class="text">
                                     <h5>김석우 회장</h5>
                                     <p>제18대 (2013) </p>
@@ -493,7 +491,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/16.png" alt="2">
+                                <img src="resource/img/president/16.png" alt="19">
                                 <div class="text">
                                     <h5>오희국 회장</h5>
                                     <p>제19대 (2014) </p>
@@ -501,7 +499,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/17.png" alt="2">
+                                <img src="resource/img/president/17.png" alt="20">
                                 <div class="text">
                                     <h5>박춘식 회장</h5>
                                     <p>제20대 (2015)</p>
@@ -509,7 +507,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/18.png" alt="2">
+                                <img src="resource/img/president/18.png" alt="21">
                                 <div class="text">
                                     <h5>이임영 회장</h5>
                                     <p>제21대 (2016)</p>
@@ -517,7 +515,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/19.png" alt="2">
+                                <img src="resource/img/president/19.png" alt="22">
                                 <div class="text">
                                     <h5>이동훈 회장</h5>
                                     <p>제22대(2017)</p>
@@ -525,7 +523,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/20.png" alt="2">
+                                <img src="resource/img/president/20.png" alt="23">
                                 <div class="text">
                                     <h5>홍만표 회장</h5>
                                     <p>제23대(2018)</p>
@@ -533,7 +531,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/21.png" alt="2">
+                                <img src="resource/img/president/21.png" alt="24">
                                 <div class="text">
                                     <h5>이경현 회장</h5>
                                     <p>제24대(2019)</p>
@@ -541,7 +539,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/21.png" alt="2">
+                                <img src="resource/img/president/22.png" alt="25">
                                 <div class="text">
                                     <h5>정수환 회장</h5>
                                     <p>제25대(2020)</p>
@@ -549,7 +547,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/22.png" alt="2">
+                                <img src="resource/img/president/23.png" alt="26">
                                 <div class="text">
                                     <h5>류재철 회장</h5>
                                     <p>제26대(2021)</p>
@@ -557,27 +555,27 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/21.png" alt="2">
+                                <img src="resource/img/president/24.png" alt="27">
                                 <div class="text">
-                                    <h5>이경현 회장</h5>
-                                    <p>제24대(2019)</p>
-                                    <span>現 ) 부경대학교 명예교수</span>
+                                    <h5>이옥연 회장</h5>
+                                    <p>제27대(2022)</p>
+                                    <span>現 ) 국민대학교 교수</span>
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/21.png" alt="2">
+                                <img src="resource/img/president/25.png" alt="28">
                                 <div class="text">
-                                    <h5>이경현 회장</h5>
-                                    <p>제24대(2019)</p>
-                                    <span>現 ) 부경대학교 명예교수</span>
+                                    <h5>원유재 회장</h5>
+                                    <p>제28대(2023)</p>
+                                    <span>現 ) 충남대학교 교수</span>
                                 </div>
                             </li>
                             <li>
-                                <img src="resource/img/president/21.png" alt="2">
+                                <img src="resource/img/president/26.png" alt="29">
                                 <div class="text">
-                                    <h5>이경현 회장</h5>
-                                    <p>제24대(2019)</p>
-                                    <span>現 ) 부경대학교 명예교수</span>
+                                    <h5>하재철 회장</h5>
+                                    <p>제29대(2024)</p>
+                                    <span>現 ) 호서대학교 교수</span>
                                 </div>
                             </li>
                         </ul>
@@ -590,6 +588,7 @@
                     <ul>
                         <a href="#"><li><i class="fa-regular fa-calendar"><span>학회 일정</span></i></li></a>
                         <a href="#"><li><i class="fa-regular fa-newspaper"><span>학회지</span></i></li></a>
+                        <a href="#"><li><i class="fa-regular fa-paste"><span>논문투고/로그인</span></i></li></a>
                         <a href="#"><li><i class="fa-regular fa-note-sticky"><span>논문지</span></i></li></a>
                         <a href="#"><li><i class="fa-regular fa-copy"><span>출간소식</span></i></li></a>
                     </ul>   
