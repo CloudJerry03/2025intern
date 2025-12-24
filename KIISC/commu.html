@@ -379,6 +379,37 @@
                 width: 100%;
             }
         }
+
+        .write-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .write-box input {
+            flex: 1;
+            padding: 8px 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        .write-box button {
+            padding: 8px 16px;
+            font-size: 14px;
+            background: #4a6cf7;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .write-box button:hover {
+            background: #3b5de0;
+}
+
     </style>
     <header id="header"></header>
     <main>
@@ -430,7 +461,11 @@
                     <div class="underline"></div>
                     <div class="content">
                         <div class="community">
-
+                        <!-- <div class="write-box">
+                            <input type="text" id="titleInput" placeholder="제목을 입력하세요">
+                            <button onclick="writePost()">글쓰기</button>
+                        </div> -->
+                            
                         <table class="board-table">
                             <thead>
                                 <tr>
@@ -479,87 +514,118 @@
     <footer id="footer"></footer>
 
     <script>
-        const postsPerPage = 15;
-        let currentPage = 1;
+    const postsPerPage = 15;
+    let currentPage = 1;
 
-        const posts = Array.from({ length: 75 }, (_, i) => ({
-            no: i + 1,
-            title: `커뮤니티 게시글 제목 ${i + 1}`,
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+    if (posts.length === 0) {
+        posts = Array.from({ length: 30 }, (_, i) => ({
+            no: 30 - i,
+            title: `공지사항 제목 ${30 - i}`,
             date: '2025-01-01',
             view: Math.floor(Math.random() * 200)
         }));
+        localStorage.setItem('posts', JSON.stringify(posts));
+    }
 
-        let filteredPosts = [...posts];
+    let filteredPosts = [...posts];
 
-        function renderBoard() {
-            const start = (currentPage - 1) * postsPerPage;
-            const end = start + postsPerPage;
-            const list = filteredPosts.slice(start, end);
+    function renderBoard() {
+        const start = (currentPage - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        const list = filteredPosts.slice(start, end);
 
-            const tbody = document.getElementById('boardBody');
-            tbody.innerHTML = '';
+        const tbody = document.getElementById('boardBody');
+        tbody.innerHTML = '';
 
-            list.forEach(post => {
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${post.no}</td>
-                        <td class="title">${post.title}</td>
-                        <td>${post.date}</td>
-                        <td>${post.view}</td>
-                    </tr>
-                `;
-            });
+        list.forEach(post => {
+            tbody.innerHTML += `
+                <tr>
+                    <td>${post.no}</td>
+                    <td class="title">${post.title}</td>
+                    <td>${post.date}</td>
+                    <td>${post.view}</td>
+                </tr>
+            `;
+        });
 
-            renderPagination();
+        renderPagination();
+    }
+
+    function renderPagination() {
+        const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+        const pageNumbers = document.getElementById('pageNumbers');
+        pageNumbers.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            pageNumbers.innerHTML += `
+                <button class="${i === currentPage ? 'active' : ''}"
+                    onclick="goPage(${i})">${i}</button>
+            `;
         }
 
-        function renderPagination() {
-            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-            const pageNumbers = document.getElementById('pageNumbers');
-            pageNumbers.innerHTML = '';
+        document.querySelector('.pagination button:first-child').disabled = currentPage === 1;
+        document.querySelector('.pagination button:last-child').disabled = currentPage === totalPages;
+    }
 
-            for (let i = 1; i <= totalPages; i++) {
-                pageNumbers.innerHTML += `
-                    <button class="${i === currentPage ? 'active' : ''}"
-                        onclick="goPage(${i})">${i}</button>
-                `;
-            }
-
-            document.querySelector('.pagination button:first-child').disabled = currentPage === 1;
-            document.querySelector('.pagination button:last-child').disabled = currentPage === totalPages;
-        }
-
-        function goPage(page) {
-            currentPage = page;
-            renderBoard();
-        }
-
-        function prevPage() {
-            if (currentPage > 1) {
-                currentPage--;
-                renderBoard();
-            }
-        }
-
-        function nextPage() {
-            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-            if (currentPage < totalPages) {
-                currentPage++;
-                renderBoard();
-            }
-        }
-
-        function searchPosts() {
-            const keyword = document.getElementById('searchInput').value.toLowerCase();
-            filteredPosts = posts.filter(post =>
-                post.title.toLowerCase().includes(keyword)
-            );
-            currentPage = 1;
-            renderBoard();
-        }
-
+    function goPage(page) {
+        currentPage = page;
         renderBoard();
-    </script>
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            renderBoard();
+        }
+    }
+
+    function nextPage() {
+        const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderBoard();
+        }
+    }
+
+    function searchPosts() {
+        const keyword = document.getElementById('searchInput').value.toLowerCase();
+        filteredPosts = posts.filter(post =>
+            post.title.toLowerCase().includes(keyword)
+        );
+        currentPage = 1;
+        renderBoard();
+    }
+
+    renderBoard();
+
+    function writePost() {
+    const titleInput = document.getElementById('titleInput');
+    const title = titleInput.value.trim();
+
+    if (!title) {
+        alert('제목을 입력하세요!');
+        return;
+    }
+
+    const newPost = {
+        no: posts.length ? posts[0].no + 1 : 1,
+        title: title,
+        date: new Date().toISOString().slice(0, 10),
+        view: 0
+    };
+
+        posts.unshift(newPost);
+        localStorage.setItem('posts', JSON.stringify(posts));
+
+        filteredPosts = [...posts];
+        currentPage = 1;
+        titleInput.value = '';
+        renderBoard();
+    }
+</script>
+
 
 
     <script src="resource/js/src.js"></script>
