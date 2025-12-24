@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="resource/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/73190c27e7.js" crossorigin="anonymous"></script>
+    <title>KIPS</title>
+    <style>
+        .t1 {
+            font-size: 1.8rem;
+            font-weight: 1000;
+            border-bottom: 1px solid var(--bs-dark);
+        }
+
+        .t1>span {
+            color: var(--bs-primary);
+        }
+
+        .t2>div:first-child {
+            border-radius: 100%;
+            width: 14px;
+            height: 14px;
+            border: 4px solid var(--bs-primary);
+            background: #fff;
+        }
+
+        .t2 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .t3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        p {
+            line-height: 2rem;
+        }
+
+        table thead {
+            background-color: var(--bs-secondary);
+            border-top: 2px solid var(--bs-primary);
+            border-bottom: 1px solid var(--bs-light);
+        }
+
+        tr * {
+            padding: 12px 5px;
+        }
+
+        tbody tr *:nth-child(2) {
+            text-align: left;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--bs-light);
+        }
+
+        .btn-primary {
+            color: #fff;
+            background: var(--bs-primary);
+            padding: 10px 20px;
+            border: 1px solid var(--bs-primary);
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            color: var(--bs-primary);
+        }
+
+        .btn-secondary {
+            color: var(--bs-dark);
+            background: var(--bs-secondary);
+            padding: 10px 20px;
+            transition: 0.3s;
+            border: 1px solid var(--bs-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bs-primary);
+            color: #fff;
+        }
+
+        .search input {
+            border-radius: 0;
+            border-right: none;
+            border: 1px solid var(--bs-light);
+            border-right: none;
+            color: var(--bs-light);
+            background: var(--bs-secondary);
+        }
+        a {
+            color: var(--bs-primary);
+            transition: 0.3s;
+        }
+        a:hover {
+            color: var(--bs-opponent);
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header"></header>
+    <section class="title d-flex justify-content-center align-items-center">
+        <div class="d-flex flex-column gap-3 align-items-center">
+            <h1 class="banner-title text-white">학회소개</h1>
+            <div class="bread-crumb d-flex gap-2 align-items-center">
+                <a href="index.html">Home</a><span>/</span><p>학회소개</p><span>/</span><select name="" id="">
+                    <option value="#">회장 인사말</option>
+                    <option value="#">설립 취지</option>
+                    <option value="#">연혁</option>
+                    <option value="#">장관 및 윤리규정</option>
+                    <option value="#">명예 회장</option>
+                    <option value="#">사무국 안내</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <!--텍스트 뎁스. t1은 대제목 t2는 중제목 t3는 소제목 p는 본문-->
+        <div class="my-5">
+            <div class="t1 py-2 my-3"><span>띄어쓰기</span> 있으면 첫번째만 색깔 입히기</div>
+            <div class="t2 my-3">
+                <div></div>
+                <div>중제목</div>
+            </div>
+            <div class="t3 my-1">소제목</div>
+            <p class="mb-2">
+                동해물과 백두산이 마르고 닳도록
+                하느님이 보우하사 우리나라 만세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+                남산 위에 저 소나무 철갑을 두른 듯
+                바람 서리 불변함은 우리 기상일세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+                가을 하늘 공활한데 높고 구름 없이
+                밝은 달은 우리 가슴 일편단심일세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+                이 기상과 이 맘으로 충성을 다하여
+                괴로우나 즐거우나 나라 사랑하세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+            </p>
+            <p>
+                동해물과 백두산이 마르고 닳도록
+                하느님이 보우하사 우리나라 만세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+                남산 위에 저 소나무 철갑을 두른 듯
+                바람 서리 불변함은 우리 기상일세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+                가을 하늘 공활한데 높고 구름 없이
+                밝은 달은 우리 가슴 일편단심일세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+                이 기상과 이 맘으로 충성을 다하여
+                괴로우나 즐거우나 나라 사랑하세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+            </p>
+        </div>
+        <div class="bg-secondary text-dark p-3 rounded-3 my-5">
+            <div class="t1 py-2 my-3"><span>띄어쓰기</span> 있으면 첫번째만 색깔 입히기</div>
+            <div class="t2 my-3">
+                <div></div>
+                <div>중제목</div>
+            </div>
+            <div class="t3 my-1">소제목</div>
+            <p class="mb-2">
+                동해물과 백두산이 마르고 닳도록
+                하느님이 보우하사 우리나라 만세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+                남산 위에 저 소나무 철갑을 두른 듯
+                바람 서리 불변함은 우리 기상일세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+                가을 하늘 공활한데 높고 구름 없이
+                밝은 달은 우리 가슴 일편단심일세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+                이 기상과 이 맘으로 충성을 다하여
+                괴로우나 즐거우나 나라 사랑하세
+                무궁화 삼천리 화려 강산
+                대한 사람 대한으로 길이 보전하세
+            </p>
+        </div>
+        <div class="my-5">
+            <table class="text-center w-100" style="table-layout: fixed">
+                <thead>
+                    <tr>
+                        <th style="width: 8%;">No.</th>
+                        <th>제목</th>
+                        <th class="d-none d-md-table-cell" style="width: 10%;">등록일</th>
+                        <th class="d-none d-md-table-cell" style="width: 8%;">작성자</th>
+                        <th class="d-none d-md-table-cell" style="width: 8%;">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>227</td>
+                        <td><a href="#">[웹진] 2023년 9월호 발간 안내</a></td>
+                        <td class="d-none d-md-table-cell">2023-09-27</td>
+                        <td class="d-none d-md-table-cell">사무국</td>
+                        <td class="d-none d-md-table-cell">270</td>
+                    </tr>
+                    <tr>
+                        <td>226</td>
+                        <td><a href="#">[국문논문] 28권 3호(2023년 9월호) 발간</a></td>
+                        <td class="d-none d-md-table-cell">2023-09-18</td>
+                        <td class="d-none d-md-table-cell">사무국</td>
+                        <td class="d-none d-md-table-cell">236</td>
+                    </tr>
+                    <tr>
+                        <td>225</td>
+                        <td><a href="#">[영문저널] JCDE Volume 10, Issue 4 (August 2023) 발간</a></td>
+                        <td class="d-none d-md-table-cell">2023-09-14</td>
+                        <td class="d-none d-md-table-cell">사무국</td>
+                        <td class="d-none d-md-table-cell">116</td>
+                    </tr>
+                    <tr>
+                        <td>224</td>
+                        <td><a href="#">2023 하계학술대회 학술발표상 수상자</a></td>
+                        <td class="d-none d-md-table-cell">2023-08-30</td>
+                        <td class="d-none d-md-table-cell">사무국</td>
+                        <td class="d-none d-md-table-cell">555</td>
+                    </tr>
+                    <tr>
+                        <td>227</td>
+                        <td><a href="#">[웹진] 2023년 9월호 발간 안내</a></td>
+                        <td class="d-none d-md-table-cell">2023-09-27</td>
+                        <td class="d-none d-md-table-cell">사무국</td>
+                        <td class="d-none d-md-table-cell">270</td>
+                    </tr>
+                    <tr>
+                        <td>226</td>
+                        <td><a href="#">[국문논문] 28권 3호(2023년 9월호) 발간</a></td>
+                        <td class="d-none d-md-table-cell">2023-09-18</td>
+                        <td class="d-none d-md-table-cell">사무국</td>
+                        <td class="d-none d-md-table-cell">236</td>
+                    </tr>
+                    <tr>
+                        <td>225</td>
+                        <td><a href="#">[영문저널] JCDE Volume 10, Issue 4 (August 2023) 발간</a></td>
+                        <td class="d-none d-md-table-cell">2023-09-14</td>
+                        <td class="d-none d-md-table-cell">사무국</td>
+                        <td class="d-none d-md-table-cell">116</td>
+                    </tr>
+                    <tr>
+                        <td>224</td>
+                        <td><a href="#">2023 하계학술대회 학술발표상 수상자</a></td>
+                        <td class="d-none d-md-table-cell">2023-08-30</td>
+                        <td class="d-none d-md-table-cell">사무국</td>
+                        <td class="d-none d-md-table-cell">555</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>222</td>
+                        <td><a href="#">2023 하계학술대회 학술발표상 수상자</a></td>
+                        <td class="d-none d-md-table-cell">2023-08-30</td>
+                        <td class="d-none d-md-table-cell">사무국</td>
+                        <td class="d-none d-md-table-cell">555</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="my-5 d-flex justify-content-between align-items-center">
+            <div>
+                <button class="btn-primary">버튼</button>
+                <button class="btn-secondary">버튼</button>
+            </div>
+            <a href="#">링크</a>
+            <div class="search d-flex">
+                <input type="text" placeholder="제목 및 내용 검색" class="px-3">
+                <button class="btn-primary">검색</button>
+            </div>
+
+        </div>
+        <!-- 리스트 형태 -->
+        <div class="my-5 d-flex gap-3">
+            <div class="bg-primary p-5 text-white flex-fill">Primary Color</div>
+            <div class="bg-secondary flex-fill p-5 text-dark">Secondary Color</div>
+        </div>
+    </section>
+    <footer id="footer"></footer>
+    <script src="resource/js/main.js"></script>
+</body>
+
+</html>

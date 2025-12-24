@@ -11,6 +11,7 @@
 
     </style>
     <link rel="stylesheet" href="resource/css/main.css">
+    <link rel="stylesheet" href="resource/css/design.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -19,18 +20,28 @@
     <script src="https://kit.fontawesome.com/73190c27e7.js" crossorigin="anonymous"></script>
     <title>KIPS</title>
     <style>
-        .greeting p {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            line-height: 2rem;
-            text-align: justify;
-        }
-
         .span {
             font-weight: 1000;
-            font-size: clamp(1rem, 3vw, 3rem);
             color: var(--bs-primary);
             text-shadow: 2px 2px 0px #fff;
+        }
+
+        .greeting-img {
+            position: relative;
+            z-index: 1;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .greeting-img::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: -10px;
+            right: -10px;
+            background-color: var(--bs-primary);
         }
     </style>
 </head>
@@ -41,7 +52,8 @@
         <div class="d-flex flex-column gap-3 align-items-center">
             <h1 class="banner-title text-white">회장 인사말</h1>
             <div class="bread-crumb d-flex gap-2">
-                <a href="index.html">Home</a><span>/</span><a href="#">학회소개</a><span>/</span><select name="" id="">
+                <a href="index.html">Home</a><span>/</span>
+                <div>학회소개</div><span>/</span><select name="" id="">
                     <option value="#">회장 인사말</option>
                     <option value="#">설립 취지</option>
                     <option value="#">연혁</option>
@@ -55,41 +67,43 @@
     <section class="my-5 d-flex container flex-column gap-3">
         <div class="greeting">
 
-            <div class="bg-secondary d-flex align-items-center p-3 gap-3 flex-column flex-sm-row mb-3 justify-content-between">
+            <div class="d-flex align-items-center gap-3 flex-column flex-sm-row mb-3 justify-content-between">
                 <span class="d-none d-sm-block span">
-                    (사)한국정보처리학회<br>
-                    30대 회장 신년사
+                    <p style="font-size: clamp(1rem, 1.5vw, 3rem);">(사)한국정보처리학회</p>
+                    <p style="font-size: clamp(1rem, 3vw, 3rem);">30대 회장 신년사</p>
                 </span>
-                <img src="resource/img/sub/greeting/boss.jpg" alt="한국정보처리학회 회장 황종성" class="float-start col-12 col-sm-3">
+                <div class="greeting-img col-12 col-sm-3">
+                    <img src="resource/img/sub/greeting/boss.jpg" alt="한국정보처리학회 회장 황종성" class="w-100">
+                </div>
             </div>
-            <p>안녕하십니까!</p>
-            <p>2025년 한국정보처리학회 회장 황종성입니다.</p>
-            <p>
+            <p class="mb-2">안녕하십니까!</p>
+            <p class="mb-2">2025년 한국정보처리학회 회장 황종성입니다.</p>
+            <p class="mb-2">
                 올해로 32주년을 맞는 한국정보처리학회는 명실상부한 대한민국 ICT 분야 최고의 학회로 산 · 학 · 연 최고의 전문가들이 연구와 실무를 융합하여 발전하고 있는 글로벌 학회입니다. 학회
                 발전을 위해 헌신하신 선배님과 동료들의 노고에 깊이 감사드립니다.
             </p>
-            <p>
+            <p class="mb-2">
                 오늘날 세계는 인공지능이 정치, 경제, 사회, 문화 전반에서 디지털 혁신을 촉발하는 지능정보사회로 진입하고 있습니다. 2025년은 인공지능(AI), 양자컴퓨팅, 그리고 디지털 전환이
                 본격적으로
                 우리의 삶과 산업을 혁신적으로 변화시키는 중요한 한 해가 될 것입니다. 한국정보처리학회가 지속적인 연구와 협력을 통해 새로운 기술들에 대한 국가와 산업의 역량을 더욱 발전시키고 시대
                 변화를
                 선도해 나가야 할 때입니다.
             </p>
-            <p>
+            <p class="mb-2">
                 올해는 우리 학회의 장점인 산 · 학 · 연 전문가들이 참여하는 연구회 활동과 주요 행사의 활성화를 통해 학회의 발전을 이루고자 합니다. 학회의 활성화를 위해 연구회는 실제 산업에 적용할
                 수
                 있는 사례를 다루고 미래 발전방향을 제시할 연구를 수행하여야 합니다. 이를 위해 연구회별로 지속적인 학술 교류와 이벤트를 수행할 수 있도록 지원하겠습니다. 학회 최대 행사인 ASK
                 2025와
                 ACK 2025는 물론 IT21 글로벌 컨퍼런스, AICompS 2025가 성공적으로 개최될 수 있도록 많은 관심 부탁드립니다.
             </p>
-            <p>
+            <p class="mb-2">
                 한국정보처리학회는 회원 여러분을 적극 지원하고 지회와 본부, 분야별 위원회와 협력하여 명실상부한 대한민국 최고의 산학연 네트워크가 될 수 있도록 노력하겠습니다.
             </p>
-            <p style="margin-bottom: 0;">감사합니다.</p>
+            <p>감사합니다.</p>
         </div>
-        <div class="d-flex flex-column gap-2" style="margin-top: -40px;">
+        <div class="d-flex flex-column gap-2">
             <strong style="font-size: 1.4rem; text-align: end;">2025년 1월</strong>
-            <strong style="font-size: 1.6rem; text-align: end; font-weight: 1000;">한국정보처리학회 회장 황 종 성 올림</strong>
+            <strong style="text-align: end; font-size: 1.6rem;">한국정보처리학회 회장 황 종 성 올림</strong>
         </div>
     </section>
     <footer id="footer"></footer>

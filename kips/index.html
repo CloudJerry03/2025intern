@@ -65,7 +65,7 @@
 
         .shortcut a i {
             font-size: 2rem;
-            color: var(--bs-dark);
+            color: var(--bs-light);
             transition: 0.3s;
         }
 
@@ -82,6 +82,9 @@
 
         /* paper */
         /* community */
+        .community-left {
+            border-radius: 10px 0 0 10px;
+        }
         .community-right {
             border-radius: 0 10px 10px 0;
         }
@@ -105,8 +108,7 @@
             min-width: 140px;
             position: relative;
             cursor: pointer;
-            font-weight: 1000;
-            color: #999;
+            color: var(--bs-dark);
         }
 
         .tab-btn li::after {
@@ -133,11 +135,11 @@
         }
 
         .tab-content ul li {
-            color: #666;
+            color: var(--bs-dark);
         }
 
         .tab-content ul li span {
-            color: #999;
+            color: var(--bs-light);
             white-space: nowrap;
             flex-shrink: 0;
         }
@@ -176,7 +178,7 @@
         }
 
         .guide a i {
-            color: #b3b3b3;
+            color: var(--bs-light);
             transition: 0.3s;
         }
 
@@ -335,7 +337,7 @@
         </button>
     </div>
     <div class="content">
-        <section class="shortcut bg-secondary t2">
+        <section class="shortcut bg-secondary">
             <ul class="container d-grid gap-4 text-center">
                 <li class="d-flex flex-column align-items-center gap-2">
                     <a href="#" class="d-flex align-items-center justify-content-center">
@@ -392,8 +394,8 @@
                                     alt=""></a>
                             <div class="d-flex flex-column justify-content-between col-6 ">
                                 <div>
-                                    <h5 class="t2">KIPS</h5>
-                                    <p class="text-primary t2">한국정보처리학회 학회지</p>
+                                    <h5 class="t3">KIPS</h5>
+                                    <p class="text-primary">한국정보처리학회 학회지</p>
                                 </div>
                                 <div class="d-flex flex-column gap-2 paper-btn">
                                     <a href="#" class="p-2 bg-primary text-white text-center hover">자세히 보기<i
@@ -410,8 +412,8 @@
                                     alt=""></a>
                             <div class="d-flex flex-column justify-content-between col-6">
                                 <div>
-                                    <h5 class="t2">TKIPS</h5>
-                                    <p class="text-primary t2">한국연구재단 등재 논문지</p>
+                                    <h5 class="t3">TKIPS</h5>
+                                    <p class="text-primary">한국연구재단 등재 논문지</p>
                                 </div>
                                 <div class="d-flex flex-column gap-2 paper-btn">
                                     <a href="#" class="p-2 bg-primary text-white text-center hover">자세히 보기<i
@@ -428,8 +430,8 @@
                                     alt=""></a>
                             <div class="d-flex flex-column justify-content-between col-6">
                                 <div>
-                                    <h5 class="t2">JIPS</h5>
-                                    <p class="text-primary t2">한국연구재단 및 SCOPUS 등재 논문지</p>
+                                    <h5 class="t3">JIPS</h5>
+                                    <p class="text-primary">한국연구재단 및 SCOPUS 등재 논문지</p>
                                 </div>
                                 <div class="d-flex flex-column gap-2 paper-btn">
                                     <a href="#" class="p-2 bg-primary text-white text-center hover">자세히 보기<i
@@ -450,16 +452,16 @@
                     <div
                         class="d-flex flex-column justify-content-between col-3 bg-primary text-white p-4 community-left">
                         <h1 class="t1 under-line community-title">한국정보처리학회 커뮤니티</h1>
-                        <p class="t3">학회 및 유관 기관의 최신 소식, <br>회원 활동, 각종 소식을 <br>확인하실 수 있습니다.</p>
+                        <p class="t3">학회 및 유관 기관의 최신 소식,회원 활동, 각종 소식을 확인하실 수 있습니다.</p>
                     </div>
                     <div class="col-md-9 col-12 border border-light border-start-0 community-right">
                         <div class="tab-btn">
                             <ul class="d-flex">
-                                <li class="active text-center t2 col p-3">학회 공지/행사</li>
-                                <li class="text-center t2 col p-3">유관기관 공지/행사</li>
-                                <li class="text-center t2 col p-3">회원 동정</li>
-                                <li class="text-center t2 col p-3">구인/구직</li>
-                                <li class="text-center t2 col p-3">학회 갤러리</li>
+                                <li class="active text-center t3 col p-3">학회 공지/행사</li>
+                                <li class="text-center t3 col p-3">유관기관 공지/행사</li>
+                                <li class="text-center t3 col p-3">회원 동정</li>
+                                <li class="text-center t3 col p-3">구인/구직</li>
+                                <li class="text-center t3 col p-3">학회 갤러리</li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -503,7 +505,7 @@
                                 </li>
                                 <li class="p-3 text-end text-dark">
                                     <a href="notice.html" class="text-decoration-none hover" style="color: #999; display: inline;">더보기<i
-                                            class="fa-solid fa-plus"></i></ㅁ>
+                                            class="fa-solid fa-plus"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -520,10 +522,10 @@
                 </div>
                 <ul class="row g-4 align-items-center justify-content-center">
                     <li class="col-md-4 col-12">
-                        <div class="circle"><span class="t2 text-primary">11.12</span></div>
+                        <div class="circle"><span class="t3 text-primary">11.12</span></div>
                         <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
-                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다.
+                            <p>안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다.
                                 안녕하세요 ACK 2025 학술대회 입니다.</p>
                             <p class="mobile-date d-none">
                                 2025.12.25
@@ -531,50 +533,50 @@
                         </div>
                     </li>
                     <li class="col-md-4 col-12">
-                        <div class="circle"><span class="t2 text-primary">11.12</span></div>
+                        <div class="circle"><span class="t3 text-primary">11.12</span></div>
                         <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
-                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
                             <p class="mobile-date d-none">
                                 2025.12.25
                             </p>
                         </div>
                     </li>
                     <li class="col-md-4 col-12">
-                        <div class="circle"><span class="t2 text-primary">11.12</span></div>
+                        <div class="circle"><span class="t3 text-primary">11.12</span></div>
                         <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
-                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
                             <p class="mobile-date d-none">
                                 2025.12.25
                             </p>
                         </div>
                     </li>
                     <li class="col-md-4 col-12">
-                        <div class="circle"><span class="t2 text-primary">11.12</span></div>
+                        <div class="circle"><span class="t3 text-primary">11.12</span></div>
                         <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
-                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
                             <p class="mobile-date d-none">
                                 2025.12.25
                             </p>
                         </div>
                     </li>
                     <li class="col-md-4 col-12">
-                        <div class="circle"><span class="t2 text-primary">11.12</span></div>
+                        <div class="circle"><span class="t3 text-primary">11.12</span></div>
                         <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
-                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다.</p>
+                            <p>안녕하세요 ACK 2025 학술대회 입니다.</p>
                             <p class="mobile-date d-none">
                                 2025.12.25
                             </p>
                         </div>
                     </li>
                     <li class="col-md-4 col-12">
-                        <div class="circle"><span class="t2 text-primary">11.12</span></div>
+                        <div class="circle"><span class="t3 text-primary">11.12</span></div>
                         <div class="d-flex flex-column border-bottom border-dark gap-2 p-2 flex-fill guide-text">
                             <h5 class="t2">ACK 2025 학술대회</h5>
-                            <p class="t3">안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다.
+                            <p>안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다. 안녕하세요 ACK 2025 학술대회 입니다.
                                 안녕하세요 ACK 2025 학술대회 입니다.</p>
                             <p class="mobile-date d-none">
                                 2025.12.25

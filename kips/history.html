@@ -60,9 +60,18 @@
                 border: none !important;
             }
         }
+
+        .timeline-center>div:first-child {
+            display: block;
+        }
+
+        .timeline-center>div {
+            display: none;
+        }
+
         .active {
-            font-weight: bold;
             color: var(--bs-primary);
+            font-weight: bold;
             cursor: pointer;
         }
     </style>
@@ -93,83 +102,1016 @@
             <li class="col-6 col-md-3 my-3 text-center border-start">2000년~</li>
         </div>
         <div class="timeline-center g-4">
-            <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
-                <dt class="timeline d-flex align-items-center gap-3">
-                    <span class="dot"></span>
-                    <span class="t1">2024</span>
-                </dt>
-                <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
-                    <li class="t3 text-dark my-2">
-                        <b class="text-primary t2">12.30</b>
-                        <p class="mx-2">2024년 운당(雲堂)학술상 시상식(학술대상 : 경희대학교 홍충선 교수)</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">12.16 ~ 18</b>
-                        <p class="mx-2">AICompS 개최</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">10.10</b>
-                        <p class="mx-2">안티드론연구회 신설(초대위원장 : 유동영 교수)</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">07.03 ~ 05</b>
-                        <p class="mx-2">제29회 IT 21 글로벌 컨퍼런스 개최</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">02.20</b>
-                        <p class="mx-2">AI시스템연구회 신설(초대위원장 : 임유진 교수)</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">01.08</b>
-                        <p class="mx-2">데이터프라이버시연구회 신설(초대위원장 : 권태경 교수)</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">01.01</b>
-                        <p class="mx-2">제29대 백윤흥 회장 취임</p>
-                    </li>
-                </dd>
+            <div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2024</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.30</b>
+                            <p class="mx-2">2024년 운당(雲堂)학술상 시상식(학술대상 : 경희대학교 홍충선 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">12.16 ~ 18</b>
+                            <p class="mx-2">AICompS 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">10.10</b>
+                            <p class="mx-2">안티드론연구회 신설(초대위원장 : 유동영 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">07.03 ~ 05</b>
+                            <p class="mx-2">제29회 IT 21 글로벌 컨퍼런스 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">02.20</b>
+                            <p class="mx-2">AI시스템연구회 신설(초대위원장 : 임유진 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.08</b>
+                            <p class="mx-2">데이터프라이버시연구회 신설(초대위원장 : 권태경 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제29대 백윤흥 회장 취임</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2023</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.01</b>
+                            <p class="mx-2">제3회 운당(雲堂)학술상 시상식(학술대상 : 서울대학교 이경무 석좌교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">12.01</b>
+                            <p class="mx-2">정보처리학회 창립 30주년 기념식</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">09.23</b>
+                            <p class="mx-2">데이터과학연구회 신설(초대위원장 : 김현희 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">09.14 ~ 15</b>
+                            <p class="mx-2">제28회 IT 21 글로벌 컨퍼런스 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">09.11</b>
+                            <p class="mx-2">양자산업기술응용연구회 신설(초대위원장 : 박종혁 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">08.24</b>
+                            <p class="mx-2">인공지능연구회 신설(초대위원장 : 전유부 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">08.24</b>
+                            <p class="mx-2">웹3.0연구회 신설(초대위원장 : 민경식 팀장)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.19</b>
+                            <p class="mx-2">클라우드서비스연구회 신설(초대위원장 : 유진호 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제28대 문남미 회장 취임</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2022</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.19 ~ 21</b>
+                            <p class="mx-2">CUTE 2022 국제컨퍼런스 개최(라오스)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">12.09</b>
+                            <p class="mx-2">제2회 운당(雲堂)학술상 시상식(학술대상 : 가천대학교 오해석 석좌교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">12.06</b>
+                            <p class="mx-2">한국화웨이-한국정보처리학회 포상 제정 및 후원 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.09 ~ 10</b>
+                            <p class="mx-2">제27회 IT 21 글로벌 컨퍼런스 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제27대 강진모 회장 취임</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2021</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.22</b>
+                            <p class="mx-2">제1회 운당(雲堂)학술상 시상식(학술대상 : 한림대학교 최양희 총장)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">11.04 ~ 06</b>
+                            <p class="mx-2">ACK 2021(추계학술발표대회 명칭 변경) 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.28</b>
+                            <p class="mx-2">운당(雲堂)학술상 제정 및 후원 협약 체결(재단법인 미래와 소프트웨어)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.10 ~ 11</b>
+                            <p class="mx-2">제26회 IT 21 글로벌 컨퍼런스 개최(온라인 웨비나)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제26대 신용태 회장 취임</p>
+                        </li>
+                    </dd>
+                </div>
             </div>
-            <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
-                <dt class="timeline d-flex align-items-center gap-3">
-                    <span class="dot"></span>
-                    <span class="t1">2023</span>
-                </dt>
-                <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
-                    <li class="t3 text-dark my-2">
-                        <b class="text-primary t2">12.30</b>
-                        <p class="mx-2">2024년 운당(雲堂)학술상 시상식(학술대상 : 경희대학교 홍충선 교수)</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">12.16 ~ 18</b>
-                        <p class="mx-2">AICompS 개최</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">10.10</b>
-                        <p class="mx-2">안티드론연구회 신설(초대위원장 : 유동영 교수)</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">07.03 ~ 05</b>
-                        <p class="mx-2">제29회 IT 21 글로벌 컨퍼런스 개최</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">02.20</b>
-                        <p class="mx-2">AI시스템연구회 신설(초대위원장 : 임유진 교수)</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">01.08</b>
-                        <p class="mx-2">데이터프라이버시연구회 신설(초대위원장 : 권태경 교수)</p>
-                    </li>
-                    <li class="t3 text-dark my-3">
-                        <b class="text-primary t2">01.01</b>
-                        <p class="mx-2">제29대 백윤흥 회장 취임</p>
-                    </li>
-                </dd>
+            <div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2020</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">09.24 ~ 25</b>
+                            <p class="mx-2">제25회 IT 21 글로벌 컨퍼런스 개최(온라인 웨비나)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.30</b>
+                            <p class="mx-2">ICESI 2020 국제학술대회 상호협력 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제25대 이상현 회장 취임</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2019</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.16 ~ 18</b>
+                            <p class="mx-2">CUTE 2019 국제컨퍼런스 개최(중국 마카오)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.13 ~ 14</b>
+                            <p class="mx-2">제24회 IT 21 글로벌 컨퍼런스 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제24대 김상훈 회장 취임(한경대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2018</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.17 ~ 19</b>
+                            <p class="mx-2">CUTE 2018 국제컨퍼런스 개최(말레이시아 쿠알라룸푸르)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">05.31 ~ 06.01</b>
+                            <p class="mx-2">제23회 IT 21 글로벌 컨퍼런스 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">04.27</b>
+                            <p class="mx-2">블록체인연구회 신설(초대위원장 : 정영식 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">04.27</b>
+                            <p class="mx-2">학회지 발간주기 변경(반년간 : 1월, 7월)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">03.22</b>
+                            <p class="mx-2">한국에듀테크산업협회 업무 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.23</b>
+                            <p class="mx-2">그룹웨어(전자결재) 도입</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제23대 남석우 회장 취임(콤텍시스템)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2017</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.15 ~ 17</b>
+                            <p class="mx-2">CUTE 2017 국제컨퍼런스 개최(대만 타이중)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">09.15</b>
+                            <p class="mx-2">한국정보산업연합회 국내 IT교육 및 산업발전을 위한 업무 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.01 ~ 02</b>
+                            <p class="mx-2">제22회 IT 21 글로벌 컨퍼런스 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제22대 정영식 회장 취임(동국대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2016</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.15 ~ 17</b>
+                            <p class="mx-2">CUTE 2016 국제컨퍼런스 개최(태국 방콕)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">10.01</b>
+                            <p class="mx-2">학회 정보화(회원 및 논문지 등) 구축 완료</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.09 ~ 10</b>
+                            <p class="mx-2">제21회 IT 21 글로벌 컨퍼런스 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제21대 구원모 회장 취임(전자신문)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2015</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.15 ~ 17</b>
+                            <p class="mx-2">CUTE 2015 국제컨퍼런스 개최(필리핀 세부)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.11 ~ 12</b>
+                            <p class="mx-2">제20회 IT 21 글로벌 컨퍼런스 개최(20주년 기념)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">03.25 ~ 27</b>
+                            <p class="mx-2">AINA 2015 국제컨퍼런스 개최(대륙간 순회 세계대회)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제20대 박두순 회장 취임(순천향대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2014</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.06 ~ 08</b>
+                            <p class="mx-2">ICFW 2014(The International Conference on Future Web) 및 2014년 추계학술대회
+                                개최(부산외국어대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">07.16</b>
+                            <p class="mx-2">&lt;'정보과학'을 정규독립교과로!!&gt; 관련 공청회 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제19대 조성갑 회장 취임(인천정보산업진흥원)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2013</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.27 ~ 29</b>
+                            <p class="mx-2">CAIPT 2013(International Conference on Computer Applications and Information
+                                Processing Technology) 국제컨퍼런스 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.</b>
+                            <p class="mx-2">정보처리학회논문지 대표 우수학술지 선정(출처:중앙일보)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제18대 박석천 회장 취임(가천대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2012</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">-</b>
+                            <p class="mx-2">JIPS(Journal of Information Processing Systems) 한국연구재단 등재지 선정</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">-</b>
+                            <p class="mx-2">JIPS(Journal of Information Processing Systems) SCOPUS 등재</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">04.26 ~ 28</b>
+                            <p class="mx-2">제1회 YSEC 2012 국제학술발표대회 및 제37회 춘계학술발표대회(순천대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제17대 오경수 회장 취임(롯데정보통신)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2011</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">09.24</b>
+                            <p class="mx-2">제1회 모바일 프로그래밍 능력 시험(TOMPA) 실시</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제16대 정태명 회장 취임(성균관대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+            </div>
+            <div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2010</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">02.04</b>
+                            <p class="mx-2">"대한민국 IT의 미래, 신진학자들과 만남의 밤" 행사 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제15대 금기현 회장 취임(전자신문사)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2009</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">02.04</b>
+                            <p class="mx-2">The e-Bridge 창간기념회 개최(서울프레스센터)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">01.31</b>
+                            <p class="mx-2">The e-Bridge 창간호 발간 - 계간(편집위원장 : 안문석 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제14대 이정배 회장 취임(선문대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2008</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">08.25</b>
+                            <p class="mx-2">중국 흑룡강신문사 조선족 학생 IT 장학금 지급</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.27</b>
+                            <p class="mx-2">한국정보시스템감리협회 업무 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.10</b>
+                            <p class="mx-2">한국정보통신설비학회 국내 정보통신 학문 발전을 위한 상호 공동 체제 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">05.16</b>
+                            <p class="mx-2">한국정보산업연합회 국내 IT교육 및 산업발전을 위한 업무 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">02.20</b>
+                            <p class="mx-2">남북IT교류협력본부 학술지교류사업을 위한 업무 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제13대 최헌규 회장 취임(다우기술)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2007</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.26</b>
+                            <p class="mx-2">학회 사무실 추가 매입(1001호)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">02.12 ~ 14</b>
+                            <p class="mx-2">제1회 ICUT 국제학술대회 개최(두바이, UAE)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제12대 김병기 회장 취임(전남대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2006</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">09.15</b>
+                            <p class="mx-2">중국 흑룡강신문사 조선족 학생 IT 장학금 지급</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제11대 변재일 회장 취임(열린우리당)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2005</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.09</b>
+                            <p class="mx-2">영문논문지(IJIPS) 창간호 Vol.1 No.1 발간(편집위원장 : 백두권 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">07.06</b>
+                            <p class="mx-2">중국칭화대학 한국원정교육중심 업무 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">04.01</b>
+                            <p class="mx-2">도산아카데미연구원 한국정보화사회 지도자포럼 업무 협약 체결</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">01.26 ~ 27</b>
+                            <p class="mx-2">제4회 아시아 태평양 국제학술대회(APIS) 개최(호주 골드코스트)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">01.21</b>
+                            <p class="mx-2">학회 사무국 이전기념 입주식 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">01.15</b>
+                            <p class="mx-2">학회 사무국 이전(용성비즈텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제10대 이상범 회장 취임(단국대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2004</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.10</b>
+                            <p class="mx-2">2004년도 송년회 개최(서울팔래스호펠)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.09</b>
+                            <p class="mx-2">학회 사무국 2차 매입(용성비즈텔 1003호)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.08</b>
+                            <p class="mx-2">학회 사무국 1차 매입(용성비즈텔 1002호)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.24</b>
+                            <p class="mx-2">학회 사무국 매각(삼공빌딩 501호, 504호)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.12 ~ 13</b>
+                            <p class="mx-2">2004년도 추계학술발표대회 및 제21회 정기총회 개최(대구가톨릭대)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">10.12 ~ 13</b>
+                            <p class="mx-2">제8회 SQMS 심포지움 개최(한국과학기술회관)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">08.18 ~ 19</b>
+                            <p class="mx-2">제3회 ICIS 국제컨퍼런스 개최(미국 LA 옴니호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.14 ~ 15</b>
+                            <p class="mx-2">제9회 IT21 컨퍼런스 개최(COEX 컨퍼런스센터)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">05.14 ~ 15</b>
+                            <p class="mx-2">2004년도 춘계학술발표대회 및 제20회 임시총회 개최(중앙대)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">01.13 ~ 14</b>
+                            <p class="mx-2">제3회 APIS 국제심포지움 개최(터키 이스탄불 ITU 대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제9대 김홍기 회장 취임(삼성SDS)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2003</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.01</b>
+                            <p class="mx-2">학회 창립 10주년 기념식 개최(서울소재 롯데월드호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.14 ~ 15</b>
+                            <p class="mx-2">2003년도 추계학술발표대회 및 제19회 정기총회 개최(경남소재 창원대)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">07.09 ~ 11</b>
+                            <p class="mx-2">제3회 동아시아 언어처리와 인터넷 정보기술 국제학술대회(EALPIIT) 개최(몽골 울란바토르 몽골국립대학)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">07.07 ~ 18</b>
+                            <p class="mx-2">실버넷운동 제10기 교육 실시(2,205명 수료)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.26 ~ 27</b>
+                            <p class="mx-2">제1차 산학협동 워크샵 개최(대전 유성소재 리베라호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.19 ~ 20</b>
+                            <p class="mx-2">제8회 IT 21 국제컨퍼런스 개최 (기업의 경쟁력 향상과 21세기 정보기술, 잠실롯데월드호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">05.16 ~ 17</b>
+                            <p class="mx-2">제19회 춘계학술발표대회 개최(서울소재 단국대)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">02.04 ~ 14</b>
+                            <p class="mx-2">실버넷운동 제9기 교육 실시(2,424명 수료)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제8대 오해석 회장 취임(숭실대)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2002</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.13</b>
+                            <p class="mx-2">대학교양교재 UIT시리즈 출판</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.15 ~ 16</b>
+                            <p class="mx-2">제18회 임시총회 및 추계학술발표대회 개최(아산소재 선문대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">10.23</b>
+                            <p class="mx-2">2003년도 수석부회장 선출(김홍기 삼성SDS 대표)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">08.21</b>
+                            <p class="mx-2">IT 인증본부 설립(본부장 : 이기현 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">07.14 ~ 15</b>
+                            <p class="mx-2">제1회 ICIS 국제학술대회 개최(서울소재 롯데월드호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">07.08 ~ 18</b>
+                            <p class="mx-2">실버넷운동 제8기 교육 실시(2,647명 수료)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.27 ~ 28</b>
+                            <p class="mx-2">제7회 IT 21 국제컨퍼런스 개최 (기업의 경쟁력 향상과 21세기 정보기술, 잠실롯데월드호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">04.12 ~ 13</b>
+                            <p class="mx-2">제17회 정기총회 및 춘계학술발표대회 개최(서울소재 세종대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">02.02 ~ 03</b>
+                            <p class="mx-2">학회지 편집위원회 제3차 워크샵(강원도 속초)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">01.28 ~ 02.07</b>
+                            <p class="mx-2">실버넷운동 제7기 교육 실시(3,566명 수료)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제7대 정진욱 회장 취임(성균관대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2001</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.23</b>
+                            <p class="mx-2">2002년도 수석부회장 선출(오해석 숭실대학교 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">10.12 ~ 13</b>
+                            <p class="mx-2">제16회 임시총회 및 추계학술발표대회 개최(광주소재 전남대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">09.15 ~ 11.03</b>
+                            <p class="mx-2">실버넷운동 제6기 교육 실시(2,853명 수료)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">07.09 ~ 20</b>
+                            <p class="mx-2">실버넷운동 제5기 교육 실시(2,759명 수료)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">07.07 ~ 08</b>
+                            <p class="mx-2">학회지 편집위원회 제2차 워크샵(경북 경주)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.21</b>
+                            <p class="mx-2">2001년도 수석부회장 선출(정진욱 성균관대학교 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.21 ~ 22</b>
+                            <p class="mx-2">제6회 IT 21 국제컨퍼런스 개최 (기업의 경쟁력 향상과 21세기 정보기술, 잠실롯데월드호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">04.13</b>
+                            <p class="mx-2">정관일부 개정(수석부회장 제도 도입)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">04.13 ~ 14</b>
+                            <p class="mx-2">제15회 임시총회 및 춘계학술발표대회 개최(수원소재 성균관대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">04.07 ~ 06.02</b>
+                            <p class="mx-2">실버넷운동 제4기 교육 실시(3,097명 수료)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">01.16 ~ 17</b>
+                            <p class="mx-2">학회지 편집위원회 제1차 워크샵(중국 해남도)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">01.14 ~ 15</b>
+                            <p class="mx-2">제1회 APIS 국제학술대회 개최 (태국 방콕)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제6대 이기현 회장 취임(명지대학교)</p>
+                        </li>
+                    </dd>
+                </div>
+            </div>
+            <div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">2000</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">10.13 ~ 14</b>
+                            <p class="mx-2">제14회 정기총회 및 추계학술발표대회 개최(대전소재 정보통신대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">09.16 ~ 11.01</b>
+                            <p class="mx-2">실버넷운동 제2기 교육 실시(3,935명 수료)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">08.17 ~ 19</b>
+                            <p class="mx-2">제1회 EALPIIT 국제학술대회 개최 (중국 심양 동북대)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">07.03 ~ 23</b>
+                            <p class="mx-2">실버넷운동 제1기 교육 실시(4,217명 수료)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.15 ~ 16</b>
+                            <p class="mx-2">제5회 IT 21 국제컨퍼런스 개최 (기업의 경쟁력 향상과 21세기 정보기술, 잠실롯데월드호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.09</b>
+                            <p class="mx-2">실버넷운동본부 발대식 개최(건국대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">04.14 ~ 15</b>
+                            <p class="mx-2">제13회 임시총회 및 춘계학술발표대회 개최(성남소재 경원대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제5대 오길록 회장 취임(한국전자통신연구원)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">1999</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.08 ~ 09</b>
+                            <p class="mx-2">정보처리논문지 특집 발간(계간)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">10.08 ~ 09</b>
+                            <p class="mx-2">제12회 정기총회 및 추계학술발표대회 개최(서울소재 숭실대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">09.16</b>
+                            <p class="mx-2">국내 최초 학술논문 인터넷 접수</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.17 ~ 18</b>
+                            <p class="mx-2">제4회 IT 21 국제컨퍼런스 개최 (기업의 경쟁력 향상과 21세기 정보기술, 잠실롯데월드호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.16</b>
+                            <p class="mx-2">한국정보처리학회와 한국정보과학회 회장단 간담회 개최</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">04.17</b>
+                            <p class="mx-2">사무국 추가(10평) 분양(현재 47.39평)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">04.09 ~ 10</b>
+                            <p class="mx-2">제11회 임시총회 및 춘계학술발표대회 개최(경주소재 동국대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제4대 조이남 회장 취임(금융결제원)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">1998</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.21</b>
+                            <p class="mx-2">남궁석 회장(제2, 3대 회장) 정보통신부 장관 취임</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.01 ~ 04</b>
+                            <p class="mx-2">소프트엑스포'98 컨퍼런스 개최(라마다르네상스호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">10.16 ~ 17</b>
+                            <p class="mx-2">제10회 정기총회 및 추계학술발표대회 개최(수원소재 경희대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">08.20 ~ 21</b>
+                            <p class="mx-2">Y2K 학계 전문가 세미나 개최(유성 엑스포호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.18 ~ 19</b>
+                            <p class="mx-2">제3회 IT 21 국제컨퍼런스 개최 (기업의 경쟁력 향상과 21세기 정보기술, 과학기술회관)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">04.10 ~ 11</b>
+                            <p class="mx-2">제9회 임시총회 및 춘계학술발표대회 개최(광주소재 광주대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.15</b>
+                            <p class="mx-2">대학 교양 교육용 교재발간(다세컴 시리즈)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.13</b>
+                            <p class="mx-2">사무실 추가 분양(1.68평)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">1997</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.27</b>
+                            <p class="mx-2">한국과학기술단체총연합회 회원 가입</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">11.13 ~ 14</b>
+                            <p class="mx-2">제1회 S/W 품질관리 심포지움 개최(삼성SDS 멀티캠퍼스)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">10.10 ~ 11</b>
+                            <p class="mx-2">제8회 정기총회 및 추계학술발표대회 개최(수원소재 경기대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">07.11</b>
+                            <p class="mx-2">학회 사무실을 현 장소로 이전(서울소재 삼공빌딩)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.18 ~ 19</b>
+                            <p class="mx-2">제2회 IT 21 국제컨퍼런스 개최 (기업의 경쟁력 향상과 21세기 정보기술, 잠실롯데월드호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">05.27</b>
+                            <p class="mx-2">현 학회 사무실 매입(35평)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">03.11</b>
+                            <p class="mx-2">제1차 학회 회원명부 발간</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.01</b>
+                            <p class="mx-2">제3대 남궁석 회장 취임(삼성SDS)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">1996</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">10.11 ~ 12</b>
+                            <p class="mx-2">제6회 정기총회 및 추계학술발표대회 개최(서울소재 광운대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">09.11</b>
+                            <p class="mx-2">중앙일보 IIE(Internet In Education)운동 참여(감사패 수상)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.12 ~ 13</b>
+                            <p class="mx-2">제1회 IT 21 국제컨퍼런스 개최(기업의 경쟁력 향상과 21세기 정보기술, 잠실롯데월드호텔)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">04.12 ~ 13</b>
+                            <p class="mx-2">제5회 임시총회 및 춘계학술발표대회 개최(부산소재 부산수산대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">03.31</b>
+                            <p class="mx-2">정보처리학회지 제3권 제1호 발간 - 격월간(편집위원장 : 허문행 실장)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">1995</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.05</b>
+                            <p class="mx-2">국제학술세미나(멀티미디어시대의 홍보전략, 프레스센터 국제회의장)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">10.14</b>
+                            <p class="mx-2">제4회 정기총회 및 추계학술발표대회 개최(서울소재 건국대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">06.23</b>
+                            <p class="mx-2">학회 사무실 이전(서울소재 찬형빌딩)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">05.12 ~ 13</b>
+                            <p class="mx-2">제3회 임시총회 및 춘계학술발표대회 개최(서울소재 명지대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.11</b>
+                            <p class="mx-2">[한국정보처리학회]로 개칭</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">01.03</b>
+                            <p class="mx-2">제2대 남궁석 회장 취임(삼성SDS)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">1994</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">10.07 ~ 08</b>
+                            <p class="mx-2">제2회 정기총회 및 추계학술발표대회 개최(수원소재 성균관대학교)</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">06.22</b>
+                            <p class="mx-2">제1회 건설분야 정보화기술 세미나/시연(논현동소재 건설회관)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">05.28</b>
+                            <p class="mx-2">정보처리논문지 제1권 제1호 발간(논문지 편집위원장 양해술 교수)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">04.15 ~ 16</b>
+                            <p class="mx-2">제1회 임시총회 및 춘계학술발표대회 개최(과천소재 대우정보통신)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">03.31</b>
+                            <p class="mx-2">정보처리학회지 제1권 제1호 발간 - 계간(편집위원장 : 박정호 교수)</p>
+                        </li>
+                    </dd>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-start gap-md-5 gap-2">
+                    <dt class="timeline d-flex align-items-center gap-3">
+                        <span class="dot"></span>
+                        <span class="t1">1993</span>
+                    </dt>
+                    <dd class="flex-fill px-5" style="border-bottom: 1px dashed var(--bs-light);">
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">12.01</b>
+                            <p class="mx-2">체신부에 [한국정보처리응용학회]로 등록</p>
+                        </li>
+                        <li class="t3 text-dark my-2">
+                            <b class="text-primary t2">03.02</b>
+                            <p class="mx-2">학회 사무실 개소(서울소재 IPAK회관)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">02.23</b>
+                            <p class="mx-2">초대 성기중 회장 취임(포스데이타)</p>
+                        </li>
+                        <li class="t3 text-dark my-3">
+                            <b class="text-primary t2">02.23</b>
+                            <p class="mx-2">창립 발기인 대회(장소 : 반도유스호스텔)</p>
+                        </li>
+                    </dd>
+                </div>
             </div>
         </div>
     </section>
 
     <footer id="footer"></footer>
     <script src="resource/js/main.js"></script>
+    <script>
+        $(".year-btn li").click(function () {
+            const idx = $(this).index();
+
+            $(".year-btn li").removeClass("active");
+            $(this).addClass("active");
+
+            $(".timeline-center > div").hide();
+            $(".timeline-center > div").eq(idx).show();
+        })
+    </script>
 </body>
 
 </html>
